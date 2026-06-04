@@ -32,6 +32,8 @@ Date: 2026-06-04
 
 ## Smoke Tests
 
+说明：本轮 smoke test 中的练习题 query 只用于校准视觉 caption 层，不代表最终用户 query 形态。最终面向吉他编曲用户时，query 应围绕编曲目标、风格、riff、和声色彩、voicing 和把位选择；练习答案 caption 层作为可视化证据库参与召回。
+
 ### 1. Fmaj7 -> Math Rock Riff
 
 Query:
@@ -81,6 +83,10 @@ Result:
 
 Top text evidence and top visual caption both命中 `D大调指型1（B小调指型2）`，说明新版题目级视觉 caption 层可以和清洗正文互相印证。
 
+Interpretation:
+
+这条 query 是内部校准题，不是正式产品 query。它的价值在于验证 VLM caption 是否正确识别了具体指板图中的大小调指型映射。正式使用时，这类 caption 应服务于“和声/riff 指型推荐”的可视化答案，例如用户询问 D 大调旋律如何借用 B 小调同把位指型时，系统可以召回该图作为证据。
+
 Report:
 
 - `data/eval/query_rag_bundle_exercise15_answer.md`
@@ -126,6 +132,7 @@ CLI 冷启动耗时主要来自本地 embedding 模型加载，约 6 秒。单�
 - 风格文本库目前混合了 funk、mathrock 等教材，虽然 query 层已经做轻量 boost，但后续最好增加 style-aware rerank 或按风格 collection 分层检索。
 - KG 召回已经加入轻量 rerank，但实体链接还比较粗。后续可引入 Entity Linker，把 `Fmaj7`、`DADGAD`、`ghost note`、`指型1` 等稳定映射到节点 ID。
 - 当前只生成 evidence bundle，不生成最终自然语言答案。下一阶段可以加入 composer，并要求每条建议绑定证据来源。
+- 当前 smoke test 包含一条练习编号 query，只能视为视觉 caption 回归测试。后续正式评测需要改成编曲用户 query，验证 caption 是否能作为和声/riff/voicing 推荐中的图形证据被召回。
 
 ## Next Steps
 
