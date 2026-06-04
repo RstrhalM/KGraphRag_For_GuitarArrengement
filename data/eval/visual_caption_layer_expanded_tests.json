@@ -1,0 +1,152 @@
+[
+  {
+    "id": "fretboard_e69_no_seventh",
+    "query": "E6/9 和弦指板图，不含七度音，构成音是 1 3 5 6 9",
+    "expected_any": ["E6/9_chord_root_position", "E6/9"]
+  },
+  {
+    "id": "fretboard_asus4_open",
+    "query": "Asus4 开放把位，很多空弦，挂四音 D 的和弦图",
+    "expected_any": ["Asus4_chord_shape", "Asus4"]
+  },
+  {
+    "id": "fretboard_c_major_arpeggio_shape2",
+    "query": "C 大三和弦琶音 指型2 根音大三度纯五度",
+    "expected_any": ["C_major_triad_arpeggio_shape_2"]
+  },
+  {
+    "id": "fretboard_d_minor_arpeggio",
+    "query": "D 小三和弦琶音，D F A，小调三和弦指板图",
+    "expected_any": ["D_minor_triad_arpeggio_shape", "Dm"]
+  },
+  {
+    "id": "fretboard_d_diminished_position",
+    "query": "D 减三和弦琶音，注意左手把位，避免用品位标记以下音符",
+    "expected_any": ["D_diminished_triad_arpeggio_pattern_2", "D diminished"]
+  },
+  {
+    "id": "fretboard_d_augmented_shape",
+    "query": "D 增三和弦琶音，增五度，练习增三和弦音程性质",
+    "expected_any": ["D_augmented_arpeggio_shape_1", "augmented_triad_arpeggio_shape_5", "D augmented"]
+  },
+  {
+    "id": "fretboard_open_major_triad_voicings",
+    "query": "开放大三和弦声部，牛仔和弦，空弦构建密集三和弦",
+    "expected_any": ["open_major_triad_voicings", "open_major_triad_voicings_finger_patterns"]
+  },
+  {
+    "id": "fretboard_fmaj7_arpeggio",
+    "query": "Fmaj7 大七和弦琶音 指型2 跨弦根音位置",
+    "expected_any": ["Fmaj7_arpeggio_shape_2", "Fmaj7_arpeggio_shapes"]
+  },
+  {
+    "id": "fretboard_f7_dominant_arpeggio",
+    "query": "F7 属七和弦琶音 指板多把位连接",
+    "expected_any": ["F7_arpeggio_shape", "F7"]
+  },
+  {
+    "id": "fretboard_fdim7_arpeggio",
+    "query": "Fdim7 减七和弦琶音，指型4或指型5",
+    "expected_any": ["Fdim7_arpeggio_shape_5", "diminished_7th_arpeggio_shape_4_root_position"]
+  },
+  {
+    "id": "fretboard_amaj7_open",
+    "query": "Amaj7 开放和弦图，开放弦的大七和弦声部",
+    "expected_any": ["Amaj7_open_voicing", "Amaj7"]
+  },
+  {
+    "id": "fretboard_bb13_exercise",
+    "query": "Bb13 琶音指法练习，十三和弦构成音指板图",
+    "expected_any": ["Bb13_arpeggio_fingering_exercise", "Bb13"]
+  },
+  {
+    "id": "fretboard_c_minor_close_voicing",
+    "query": "C 小三和弦密集排列，闭合把位，识别指法",
+    "expected_any": ["C_minor_triad_fingering_identification", "C_minor_triad_close_voicing_identification"]
+  },
+  {
+    "id": "fretboard_c_diminished_exercise",
+    "query": "C 减三和弦指法练习，减三和弦密集声部",
+    "expected_any": ["C_diminished_triad_fingering_exercise", "C diminished triad"]
+  },
+  {
+    "id": "mathrock_facgce_chord_progressions",
+    "query": "FACGCE 调弦下 Fmaj9 G7 Am Bm7b5 Cmaj7 的和弦进行与 voicing",
+    "expected_any": ["FACGCE_tuning_chord_voicings_progressions"]
+  },
+  {
+    "id": "mathrock_facgce_5th_string_root",
+    "query": "FACGCE 从第五弦起始的和弦指型，五弦根音，密集 voicing",
+    "expected_any": ["FACGCE_chord_shape_5th_string_root"]
+  },
+  {
+    "id": "mathrock_facgce_major_scale",
+    "query": "FACGCE 大调音阶指板图，用于 tapping riff 和旋律写作",
+    "expected_any": ["FACGCE_tuning_major_scale_fingering", "FACGCE_major_scale_pattern"]
+  },
+  {
+    "id": "mathrock_facgce_minor_scale",
+    "query": "FACGCE 小调音阶 pattern，开放弦共鸣，math rock 乐句素材",
+    "expected_any": ["FACGCE_tuning_minor_scale_pattern", "FACGCE_minor_scale_pattern"]
+  },
+  {
+    "id": "mathrock_facgce_tapping_sustain",
+    "query": "FACGCE 点弦琶音谱例，hammer on pull off slide let ring 延音",
+    "expected_any": ["FACGCE_tapping_arpeggios_sustain"]
+  },
+  {
+    "id": "mathrock_daeacse_chord_voicings",
+    "query": "DAEAC#E 调弦 Dmaj9 F#m9 E7 G#m7b5 Am9 的和弦指型",
+    "expected_any": ["DAEAC#E_tuning_chord_voicings_progressions"]
+  },
+  {
+    "id": "mathrock_daeacse_9th_fret_shape",
+    "query": "DAEAC#E 第九品附近的 Am9 G#m7b5 和弦图",
+    "expected_any": ["DAEAC#E_tuning_chord_shape_9th_fret"]
+  },
+  {
+    "id": "mathrock_daeacse_major_minor_scales",
+    "query": "DAEAC#E 大调小调音阶，0到7品，开放弦重复音选择",
+    "expected_any": ["DAEAC#E_tuning_major_minor_scales", "DAEAC#E_tuning_major_minor_scale_patterns"]
+  },
+  {
+    "id": "mathrock_daeacse_tapping_phrase",
+    "query": "DAEAC#E tapping phrase，击弦勾弦和持续音的 math rock 谱例",
+    "expected_any": ["DAEAC#E_tuning_math_rock_phrases", "DAEAC#E_tuning_arpeggio_phrasing"]
+  },
+  {
+    "id": "mathrock_dm7_bm7b5_nearest_voicing",
+    "query": "Dm7 到 Bm7b5 的最近邻和弦移动，不同弦组 voicing",
+    "expected_any": ["Dm7_Bm7b5_voicings_by_string_set"]
+  },
+  {
+    "id": "mathrock_cm7_am7_g7_fm7",
+    "query": "CM7 Am7 G7 FM7 的 drop2 或横按 voicing 变化",
+    "expected_any": ["CM7_Am7_G7_FM7_voicings_variations"]
+  },
+  {
+    "id": "mathrock_minor_69_shell_voicing",
+    "query": "Dm6/9 和 CM7 的 shell voicing，扩展和弦声部",
+    "expected_any": ["minor_6/9_voicings", "maj7_shell_voicings"]
+  },
+  {
+    "id": "mathrock_shell_voicing_progression",
+    "query": "shell voicing 构建 Dm7 G7 G#m7 F#m7 Bmaj7 进行",
+    "expected_any": ["shell_voicings_Dm7_G7_m7_progression"]
+  },
+  {
+    "id": "mathrock_extended_chord_progressions",
+    "query": "CM9 Dsus4 Em9 Gsus2 C6/9 Am9 扩展和弦进行",
+    "expected_any": ["extended_chord_voicings_progressions"]
+  },
+  {
+    "id": "mathrock_jazz_voicings_high_fret",
+    "query": "高把位 jazz voicing，C6 G6/9 Bm7 Dm6/9 Am7",
+    "expected_any": ["high_fret_jazz_voicings_progression"]
+  },
+  {
+    "id": "mathrock_gsus4_fm9_am9_g7",
+    "query": "Gsus4 FM9 Am9 G7 的 voicing substitution 和和弦进行",
+    "expected_any": ["Gsus4_voicings", "FM9_Am9_G7_progression"]
+  }
+]

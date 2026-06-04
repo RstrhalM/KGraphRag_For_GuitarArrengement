@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "description": "Conservative OCR cleanup rules. Simple Chinese typo correction is intentionally handled by the Chinese-native LLM, not by deterministic rules.",
+  "policy": {
+    "llm_handles": [
+      "simple Chinese typo correction",
+      "missing common Chinese characters",
+      "natural punctuation and phrase repair",
+      "music term completion when context-dependent"
+    ],
+    "rules_handle": [
+      "layout or artifact cleanup that is deterministic",
+      "book-specific recurring OCR artifacts after human review",
+      "format normalization for source IDs, page markers, exercise labels, and list markers",
+      "high-precision domain patterns with low false-positive risk"
+    ]
+  },
+  "rules": []
+}

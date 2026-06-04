@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "id": "fretboard_strings_names",
+      "query": "标准调弦下吉他第6弦到第1弦的名称是什么",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["E、A、D、G、B、E", "第6弦", "第1弦"]
+    },
+    {
+      "id": "fretboard_root_form_3",
+      "query": "指型3的根音在第几弦，相差几品",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["指型3", "第3弦", "第5弦", "第6弦"]
+    },
+    {
+      "id": "fretboard_major_scale_formula",
+      "query": "大调音阶的全音半音结构是什么",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["大调音阶", "全音", "半音"]
+    },
+    {
+      "id": "fretboard_relative_minor",
+      "query": "自然小调音阶和关系大调有什么关系",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["自然小调", "关系大调", "小调音阶"]
+    },
+    {
+      "id": "fretboard_pentatonic_scale",
+      "query": "五声音阶为什么少了两个音",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["五声音阶", "大调音阶", "七个音"]
+    },
+    {
+      "id": "fretboard_major_triad_arpeggio",
+      "query": "大三和弦琶音由哪些音构成",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["大三和弦", "1、3、5", "根音"]
+    },
+    {
+      "id": "fretboard_chord_voicing_definition",
+      "query": "和弦声部是什么意思，为什么吉他三和弦会重复八度音",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["声部", "三和弦", "不同的八度"]
+    },
+    {
+      "id": "fretboard_extended_chord_11th",
+      "query": "延伸和弦里九度十一度十三度是什么概念",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["延伸和弦", "九度", "十一度", "十三度"]
+    },
+    {
+      "id": "fretboard_exercise_30_prompt",
+      "query": "练习30要求怎样构建D大三和弦琶音五种指型",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["练习30", "D大三和弦琶音", "五种指型"]
+    },
+    {
+      "id": "fretboard_answer_exercise_15",
+      "query": "练习15答案里D大调指型1对应哪个小调指型",
+      "text_sources": ["fretboard_handbook_clean_text"],
+      "expected_keywords_any": ["D大调指型1", "B小调指型2", "练习15"]
+    }
+  ]
+}

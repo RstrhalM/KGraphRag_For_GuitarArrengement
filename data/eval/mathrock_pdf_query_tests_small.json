@@ -1,0 +1,38 @@
+[
+  {
+    "id": "pdf_tapping_simultaneous_rhythm_lead",
+    "query": "math rock two hand tapping simultaneous rhythm and lead clean solo guitar arrangement",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "visual_sources": ["mathrock_pdf_steve_h"],
+    "style_tags": ["math_rock", "midwest_emo", "tapping"],
+    "kg_nodes_any": [
+      "technique:two_hand_tapping",
+      "guitar_idiom:simultaneous_rhythm_lead",
+      "guitar_idiom:solo_guitar_arrangement"
+    ]
+  },
+  {
+    "id": "pdf_facgce_open_string_voicing",
+    "query": "FACGCE tuning open strings Fmaj9 movable barre shapes math rock voicing",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "visual_sources": ["mathrock_pdf_steve_h"],
+    "style_tags": ["math_rock", "alternate_tuning", "voicing"],
+    "kg_nodes_any": [
+      "tuning:FACGCE",
+      "chord:open_Fmaj9",
+      "pattern:movable_barre_shapes_root_6"
+    ]
+  },
+  {
+    "id": "pdf_clean_maj9_ambient_texture",
+    "query": "math rock clean open string maj9 lush ambient texture arpeggio intro bridge",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "visual_sources": ["mathrock_pdf_steve_h"],
+    "style_tags": ["math_rock", "midwest_emo", "voicing"],
+    "kg_nodes_any": [
+      "chord:maj9",
+      "color:lush_ambient_texture",
+      "voicing:open_string_maj9_cluster"
+    ]
+  }
+]

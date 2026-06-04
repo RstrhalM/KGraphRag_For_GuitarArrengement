@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guitar Knowledge Workbench</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">KG</span>
+          <div>
+            <strong>Guitar Workbench</strong>
+            <small>Phase 1 Read-only</small>
+          </div>
+        </div>
+        <nav>
+          <button class="nav-button active" data-view="dashboard">Dashboard</button>
+          <button class="nav-button" data-view="datasets">Datasets</button>
+          <button class="nav-button" data-view="chunks">Chunks</button>
+          <button class="nav-button" data-view="visuals">Visual Evidence</button>
+          <button class="nav-button" data-view="graph">Graph</button>
+          <button class="nav-button" data-view="reports">Eval Reports</button>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <h1 id="page-title">Dashboard</h1>
+            <p id="page-subtitle">本地知识库只读工作台</p>
+          </div>
+          <button id="refresh-button" class="secondary-button">刷新</button>
+        </header>
+
+        <section id="dashboard" class="view active">
+          <div id="metric-grid" class="metric-grid"></div>
+          <div class="two-column">
+            <section class="panel">
+              <div class="panel-header">
+                <h2>关系类型</h2>
+              </div>
+              <div id="relation-list" class="stack-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-header">
+                <h2>向量集合</h2>
+              </div>
+              <div id="collection-list" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="datasets" class="view">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>数据源</h2>
+              <span id="dataset-count" class="muted"></span>
+            </div>
+            <div id="dataset-table" class="table"></div>
+          </section>
+        </section>
+
+        <section id="chunks" class="view">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Chunk Viewer</h2>
+              <div class="toolbar">
+                <input id="chunk-query" type="search" placeholder="搜索 chunk 文本或 id" />
+                <button id="chunk-search" class="secondary-button">搜索</button>
+              </div>
+            </div>
+            <div class="chunk-workspace">
+              <aside id="book-list" class="book-pane"></aside>
+              <div id="chunk-list" class="list-pane"></div>
+              <article id="chunk-detail" class="detail-pane empty">选择一个 chunk 查看原文。</article>
+            </div>
+          </section>
+        </section>
+
+        <section id="visuals" class="view">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Visual Evidence</h2>
+              <div class="toolbar">
+                <select id="visual-source"></select>
+                <input id="visual-query" type="search" placeholder="搜索 visual_id / caption / topic" />
+                <button id="visual-search" class="secondary-button">搜索</button>
+              </div>
+            </div>
+            <div class="split">
+              <div id="visual-list" class="list-pane"></div>
+              <article id="visual-detail" class="detail-pane empty">选择一条视觉证据查看图片和 caption。</article>
+            </div>
+          </section>
+        </section>
+
+        <section id="graph" class="view">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Graph Explorer</h2>
+              <div class="toolbar">
+                <input id="graph-query" type="search" placeholder="搜索节点、关系或 evidence" value="math rock" />
+                <select id="graph-relation"><option value="">全部关系</option></select>
+                <select id="graph-source-group"><option value="">全部来源</option></select>
+                <select id="graph-knowledge-type"><option value="">全部类型</option></select>
+                <button id="graph-search" class="secondary-button">搜索图谱</button>
+              </div>
+            </div>
+            <div class="graph-layout">
+              <div>
+                <div id="graph-summary" class="mini-stats"></div>
+                <svg id="graph-svg" viewBox="0 0 900 520" role="img"></svg>
+              </div>
+              <div id="graph-edge-list" class="edge-list"></div>
+            </div>
+          </section>
+        </section>
+
+        <section id="reports" class="view">
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Eval Reports</h2>
+              <span class="muted">读取 data/eval/*.md</span>
+            </div>
+            <div class="split">
+              <div id="report-list" class="list-pane"></div>
+              <article id="report-detail" class="detail-pane empty">选择一个评测报告查看。</article>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,817 @@
+{
+  "query": "Fmaj7琶音怎么发展成math rock风格riff",
+  "analysis": {
+    "query": "Fmaj7琶音怎么发展成math rock风格riff",
+    "intent": "mixed_arrangement",
+    "style_hints": [
+      "mathrock"
+    ],
+    "theory_terms": [
+      "琶音"
+    ],
+    "technique_terms": [
+      "riff"
+    ],
+    "needs_fretboard_text": true,
+    "needs_visual": false,
+    "needs_style_text": true,
+    "needs_kg": true,
+    "confidence": 0.8,
+    "matched_rules": [
+      "fretboard_terms",
+      "style_or_technique_terms",
+      "arrangement_or_relation_terms"
+    ]
+  },
+  "plan": [
+    {
+      "name": "fretboard_text",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+      "query": "Fmaj7琶音怎么发展成math rock风格riff",
+      "top_k": 5,
+      "reason": "指板/理论/练习题干证据"
+    },
+    {
+      "name": "style_text",
+      "backend": "chroma",
+      "collection": "guitar_text_chunks_qwen3_06b",
+      "query": "Fmaj7琶音怎么发展成math rock风格riff mathrock",
+      "top_k": 5,
+      "reason": "风格/riff/节奏/技法文本证据"
+    },
+    {
+      "name": "kg",
+      "backend": "neo4j_or_file",
+      "collection": null,
+      "query": "Fmaj7琶音怎么发展成math rock风格riff mathrock 琶音 riff",
+      "top_k": 8,
+      "reason": "技法关系/风格迁移/编配启发"
+    }
+  ],
+  "text_evidence": [
+    {
+      "evidence_id": "text:fretboard_text_0099",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习38\n在F大三和弦的基础上增加大七度音，并画出六根弦上D大七和弦琶音的五种指型，根音已圈出。\n1）Fma7琶音\n=\n2)Fma7琶音 指型2\n3)Fma7琶音 指型3\nV\nVI\n4)Fma7琶音\nIX\n5)Fma7琶音\nXII\n弹奏以上这些F大七和弦琶音，弹奏前先大声说出指型的序号。同时，要注意仔细体会大七和弦的色彩。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.85677,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0099",
+        "page_hint": "48",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_edges": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "chunk_id": "fretboard_text_0099",
+          "gp5_feature_triggers": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_kg_nodes": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "page_hint": "48",
+          "source_type": "clean_markdown",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "review_jsonl": "",
+          "lesson_title": "",
+          "linked_review_ids": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a3768c239997f81afde17999a69756c2ce9bbae1d337310ff09078ea7bdbbbfc.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\46720b122c738a3f6d9ce5a2807c4c1bc4d791fc7340312b92d0d6386d1a909e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\1468904dc1fedcf27d06f1d9420039a0ccf921fa984d9939247803b792666ad2.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e279561afc589fd0a9c41b07aacd7a3cc59e294079d7829aac84203e89d087a9.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b3ae7f305a0303edcd7ec3891641b189dd6de902ebddaeb1feb40c8eae68913e.jpg\"]",
+          "source_id": "fretboard_handbook_clean_text"
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.16823023557662964,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0157",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习38\n1）Fma7琶音 指型5\n2）Fma7琶音指型1\n3）Fma7琶音 指型2\n4）Fma7琶音 指型3\n5)Fma7琶音 指型4\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.83658,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0157",
+        "page_hint": "68",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\57ea55d067dd2c0b6c1abcdb14ea94e96babc4faeaf3e587211a60237e882486.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fa32522c4d9bd91c8f74951b7aa99af4e042296bd7f0af58b2bee61e32c2d3f7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2f93250473fc6e811fa948de7120a4826ee2e7d9015952a27c45b5e9ee234da8.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9619469b1dc2eba22ebdd0f93f237879b8607fd870e81cafe8d66bcd280ad299.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\06b8704c493afdc9509f2a918c8b825a5e7f53dbf4720e3bf1024d9ec8df07cf.jpg\"]",
+          "linked_review_ids": "[]",
+          "gp5_feature_triggers": "[]",
+          "source_type": "clean_markdown",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "review_jsonl": "",
+          "page_hint": "68",
+          "lesson_title": "",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_kg_nodes": "[]",
+          "chunk_id": "fretboard_text_0157",
+          "linked_kg_edges": "[]",
+          "source_title": "吉他指板手册正文清洗层"
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.1884167194366455,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0101",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习39\n在F小三和弦的基础上增加小七度音，并画出六根弦上F小七和弦琶音的五种指型，同时圈出根音。\n1）Fmi7琶音\n指型1\n2)Fmi7琶音 指型2\nI三I\n3)Fmi7琶音 指型3\nV\n5)Fmi7琶音\nVII\nX\n弹奏以上这些F小七和弦琶音，弹奏前先大声说出指型的序号。同时，要注意仔细体会小七和弦的色彩。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.83319,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0101",
+        "page_hint": "48",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6dbb82aae67868db6515195ed14ac6a12742c368d5af4eef43cb4e42dcb77546.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\732af9531d66b99c4acc41ad0c6e5a3fbb404617d01c13d80ba9686ac6549e34.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8dbd2f3574973cd9e7257948a106ff4856999644707f7457fe70dff3a42d690d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0dad7ffe5b171c92e2f544cfd4779fa5d23907955132c504405f8ea54f12af4e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6b6296b73f321d856c8106e146dcf498d1e55cbd4c0dbee82feb7835c854c8f2.jpg\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "page_hint": "48",
+          "chunk_id": "fretboard_text_0101",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_edges": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "source_type": "clean_markdown",
+          "linked_kg_nodes": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "review_jsonl": "",
+          "linked_review_ids": "[]",
+          "lesson_title": "",
+          "gp5_feature_triggers": "[]"
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.19181489944458008,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0105",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习41\n在F减三和弦琶音的基础上增加小七度音，并画出六根弦上F小七减五和弦的五种琶音指型。圈出根音，和弦的全称和指型序号已经标出。\n1）Fmi7(b5)琶音\n2)Fmi7(b5)琶音 指型2\n3)Fmi7(b5)琶音 指型3\nV\n=\nVII\n5)Fmi7(b5)琶音 指型5\nX\n弹奏以上这些F小七减五和弦琶音，演奏前先大声说出指型的序号。同时，要注意仔细体会小七减五和弦的色彩。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.8285,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0105",
+        "page_hint": "48",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e59bd9b18318b42b3e72c06ff8169b2030ebf567755dc252440f41380f8a7fa3.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6b087a4250fe7e331153921f953194ed9b435d50cf0557c86e9c7b7abb07d3b8.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9dffe0904b0eafe876e67341fdc9ac743a731e224c07b9e07ebdf0d7b80c1214.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a62b75a39731b52b0bb79e52016f0ef0ff494e764c0253e73f04591559e0ecc0.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\4dc974b3d83c33f8f7f0f76c4d678740269735e2f66c43fab77653ad4f24164a.jpg\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "lesson_title": "",
+          "page_hint": "48",
+          "review_jsonl": "",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_type": "clean_markdown",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_nodes": "[]",
+          "chunk_id": "fretboard_text_0105",
+          "gp5_feature_triggers": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_kg_edges": "[]"
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.1965034008026123,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0103",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习40\n在F大三和弦的基础上增加小七度音，并画出六根弦上F属七和弦琶音的五种指型，同时圈出根音。\n1)F7琶音\n指型1\n2)F7琶音\n3)F7琶音\n指型2\n=\n指型3\nV\nVI\n4)F7琶音\n指型4\nX\n指型5\n5)F7琶音\nXII\n弹奏以上这些F属七和弦琶音，演奏前先大声说出指型的序号。同时，要注意仔细体会属七和弦的色彩。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.8275,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0103",
+        "page_hint": "48",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "page_hint": "48",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_nodes": "[]",
+          "gp5_feature_triggers": "[]",
+          "linked_review_ids": "[]",
+          "lesson_title": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\08781b9d83dcb6653500d5b5e62306589440fc9355ec92a1abafc341b921600b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e4be4e7240d6aeef48108db5d591934e44673baee4865cb037400caee1fd751c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ee5bced8de4685f24a620df5846a63d48ef1d88805983d93c72b8446360233bc.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b6269bd9f7c469f861165d47aa343cd84c50ebb80eea960b9208ecc2bd8a27ee.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\48d6ed093b88c5e8a1961e1b29ea7396550bf2bd6df9fa869ace29a8bc4a7ce7.jpg\"]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "chunk_id": "fretboard_text_0103",
+          "linked_kg_edges": "[]",
+          "source_type": "clean_markdown",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "review_jsonl": "",
+          "source_id": "fretboard_handbook_clean_text"
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.19749760627746582,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0002",
+      "evidence_type": "text",
+      "source_id": "mathrock_text_course",
+      "title": "mathrock教学课",
+      "content": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered around de maja. I have this bmi NOR in the root suspended quartz is going to be a lot of what we're outlining in this one. it's going to have a really neat sound so. I'm barring well essentially,I'm gonna be picking the ninth fret in the base string and then I'm gonna bar the seventh fret with my first finger. ,and I'm gonna be picking four,third,fourth,second street. what you can do as an epi gio,as a role,as well,or you can mix it up.\nand if you want to get that Nice thumb slap,little percussive there,so what's going on there? I'm barring the seven th threat now,another call suspended god.and with an a in the base now set of ABS o,it's like you're going from the six and the qd to the five,and I'm going to tap after hammering onto add sharp right here.up on the second string,god fret,I'm gonna tap the eleven th,which is the seventh and the kfd eleven th fret on the fourth string and you haven't neat little harmony right there.creates a fifth and less power cord.I really like power cords. let's get a little thumb slapping rip peel.we're going to do some slap and pop. you're going to hit up with the thumbs lap six string hammer onto the seventh and then to the ninth red dab in the base I'm going to pop.four three open d,\nso it's like the same old as here. and then we're gonna walk it up to hammering on on the seven th threat.and a ninth fret of your fifth string,I'm going to hammer on then to the four th fret,which I'm going to have on the base. it's an f sharp,I'm going to bar the second fret.same strings fourth through second string can I suspend a cord here again?up to the fort hretandoo pind for your base.cool little Melody here using my.AH,my finger as I'm borrowing the fore fret as my foundation,sliding after I tapped some fret to the ninth fret.on the second string,pulling off to the forefront. let's eef sho PC shop two three seven,then I'm going to tap.\nthe ninth threat to the seven th threat slide down the seven th threat on the fourth string and then pull off to the fourth that's going to be the three,thef shop five.six so you see as I'm walking down here for the Melody da da da seven six five.three three n eat go ahead.do that again,same slapping lick.but we're gonna change up the Melody. we're gonna use the same pattern,though I'm gonna hammer on now from the fourth to the seventh threat COP,the open forth string again,then I'm gonna walk.down full threat fit strings,even threat sixth street,so it's like one seven five.again and then once again.that's gonna be second time around right there next time we're gone.\n就酷俄罗斯关系哦。as I'm doing a lot of ha ron's pool offs as you notice,so that's first of all.I'm ring on now seventh to the ninth front on the first ring and then I'm going to tap.the eleven th threat on the second and fourth string is it really called power cord. I'm hitting now the shop four.instead of I'm going outside of the key,I'm actually going to try and make the key of aim my tonal center now.so it's gonna be the fifth of d right,which is really cool. I kind of like this so good.so after that,I'm pulling off to the open. sorry,the seventh threat where I'm borrowing my first finger on the first string.then I'm pouring off to seventh.out second and fourth string hammering on back to the ninth threat,second string and then tapping fourteenth threat fourth string.\nso that's like three t of short e,okay?you can even tap that would be a cool Melody as well. fourteenth fret.third ring alright call variations you could do this and fun ideas,but I'm really highlighting that that shop four.the flat fire cuz I wanted to give it to the cube a field now.cut premie t premie t that I'm going back to.call it all ref right here from the four th fret.barring on the border fortress,I'm gonna do some har on to nowhere again. I'm hitting the sharp four . ,and I'm gonna walk that from the sixth front of the first ring,then hammer on the seventh front of the second string . and then on tapping ninth threat second to fourth street.cool tapping sequences there.\na lot of power cords,a lot of suspended cords,and we're transitioning again. that's again the key of a's the total center there.子儿。yeah,so now going back to the first two bars we had.没有。",
+      "score": 0.79911,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0002",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "math_rock",
+          "midwest_emo"
+        ],
+        "raw_metadata": {
+          "source_type": "transcript",
+          "raw_path": "data/book/mathrock教学课.txt",
+          "page_hint": "",
+          "source_title": "mathrock教学课",
+          "review_jsonl": "data/processed/mathrock/mathrock_text/arrangement_kg_review.all_accept.jsonl",
+          "image_refs": "[]",
+          "linked_kg_nodes": "[\"chord:modal_interchange_A_major\", \"chord:suspended_add9\", \"color:angular_math_rock_momentum\", \"color:jangly_open_midwest_emo\", \"feature:common_tone_top_strings\", \"feature:hammer_pull_density\", \"feature:open_string_drone\", \"feature:tapped_power_chords\", \"heuristic:movable_shape_over_drone\", \"heuristic:theme_variation_layering\", \"task:math_rock_riff_writing\", \"technique:hammer_on_pull_off\", \"technique:percussive_slap\", \"technique:slide_to_open_string_pulloff\", \"technique:two_hand_tapping\", \"tuning:DADGAD\"]",
+          "chunks_path": "data\\processed\\mathrock\\mathrock_text\\chunks.json",
+          "chunk_id": "chunk_0002",
+          "linked_review_ids": "[\"chunk_0002:mathrock_text:001\", \"chunk_0002:mathrock_text:002\", \"chunk_0002:mathrock_text:003\", \"chunk_0002:mathrock_text:004\", \"chunk_0002:mathrock_text:005\", \"chunk_0002:mathrock_text:006\", \"chunk_0002:mathrock_text:007\", \"chunk_0002:mathrock_text:008\"]",
+          "style_tags": "[\"math_rock\", \"midwest_emo\"]",
+          "linked_kg_edges": "[\"tuning:DADGAD -[enables]-> feature:open_string_drone\", \"chord:suspended_add9 -[suggests]-> heuristic:movable_shape_over_drone\", \"technique:percussive_slap -[evokes]-> color:angular_math_rock_momentum\", \"technique:two_hand_tapping -[enables]-> feature:tapped_power_chords\", \"technique:hammer_on_pull_off -[suggests]-> feature:hammer_pull_density\", \"task:math_rock_riff_writing -[can_inspire]-> heuristic:theme_variation_layering\", \"chord:modal_interchange_A_major -[suggests]-> color:jangly_open_midwest_emo\", \"technique:slide_to_open_string_pulloff -[enables]-> feature:common_tone_top_strings\"]",
+          "source_id": "mathrock_text_course",
+          "gp5_feature_triggers": "[\"accidental_sharp_4\", \"alternate_tuning_DADGAD\", \"chord_type_add9\", \"chord_type_sus2_or_sus4\", \"glissando_into_release\", \"high_legato_note_ratio\", \"high_open_string_sustain_ratio\", \"interval_perfect_fifth_tapped\", \"key_modulation_to_dominant\", \"low_string_accentuation\", \"open_string_termination\", \"percussive_articulation_detected\", \"repetitive_rhythmic_pattern\", \"short_duration_grace_notes\", \"simultaneous_notes_different_hands\", \"varying_pitch_sequence\"]",
+          "lesson_title": "tutorial 2"
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.3008878231048584,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff mathrock",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0007",
+      "evidence_type": "text",
+      "source_id": "mathrock_text_course",
+      "title": "mathrock教学课",
+      "content": "we'll find more vents,one there.using some cool ideas of how we take an alternate tuning in an open minor or major court with some extensions,we might have thirteen and how we.can mix up the ribbon,\nhere's simple movable core shapes,all right? thinking about major and minor,and then creating some mellies .tapping some power cords,some suspended cords.alright,and then even in the second movement,how we once again use some different movable core shapes,you can think of.closed voicing,which is what's going on with? how we do these shapes right here or the spread voicing how we do it in different octaves like in the beginning .all right,and then lastly how we looked ate pig yi ding.the idea of a corn. but then making the noise.kind of in a different patent to where it outlines the cord,but it sounds more musical more melodic.so there you go,glass hope,you joined this progression,hope it,taught you a lot.",
+      "score": 0.79663,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0007",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "math_rock",
+          "midwest_emo"
+        ],
+        "raw_metadata": {
+          "linked_kg_edges": "[\"tuning:open_minor_add9 -[enables]-> heuristic:movable_shape_drone\", \"technique:tapped_power_chord -[can_inspire]-> feature:tapped_dyads\", \"task:math_rock_riff_writing -[suggests]-> heuristic:theme_variation_layering\", \"technique:percussive_slap -[evokes]-> color:angular_math_rock_momentum\", \"feature:common_tone_top_strings -[constrains]-> caution:tuning_specific_shape_dependency\"]",
+          "page_hint": "",
+          "linked_kg_nodes": "[\"caution:tuning_specific_shape_dependency\", \"color:angular_math_rock_momentum\", \"feature:common_tone_top_strings\", \"feature:tapped_dyads\", \"heuristic:movable_shape_drone\", \"heuristic:theme_variation_layering\", \"task:math_rock_riff_writing\", \"technique:percussive_slap\", \"technique:tapped_power_chord\", \"tuning:open_minor_add9\"]",
+          "chunk_id": "chunk_0007",
+          "linked_review_ids": "[\"chunk_0007:mathrock_text:001\", \"chunk_0007:mathrock_text:002\", \"chunk_0007:mathrock_text:003\", \"chunk_0007:mathrock_text:004\", \"chunk_0007:mathrock_text:005\"]",
+          "raw_path": "data/book/mathrock教学课.txt",
+          "gp5_feature_triggers": "[\"alternate_tuning\", \"dead_note_articulation\", \"increasing_note_density\", \"interval_perfect_fourth_or_fifth\", \"open_string_sustain_overlap\", \"percussive_attack_markers\", \"repeated_finger_pattern_on_different_frets\", \"section_change\", \"short_duration_high_velocity_notes\", \"simultaneous_left_right_hand_notes\", \"staccato_phrasing\", \"static_bass_or_high_string_notes\", \"widening_interval_range\"]",
+          "review_jsonl": "data/processed/mathrock/mathrock_text/arrangement_kg_review.all_accept.jsonl",
+          "lesson_title": "tutorial 6 / part 2",
+          "source_title": "mathrock教学课",
+          "source_type": "transcript",
+          "image_refs": "[]",
+          "source_id": "mathrock_text_course",
+          "style_tags": "[\"math_rock\", \"midwest_emo\"]",
+          "chunks_path": "data\\processed\\mathrock\\mathrock_text\\chunks.json"
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.30337071418762207,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff mathrock",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0006",
+      "evidence_type": "text",
+      "source_id": "mathrock_text_course",
+      "title": "mathrock教学课",
+      "content": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique it's bfs hop de a.d and dokay so i didn't start with just an idea. I actually wanted to experiment around a specific alternate tuning.see,I have the be mono the one hundred and fifty three. I have the four right here so that could be also in the thirteen I have here.seven,which is eight and finally AD,which is another three. so this is basically AB minus thirteen cord,sorry,I thought,hey,let's experiment with s.something new a different alternate chining the idea is going to be set on around using movable cord shape in the beginning and then relying on some open strings.to carry out a pebble tone.or a constant Melody,\nso we had the seven ringing out. and that's what's going on there in the beginning,it's going to be a ga and then bin the base.eight ten twelve on the sixth string,then I'm playing the third of that the BC sharp d.which is going to be seventh fret nine threat,tenth RET on the third string and then I finish with some harmonics here,open harmonics.twelve on the fourth,third and second string so that's bmin or suspended four right there and then with the seven.it's really pretty now. we're gonna carry out some tapping Melody,heel.so what's this here? single melodies,alright? so that's gonna be nine to eleven first string.tapping the tool fer on the second stream and if we're in the key of be e moana,that's one. one,two,seven,pulling off to open all right now,we'll give you some hammer ons from our fourth through second string .it's going to be seven tonight,Fred. we have a power cord with the fourth and second string that's going to be at ob.now we're adding him the suspended second.so we got a suspended second cord here,pretty cool tapping,tapping the fourteenth threat to create that power cord second and fourth string. sliding down to the twelfth really Nice mouth Rock sound right there suspended and power cords mixing up suspended and power cords ya.and then pouring off,so that's gonna be the timing right there.so that's the first thing of that is,\nthe first phrase so once more.you can slide into it use some Grace notes,all right next up we have. so mixing up the progression there save from the g then to the p minor then to the a so just rearranging it there same quartz. then we're gonna do a series of the suspended cord right now and then hammering on.once again,from the ninth to the t or f rep,we're going to tap the fourteenth and the sixteenth fret. we're going to do a little bit of a variation here,you start with that little.l right there,so hammer on from the night to the t or fre tapped the power cord.voting fret good tablet,you can pull off tonight,night fret hammer on again to the top fret.and then do the same thing on the sixteenth front,\nand I'm doing pal quarti of e.dd power cord and that's going to be f sharp power cord,so we have b power cord here. that's the one,three,four,five.suspended cords from one to three power cord of four and five.you could even go back up to the seven right here,which is the a power cord I really like that. you could do some triplets,alright?cool thing about this,if we're giving it,that math Rock signature,we can kind of play an extra phrase or two and just carry it out like it's a different time signature,which is really neat,\nwhich is really.fine,and you can be sort of creative with its style,so we had.饼干。so that is section one. now section two completely different group,all right? let me play this s for you.so a lot of interesting stuff going on here,you can say it's a little bit jazzy,right? we're going.in and out of the key a little bit so plan,some non di tonic notes plan some Grace notes doing some slides.alright,so first time around.I'm doing a series of notes right here in the base region. I'm gonna go three zero. sixth rate that's going to bed to be.kind of outlining a beaumont accord hill,right? that's gonna be nine fret third string,seven fret four string. this is gonna be two seven in the beam water key.so three,one,two,seven. so that's what the malady is all about.and then we're hitting open first string,which is the d again .so I'm really outlining here the seventh and the ninth. it's kind of like a bee MI nine and nine chord is what I'm thinking about here.all right,interesting,huh? see,\nyou can do that all the time. you can upidgei ate.uh,accord,but rearrange the Melody and make the ribbon a little interesting. right? you're not bound to just.playing just chords,you can think of how we can do chords in our pigeons in a musical way. and this is a good example here,see I took it in the lower register.outlined the base,the line of the one and the three,and then i played the nine,the seven.and then the three again.in the higher register in the higher octave. ,and then I'm gonna do four,\nseven on the fourth string that's gonna be the fifth,fifth and the beamon i cord,and then back to the seventh.right? so now we're getting like all the notes of the bean wine and iron corn.alright,so what's going on here? I'm using a movable cord shape.remember how if we play our open strings we have bf sharp dis the bee want to try it?so now I'm playing an emo na triad,and then I'm going to bring that down to AD major triad right here. so you're going to be borrowing the first,the fifth fret.and then you're gonna be playing.third threat top two strings,fourth threat is going to be the major third of that chord on the fourth string .and i'd like to feel a little Grace,note there good from miner dem aj jo demo nar dem aj jo. 转折。 and I throw down a little percussive slap bit.where we're gonna do a little offbeat,sa little syncopation.小哒哒哒。 ,right,that's the next movement. right there,taking that same court shaped major going to bring it to a major slide,it down to GM ajj or.so starting on the temp right now,sliding down to the eighth threat,the major note the third is going to be Bill levin,sliding down to the nine on the fourth string.人。 right? what's going on here once,once again? we're gonna do that after that dom SIL.right? so we're going from this court right here barring seven th threat.thumb is playing the six string and then the finger is going to do fourth through second string and the musically this is going to be an f sharp. so that's the five cord we have,the third which is a one three.the four right here,I'm going to think of this as the thirteen as well,because then we have the seven on the second stream. there's an eno right there,it's behind the f shop.it's a set of sharp minus thirteen chord rather,but then we're gonna make the seventh hammer onto the one again. right,this is the ninth threat on the second three.OK,OK.don't slap again,\nalright? so we're gonna take that minor thirteen chord shape again.we're gonna slide down,do a chromatic passing cord right here. six th fret to the fifth fret,we're just gonna now,gonna be.in mind of the thing.三星的。I want more.second variation here we go,we have. ,so what's going on here once again outlining the beam liner shape with the base? but then I'm gonna do hammer on. from the a from the BT o,the CS hop,so that's the one of the two . and then I'm going to hit for three open for three. so we're going to walk him down there.that's what's going on,then basically.then I'm gonna do for thre t open on the fourth stream to meet at five to the three of the beam on court evs ha dear.so using. the similar notes,we're not quite outlining a beam line or nine chord here. we're using chords basically within just the beam line accord,but adding in the second as well.all right,but different barrier,I shouldn't heal. and then all right,and then we had similar next measure as well. we'll same next measure,which was .right? that what's going on here second time around? so same thing gone on there sliding down from a to g major triad minus thirteen to a regular fof sharma wine. ,now I'm going to tap a power cord here. this is a deep power cord,interesting hi cause now we have.it's a completely different cord right here. it's really cool,but I also wanted to think of it just as like f shop. and then AD in the Melody,creating AP chor da harmony OK ay,what's again the passing chord chromatic passing chord?and the same thing gone on there,we do aporth for variation to start home the porth into the miner thirteen cord. so. ,and that's what's going on there. it's,I'm just gonna do it on the base strings since I wanna ring out the dp oly corn.现在你可以铺off。 and once you get to the fifth fret,that might of thirteen quartz,so it would be like this slow.s lap and then that pool of rhu ben ne,sota.pretty me right,and then we're gonna end simply with that first idea that walk right there,gee a.be moana from the beginning.second variation or second movement .and there you go it.",
+      "score": 0.78818,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0006",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "math_rock",
+          "midwest_emo"
+        ],
+        "raw_metadata": {
+          "style_tags": "[\"math_rock\", \"midwest_emo\"]",
+          "chunk_id": "chunk_0006",
+          "gp5_feature_triggers": "[\"alternate_tuning_detected\", \"asymmetric_phrase_length\", \"bar_line_misalignment\", \"chord_shape_transposition\", \"chromatic_root_movement\", \"consonant_open_string_overlap\", \"dead_note_articulation\", \"high_hammer_pull_density\", \"high_open_string_sustain_ratio\", \"increasing_rhythmic_complexity\", \"sectional_variation_in_technique\", \"short_note_duration_with_sustain_flag\", \"simultaneous_high_fret_notes\", \"slide_articulation_between_chords\", \"syncopated_accent_pattern\", \"tapped_note_followed_by_open_string\"]",
+          "lesson_title": "tutorial 6 / part 1",
+          "raw_path": "data/book/mathrock教学课.txt",
+          "linked_kg_edges": "[\"tuning:BF#DEAD -[enables]-> feature:open_string_drone\", \"technique:tapped_power_chord -[evokes]-> color:angular_math_rock_momentum\", \"technique:tap_pull_off_to_open -[suggests]-> feature:common_tone_top_strings\", \"heuristic:theme_variation_layering -[can_inspire]-> task:math_rock_riff_writing\", \"technique:percussive_slap -[enables]-> feature:odd_grouping\", \"harmony:movable_minor_add9_shape -[constrains]-> tuning:BF#DEAD\", \"heuristic:non_diatonic_passing_chords -[suggests]-> color:jazzy_midwest_emo\", \"feature:odd_grouping -[evokes]-> style:math_rock\"]",
+          "image_refs": "[]",
+          "page_hint": "",
+          "review_jsonl": "data/processed/mathrock/mathrock_text/arrangement_kg_review.all_accept.jsonl",
+          "chunks_path": "data\\processed\\mathrock\\mathrock_text\\chunks.json",
+          "source_type": "transcript",
+          "source_id": "mathrock_text_course",
+          "source_title": "mathrock教学课",
+          "linked_kg_nodes": "[\"color:angular_math_rock_momentum\", \"color:jazzy_midwest_emo\", \"feature:common_tone_top_strings\", \"feature:odd_grouping\", \"feature:open_string_drone\", \"harmony:movable_minor_add9_shape\", \"heuristic:non_diatonic_passing_chords\", \"heuristic:theme_variation_layering\", \"style:math_rock\", \"task:math_rock_riff_writing\", \"technique:percussive_slap\", \"technique:tap_pull_off_to_open\", \"technique:tapped_power_chord\", \"tuning:BF#DEAD\"]",
+          "linked_review_ids": "[\"chunk_0006:mathrock_text:001\", \"chunk_0006:mathrock_text:002\", \"chunk_0006:mathrock_text:003\", \"chunk_0006:mathrock_text:004\", \"chunk_0006:mathrock_text:005\", \"chunk_0006:mathrock_text:006\", \"chunk_0006:mathrock_text:007\", \"chunk_0006:mathrock_text:008\"]"
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.3118247985839844,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff mathrock",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:md_chunk_0037",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_mineru",
+      "title": "吉他指板手册",
+      "content": "## 关于作\n\n巴雷特·塔利亚里诺自1987年起在MI执教，并且在1994年成为奥地利维也纳霍纳音乐学校摇滚系主任。他通过乘坐轮船、火车、公共汽车、飞机、卡车或者汽车去往各地进行无数次的公演和巡回演出。同时他还开展了许多教学研讨班、进修班以及私人课程。\n\n巴雷特参加过许多CD、电视节目、广播商业节目和卡拉OK伴奏的吉他演奏录制。他的教学被著名的杂志《经典摇滚吉他独奏》（ClassicRockGuitarSoloing）中的星级教学视频收录，同时也刊登在《吉他手》（GuitarPlayer）和《吉他王》（GuitarOne）杂志中。\n## 致 谢\n\n感谢史蒂夫·斯塔拉萨托斯、本杰明·祖尔布鲁格和加州蒙罗维亚市十字路口音乐室的比利·布尔克对本书内容所做的实际检验。\n\n同时也要感谢德纳·穆拉伊的鼓励和建议。特别要感谢杰夫·施尔德尔，道格·唐宁和海伦德公司的支持。\n\n巴雷特·塔利亚里诺\n\nFRETBOARD WORKBOOK\n## 吉他指板手册\n\n全面认识理解吉他指板木吉他和电吉他通用\n\n■亲自动手将音乐理论运用于吉他之中\n\n■学习自己建构音阶与和弦\n\n无需识谱视奏能力\n\n■适用于任何学习阶段和水平的吉他手\n\n■消除学琴困惑并释放创造力\n\nMI（Musicianslnstitute）音乐学院是当今世界上最著名的音乐学院之一。作为流行音乐学院的先驱，MI在国际上享有很高的声誉。MI音乐学院的教师都是世界上最优秀和最具职业经验的音乐家，由他们创作编写的MI系列教材因实用性强并符合新时代教学需求而成为该校的最大特色之一\n\n策划编辑：应武\n\n责任编辑：于倩\n\n定价：35.00元\n\n[IMAGE_BLOCK:images/e305077df6a98727d4ebb42a97ebef11157e844f9f72df3e2c27332ea3790692.jpg]",
+      "score": 0.72317,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "md_chunk_0037",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "gp5_feature_triggers": "[]",
+          "page_hint": "",
+          "chunk_id": "md_chunk_0037",
+          "linked_review_ids": "[]",
+          "linked_kg_nodes": "[]",
+          "source_id": "fretboard_handbook_mineru",
+          "image_refs": "[\"images/e305077df6a98727d4ebb42a97ebef11157e844f9f72df3e2c27332ea3790692.jpg\"]",
+          "markdown_path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "raw_path": "data/book/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).pdf",
+          "lesson_title": "",
+          "style_tags": "[\"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_edges": "[]",
+          "source_title": "吉他指板手册",
+          "source_type": "mineru_markdown"
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.301832914352417,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff mathrock",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:md_chunk_0021",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_mineru",
+      "title": "吉他指板手册",
+      "content": "## 第19章调式\n\n学习目标：记住各种调式的顺序，学习伊奥尼亚（Ionian）调式。\n\n当我们学习小调音阶的时候，已经知道小调音阶和大调音阶是相关的。先来复习一下关系大小调：“大调音阶的6级音是其关系小调的根音。”\n\n当练习大调音阶和小调音阶的时候，你会发现如果不采用特殊的方法强调根音的话，比如从根音开始并以根音结束，很难去找出哪个音是音阶的根音。但是，当在一个和弦进行中弹奏某一大调或者小调音阶，就很容易找出哪个音是根音。\n\n例如，弹奏右边构建C小调的两个和弦若干次：\n\n[IMAGE_BLOCK:images/82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg] \n自然小调\n\n当这些和弦的声音还在你耳边回旋时，紧接着弹奏C小调自然音阶的某个指型，例如指型2。\n\n注意，C小调的关系大调是Eb大调，他们共用着同样的音符，但是上面弹奏出的音乐无论如何也不像Eb大调中的音乐。\n\nBb7 \n[IMAGE_BLOCK:images/e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg]\n\n为了比较说明，下面弹奏构建Eb大调感觉的和弦进行若干次：\n\n[IMAGE_BLOCK:images/28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg]\n\n然后弹奏Eb大调的音阶，其音符和C自然小调的音符是相同的。\n\n判断哪个音是根音，很大程度上取决于音乐的语境：也即音阶是在什么和弦上弹奏的。只要选择了合适的和弦作为音乐的背景，那么任何音符都可以成为音阶的根音。\n\n[IMAGE_BLOCK:images/3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg]\n\n上面的规则适用于大调音阶中的每个音符，并不仅仅是6级音。大调音阶中的每一级音都是一个调式的根音。每种调式都可以用大调音阶的五种指型来表达。虽然使用了相同的音，但不同调式的感觉和大调音阶及小调音阶是完全不同的。\n\n记住以下调式的顺序和名称，顺序使用了罗马数字，名称使用了希腊语。在关于调式的理论里，通常采用罗马数字来表示。\n\nI Ionian (伊奥尼亚调式，也就是大调)\n\nII Dorian （多利亚调式）\n\nIII Phrygian (弗里几亚调式）\n\nIV Lydian （利底亚调式）\n\nV Mixolydian （混合利底亚调式）\n\nVI Aeolian (爱奥尼亚调式，也就是自然小调)\n\nVIILocrian (洛克里亚调式）\n## 练习\n\n当你学会了这些调式的名称和顺序，用手盖住上面的列表，回答下面的问题。 \n1.第五个调式是什么？ 9.Locrian调式是第几个？ \n2.Aeolian调式是第几个？ 10.第六个调式是什么？ \n3.第三个调式是什么？ 11.Dorian调式是第几个？ \n4.第二个调式是什么？ 12.第四个调式是什么？ \n5.Ionian调式是第几个？ 13.Phrygian调式是第几个？ \n6第七个调式是什么？ 14.再说一次第五个调式是什么？ \n7.Mixolydian调式是第几个？ 16.Lydian调式是第几个？ \n8.第一个调式是什么？\n## 寻找Ionian调式\n\nIonian调式和Aeolian调式是最重要的两个调式，这两个调式之前已经学习过了。Ionian是大调音阶的第一个调式，也即大调音阶。Aeolian是大调音阶的第六个调式，也即自然小调音阶。\n\n在下面的内容中，我们将要学习如何通过找到关系大调来弹奏各种调式，这就需要先掌握Ionian调式。跟着下面的内容按部就班地学习，不要着急。如果太匆忙跳过这些练习或者学得太快，可能会在后续的学习中产生混乱。所以在开始的时候要慢慢地一步一步去学习。\n\n首先假设你需要弹奏FMixolydian调式。那么按照下面的步骤进行：\n\n1．确定调式的序号。Mixolydian调式是大调音阶中的第五个调式，所以F现在就是“5”。\n\n2．向下数到Ionian调式。运用大调音阶公式，找到Ionian调式。例如，已经确定了F音是5级音，那么按照54^321的关系，就可以找到根音是Bb音。\n\n[IMAGE_BLOCK:images/199cf05b9c2edb12106447e6a73544c662d9145eab60dcacccd0a426b8081af0.jpg]\n\n3．弹奏大调音阶，但是要从特殊的根音开始并结束。这里我们从BbIonian调式中的F音演奏到F音。这样，就相当于演奏的是FMixolydian调式。\n## 练习52\n\n用以上所学习的三步寻找Ionian的方法，填写下面的空格。\n\n1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G\n\n2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A\n\n3.EDorian Ionian从E到E 8.FDorian Ionian从F到F\n\n4.A Ionian Ionian从A到A 9.E Lydian Ionian从E到E\n\n5.D Aeolian=Ionian从D到D 10.AMixolydian=\\_\\_Ionian从A到A",
+      "score": 0.71213,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "md_chunk_0021",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[]",
+          "source_id": "fretboard_handbook_mineru",
+          "gp5_feature_triggers": "[]",
+          "style_tags": "[\"fretboard\", \"guitar_foundation\"]",
+          "page_hint": "",
+          "linked_kg_edges": "[]",
+          "source_type": "mineru_markdown",
+          "source_title": "吉他指板手册",
+          "lesson_title": "",
+          "chunk_id": "md_chunk_0021",
+          "raw_path": "data/book/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).pdf",
+          "markdown_path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "image_refs": "[\"images/82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg\", \"images/e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg\", \"images/28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg\", \"images/3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg\", \"images/199cf05b9c2edb12106447e6a73544c662d9145eab60dcacccd0a426b8081af0.jpg\"]",
+          "linked_review_ids": "[]"
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.287872850894928,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "Fmaj7琶音怎么发展成math rock风格riff mathrock",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    }
+  ],
+  "visual_evidence": [],
+  "kg_evidence": [
+    {
+      "evidence_id": "kg:tuning:DADGAD:ENABLES:heuristic:ringing_open_string_anchor",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "tuning:DADGAD -[ENABLES]-> heuristic:ringing_open_string_anchor",
+      "content": "tuning:DADGAD -[ENABLES]-> heuristic:ringing_open_string_anchor\nMath Rock/Midwest Emo riffs requiring sustained harmonic beds while moving melodic shapes.\nDADGAD tuning allows open strings (D, A, D) to act as common tones/pedal points within the key of D minor, enabling complex movable shapes without losing tonal center.\nalternate shootings... ing moi dal [DADGAD]... d GG miner... open quartz ringing",
+      "score": 1.69,
+      "metadata": {
+        "source": "tuning:DADGAD",
+        "relation": "ENABLES",
+        "target": "heuristic:ringing_open_string_anchor",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Math Rock/Midwest Emo riffs requiring sustained harmonic beds while moving melodic shapes.",
+        "review_note": "DADGAD tuning allows open strings (D, A, D) to act as common tones/pedal points within the key of D minor, enabling complex movable shapes without losing tonal center.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 7,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 10,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:technique:tapped_power_chord:CAN_INSPIRE:task:math_rock_riff_writing",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "technique:tapped_power_chord -[CAN_INSPIRE]-> task:math_rock_riff_writing",
+      "content": "technique:tapped_power_chord -[CAN_INSPIRE]-> task:math_rock_riff_writing\nUsing two-hand tapping to play power chords (dyads) on non-adjacent strings (e.g., 4th and 2nd strings) to allow for wider intervals or open string resonance.\nTapped dyads on spread strings allow for cleaner articulation of power chords without muting adjacent ringing strings, typical in Math Rock.\nTapping power chord on 9th fret, 4th and 2nd strings; hammering on to form dyad.",
+      "score": 1.64,
+      "metadata": {
+        "source": "technique:tapped_power_chord",
+        "relation": "CAN_INSPIRE",
+        "target": "task:math_rock_riff_writing",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.9,
+        "context_condition": "Using two-hand tapping to play power chords (dyads) on non-adjacent strings (e.g., 4th and 2nd strings) to allow for wider intervals or open string resonance.",
+        "review_note": "Tapped dyads on spread strings allow for cleaner articulation of power chords without muting adjacent ringing strings, typical in Math Rock.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 7,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 33,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:tuning:FACGCE:EVOKES:style:midwest_emo_math_rock",
+      "evidence_type": "kg",
+      "source_id": "ColorEmotion",
+      "title": "tuning:FACGCE -[EVOKES]-> style:midwest_emo_math_rock",
+      "content": "tuning:FACGCE -[EVOKES]-> style:midwest_emo_math_rock\n追求American Football式的中空、共鸣感强的Emo/Math Rock音色时\nFACGCE调弦是数学摇滚和Midwest Emo的标志性调弦之一，能自然形成特定的开放和弦共鸣和指法便利，直接指向该风格的听感特征。\n最常用的两种非标准调弦是FACGCE...美国乐队《American Football - Never Meant》",
+      "score": 1.61,
+      "metadata": {
+        "source": "tuning:FACGCE",
+        "relation": "EVOKES",
+        "target": "style:midwest_emo_math_rock",
+        "knowledge_type": "ColorEmotion",
+        "confidence": 0.95,
+        "context_condition": "追求American Football式的中空、共鸣感强的Emo/Math Rock音色时",
+        "review_note": "FACGCE调弦是数学摇滚和Midwest Emo的标志性调弦之一，能自然形成特定的开放和弦共鸣和指法便利，直接指向该风格的听感特征。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 6,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 13,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:tuning:DADGAD:ENABLES:feature:open_string_drone",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "tuning:DADGAD -[ENABLES]-> feature:open_string_drone",
+      "content": "tuning:DADGAD -[ENABLES]-> feature:open_string_drone\nMath Rock/Midwest Emo progression centered on D Major, utilizing open strings as pedal tones.\nDADGAD tuning facilitates ringing open strings (pedal tones) that sustain while movable chord shapes shift, creating the characteristic 'jangly' Midwest Emo texture.\ntune in dad gatt... key centered around de maja... ringing open strings",
+      "score": 1.61,
+      "metadata": {
+        "source": "tuning:DADGAD",
+        "relation": "ENABLES",
+        "target": "feature:open_string_drone",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Math Rock/Midwest Emo progression centered on D Major, utilizing open strings as pedal tones.",
+        "review_note": "DADGAD tuning facilitates ringing open strings (pedal tones) that sustain while movable chord shapes shift, creating the characteristic 'jangly' Midwest Emo texture.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 6,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 15,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:rhythm:32nd_note_bursts:ENABLES:color:angular_math_rock_momentum",
+      "evidence_type": "kg",
+      "source_id": "ColorEmotion",
+      "title": "rhythm:32nd_note_bursts -[ENABLES]-> color:angular_math_rock_momentum",
+      "content": "rhythm:32nd_note_bursts -[ENABLES]-> color:angular_math_rock_momentum\nInserting rapid 32nd-note taps or pull-offs into a steady 16th-note grid.\nSudden bursts of 32nd notes (via tapping or fast legato) break the rhythmic monotony, creating the 'angular' and technical feel typical of math rock.\nconsistently sixteenth notes... but then we're going to do thirty second notes f",
+      "score": 1.56,
+      "metadata": {
+        "source": "rhythm:32nd_note_bursts",
+        "relation": "ENABLES",
+        "target": "color:angular_math_rock_momentum",
+        "knowledge_type": "ColorEmotion",
+        "confidence": 0.9,
+        "context_condition": "Inserting rapid 32nd-note taps or pull-offs into a steady 16th-note grid.",
+        "review_note": "Sudden bursts of 32nd notes (via tapping or fast legato) break the rhythmic monotony, creating the 'angular' and technical feel typical of math rock.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 6,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 31,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:technique:tapped_power_chord:EVOKES:color:angular_math_rock_momentum",
+      "evidence_type": "kg",
+      "source_id": "ColorEmotion",
+      "title": "technique:tapped_power_chord -[EVOKES]-> color:angular_math_rock_momentum",
+      "content": "technique:tapped_power_chord -[EVOKES]-> color:angular_math_rock_momentum\nUsing two-hand tapping to play power chords (dyads) on high frets (14th/16th) while maintaining rhythmic syncopation.\nTapping power chords (e.g., 14th fret on 2nd/4th strings) allows for rapid position shifts and sustained notes that picking cannot easily achieve in fast math rock passages.\nTapping the fourteenth fret to create that power chord... sliding down to the tw",
+      "score": 1.56,
+      "metadata": {
+        "source": "technique:tapped_power_chord",
+        "relation": "EVOKES",
+        "target": "color:angular_math_rock_momentum",
+        "knowledge_type": "ColorEmotion",
+        "confidence": 0.9,
+        "context_condition": "Using two-hand tapping to play power chords (dyads) on high frets (14th/16th) while maintaining rhythmic syncopation.",
+        "review_note": "Tapping power chords (e.g., 14th fret on 2nd/4th strings) allows for rapid position shifts and sustained notes that picking cannot easily achieve in fast math rock passages.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 6,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 34,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:tuning:DAEAC#E:ENABLES:voicing:open_string_maj9_cluster",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "tuning:DAEAC#E -[ENABLES]-> voicing:open_string_maj9_cluster",
+      "content": "tuning:DAEAC#E -[ENABLES]-> voicing:open_string_maj9_cluster\n编配 DAEAC#E 调弦下的和声织体时\n图示显示该调弦下，利用空弦（D-A-E-A-C#-E）可轻松构建包含根音、3音、7音及9音的 Maj9 和弦，且无需大跨度指法。这种 Voicing 利用了调弦特性产生的自然共鸣，适合 Math Rock 中清澈、延音长的背景铺底。\nPage 38 diagrams show Dmaj9 and Amaj9 shapes utilizing multiple open strings (x0",
+      "score": 1.53,
+      "metadata": {
+        "source": "tuning:DAEAC#E",
+        "relation": "ENABLES",
+        "target": "voicing:open_string_maj9_cluster",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "编配 DAEAC#E 调弦下的和声织体时",
+        "review_note": "图示显示该调弦下，利用空弦（D-A-E-A-C#-E）可轻松构建包含根音、3音、7音及9音的 Maj9 和弦，且无需大跨度指法。这种 Voicing 利用了调弦特性产生的自然共鸣，适合 Math Rock 中清澈、延音长的背景铺底。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 5,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 18,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:tuning:drop_b_fsharp:ENABLES:feature:open_string_drone",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "tuning:drop_b_fsharp -[ENABLES]-> feature:open_string_drone",
+      "content": "tuning:drop_b_fsharp -[ENABLES]-> feature:open_string_drone\nLow-tuned math rock/emo progressions requiring heavy bass resonance and movable shapes.\nThe specific tuning (Drop B/F#) allows the open 6th string to act as a pedal tone while playing chords on higher strings, creating the characteristic 'wall of sound' with minimal left-hand movement.\nspecial shooting... drop bf sharp... base stream six stream that's gonna be the",
+      "score": 1.53,
+      "metadata": {
+        "source": "tuning:drop_b_fsharp",
+        "relation": "ENABLES",
+        "target": "feature:open_string_drone",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Low-tuned math rock/emo progressions requiring heavy bass resonance and movable shapes.",
+        "review_note": "The specific tuning (Drop B/F#) allows the open 6th string to act as a pedal tone while playing chords on higher strings, creating the characteristic 'wall of sound' with minimal left-hand movement.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 5,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 21,
+        "backend": "neo4j"
+      }
+    }
+  ],
+  "judgement": {
+    "sufficient": true,
+    "confidence": 0.71,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 2,
+    "text_count": 10,
+    "visual_count": 0,
+    "kg_count": 8,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [
+      "text:fretboard_text_0099",
+      "text:fretboard_text_0157",
+      "text:fretboard_text_0101"
+    ],
+    "top_visual_ids": [],
+    "top_kg_ids": [
+      "kg:tuning:DADGAD:ENABLES:heuristic:ringing_open_string_anchor",
+      "kg:technique:tapped_power_chord:CAN_INSPIRE:task:math_rock_riff_writing",
+      "kg:tuning:FACGCE:EVOKES:style:midwest_emo_math_rock",
+      "kg:tuning:DADGAD:ENABLES:feature:open_string_drone",
+      "kg:rhythm:32nd_note_bursts:ENABLES:color:angular_math_rock_momentum"
+    ],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。"
+  },
+  "timings": {
+    "model_load_seconds": 6.0869595000112895,
+    "fretboard_text_seconds": 0.33967679999477696,
+    "style_text_seconds": 0.081621899997117,
+    "kg_seconds": 0.3740970000071684,
+    "total_seconds": 6.945625400010613,
+    "kg_status": "neo4j"
+  }
+}

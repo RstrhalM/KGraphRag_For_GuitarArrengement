@@ -1,0 +1,52 @@
+[
+  {
+    "id": "b6_no_7_chord",
+    "query": "B6 六和弦指法，不包含七度音，根音在九品附近",
+    "expected_any": ["B6_chord_shape", "B6"]
+  },
+  {
+    "id": "fm7b5_arpeggio_shape",
+    "query": "F小七减五 Fm7b5 琶音指型，低把位，半减七和弦",
+    "expected_any": ["Fm7b5_arpeggio_shape_1", "F half-diminished"]
+  },
+  {
+    "id": "d_major_arpeggio",
+    "query": "D大三和弦琶音 指型1 根音三音五音",
+    "expected_any": ["D_major_triad_arpeggio_shape_1"]
+  },
+  {
+    "id": "d_diminished_arpeggio",
+    "query": "D减三和弦琶音，根音小三度减五度，制造紧张经过感",
+    "expected_any": ["D_diminished_triad_arpeggio_shape", "D diminished"]
+  },
+  {
+    "id": "facgce_fifth_string_root",
+    "query": "FACGCE 调弦，从第五弦起始的 math rock 和弦指型",
+    "expected_any": ["FACGCE_chord_shape_5th_string_root", "FACGCE"]
+  },
+  {
+    "id": "facgce_minor_pattern",
+    "query": "FACGCE 特殊调弦 小调音阶 指板音型 空弦共鸣 点弦",
+    "expected_any": ["FACGCE_tuning_minor_scale_pattern"]
+  },
+  {
+    "id": "daeacse_scale",
+    "query": "DAEAC#E 调弦的大调与小调音阶，0到7品，开放弦",
+    "expected_any": ["DAEAC#E_tuning_major_minor_scales", "DAEAC#E_tuning_major_minor_scale_patterns"]
+  },
+  {
+    "id": "daeacse_tab_hammer_pull",
+    "query": "DAEAC#E 调弦谱例，击弦勾弦滑音，开放弦分解和弦",
+    "expected_any": ["DAEAC#E_tuning_arpeggio_phrasing", "DAEAC#E_tuning_chord_progression_and_arpeggios"]
+  },
+  {
+    "id": "mathrock_voicing_connection",
+    "query": "Math Rock 里 CM7 GM7 Bm7 不同把位 voicing 连接",
+    "expected_any": ["CM7_GM7_Bm7_voicings_comparison"]
+  },
+  {
+    "id": "sus2_fill_exercise",
+    "query": "Gsus2 挂二和弦 1 2 5 构成音，在图上补全指法的练习",
+    "expected_any": ["Gsus2_chord_shape_exercise"]
+  }
+]

@@ -1,0 +1,1787 @@
+{
+  "summary": {
+    "tests": 10,
+    "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+    "collection_count": 174,
+    "top_k": 5,
+    "rerank": true,
+    "rerank_candidates": 20,
+    "pass_all": 10,
+    "source_hit_at_k": 10,
+    "keyword_hit_at_k": 10,
+    "source_hit_at_1": 10,
+    "keyword_hit_at_1": 10,
+    "misses": [],
+    "avg_total_seconds": 0.07699646999972173,
+    "median_total_seconds": 0.04033075000188546,
+    "model": {
+      "provider": "local_transformers",
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "device": "cuda",
+      "max_length": 2048,
+      "dimensions": 1024
+    }
+  },
+  "rows": [
+    {
+      "id": "fretboard_strings_names",
+      "query": "标准调弦下吉他第6弦到第1弦的名称是什么",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "E、A、D、G、B、E",
+        "第6弦",
+        "第1弦"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.3148430000001099,
+      "query_seconds": 0.06983030000264989,
+      "total_seconds": 0.3846733000027598,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0010:9c4586045867bd88",
+          "distance": 0.12114512920379639,
+          "document": "## 琴弦\n琴弦一般按从第6弦到第1弦的顺序命名。第6弦指的是最粗的那根琴弦，而第1弦指的是最细的那根。同时第1弦也是音高最高的琴弦。\n向上到下一根琴弦的意思就是说到音高更高的琴弦上。除非你是倒立着弹吉他（见第19章)，否则这里所说的移动到更高的弦时，指的是将手指向地面的方向移动。这样说来，标示弦的数字与我们通常理解的意义是相反的。要想改变这个规则是比较难的，目前所有\n的吉他书籍都是这样标示的。\n从第6弦开始，每根弦用字母标示的名称是：E、A、D、G、B、E。在开始下面的学习之前，先记熟这些弦的名称。记住了这些内容，在听力范围之内，我们就能够清晰地说出第4弦是D音，第2弦是B音，依此类推。本书尽量减少需要记忆的内容，但是有些知识是必须要牢记的。\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0010",
+            "page_hint": "6",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\cff603262c186ae283f0f2c6c62c96ba002f1f059da6de0b3bfb9bcb90067791.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.11114512920379639,
+          "rerank_details": {
+            "matched_tokens": [
+              "弦到第"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0061:47fd4e0c809043d9",
+          "distance": 0.1341402530670166,
+          "document": "## 纯四度\n吉他的调弦应用的便是纯四度。每根弦都比其下方的弦高四度，除了第2弦的B音比第3弦的G音高一个大三度音程外。\n\n[图示引用 3 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0061",
+            "page_hint": "33",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\20632a03da621dec6c053e3acccda31a14c60d57560404a1e6739a5409500a49.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d98f502c13ad332d80124d3115eac2bb5332f4ce963dee124d7e30c88df3a11f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e0008725356a522ed8fa9d80b4ac9edcb91b25763ac38b3dfb318bd861e72912.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 2,
+          "rerank_score": -0.1241402530670166,
+          "rerank_details": {
+            "matched_tokens": [
+              "调弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0013:217bad69d6459370",
+          "distance": 0.1555810570716858,
+          "document": "## 练习3\n大声回答下面的问题，并且填空。\n1.第3弦的字母名称是什么？\n2.B弦是第几弦？\n3.第4弦的字母名称是什么？\n4.G弦是第几弦？\n5.第6弦的字母名称是什么？\n6.A弦是第几弦？\n7.第2弦的字母名称是什么？\n8.E弦是第几弦？\n9.第1弦的字母名称是什么？\n10.D弦是第几弦？",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0013",
+            "page_hint": "6",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.1555810570716858,
+          "rerank_details": {
+            "matched_tokens": [],
+            "token_score": 0.0,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0021:086840d370ef89ac",
+          "distance": 0.1761918067932129,
+          "document": "## 练习8\n指板上第12品位置的音符和空弦的音符是相同的。用一张含有6根弦的指板图，在每根弦的第12品处标出音符的名称。然后再次在每根弦上写出每个自然音阶音符，不同的是这次从第12品开始，向前写出来。记住F和E之间是半音，C和B之间也是半音。\n←A\n除了以上这些练习之外，你还可以这样练习。先弹奏每根弦空弦上的自然音阶音符。然后从空弦位置向上一直弹奏到手可以容易按得到的位置。在弹奏的同时大声地说出每个音符的名称（以及所在品格的位置）：\n“第6弦：、空·F、第品G、第3品…A、第5品…B、第品…C、第8…”\n说出品的位置可以很好地加强你对于全音和半音的记忆。同样，不要急于记住每个音符，现在只要知道音乐的字母表，并且能够记住E和F之间、B和C之间是半音就可以了。\nVl\n\n[图示引用 6 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0021",
+            "page_hint": "12",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\24126a6e73ef4ac122e855eb06967856951e6a0e507f4cf585e28f1a9bef4e21.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8f015cd0ae013e7fe491ae752b9323e93dffd12f84b425e54f0b483204917d6d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\aa00c491c1021d3db98b68b4953b7c62a2c8cb5c42ae09bf0792f43aefc789db.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\29277f363a463f033f8d637c64ad8071470a921c1ff84aa04f07af333227a4e7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0d87c9d6bc002b07a8b2ff483b0a1767030a512324cae12d6bf01cc5d31b712e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e42f26ebf39921325b15c9ac4a213531b38fcc4341e3bbc96e737af494ccda29.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 4,
+          "rerank_score": -0.1761918067932129,
+          "rerank_details": {
+            "matched_tokens": [],
+            "token_score": 0.0,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0019:61e7bab724f26a13",
+          "distance": 0.18163806200027466,
+          "document": "## 练习6\n画出每根弦上的自然音阶音符。在下面写出音符的名称。其中第6弦的音符已经作为例子写出来了。\n\n[图示引用 6 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0019",
+            "page_hint": "12",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e52ec9e7fdc19bce42a6d972cb132fcba24ddc078912178a2abf01176eaa3115.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\66515beab1f501dd8e844016794a5c38899baf7bdc437e4963a65a5fafaf4a8e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\421cbb9dc6702725419c037ee6569d97e47d46450c4a6e04c6af00456999a807.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\979cb01e1568bff34d27278e28d9ee70c66570ca313772d76cb45b093d964bba.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8a229050b319ea34817252f0ba8921e38c9a7e89ba4638d846b5245bd55880df.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c819f11fc67deae308a48ddd62f8fea29f1cea07c874838bc8355259835db5b5.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 5,
+          "rerank_score": -0.18163806200027466,
+          "rerank_details": {
+            "matched_tokens": [],
+            "token_score": 0.0,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_root_form_3",
+      "query": "指型3的根音在第几弦，相差几品",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "指型3",
+        "第3弦",
+        "第5弦",
+        "第6弦"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.03753840000717901,
+      "query_seconds": 0.002631100003782194,
+      "total_seconds": 0.0401695000109612,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0024:d7584573b044653c",
+          "distance": 0.11607974767684937,
+          "document": "## 方法2：根音型式\n我们也可以通过使用根音型式来命名音符。比如前面我们找到了第2弦第7品上的音符，它属于根音指型5，这个指型的根音在第2弦和第4弦上，距离为3品。这样就可以知道第4弦的第4品和我们已经知道的音符具有相同的名称。\n指型5\nVlI\n根音指型4的根音在第1弦、第6弦和第4弦上，距离2品。按照前面的方法推算，在第6弦第2品处也和之前找到的音符是相同的。这个音比E弦的空弦音高2品，那么它就是F#或者Gb(我们要找的音)。\n指型4 指型5\nVl\n\n[图示引用 2 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0024",
+            "page_hint": "15",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\7bff7770f3627168bb4dbd64362255b8ec214fb3f250b9403f2e98070c91f6e1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b48e11cda313edcec7b66e15fbcad1bd99e85d10dcd88e796b3e072b9424641f.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.09607974767684936,
+          "rerank_details": {
+            "matched_tokens": [
+              "指型",
+              "根音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0028:8a76cd9270682887",
+          "distance": 0.1277707815170288,
+          "document": "## 练习10\n在正确的弦上，画出指板图上方所写的音符。可以运用自然音阶推算的方法，也可以采用五种根音指型的方法。有时可能需要运用各种不同的方法：\n·从每根弦的空弦音向上推算\n·从每根弦的第12品向下推算\n·从另外一个熟悉的音符（比如，第7品的D音）向上或者向下推算\n·选择一个临近的音符（比如E音)，首先找到它所在的位置\nF\nVI\n2)\nF#\nIV\nII\nG\nV\nA\nV\nEb\nVII\nB\n三\nDb\nXI\n10)\nC\nxV\n\n[图示引用 10 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0028",
+            "page_hint": "17",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\91fe5bc494d4625ffbc478053306e4ba6cd1a9b60dc591b26c2049669e905c20.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b7a4b341c58db24ff4c20d3e44ed3f291a00c2e0ddfbf3c7d8ec737856a4db3d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9e5b8859f3b89310e8c8d3750ecf53c9d12197b5b80b9e2d55ca93422384d9cf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3a8441dbc4ef1afc5b8d231f3382630de87d2e062a060c1408b4cdbb2ab7febf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\50c5a42c86a7809411315b0b0f67ca48734208338751013c70ca1e744e870fb6.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f2d1a903a076cfdb42e520b1277352833e07c9ebe4e145b7742b01e6022b674b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a37ef064a65a12f223ec569b59369572170de879ebfef5f45c0c21f57ba9328e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3f95f14312e41aeda0655632bcdb085e617ea85bb2a8263ed6d35a1778d0aa1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6981e345f733dc3854e60aef3bc67aed6ad169474efcc1c90bb789aa1cebae21.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a2ad3fd939cbdbc25a770aa91c46e25738a71bd1fcb6808764b1e87ee4136342.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 2,
+          "rerank_score": -0.1077707815170288,
+          "rerank_details": {
+            "matched_tokens": [
+              "指型",
+              "根音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0025:d5d9e8f82808ba47",
+          "distance": 0.1304275393486023,
+          "document": "## 新音符：第7品的D音\n如果你已经记住了除空弦音以外的很少几个其他音符，那么采用根音型式的方法找到别的音符也是非常方便的。比如我们己经记住一个新的音符，第3弦第7品的D音。\nVlI\n现在你已经可以更快地说出3弦在这个音附近的音符名称了。并且根据根音指型的知识，第3弦上的任意一个音符都可以作为根音型式2和根音型式3中的音符，因此可以直接由此得出组成这些根音型式的其他音符的位置。\nVII\n\n[图示引用 2 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0025",
+            "page_hint": "15",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d96081e153f0d371df123b28327b272245a6fc9d66411b3a70a28e7618c5e030.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\96d26311695be05e605f8dd3cc1ac0fb34d40043a5eb658e67bb73d4058f5f95.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.11042753934860229,
+          "rerank_details": {
+            "matched_tokens": [
+              "指型",
+              "根音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0014:2f993e29814249b6",
+          "distance": 0.15162265300750732,
+          "document": "学习目标：学习五种根音型式。\n每种音阶、和弦或者旋律都是由一组音符构成的，这组音符中有一个主要的音被称为根音。根音可以作为我们的向导，如果没有根音，就会迷失方向。\n当我们找到一个根音的位置时，就可以根据它的位置找出相邻的另外一个根音。这两个相邻的根音就构成了一种根音型式。在指板上共有五种根音型式，所以用1到5这五个数字进行标识。以C调为例，下面是C调中的五种根音型式。\nC调\n随着本书的学习，你会逐渐体会出这些根音型式是相当重要的。演奏中用到的音阶、琶音或者和弦都是基于这些根音型式建立起来的。以下内容中将这些根音型式称为指型，比如指型1、指型2等。因为后面的音阶指型也是基于同样的图形建立的，两者有很紧密的联系。\n从现在开始，我们就开始通过看和弹来全面学习这五种根音型式，每次一种，每种都采用相同的方式学习。将1指和3指放在图示中的音符上，然后大声重复：\n“指型1的根音在第2和第5弦上，两个根音相差2品！\n现在将1指向上移动到之前3指的位置，也就是第3品，然后3指向下移动到第3弦的第5品，并且也要大声地说出：\n“指型2的根音在第5和第3弦上，两个根音相差2品！\n注意指型2和其上方的指型1共用同一个第5弦上的根音。每个指型都和随后的指型有所重叠。这种重叠也会应用到我们以后学习的所有和弦、音阶和琶音中。\n当演奏指型3的根音时，你不需要立刻把手放在指板上去弹奏这3个音。你首先要学会一种空间关系。练习时可以先用1指演奏第3弦的第5品，然后用4指依次弹奏剩下的两个根音音符。练习时要同时说出来以增强记忆：\n“指型3的根音在第3弦、第5弦和第6弦上，相差3品！\nV\n指型4和指型3也共用了2个音符。按弦是用1指同时按住第8品的第1弦和第6弦，用3指按住第4弦的第10品。将手指按在正确的位置，然后大声地说出音符：\n“指型4的根音在第1弦、第6弦和第4弦上，相差2品！”\nVII\n对于指型5，用1指按住第4弦的第10品，然后用4指按住第2弦的第13品。同样大声说出来：\n“指型5的根音在第4弦、第2弦上，相差3品！\nX\n现在我们掌握了所有的五种根音型式，但是还没有结束。这些根音在指板上构成了一个循环不断的重复，直至整个指板上的品位结束。所以现在又开始弹奏指型1，从我们弹奏过的最高音开始，也就是第13品。\nXIII\n紧接着是第15品处的指型2，可以用自己认为舒服的方式演奏。\n这五种根音型式可以从任意一个音符开始，也可以从指板上任意一个位置开始，虽然有的乐句可能从某种型式的不同点开始，但是这些型式本身以及整体顺序是从来不会变的。例如，下面的图示给出了G调在吉他指板上的五种根音型式。\nG调\n\n[图示引用 8 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0014",
+            "page_hint": "8",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d4f8f97a00f58cc855a411df9d3b3f68cd9603fe0e928f10d3e7683170ec9bdf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\7051f76b72cbbc92ea20f7b39b0d5fbf860b7b9530ecc35ab7ba6d3f26e1e607.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\7d1431d317e4c6ab9c140699aa5712b04b4f9e82ee446bb2a9650b4f5782c424.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\4cdc223748fdfa775cf6c2af8fdc2011668d579477f1da1412ae3611aa8fd7d2.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\afbe3c94a3f44126227fe14893b65cf403974a0dc7c9a3ad902d61684088962d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9aece81e43e923157c31766eecd7373371790286a2ff8dbeb453d6d58f7b3431.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0be97b04b18affe8d6d441ffed4f66b854b5da20e2ca026d6855acbab63d8786.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\4e70f74b8c90833b8193ff63ab6864678dc3aeaafed16567f259845c2f89f364.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 6,
+          "rerank_score": -0.13162265300750733,
+          "rerank_details": {
+            "matched_tokens": [
+              "指型",
+              "根音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0037:09fa7dd3ba20c277",
+          "distance": 0.1534489393234253,
+          "document": "## 练习12\n利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。\n2 G大调指型\\_\n3)C大调指型一\n=\n51 Bb大调指型\\_\n=\nG大调指型\nIV\nA大调指型\\_\n8 Gb大调指型\nI三I\n101 Eb大调指型\n三\n弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。\n\n[图示引用 10 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0037",
+            "page_hint": "23",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\bb42c2c6bb91e4aaf7fd44150978076b0bafe9b5dd5ba0077fb7d4a473fbf486.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5c2f7d29937759ccdc64857b83f7a22e6506c6ae7eb2e3ebf231b5c4c7cc7f5c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\7db786b94b0c1007964c6f5d24b2a4af277bad55f503f7775f8aa211f5711a7f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fdb05f9bd48d0eca087b09599a57a8f5032403c8a946d9b30efab9c1af809c2a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\652d43c36774c3732d9b2b437c89543e01f2ecd6ecc3fb8adac15684acf22b95.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\247e98c5de1e18f7bed3d6151dd60c99421e9cd4fd9be9dd18d6f43ccdf52d1f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e39d0f35127cbb2cc55b226fe53283c77b9d64072f42902c038db85b1d89adff.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\eaf375ea5027e376fed789b47d0afd250dad6e7cb6f03e8ef8d7aa454bb94c26.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3915d96cf8739e165fc331ba6c7e94d25a788ce2ebb260c57bb10f6d826587f7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d6d620ee542bb665ee1def9062d1addb66b2ac87bc83d993d8839edef64495e5.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 7,
+          "rerank_score": -0.1334489393234253,
+          "rerank_details": {
+            "matched_tokens": [
+              "指型",
+              "根音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_major_scale_formula",
+      "query": "大调音阶的全音半音结构是什么",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "大调音阶",
+        "全音",
+        "半音"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.03734229999827221,
+      "query_seconds": 0.002334199998585973,
+      "total_seconds": 0.03967649999685818,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0031:e17787668039ef79",
+          "distance": 0.1254945993423462,
+          "document": "## 大调音阶公式\n音阶中的音符通常用“音阶的级数”来表示，或者简称“音级”。想要搞清楚音级的位置，就先要牢记大调音阶的公式。反复大声说出下面这句话：\n“全、全、半、全、全、全、半。”\n任何一个大调音阶中，3级音和4级音之间都是半音，7级音和8级音之间也是半音。除此之外，其他相邻两音之间都是全音。在纸上写出一个完整的音阶，然后在半音关系的两个音符之间写上一个（^）符号，就像这样：1234567^8。\n在不是从C音开始的其他大调中，要保证这一公式的顺序关系，就要包含许多带有临时记号的音（像钢琴键盘上的黑键）。如果你记得自然音阶中B音和C音之间、E音和F音之间是半音关系，那么你就能够推算出其他大调音阶中包含哪些带有临时记号的音符。\n例如，以从F音（吉他上的第4弦第3品）开始的F大调为例。首先1级音和2级音，也就是F音和G音之间是一个全音。然后2级音和3级音，也就是G音和A音之间也是一个全音。按照上面所说的公式，3级和4级音之间是一个半音，但是A音后面的B音和A音之间是一个全音，因此用Bb音代替B音。Bb音就是F大调音阶中的4级音。\n全 全 半\n从4级到5级是一个全音。这样就又回到了C音的自然音，因为在自然音阶中B音和C音之间是一个半音。再往后是两个全音，得出D音和E音。最后是7级到8级的半音，正好回到了F音。\n\n[图示引用 3 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0031",
+            "page_hint": "20",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\637fa31a2cd9b6487ce3a924c5a5b49340566f75ede6120a5c077b69f47718c7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\607003812bb836d289f72739b2d6313d47af1eaaa35eb507ec6a0724a3109961.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\38d7266f370dde40a6f4213b04976d9ff5e0e72a10047672894610ba2663e76f.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.1154945993423462,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0124:da91db68dbd17cd3",
+          "distance": 0.1298532485961914,
+          "document": "学习目标：记住各种调式的顺序，学习伊奥尼亚（Ionian）调式。\n当我们学习小调音阶的时候，已经知道小调音阶和大调音阶是相关的。先来复习一下关系大小调：“大调音阶的6级音是其关系小调的根音。”\n当练习大调音阶和小调音阶的时候，你会发现如果不采用特殊的方法强调根音的话，比如从根音开始并以根音结束，很难去找出哪个音是音阶的根音。但是，当在一个和弦进行中弹奏某一大调或者小调音阶，就很容易找出哪个音是根音。\n例如，弹奏右边构建C小调的两个和弦若干次：\n自然小调\n当这些和弦的声音还在你耳边回旋时，紧接着弹奏C小调自然音阶的某个指型，例如指型2。\n注意，C小调的关系大调是Eb大调，他们共用着同样的音符，但是上面弹奏出的音乐无论如何也不像Eb大调中的音乐。\nBb7\n为了比较说明，下面弹奏构建Eb大调感觉的和弦进行若干次：\n然后弹奏Eb大调的音阶，其音符和C自然小调的音符是相同的。\n判断哪个音是根音，很大程度上取决于音乐的语境：也即音阶是在什么和弦上弹奏的。只要选择了合适的和弦作为音乐的背景，那么任何音符都可以成为音阶的根音。\n上面的规则适用于大调音阶中的每个音符，并不仅仅是6级音。大调音阶中的每一级音都是一个调式的根音。每种调式都可以用大调音阶的五种指型来表达。虽然使用了相同的音，但不同调式的感觉和大调音阶及小调音阶是完全不同的。\n记住以下调式的顺序和名称，顺序使用了罗马数字，名称使用了希腊语。在关于调式的理论里，通常采用罗马数字来表示。\nI Ionian (伊奥尼亚调式，也就是大调)\nII Dorian （多利亚调式）\nIII Phrygian (弗里几亚调式）\nIV Lydian （利底亚调式）\nV Mixolydian （混合利底亚调式）\nVI Aeolian (爱奥尼亚调式，也就是自然小调)\nVIILocrian (洛克里亚调式）\n\n[图示引用 4 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0124",
+            "page_hint": "59",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.11985324859619141,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0048:c790576ec86c7d9c",
+          "distance": 0.13145941495895386,
+          "document": "## 练习16\n依据给出的根音在下面的图示中画出大调音阶。可以应用前面学到的大调音阶公式：全一全一半一全一全一全—半（123^4567^8)。这些音符中包含了4级音和7级音，用叉号将这些音符划出，剩下的音符便组成了大调五声音阶。用圆圈圈出根音，在图示上方写出音阶的名称和指型的序号。第一个图示作为例子已经给出。\n弹奏上面每个图示中的练习，先弹大调音阶，再弹大调五声音阶。在弹奏的同时要大声地说出音阶的名称和指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0048",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3d02d8a9e56d345ecbf9dcb7b887c70c78f665bc5a600560c4fb6fb97c55800f.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.12145941495895386,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0039:b2d0dd92c5677308",
+          "distance": 0.133220374584198,
+          "document": "学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。\n大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）：",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0039",
+            "page_hint": "26",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 4,
+          "rerank_score": -0.123220374584198,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0129:3740809696a67c84",
+          "distance": 0.1362839937210083,
+          "document": "## 练习54\n写出各种调式的音阶，其中Ionian（大调）音阶和Aeolian（自然小调）音阶已经给出。可以参考以上练习中的指板指型，也可以参考之前学过的C大调（Ionian）音阶的全音和半音关系。\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0129",
+            "page_hint": "59",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b9cb1861b464a7605684a595f56a5b5030c412e1edba53d7d2455e94def109e8.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 5,
+          "rerank_score": -0.1262839937210083,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_relative_minor",
+      "query": "自然小调音阶和关系大调有什么关系",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "自然小调",
+        "关系大调",
+        "小调音阶"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.0369626999963657,
+      "query_seconds": 0.002529500001401175,
+      "total_seconds": 0.039492199997766875,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0039:b2d0dd92c5677308",
+          "distance": 0.10650545358657837,
+          "document": "学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。\n大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）：",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0039",
+            "page_hint": "26",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.09650545358657837,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0124:da91db68dbd17cd3",
+          "distance": 0.12352931499481201,
+          "document": "学习目标：记住各种调式的顺序，学习伊奥尼亚（Ionian）调式。\n当我们学习小调音阶的时候，已经知道小调音阶和大调音阶是相关的。先来复习一下关系大小调：“大调音阶的6级音是其关系小调的根音。”\n当练习大调音阶和小调音阶的时候，你会发现如果不采用特殊的方法强调根音的话，比如从根音开始并以根音结束，很难去找出哪个音是音阶的根音。但是，当在一个和弦进行中弹奏某一大调或者小调音阶，就很容易找出哪个音是根音。\n例如，弹奏右边构建C小调的两个和弦若干次：\n自然小调\n当这些和弦的声音还在你耳边回旋时，紧接着弹奏C小调自然音阶的某个指型，例如指型2。\n注意，C小调的关系大调是Eb大调，他们共用着同样的音符，但是上面弹奏出的音乐无论如何也不像Eb大调中的音乐。\nBb7\n为了比较说明，下面弹奏构建Eb大调感觉的和弦进行若干次：\n然后弹奏Eb大调的音阶，其音符和C自然小调的音符是相同的。\n判断哪个音是根音，很大程度上取决于音乐的语境：也即音阶是在什么和弦上弹奏的。只要选择了合适的和弦作为音乐的背景，那么任何音符都可以成为音阶的根音。\n上面的规则适用于大调音阶中的每个音符，并不仅仅是6级音。大调音阶中的每一级音都是一个调式的根音。每种调式都可以用大调音阶的五种指型来表达。虽然使用了相同的音，但不同调式的感觉和大调音阶及小调音阶是完全不同的。\n记住以下调式的顺序和名称，顺序使用了罗马数字，名称使用了希腊语。在关于调式的理论里，通常采用罗马数字来表示。\nI Ionian (伊奥尼亚调式，也就是大调)\nII Dorian （多利亚调式）\nIII Phrygian (弗里几亚调式）\nIV Lydian （利底亚调式）\nV Mixolydian （混合利底亚调式）\nVI Aeolian (爱奥尼亚调式，也就是自然小调)\nVIILocrian (洛克里亚调式）\n\n[图示引用 4 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0124",
+            "page_hint": "59",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.11352931499481202,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0043:6a762dd639791d36",
+          "distance": 0.13308894634246826,
+          "document": "## 关系小调和关系大调\n在进行前面的练习时，你也许会注意到，这些音阶指型和之前我们学过的大调音阶指型是基本相同的。唯一不同的地方就是指型中的根音不同。例如，在写出E小调音阶时，就用到了G大调音阶中的音符。这是因为，E小调是G大调的关系小调。\n这种关系十分重要，所以请大声地复述下面的话：\n“大调音阶的6级音是其关系小调的根音。”\n反过来说也是对的，G大调也是E小调的关系大调。下面再大声地复述下面这句话：\n“小调音阶的3级音是其关系大调的根音。”",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0043",
+            "page_hint": "26",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.12308894634246827,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0051:6def1d18c60e7aae",
+          "distance": 0.1367434859275818,
+          "document": "## 关系五声音阶\n五声音阶中也存在关系大小调的概念。我们可以通过大声说出下面的方法来获得关系小调五声音阶：\n“大调音阶的6级音是其关系小调五声音阶的根音。”\n得到关系大调五声音阶的规则如下：\n“小调音阶的3级音是其关系大调五声音阶的根音。”\n(F大调五声音阶指型1）",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0051",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 4,
+          "rerank_score": -0.12674348592758178,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0129:3740809696a67c84",
+          "distance": 0.15006637573242188,
+          "document": "## 练习54\n写出各种调式的音阶，其中Ionian（大调）音阶和Aeolian（自然小调）音阶已经给出。可以参考以上练习中的指板指型，也可以参考之前学过的C大调（Ionian）音阶的全音和半音关系。\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0129",
+            "page_hint": "59",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b9cb1861b464a7605684a595f56a5b5030c412e1edba53d7d2455e94def109e8.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 5,
+          "rerank_score": -0.14006637573242187,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_pentatonic_scale",
+      "query": "五声音阶为什么少了两个音",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "五声音阶",
+        "大调音阶",
+        "七个音"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.05481600000348408,
+      "query_seconds": 0.0024885999955586158,
+      "total_seconds": 0.057304599999042694,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0049:73fa95cb77328473",
+          "distance": 0.15252017974853516,
+          "document": "## 小调五声音阶\n小调五声音阶的构建方式是，从自然小调音阶中，去除2级音和6级音。为了记忆小调五声音阶的构成方式，请大声朗读下面这句话：\n“小调五声音阶没有2级音和6级音。”",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0049",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.14252017974853515,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0055:30aa75cb5ba844ca",
+          "distance": 0.16895198822021484,
+          "document": "## 练习21\n依据下面每一图示中给出的根音，用小调音阶公式构建小调五声音阶，注意去除2级音和6级音。写出每一图示中对应的音阶名称和指型序号。\n1）\nD小调五声音阶\n2)\n4)\n5)\n\n[图示引用 10 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0055",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c4d854028340baa0f76f7d29fa04747184a064b6006e49b79fc142a0c9e159fa.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\81aea4f799b099deb6e7d4c85a9ec2b7bc666c3af020b536fec5ec14ca74654d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\edcfc0d58c295e9a050fe90810a0e6944826adb106bee73c426d450006423274.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\19f0c4479633c663c42cdda621b02505048145f68fcdf3e65f751bbe2ac00803.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0fb89ec143a1b7c1e5ab0867db1131803706da8740efdc98ced720fbfdcc1097.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6e959ddd00042fb6a9a281b2e7aa5c63bc806156900cc6d4c485b626b8cd4798.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\014b21623a5da6b9701c48fe23791c7e222765f5e0d93f16a6cf1ae7572dd032.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ed691e747eb5e90158e4503d87ce95254b472f07495e5d13d4fb9c95eb00e9ad.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d81a79c3fd58e593426697b0fe0387c014399f01985b13ce0e5cf045624199c8.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5b7a892b32164bd951a0ffd90427567022f12ec5dd3da9f704ac3b04a07cf55c.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.15895198822021483,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0046:af58068b59fe350e",
+          "distance": 0.1762673258781433,
+          "document": "学习目标：构建五种大调五声音阶指型和五种小调音阶指型。\n五声音阶只包含五个音符。五声音阶的英文“pentatonic”来自希腊语“penta”（五）和“tonos”（音）。在五声音阶的每种指型中，每根琴弦上都只有2个音符，这让五声音阶演奏起来非常容易并且很有趣。五声音阶是许多摇滚乐、布鲁斯音乐和乡村音乐独奏的基础。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0046",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.1662673258781433,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0056:39111526407998ef",
+          "distance": 0.17778915166854858,
+          "document": "## 练习22\n回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。\n弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0056",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 4,
+          "rerank_score": -0.16778915166854858,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0050:d40b50d47311f300",
+          "distance": 0.17790478467941284,
+          "document": "## 练习17\n依据给出的根音在下面的图示中画出自然小调音阶。可以应用前面学到的自然小调音阶公式：全一半一全一全一半一全一全（12^345^678)。从这些音符中用叉号划出2级音和6级音，便可得到小调五声音阶。在每一图示的上方写出音阶的名称和指型的序号。\n弹奏上面每个图示中的练习，先弹自然小调音阶，再弹小调五声音阶。要能够识别每一图示中的音阶名称和指型序号，并且要在弹奏之前大声地说出来。\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0050",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\4f4b1ae31af5406223fdbcbd187ba7dac1c204bf08bee973dadb74afe9a9afc8.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 5,
+          "rerank_score": -0.16790478467941283,
+          "rerank_details": {
+            "matched_tokens": [
+              "音阶"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_major_triad_arpeggio",
+      "query": "大三和弦琶音由哪些音构成",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "大三和弦",
+        "1、3、5",
+        "根音"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.03783039999689208,
+      "query_seconds": 0.0026615999959176406,
+      "total_seconds": 0.040491999992809724,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0078:f5fbc71e7463c816",
+          "distance": 0.10557949542999268,
+          "document": "## 大三和弦琵音\n大三和弦的组成包括根音和根音上的大三度和纯五度音，也就是：1、3、5。也可以将其看成是大调音阶的1级、3级和5级音。通过重复这些音符（在不同的八度中）可以组建C大三和弦琶音的两种型式。\nC大三和弦\nXI\nC大三和弦，指型2\n\n[图示引用 2 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0078",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f8d55dd88c89005fad961b949f2537db09cf4cf3230b653f44ed0f557d115700.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\517d6d3e3964bff1fb33923c9369b21201d4cb6a0a6a6cb041aaf9f854d67b49.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.08557949542999267,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "琶音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0077:b0d9d4583cf3a005",
+          "distance": 0.12490350008010864,
+          "document": "学习目标：在指板上构建三和弦的琶音。\n两个或者更多的音同时发声称为和弦。而琶音是指将和弦中的音符依次弹出，而不是同时弹奏。在指板上找出琶音比和弦更加容易，所以我们先来学习琶音。下一章，将用这章学习到的同样的音符来组成和弦。\n最基础的琶音（或和弦）是三和弦。三和弦由三个音构成：根音、三度音和五度音。这些音可以在不同的八度中重复，以此方式来构成指型1到指型5这五种琶音指型。\n不要试图在一天中记住所有的指型。在开始学习时，用大声朗读的方法，并通过用黑体字写出来来帮助记忆它的构成方式，然后按照音程的关系在指板图中画出琶音的音符。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0077",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 4,
+          "rerank_score": -0.10490350008010864,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "琶音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0086:3dcc84129f2f94df",
+          "distance": 0.12962275743484497,
+          "document": "学习目标：在指板上构建密集三和弦。弹奏密集三和弦的所有转位。\n相对于琶音是依次弹奏每一个音，和弦是同时扫奏或拨奏所有的音。琶音存在同一根弦上有2个音符的情况，但是在和弦中不会，因为一根弦一次只能发出一个音。这也是我们先学习琶音，再学习和弦的原因。相对于琶音而言，和弦会稍难一些。\n在指板上找到琶音在不同弦上的音，然后同时扫奏或拨奏，这样就产生了和弦。和弦中音符不同的排列方式称为声部。一个完整的三和弦声部仅需要3个音符，但吉他手在演奏三和弦时，常常会同时弹奏不同八度的同一音符，这样在演奏中可以同时扫过五根或者六根琴弦，而不必太精细于每个音符。最简单的和弦声部排列是这样的：基础的横按加上开放形式的和弦（“牛仔和弦”）。有时你并不知道，这些熟悉的和弦就是三和弦。\n开放大三和弦声部（“牛仔和弦”）\n现在根据之前学习的各种琶音型式，我们来构建类似的六根弦上的连续密集声部三和弦，且每根弦上只有一个音符。在一个连续密集声部三和弦中，根音之后必定是三度音，三度音后是五度音，然后接着又是根音，接着再是三度音，以此类推。\n1、3、5、1、3、5、1….\n当我们构建这些指型图时，将会发现共有三种基本指型，它们重复出现并覆盖整个吉他指板：每种指型都是三和弦的每个音从六弦上开始的。不要尝试去一次弹奏每种指型的全部六根琴弦。我们将这每种指型分成四种以三根琴弦为一组的指型。\n\n[图示引用 2 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0086",
+            "page_hint": "44",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3f5d0bc1badfed39b798af4bec9ca590df3e86cbdbddcbb96c5cc904f2e803a7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0a2a6f601b344ae09fe6e977704f1260fa55caf22a3f1f1cc9643aa2af5bde12.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 5,
+          "rerank_score": -0.10962275743484497,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "琶音"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0087:4038e1e123d854f0",
+          "distance": 0.12194758653640747,
+          "document": "## 大三和弦\n大三和弦是由根音、根音的大三度音和纯五度音组成的：1、3、5。大三和弦可用下面任意一种和弦标记来表达：Abmai，Abma，AbMa，Ab。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0087",
+            "page_hint": "44",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.11194758653640748,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0080:ebd7c88df63d6d89",
+          "distance": 0.12314331531524658,
+          "document": "## 小三和弦琵音\n小三和弦是由根音、根音上方的小三度音和纯五度音组成的：1、b3、5。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0080",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.11314331531524659,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_chord_voicing_definition",
+      "query": "和弦声部是什么意思，为什么吉他三和弦会重复八度音",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "声部",
+        "三和弦",
+        "不同的八度"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.046934400001191534,
+      "query_seconds": 0.0023593999940203503,
+      "total_seconds": 0.049293799995211884,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0086:3dcc84129f2f94df",
+          "distance": 0.11676299571990967,
+          "document": "学习目标：在指板上构建密集三和弦。弹奏密集三和弦的所有转位。\n相对于琶音是依次弹奏每一个音，和弦是同时扫奏或拨奏所有的音。琶音存在同一根弦上有2个音符的情况，但是在和弦中不会，因为一根弦一次只能发出一个音。这也是我们先学习琶音，再学习和弦的原因。相对于琶音而言，和弦会稍难一些。\n在指板上找到琶音在不同弦上的音，然后同时扫奏或拨奏，这样就产生了和弦。和弦中音符不同的排列方式称为声部。一个完整的三和弦声部仅需要3个音符，但吉他手在演奏三和弦时，常常会同时弹奏不同八度的同一音符，这样在演奏中可以同时扫过五根或者六根琴弦，而不必太精细于每个音符。最简单的和弦声部排列是这样的：基础的横按加上开放形式的和弦（“牛仔和弦”）。有时你并不知道，这些熟悉的和弦就是三和弦。\n开放大三和弦声部（“牛仔和弦”）\n现在根据之前学习的各种琶音型式，我们来构建类似的六根弦上的连续密集声部三和弦，且每根弦上只有一个音符。在一个连续密集声部三和弦中，根音之后必定是三度音，三度音后是五度音，然后接着又是根音，接着再是三度音，以此类推。\n1、3、5、1、3、5、1….\n当我们构建这些指型图时，将会发现共有三种基本指型，它们重复出现并覆盖整个吉他指板：每种指型都是三和弦的每个音从六弦上开始的。不要尝试去一次弹奏每种指型的全部六根琴弦。我们将这每种指型分成四种以三根琴弦为一组的指型。\n\n[图示引用 2 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0086",
+            "page_hint": "44",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3f5d0bc1badfed39b798af4bec9ca590df3e86cbdbddcbb96c5cc904f2e803a7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0a2a6f601b344ae09fe6e977704f1260fa55caf22a3f1f1cc9643aa2af5bde12.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.09676299571990966,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "声部"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0108:095614fc6cb4ea3d",
+          "distance": 0.15382468700408936,
+          "document": "学习目标：构建七和弦的常备声部。\n前面我们已学习了密集和弦，实际上对于三和弦和七和弦而言，开放和弦有时更加悦耳好听并且更加容易弹奏。\n对于七和弦来说，密集和弦有时在吉他上是很难弹奏的。按弦的手指有时够不到并按住全部的音符。例如，像Amaj7这样的密集和弦。\n和弦中的音符在指板上的跨度太大，以致很难全部按住。同时，这样的和弦中也含有较多相近的低音，使得音色也会变得暗淡浑浊。\n为了找到和弦中更有用的和弦音，常常需要将其中的某些音符升高或降低一个八度，这样就可以得到更加宽广的和弦声音。下面来尝试一下。密集大七和弦Amaj7包含了“1、3、5、7”四个音符，如果将三度音升高一个八度，那么就变成了“1、5、7、10”。这样它就变成了开放和弦，因为所有的音在音高上都分散开来而不是局促在一起了。在指板上，可以用五度音程来演奏Amaj7和弦，这样就用到了指型4。\n由于在和弦中十度音和三度音产生的和弦性质是相同的，因此可以用“1、5、7、3”来表示这个和弦的构成，这样更便于识别和弦音。也就是说，即使把和弦中的某些音符升高或降低了一个八度，也可以用原来的音符来表示它。\n最上面两根琴弦上的五度音听起来还是有些暗沉，可以把和弦中的五度音升高一个八度，这样就变成了“1、7、10、12”，也就是“1、7、3、5”。\n在用向下扫弦的方法演奏这个和弦时，左手的1指需要同时完成以下两项任务：（1）牢牢按住六弦上的和弦根音。（2）对第5弦进行消音。如果是拨弦而不是扫弦时，注意不要拨奏第5弦。\n“1、7、3、5”是ma7、mi7、dom7、mi7(b5)和dim7这些和弦指型4中的常用声部构成。尽管这些和弦有多种不同的声部构成可以选择，但常用声部构成可以让你在指板上迅速地找出该和弦。在练习过程中，首先要掌握的是指型2和指型4的和弦常用声部构成，即根音在第6弦和第5弦上的和弦，它们也是最容易的声部构成。掌握了它们，就基本可以写出一首歌的和弦进行了。然后，你就可以学习其他声部构成的和弦了，它们会让音乐更有色彩或者和弦进行更加流畅。最终的目标是要掌握和弦五种指型中的常用声部构成。\n七和弦常用声部构成表\n\n[图示引用 4 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0108",
+            "page_hint": "51",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\530d4efe467fbf8b61260ac47fc8282cdb89fa8148d93dea37ad8ce0406a0d8d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\33b8159428f446970ffdd6b0a125c27dd7bf26c94345cd9e67c7ef2d0112440d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9a8e283a7962aa92f29ca3c2c080d96e5767c42cdc41e873f7feae04cc2a0d7d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\dea1567ec2f9de31a02846495b3a87bb1a36e0a1bb177c57d39b41a695cf6c4a.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.13382468700408937,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "声部"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0137:1e687cb137b6084b",
+          "distance": 0.16156989336013794,
+          "document": "## 分割（Slash）和弦\n分割和弦就是将三和弦或七和弦叠加在一个非和弦根音的低音上。这种和弦可以用这种方式来表达：C/D。当这个低音也是和弦中的音时，分割和弦就变成了一种和弦转位。否则，分割和弦就是延伸和弦或者变化和弦的一种声部构成。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0137",
+            "page_hint": "65",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 4,
+          "rerank_score": -0.14156989336013795,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "声部"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0077:b0d9d4583cf3a005",
+          "distance": 0.15399169921875,
+          "document": "学习目标：在指板上构建三和弦的琶音。\n两个或者更多的音同时发声称为和弦。而琶音是指将和弦中的音符依次弹出，而不是同时弹奏。在指板上找出琶音比和弦更加容易，所以我们先来学习琶音。下一章，将用这章学习到的同样的音符来组成和弦。\n最基础的琶音（或和弦）是三和弦。三和弦由三个音构成：根音、三度音和五度音。这些音可以在不同的八度中重复，以此方式来构成指型1到指型5这五种琶音指型。\n不要试图在一天中记住所有的指型。在开始学习时，用大声朗读的方法，并通过用黑体字写出来来帮助记忆它的构成方式，然后按照音程的关系在指板图中画出琶音的音符。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0077",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.14399169921875,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0118:54e604f2e71828c1",
+          "distance": 0.16651785373687744,
+          "document": "## 10） Bb13\n指型\n11)Fmi11(b5)\nXI\n12)Cma13(#11)\n三\n13) G9\nVlI\n14)D11\n15)Ami13\nXI\n弹奏以上练习中的琶音，演奏时大声说出和弦名称、指型序号和声部构成。\n“G大九和弦，指型4，‘1、3、5、7、9...\nD小九和弦，指型”\n在指板上构建延伸和弦时，采用与七和弦一样的方法：升高八度或者降低八度，以使每根琴弦上仅有一个和弦音。通常，让延伸音在和弦的最高处比较好。\n之前也曾提到过，在指板上弹奏延伸和弦时，可以根据演奏者的需要，忽略部分音符，从而获得更好的效果。忽略哪个音取决于所演奏的音乐风格，或者贝司及其他乐器是如何演奏的。可以尝试去掉五度音和（或）根音，听听会产生什么效果。\n\n[图示引用 6 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0118",
+            "page_hint": "54",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3384a6590bd23579deebc821be0cd20f7b8a370e123752224157d95a17e9b3a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b3e5ad9f17f5aee153afa9efd6bd27a850adb72520990ca17d18daadae73974e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e62afb71282a16914fede8bcbb30020bacde8c13bec9cc914eec137dc821c131.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\40f0d7b74c754b397cf3c83fdd9ff7f8cbe37561076c4e182da7055d95c8b074.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\49648cecde9af74e5fec3ebb9d8524203ead0b0f6ddcd100a3f80c945600e366.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9088b2a6fbc1205c1c6d1c334cae13f83ce70b062cb186b697e475e71a2a8e2.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 5,
+          "rerank_score": -0.14651785373687745,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "声部"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_extended_chord_11th",
+      "query": "延伸和弦里九度十一度十三度是什么概念",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "延伸和弦",
+        "九度",
+        "十一度",
+        "十三度"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.03598290000081761,
+      "query_seconds": 0.002243900002213195,
+      "total_seconds": 0.0382268000030308,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0115:83dc879d2e9fe2f8",
+          "distance": 0.14820361137390137,
+          "document": "学习目标：学习构建延伸和弦及其琶音，并在指板上进行应用。\n延伸和弦指的是在七和弦的基础上再增加根音上方其他音程的一个或者几个音：如九度、十一度或者十三度音。在有些地区，这些增加的音符被称为“延伸音”。延伸和弦常被运用在一些特定的音乐风格中，或者有的乐手喜欢用它来替代七和弦，从而起到特殊的效果。\n这里仅用“和弦”来进行讲解，但是下面的规则既适用于和弦也适用于琶音。\n·当对七和弦进行和弦延伸时，和弦本身的性质不变；\n·任何的ma7，dom7，mi7或者mi7(b5)和弦都可以通过增加九度音、十一度音或者十三度音来进行延伸，但减七和弦通常不被延伸；\n·除非和弦名称为特殊的情形，否则延伸音均为大音程或者纯音程；\n·所有的延伸音，包括仅有一个延伸音时，都要将其在和弦名称后表示出来，尽管有时延伸后的和弦音超过了吉他6根弦的限制，或者手指根本无法将其全部弹奏出来。延伸的音均应写在七和弦的名称后，较低的音可以不弹出来。（比如，在ma13和弦中，九度音和十一度音可以不用弹出来。）\n下面这张表中列出了七和弦理论上可以得到的延伸和弦。注意这里说的是“理论上”的，后面会给出解释，先继续学习。\n延伸和弦表\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0115",
+            "page_hint": "54",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\047c1a6bbaa7ebc16e1d8ebd95a65d42c3d77ed2753555aeb2c6b59794361ec7.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.13820361137390136,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0118:54e604f2e71828c1",
+          "distance": 0.1530473232269287,
+          "document": "## 10） Bb13\n指型\n11)Fmi11(b5)\nXI\n12)Cma13(#11)\n三\n13) G9\nVlI\n14)D11\n15)Ami13\nXI\n弹奏以上练习中的琶音，演奏时大声说出和弦名称、指型序号和声部构成。\n“G大九和弦，指型4，‘1、3、5、7、9...\nD小九和弦，指型”\n在指板上构建延伸和弦时，采用与七和弦一样的方法：升高八度或者降低八度，以使每根琴弦上仅有一个和弦音。通常，让延伸音在和弦的最高处比较好。\n之前也曾提到过，在指板上弹奏延伸和弦时，可以根据演奏者的需要，忽略部分音符，从而获得更好的效果。忽略哪个音取决于所演奏的音乐风格，或者贝司及其他乐器是如何演奏的。可以尝试去掉五度音和（或）根音，听听会产生什么效果。\n\n[图示引用 6 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0118",
+            "page_hint": "54",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3384a6590bd23579deebc821be0cd20f7b8a370e123752224157d95a17e9b3a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b3e5ad9f17f5aee153afa9efd6bd27a850adb72520990ca17d18daadae73974e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e62afb71282a16914fede8bcbb30020bacde8c13bec9cc914eec137dc821c131.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\40f0d7b74c754b397cf3c83fdd9ff7f8cbe37561076c4e182da7055d95c8b074.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\49648cecde9af74e5fec3ebb9d8524203ead0b0f6ddcd100a3f80c945600e366.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9088b2a6fbc1205c1c6d1c334cae13f83ce70b062cb186b697e475e71a2a8e2.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.1430473232269287,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0119:21739203f4360e91",
+          "distance": 0.16664385795593262,
+          "document": "## 练习49\n根据给出的声部构成，在下面的图示中构建延伸和弦。\n5）F#7(#11)\n6Db13\n7）A13(#11)\n8 E13\n10）F9（#11)\n弹奏上页练习中的延伸和弦，弹奏时大声说出和弦名称、指型序号和声部构成。\n“C九和弦，指型1，‘1、3、b7、.\nG大十三和弦，指型4，‘1、3、7、13..”\n\n[图示引用 10 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0119",
+            "page_hint": "54",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8b4316202b722a59012caf14d81fafb2e864d6437437f7193aa92f4485ecec90.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a5cad2ac1a60193c9315db6052c0675e341d917de749624c743318e926326571.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e52abc16b7b425d06daad05ac1e338afacee60bc2d28ff1fed7b974f403709f4.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5f1c68a4f3fe4d3897cea4581f30853e91f9716d90cd55a954185c6eded6e36b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\521c7f42f623227908b8bb9deffb2b6440e1c6721ab3a0d15912fa49ebd1a32e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\15fd64c9a2661d2891b291c8023e112fdba0547ff7a2637f6c1515c246d3c9e2.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9f7008faf63d7b3092fb669815debe554590d4419d952fdfee2730fb4bb984b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3cca6a7cf27f7ebcd590b11ed719e40b1800fe26343244801616db510a7fe90a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6e35ced523269fc162dda3d7ba946caa642d152c744433112fe23e4ba1d56a14.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f18a803a6e3dca466ce984fee05cb9060bbd4826cc8d1a548f3886d9fb4cdb25.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.1566438579559326,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0116:caf002468fb35434",
+          "distance": 0.18013441562652588,
+          "document": "## 麻烦的十一度音\n在音乐中，十一度音和四度音是等效的。当弹奏一个和弦时，如果和弦中包含了大三度，那么四度和五度音听上去就会不和谐。这就意味着对于大和弦和属和弦，在延伸至十一度或超过十一度时，就需要进行特别的考虑。在琶音中，这种不和谐不太明显，因为每个音符都是单独发音的，但是在弹奏和弦时，这种不和谐会非常明显。下面一些常用的练习可以有效地解决这一问题。\n通常，在大和弦和属和弦中，采用将十一度音升高半音的方法来解决这个问题。它可以有效避免十一度和大三度音的不和谐。在和弦中如果用到这种情况，需要标明“#11”：\nCma7(#11）一1、3、5、7、#11 C7(#11）→1、3、5、b7、#11\nCma9(#11）一1、3、5、7、9、#11 C9(#11）→1、3、5、b7、9、#11\nCma13(#11）-1、3、5、7、9、#11、13 C13(#11）一1、3、5、b7、9、#11、13\n其他解决“3、11”不和谐的方法有：\n1）构建大十三和弦或者属十三和弦时，可去掉十一度音。Cma13 一1、3、5、7、9、13C13 →1、3、5、b7、9、13\n2）去除三度音，特别是在延伸属和弦中。C11 →1、5、b7、9、11C13 一1、5、b7、9、11、13",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0116",
+            "page_hint": "54",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 4,
+          "rerank_score": -0.17013441562652587,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0135:e29889fe87beb6ab",
+          "distance": 0.1803441047668457,
+          "document": "学习目标：练习运用音程关系构建各种和弦。\n除了七和弦和它的延伸和弦以及变化和弦，还有一些比较常用的和弦也应该了解。通常可以通过它们的名称推算出它们的构成音符。\n·挂留和弦：用音阶中的4级音代替三和弦中的三度音，就形成了 sus4—1、4、5挂四和弦（sus4)。现在也常用到sus2和弦。尽管它们不是真正 sus2—1、2、5意义上的三和弦，但应该将sus4和sus2和弦归到三和弦中去学习。它们十分常见。\n·六和弦：在三和弦中加入大六度音。不同的三和弦，大三和弦或 6-1、3、5、6者小三和弦，都是要加入大六度音。（也就是说在小六和弦中，也 mi6—1、b3、5、6是加入大六度音）。\n·六九和弦：在六和弦的基础上再加入大九度音，三和弦的类型不 6/9—1、3、5、6、9变。这类和弦通常被认为是大和弦或者是小和弦，而不是属和 mi6/9—1、b3、5、6、9弦，它们不包含七度音。\n·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0135",
+            "page_hint": "65",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 5,
+          "rerank_score": -0.1703441047668457,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_exercise_30_prompt",
+      "query": "练习30要求怎样构建D大三和弦琶音五种指型",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "练习30",
+        "D大三和弦琶音",
+        "五种指型"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.03759420000278624,
+      "query_seconds": 0.0022695000006933697,
+      "total_seconds": 0.03986370000347961,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0079:bc791b9e0db3452e",
+          "distance": 0.12063544988632202,
+          "document": "## 练习30\n运用五种大调音阶指型中的音符，构建D大三和弦琶音的五种指型。注意不要使用品位标记以下的音符，并且在画出音符时，保证所有的音符都在左手所在的把位以内，最多不要超出1品以外。\n1）D大三和弦琶音\n指型1\n2)D大三和弦琶音 指型2\n3)D大三和弦琶音\n=\n指型3\n4)D大三和弦琶音\nIV\nVII\n指型4\n5)D大三和弦琶音 指型5\nIX\n弹奏以上这些D大三和弦琶音，演奏时要大声说出和弦名称及指型序号。弹奏时，从每一指型中最低的根音开始，弹至最高音，再向下弹至最低音，最后回到根音。同时，要注意仔细聆听琶音中不同的音程性质。\n\n[图示引用 5 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0079",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2c8b32bf233d01c7334bd00960a8c649e8d99f3b3c728357259fe98d182cd025.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3d544f9591abee93dfeb682eb5293552ce4cfd3e72baff63056ed6e6fd8b5f46.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\59bcb0820ee626a7cbbd9299081215bb3ef5a38a94cb052c67dd23e9b52a3f1c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\97c7d7505ce88b266ced2d97a35a6883c794468513774f9432b5258e3bfd8e18.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c55fb174db9e32f32aaf479912847233a4017fcb23268b0f94341a474438053e.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.09063544988632202,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "琶音",
+              "练习"
+            ],
+            "token_score": 0.03,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0081:a3027667972f7c56",
+          "distance": 0.12180376052856445,
+          "document": "## 练习31\n构建D小三和弦琶音的五种指型。注意不要用品位标记以下的音符，并且在画出音符时，保证所有的音符都在左手所在的把位以内，最多不要超出1品以外。\n1)D小三和弦琶音\nV\n2)D小三和弦琶音 指型2\n3)D小三和弦琶音\n=\nVII\n4)D小三和弦琶音\n5）D小三和弦琶音 指型5\nX\nXI\n弹奏以上这些D小三和弦琶音，演奏时要大声说出和弦名称及指型序号。同时，要注意仔细聆听琶音中不同的音程性质。\n\n[图示引用 5 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0081",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f09a862e2cade2cfda3e9353a518c29274fbf8f6066dc3a4e804b323c7c690f9.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\54ffe98859668a2202ca2c5c194a76b8ed1006e61ce76464870a6c8cab9f1ff5.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\73aed2f436908372111dd5e3185d44bb5784b2f30f6a179dd5fd363c0d41e473.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5490cff0a16d012ecb669cacc34b6e3ca4fc99c1efb432704a5481030debd5a7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\edd1ba59275bdb40da458f8678f3c18c784218eaa338b3698576718bfdea145a.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 3,
+          "rerank_score": -0.09180376052856445,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "琶音",
+              "练习"
+            ],
+            "token_score": 0.03,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0149:e6a9ce2000ec9482",
+          "distance": 0.11468356847763062,
+          "document": "## 练习30\n1)D大三和弦指型1\nb9\n\n[图示引用 2 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0149",
+            "page_hint": "68",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ef4b04b699592437ae5f2a4cea404576d19bdebfee6689dc94eb4019baf8289d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\343bf6b965e3b30bc75cc24678a357b67a457045dbf7432a91c87857f93b1bed.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.09468356847763061,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "练习"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0083:a80bddedd9df333b",
+          "distance": 0.12550604343414307,
+          "document": "## 练习32\n对应五种根音指型，构建D减三和弦琶音型式。注意不要用品位标记以下的音符，并且在画出音符时，保证所有的音符都在左手所在的把位以内，最多不要超出1品以外。其中在有些指型中需要越弦演奏。\n1）D减三和弦琶音\n2）D减三和弦琶音 指型2\n3）D减三和弦琶音\nIII\nVI\n4）D减三和弦琶音\n5)D减三和弦琶音\nX\nXI\n弹奏以上这些D减三和弦琶音，演奏时要大声说出和弦名称及指型序号。同时，要注意仔细聆听琶音中不同的音程性质。\n\n[图示引用 5 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0083",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5c2ee8d52bcfec7346e8b0fbe3563b825c9aef95d21ce60845917d2245ceefd7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a455c27dea702997ddd16a1b08b326942fdbfa1781b2f01e8bbb521debbaa680.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\649da6aa6e2b89b8492ce64a3dbbd672171b12fc9f81a68d2466816b247424a1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9c2d1dd325fd9a40296236db40ff068fc22d177e9390218773a6d0f05453a32a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3388224cfe66af5e8dc34db899b028d733b24a1461361f96f0ea588c27de1677.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 5,
+          "rerank_score": -0.09550604343414307,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "琶音",
+              "练习"
+            ],
+            "token_score": 0.03,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0085:eadb0bca8271ed93",
+          "distance": 0.12655597925186157,
+          "document": "## 练习33\n在五种根音指型中，构建D增三和弦琶音型式。不用圈出每个音符。其中有些指型需要越弦演奏。在构建增三和弦时会发现，有时同一指型中的一个音符有两种弹法，这两种都是正确的。\n1)D增三和弦琶音\n指型1\n=\n2)D增三和弦琶音 指型2\n3）D增三和弦琶音\nIV\nVI\n4)D增三和弦琶音\nIX\n5)D增三和弦琶音\n指型5\nXI\n弹奏以上这些D增三和弦琶音，演奏时要大声说出和弦名称及指型序号。同时，要注意仔细聆听琶音中不同的音程性质。\n\n[图示引用 5 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0085",
+            "page_hint": "41",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\be4322276df242e12f2f42306cd9dabc71a5b02294fbc770696af4fffc83f279.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fb6d026d8862576cb7f96489b6af85023628b1d7058f3cf2aa294c5cd2b17470.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\1c9e79707d0b0eaed9111030951b2d5f6f6292472e1e1f534b8b34f7bb41e20d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5866c6c3ed47f18e51f155c99b51100231602a4e946136b19eb65c3a6938ee34.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8b8b5275ba8d1a272bd002d76816fb85db5add589b4e85f59081a9ab6f949522.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 6,
+          "rerank_score": -0.09655597925186157,
+          "rerank_details": {
+            "matched_tokens": [
+              "和弦",
+              "琶音",
+              "练习"
+            ],
+            "token_score": 0.03,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "fretboard_answer_exercise_15",
+      "query": "练习15答案里D大调指型1对应哪个小调指型",
+      "text_sources": [
+        "fretboard_handbook_clean_text"
+      ],
+      "expected_keywords_any": [
+        "D大调指型1",
+        "B小调指型2",
+        "练习15"
+      ],
+      "rerank": true,
+      "rerank_candidates": 20,
+      "source_first_rank": 1,
+      "keyword_first_rank": 1,
+      "pass_source": true,
+      "pass_keyword": true,
+      "pass_all": true,
+      "embed_seconds": 0.03834379999898374,
+      "query_seconds": 0.002428499996312894,
+      "total_seconds": 0.040772299995296635,
+      "results": [
+        {
+          "rank": 1,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0143:e469e32dd83497bd",
+          "distance": 0.08132100105285645,
+          "document": "## 练习15\nD大调指型1（B小调指型2）\nG大调指型4（E小调指型5）\nC大调指型2（A小调指型3）\nE大调指型5（C#小调指型1）\nBb大调指型3（G小调指型4）\n\n[图示引用 5 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0143",
+            "page_hint": "68",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ac046f1b37c66ec6255a0b7ef2a757ad7c0e9ae28da8cf7a96b0916b85d77e2c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\464fad4e8ea83f72b5f37371eb5d835f36dc03153324a328af64a1bef85b7b7b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9638beb838c84cca083f4e4e8890f9dd60446e003235a3ad65b4f70ca2a3498c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\23a2cefa4eb416d4d1e5a18fbaca9c680bdb7c468b61907043870915dd8eb2ff.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b0e741c4c6076e68e7a4aaf03d0154cc6c1fcad501dfb1eb6d8776eb14ce2e98.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 1,
+          "rerank_score": -0.06132100105285644,
+          "rerank_details": {
+            "matched_tokens": [
+              "大调指型",
+              "练习"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 2,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0045:b082a6528872572a",
+          "distance": 0.08640152215957642,
+          "document": "## 练习15\n回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如：\nD大调指型1 (B小调指型2)\n再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0045",
+            "page_hint": "26",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6bf08545fb324ceef97dce49a035a6b474ab171276e257aa2479c8538ab431a6.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": true,
+          "original_rank": 2,
+          "rerank_score": -0.06640152215957641,
+          "rerank_details": {
+            "matched_tokens": [
+              "大调指型",
+              "练习"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 3,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0044:539d5c4a7b9c4be6",
+          "distance": 0.10331505537033081,
+          "document": "## 练习14\n回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。\nE小调指型5(G大调指型4）\n再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0044",
+            "page_hint": "26",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0b2c654cc033443dc9a9ab711f4f8aaeed89249dd2d0601e5743f6cd919ae824.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 3,
+          "rerank_score": -0.0833150553703308,
+          "rerank_details": {
+            "matched_tokens": [
+              "大调指型",
+              "练习"
+            ],
+            "token_score": 0.02,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 4,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0142:7ffc29da4841ecbc",
+          "distance": 0.10954666137695312,
+          "document": "## 练习13\nE小调指型5\n2C小调指型2\nE小调指型\nA小调指型3\nD小调指型3\n小调指型4\n小调指型\nBb小调指型3\n小调指型2\nF小调指型5\n\n[图示引用 10 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0142",
+            "page_hint": "68",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\aa757a54a06b630efa6d927ec30bfa29c8f1248240b24dee45d9bf6359d391bf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0b5a30842ced8eddce90c21ed678b2ae4825d95d6534bf697c0df5a282c76ca9.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6c9b9bc6504ddf3616f1e23fff369c976a6348e8c442b529274d1a7404b9f7b7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\217ec23fcb2ada251b0e2538a412339a4a7f868ab7acc55d4b93d2eea272f5f4.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\af2a615fdd8ba99273b1419c09377083cf872bd70bfd1180cc658eb649c94f56.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2623d9690382e6b1c283766fbfd29add42a7670ed3b45be90a1d901e454b48b8.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b1e6190512cdab9ca3c8339b6f9be813e237271028b880d565192a7002895f5d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\90a49dd549b660d978eedc8b143046e04f3b91efd5265dea71f0ed49fca6773a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\741955881ca28a7155fb1a55d54878c09664beb6ffc964aea969fa148e75a49e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fadbf75f0081959d1d1fe1471f9b042f9838467ecc44698ef2ed9587029a3ba6.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 4,
+          "rerank_score": -0.09954666137695313,
+          "rerank_details": {
+            "matched_tokens": [
+              "练习"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        },
+        {
+          "rank": 5,
+          "id": "fretboard_handbook_clean_text::fretboard_text_0053:5332941c675c9ab2",
+          "distance": 0.11190426349639893,
+          "document": "## 练习19\n回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。\nD小调五声音阶指型2\n\n[图示引用 1 张，详见 image_refs]",
+          "metadata": {
+            "source_id": "fretboard_handbook_clean_text",
+            "source_title": "吉他指板手册正文清洗层",
+            "source_type": "clean_markdown",
+            "chunk_id": "fretboard_text_0053",
+            "page_hint": "29",
+            "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+            "gp5_feature_triggers": "[]",
+            "linked_kg_nodes": "[]",
+            "linked_kg_edges": "[]",
+            "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d.jpg\"]"
+          },
+          "source_expected": true,
+          "keyword_expected": false,
+          "original_rank": 5,
+          "rerank_score": -0.10190426349639893,
+          "rerank_details": {
+            "matched_tokens": [
+              "练习"
+            ],
+            "token_score": 0.01,
+            "source_score": 0.0,
+            "generic_penalty": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

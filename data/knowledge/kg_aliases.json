@@ -1,0 +1,82 @@
+{
+  "technique:tapped_power_chords": [
+    "technique:tapped_power_chord",
+    "feature:tapped_power_chords",
+    "feature:tapped_power_chords_melodic"
+  ],
+  "technique:tapping_power_chords": [
+    "technique:tapped_power_chord",
+    "technique:two_hand_tapping",
+    "feature:tapped_power_chords"
+  ],
+  "voicing:suspended_power_chord": [
+    "feature:tapped_dyads",
+    "technique:tapped_power_chord"
+  ],
+  "concept:根音": [
+    "concept:root_pattern_cycle",
+    "concept:root_pattern_system",
+    "pattern:root_shape_1",
+    "pattern:root_shape_4",
+    "heuristic:power_chord_root_finding"
+  ],
+  "concept:指型": [
+    "concept:five_major_scale_patterns",
+    "pattern:caged_system_shapes",
+    "pattern:caged_system_navigation",
+    "pattern:interval_geometry_shift",
+    "pattern:interval_shape_shift"
+  ],
+  "concept:把位": [
+    "heuristic:minimize_position_shift",
+    "guitar_idiom:position_based_melodic_design",
+    "pattern:caged_system_navigation"
+  ],
+  "concept:八度": [
+    "interval:octave",
+    "heuristic:octave_symmetry_at_12th_fret",
+    "technique:octave_displacement_rule",
+    "pattern:octave_minus_one_fret"
+  ],
+  "concept:音程": [
+    "concept:compound_interval",
+    "pattern:interval_geometry_shift",
+    "pattern:interval_shape_shift",
+    "interval:perfect_5th",
+    "interval:major_6th"
+  ],
+  "concept:指板": [
+    "concept:fretboard_geometry",
+    "heuristic:fretboard_navigation_logic"
+  ],
+  "concept:琶音": [
+    "chord:major_triad",
+    "chord:triad_inversions",
+    "pattern:caged_system_shapes"
+  ],
+  "concept:三和弦": [
+    "chord:major_triad",
+    "chord:aug_triad",
+    "chord:triad_inversions"
+  ],
+  "concept:大三和弦": [
+    "chord:major_triad"
+  ],
+  "concept:六和弦": [
+    "chord:6/9",
+    "chord:6_9",
+    "interval:major_6th"
+  ],
+  "concept:九和弦": [
+    "chord:add9",
+    "chord:6/9",
+    "chord:6_9",
+    "chord:extended_chords"
+  ],
+  "concept:常用和弦": [
+    "chord:add9",
+    "chord:6/9",
+    "chord:6_9",
+    "chord:extended_chords"
+  ]
+}

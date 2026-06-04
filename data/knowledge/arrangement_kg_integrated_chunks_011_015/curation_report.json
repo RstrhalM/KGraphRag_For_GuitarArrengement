@@ -1,0 +1,10 @@
+{
+  "review_file": "data\\processed\\mineru_full_gpu\\kg_integrated_review_chunks_011_015\\arrangement_kg_review.synced_preview.jsonl",
+  "output_dir": "data\\knowledge\\arrangement_kg_integrated_chunks_011_015",
+  "accepted": 41,
+  "revised": 1,
+  "rejected": 0,
+  "pending": 0,
+  "curated_edges": 42,
+  "ingested_at": "2026-05-29T14:59:46.331716+00:00"
+}

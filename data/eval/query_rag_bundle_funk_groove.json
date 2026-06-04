@@ -1,0 +1,573 @@
+{
+  "query": "funk十六分切分节奏怎么让riff更有groove",
+  "analysis": {
+    "query": "funk十六分切分节奏怎么让riff更有groove",
+    "intent": "style_arrangement",
+    "style_hints": [
+      "funk"
+    ],
+    "theory_terms": [],
+    "technique_terms": [
+      "groove",
+      "riff",
+      "切分"
+    ],
+    "needs_fretboard_text": false,
+    "needs_visual": false,
+    "needs_style_text": true,
+    "needs_kg": true,
+    "confidence": 0.7,
+    "matched_rules": [
+      "style_or_technique_terms",
+      "arrangement_or_relation_terms"
+    ]
+  },
+  "plan": [
+    {
+      "name": "style_text",
+      "backend": "chroma",
+      "collection": "guitar_text_chunks_qwen3_06b",
+      "query": "funk十六分切分节奏怎么让riff更有groove funk",
+      "top_k": 5,
+      "reason": "风格/riff/节奏/技法文本证据"
+    },
+    {
+      "name": "kg",
+      "backend": "neo4j_or_file",
+      "collection": null,
+      "query": "funk十六分切分节奏怎么让riff更有groove funk groove riff 切分",
+      "top_k": 8,
+      "reason": "技法关系/风格迁移/编配启发"
+    }
+  ],
+  "text_evidence": [
+    {
+      "evidence_id": "text:chunk_0011",
+      "evidence_type": "text",
+      "source_id": "cory_wong_funk_core",
+      "title": "Cory Wong Funk 吉他大师课",
+      "content": "one of the signature moves that I have is hitting the strings.now that sounds a little bit weird on its own,why would I just hit the strings,but what it does is it helps me accomplish some of my signature moves,both in the ribbon guitar realm and lead ribbon realm. so here's an example.now when you watch me,do that it almost doesn't look like if you're just watching my strumming hand. it doesn't look like I'm.like I'm actually doing this so.now both of those triplet moves are actually the exact same thing.in the right hand,what it is is I'm going.upstroke hit the string.downstroke i'll show you an the other.but I'm going.upstroke hit downstroke.of stroke hit downstroke.\nit's kind of a weird thing when you watch my hand. it doesn't really look like I'm strumming those things,but it's because.I'm literally just doing this.I'm hitting the strings with my hand.and.just making that sound,it's a lot easier than what it sounds like. so another example of how I use it would be like this.嗯。its just like this.so most of the time when i do it,I'm going up stroke hit downstroke.right? same thing as the way I was doing up there,but.it's just hitting the string in between the upstroke and the downstroke upstroke hit,downstroke upstroke hit downstroke.\nso one way that you can practice it is just literally that just mute the strings like this go up stroke hit downstroke.you can do it as triplets or you could practice as sixteenth notes so that way you're practicing four note phrases.with three moves,so it's kind of a symmetrical for a while,and then it comes back around. so that's how you get some of those cool moves like this one.so you can get into different types of phrasing with the three movement thing,but use it over two note phrases,four note phrases.sixteenth note triplet that sort of thing helps make it really fun,and all of a sudden gives it a little bit of a different thing,but first and foremost just practice.upstroke hit downstroke and then try to add that into your plan like this,you're just playing over like accord.you can do a bunch of different things like that,make different phrases,\nhave some fun. you can even bring it into your lead guitar realm,you.you could bring it into comping,so if I wanted to go just CAD gi could go.so now all of a sudden,it's a different part of a ribbon guitar pocket. it's part of a different lead guitar,sort of thing if you want it to be.so practise that one,there's a lot of different permutations you can do. but for me,that's the one that I use that's part of my signature sound.",
+      "score": 0.7592,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0011",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "cory_wong_style",
+          "funk",
+          "groove",
+          "lead_guitar",
+          "rhythm_guitar",
+          "riff_writing",
+          "rnb",
+          "technique"
+        ],
+        "raw_metadata": {
+          "source_title": "Cory Wong Funk 吉他大师课",
+          "gp5_feature_triggers": "[\"alternating pitched and unpitched (muted) events\", \"continuous 16th note stream\", \"grouping of 3 events per beat\", \"high density of muted notes interspersed with pitched strokes\", \"lead phrases with high rhythmic density and staccato articulation\", \"notes marked as dead/muted (x notation)\", \"regular rhythmic subdivision pattern\", \"sequence of upstroke followed immediately by muted strum and downstroke\", \"simultaneous left-hand release pressure indicators in tablature\", \"single note lines with interspersed muted strikes\", \"swing feel indicators\", \"triplet or 16th note grid containing mixed articulation\", \"triplet time signature or tuplet notation\"]",
+          "chunk_id": "chunk_0011",
+          "source_type": "transcript",
+          "page_hint": "",
+          "linked_review_ids": "[\"chunk_0011:funk_signature:001\", \"chunk_0011:funk_signature:002\", \"chunk_0011:funk_signature:003\", \"chunk_0011:funk_signature:004\", \"chunk_0011:funk_signature:005\"]",
+          "chunks_path": "data\\processed\\style_rhythm\\cory_wong_funk\\chunks.json",
+          "linked_kg_nodes": "[\"color:percussive_funk_momentum\", \"feature:percussive_ghost_note\", \"feature:sixteenth_note_undercurrent\", \"feature:triplet_feel\", \"task:riff_writing\", \"technique:left_hand_muting\", \"technique:upstroke_hit_downstroke\"]",
+          "source_id": "cory_wong_funk_core",
+          "image_refs": "[]",
+          "lesson_title": "cory wong绝招.1 hitting the strings",
+          "linked_kg_edges": "[\"technique:upstroke_hit_downstroke -[enables]-> feature:percussive_ghost_note\", \"technique:upstroke_hit_downstroke -[suggests]-> feature:sixteenth_note_undercurrent\", \"technique:upstroke_hit_downstroke -[can_inspire]-> task:riff_writing\", \"technique:left_hand_muting -[enables]-> technique:upstroke_hit_downstroke\", \"feature:triplet_feel -[evokes]-> color:percussive_funk_momentum\"]",
+          "raw_path": "data/book/cory wong funk吉他大师课.txt",
+          "review_jsonl": "data/processed/style_rhythm/cory_wong_funk_review_core/arrangement_kg_review.all_accept.jsonl",
+          "style_tags": "[\"cory_wong_style\", \"funk\", \"groove\", \"lead_guitar\", \"rhythm_guitar\", \"riff_writing\", \"rnb\", \"technique\"]"
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.3157992362976074,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "funk十六分切分节奏怎么让riff更有groove funk",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0009",
+      "evidence_type": "text",
+      "source_id": "cory_wong_funk_core",
+      "title": "Cory Wong Funk 吉他大师课",
+      "content": "now something to really note is.there's a difference between timing.patterns.and groove.they all kind of make up this thing that we call ribbon.那timing is。where you're placing something.right? the timing is a hundred and twenty bpm or whatever,and that's the pulse.the pattern is whatever the rhythmic phrase is that you're putting in that timing. now that's something that you could put on paper.that a hundred different guitar players could read or you could tell a hundred different guitar players what this pattern is,because guitar players.typically don't read,hopefully you do. it's OK if you don't.but if somebody gave me a piece of sheet music and I read it,it's going to sound my feel,\nmy timing,my groove is going to be different than if James v reads it or if.steve luc at ther reads it or if.you know,steve v ye reads it or kerk hammett.or you know,or whoever James head field i picked both guitar players for metallica,i don't know why they are just.for whatever reason,the people that came into mind George harrison if he would have read that he would have played the feel and the groove differently,and that's where things get to be.a little more personal.do you feel things right on the beat behind the beat ahead of the beat I talk about these things and other lessons,but they really are important in ribbon guitar because?it's kind of really one of the things that makes up your fingerprint as a player is how your groove and how your ribbon.\nall locks together how you decide to make patterns and phrases and then how you decide to phrase those.lago do VS staccato Paul muted vs open and then were you placed them in the timing ahead on behind?how you place the dynamic flow of your lines,so that's actually where things can get really fun. and I want to encourage you to explore all sides of that.find the exact same time and pattern and just explore what it's like.to play different dynamic levels.different levels of muting different levels of.a velocity on the strings,and I think what's going to happen is you're going to find yourself with preferences.and your own taste is going to.help inform what your preferences are,and that's something that you should just be aware of know what your preferences are and.just like i've said in other lessons,the people that you work with try to understand their preferences as well,and that's going to help you a lot.",
+      "score": 0.73127,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0009",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "arrangement_strategy",
+          "funk",
+          "practice_methodology",
+          "rhythm_guitar"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[\"heuristic:explore_articulation_variants\", \"task:rhythm_guitar_arrangement\"]",
+          "chunk_id": "chunk_0009",
+          "source_title": "Cory Wong Funk 吉他大师课",
+          "chunks_path": "data\\processed\\style_rhythm\\cory_wong_funk\\chunks.json",
+          "raw_path": "data/book/cory wong funk吉他大师课.txt",
+          "linked_kg_edges": "[\"heuristic:explore_articulation_variants -[suggests]-> task:rhythm_guitar_arrangement\"]",
+          "image_refs": "[]",
+          "style_tags": "[\"arrangement_strategy\", \"funk\", \"practice_methodology\", \"rhythm_guitar\"]",
+          "review_jsonl": "data/processed/style_rhythm/cory_wong_funk_review_core/arrangement_kg_review.all_accept.jsonl",
+          "lesson_title": "rythmn.3 时值，模式，律动",
+          "gp5_feature_triggers": "[]",
+          "source_id": "cory_wong_funk_core",
+          "linked_review_ids": "[\"chunk_0009:funk_rhythm:012\"]",
+          "source_type": "transcript",
+          "page_hint": ""
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.31873250007629395,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "funk十六分切分节奏怎么让riff更有groove funk",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0008",
+      "evidence_type": "text",
+      "source_id": "cory_wong_funk_core",
+      "title": "Cory Wong Funk 吉他大师课",
+      "content": "let's dive deeper into that bongo conga style to me,that world of ribbon guitar playing is the bubble. now you hear this sort of thing on a lot of songs,it's classic.billy IE,Jean,you hear it on?a lot of other songs that I'm not going to play for you now cause i can't afford the copyrights to put them in my videos,so I'm going to give you just some off the top of my head examples of bubble guitar parts.and because I was an f sharp miner there,i'll stay in f sharp miners of sharp miner. I'm only going to use notes out of f sharp miner PE ni tonic.okay,so check this out.now I'm just taking that one repeating OS ten ato pattern and then changing it four bars later or something I'm making a phrase out of it now.if that's one of the things that's really important with this,make it feel like a phrase. sometimes these sort of bubble parts people will play,and it just feels like.\nthere's nothing really to latch onto my approach,is that I normally like to play phrases specific things that hopefully will end up feeling like hooks?something that feels like it fits with in the song,but feels like potentially a counter Melody or a counter hook to something else that's happening.the more that you think about how your part fits within the context of everything else in this song,the more you'll notice that your parts are going to get turned up in the mix.it's just one of those things,sometimes like i don't know why this is clashing eh turn it down.that's just sometimes what happens,or it gets muted. i've had that happen to me several times,i've done that to other people with other parts,but whatever it's fine so.the bubble part.I like to think of phrases like that single notes.staccato things that's to me the kind of classic bubble.\nthat's playing a little lower on the neck,and it has a different feel when you play higher. so I'm going to play that same line,just an octave higher.now check it out,I'm going to add some subdivision within there and skin to change the feel of it.now I'm kind of palm muting the whole time. check this out,now I'm going to open up my strum,I'm going to play a wider stroke.so it has a different feel when you play it like that,as opposed to.and I'm going to talk later about how you can blend that style with other cords and different things,which leads US to our next.type of ribbon guitar playing the chuck.now this is one that's a little more classic.nile rogers and anile voicing,\nhe uses all the time,let's just stay in f sharp miner. this sort of fifth string rooted miner,seven cord.paid that sort of thing I you can't play the whole cord,but really I like to focus on two or three strings at a time,three strings at a time.now this one,is maybe a little more.like the shaker.along with.horn stabs or something it's like papa papa.巴不得不。butt up pup pup pup,then you add in a shaker part along with that which you might not necessarily think about and a shaker of course is not going to be able to add horns.and horns are going to be able to add shaker ish things,\nbut on the guitar we can do that sort of thing like this.it's really fun now,play it down low.and with that sort of thing,what you want to think about is there's the notes. there's the chords,and then there's the chucks.you can have it with more notes and less chucks you can have it with less notes and more chucks or you can also have just a little bit of each.and those all sound different. so I'm going to show you some examples,here's.a lotta notes and less chucks.not going to take out the chucks,put them back.and you'll notice my right hand motor is just moving the whole time. it's just when do i press down.okay,so now I'm going to do less notes more chucks shaker player.\nso now i'll do the same part that bump,bump,bump,dump,dump,but less chucks so you see that there's more space in there and actually allows a little more.for the high hat or other subdivision,the base player keyboard player to add something in there,so there's not as much.motion in my guitar part,but it still has the same type of undercurrent of sixteenth notes.that sort of thing and sometimes that's what the music calls for there might be a lot of stuff happening and also if you're playing a lot of subdivision if you're outlining the entire sixteenth note grid.and it's not lining up with everybody else.it's cana sound really messy. so sometimes you want to remove some of those extra chucks to clean up your subdivision and clean up your part,but.\nbut if you're locking in it,actually can sound really awesome,because then it all of a sudden everybody's accenting these kind of micro acs sent s within the groove. and it really gives it this.an undercurrent really is the the word in the thing that i visualize as I'm playing that sort of thing all right. so now let's try.putting together the bubbles and the chucks,we're still an f sharp minor. I'm just gonna play an f sharp minor comp,and I'm still just gonna comp notes.out of the f sharp miner PE ni tonic scale,I'm going to play the first thing that comes to mind if somebody says,give me some chucks and bubbles.and some kind of ribbon IC momentum.nf sharp miner is what I'm thinking.gonna play a couple different types of phrases there.whatever OK now,here's what it feels like if I'm playing a pyre.\nit was like a little fore bar phrase using some chucks,using some bubbles going back and forth,and of course some of that just depends on whatever the song is here,I'm just kind of blindly playing.showing you an example,but I think the fun thing for you to do would be find a song that feels like it's calling for.some sixteenth note or eighth note under current,adding some of these little single note lines as bubbles,then try to add.some of the chuck parts and then see if you can find something that blends the both.because sometimes what i'll do when I'm coming up with parts for songs is like the first half of a verse i'll play.or whatever,and then the second half of the verse,or maybe the pre chorus,i'll open up my stroke a little bit,\nmaybe even at a little more.and then on the chorus.go to mora BA.it's kind of rushing through that whatever,but it's the same sort of thing and I'm really just staying in the same hand position the whole time,but my right hand.sweep my stroke.gets to be wider as the section goes on and as the song goes on and I'm allowing more notes through and my velocity is a little bit harder as well so.those are some things that you can try cause that way you have this part that's dedicated for the verse. then this part builds on it a little bit,and then it's a new part for later.then maybe the second time you get to the verse you do a little combo platter of.something like that where you add in some extra things just to give it a little bit of a stairstep,something a little more interesting. but it's all kind of tied together.and that kind of phrasing,that kind of.\ncompartmentalizing section to section.making them feel like they weave together and then building a little bit of momentum from one to the other is something that will really help propel the momentum of a song forward in general.with a really ribbon IC guitar part.",
+      "score": 0.73003,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0008",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "arrangement",
+          "comping",
+          "dynamics",
+          "funk",
+          "groove",
+          "rhythm_guitar",
+          "technique",
+          "timing"
+        ],
+        "raw_metadata": {
+          "chunks_path": "data\\processed\\style_rhythm\\cory_wong_funk\\chunks.json",
+          "gp5_feature_triggers": "[\"3_string_chord_shape\", \"alternating_up_down_strokes\", \"consistent_tempo\", \"continuous_16th_notes\", \"high_muted_note_ratio\", \"high_muted_strum_count\", \"increasing_chord_complexity\", \"increasing_dynamic_level\", \"minor_seventh_harmony\", \"mixed_articulation_pattern\", \"repetitive_melodic_motif\", \"section_marker_change\", \"short_duration_notes\", \"single_note_line\", \"syncopated_rhythm\"]",
+          "lesson_title": "rythmn.2 Bubbles and Chucks",
+          "source_type": "transcript",
+          "source_title": "Cory Wong Funk 吉他大师课",
+          "chunk_id": "chunk_0008",
+          "page_hint": "",
+          "linked_kg_nodes": "[\"caution:overcrowded_sixteenth_grid\", \"color:percussive_funk_momentum\", \"feature:muted_chuck_density\", \"feature:sixteenth_note_undercurrent\", \"feature:staccato_bubble\", \"heuristic:leave_space_for_band\", \"heuristic:make_rhythm_part_a_hook\", \"heuristic:section_energy_stair_step\", \"style:funk\", \"task:rhythm_guitar_arrangement\", \"technique:right_hand_constant_motion\", \"voicing:sparse_funk_voicing\"]",
+          "linked_kg_edges": "[\"feature:staccato_bubble -[enables]-> heuristic:make_rhythm_part_a_hook\", \"voicing:sparse_funk_voicing -[suggests]-> heuristic:leave_space_for_band\", \"feature:muted_chuck_density -[cautions]-> caution:overcrowded_sixteenth_grid\", \"technique:right_hand_constant_motion -[enables]-> feature:sixteenth_note_undercurrent\", \"heuristic:section_energy_stair_step -[suggests]-> task:rhythm_guitar_arrangement\", \"style:funk -[evokes]-> color:percussive_funk_momentum\"]",
+          "linked_review_ids": "[\"chunk_0008:funk_rhythm:006\", \"chunk_0008:funk_rhythm:007\", \"chunk_0008:funk_rhythm:008\", \"chunk_0008:funk_rhythm:009\", \"chunk_0008:funk_rhythm:010\", \"chunk_0008:funk_rhythm:011\"]",
+          "raw_path": "data/book/cory wong funk吉他大师课.txt",
+          "image_refs": "[]",
+          "review_jsonl": "data/processed/style_rhythm/cory_wong_funk_review_core/arrangement_kg_review.all_accept.jsonl",
+          "source_id": "cory_wong_funk_core",
+          "style_tags": "[\"arrangement\", \"comping\", \"dynamics\", \"funk\", \"groove\", \"rhythm_guitar\", \"technique\", \"timing\"]"
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.3199748992919922,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "funk十六分切分节奏怎么让riff更有groove funk",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0007",
+      "evidence_type": "text",
+      "source_id": "mathrock_text_course",
+      "title": "mathrock教学课",
+      "content": "we'll find more vents,one there.using some cool ideas of how we take an alternate tuning in an open minor or major court with some extensions,we might have thirteen and how we.can mix up the ribbon,\nhere's simple movable core shapes,all right? thinking about major and minor,and then creating some mellies .tapping some power cords,some suspended cords.alright,and then even in the second movement,how we once again use some different movable core shapes,you can think of.closed voicing,which is what's going on with? how we do these shapes right here or the spread voicing how we do it in different octaves like in the beginning .all right,and then lastly how we looked ate pig yi ding.the idea of a corn. but then making the noise.kind of in a different patent to where it outlines the cord,but it sounds more musical more melodic.so there you go,glass hope,you joined this progression,hope it,taught you a lot.",
+      "score": 0.70909,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0007",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "math_rock",
+          "midwest_emo"
+        ],
+        "raw_metadata": {
+          "linked_review_ids": "[\"chunk_0007:mathrock_text:001\", \"chunk_0007:mathrock_text:002\", \"chunk_0007:mathrock_text:003\", \"chunk_0007:mathrock_text:004\", \"chunk_0007:mathrock_text:005\"]",
+          "linked_kg_nodes": "[\"caution:tuning_specific_shape_dependency\", \"color:angular_math_rock_momentum\", \"feature:common_tone_top_strings\", \"feature:tapped_dyads\", \"heuristic:movable_shape_drone\", \"heuristic:theme_variation_layering\", \"task:math_rock_riff_writing\", \"technique:percussive_slap\", \"technique:tapped_power_chord\", \"tuning:open_minor_add9\"]",
+          "source_id": "mathrock_text_course",
+          "page_hint": "",
+          "review_jsonl": "data/processed/mathrock/mathrock_text/arrangement_kg_review.all_accept.jsonl",
+          "gp5_feature_triggers": "[\"alternate_tuning\", \"dead_note_articulation\", \"increasing_note_density\", \"interval_perfect_fourth_or_fifth\", \"open_string_sustain_overlap\", \"percussive_attack_markers\", \"repeated_finger_pattern_on_different_frets\", \"section_change\", \"short_duration_high_velocity_notes\", \"simultaneous_left_right_hand_notes\", \"staccato_phrasing\", \"static_bass_or_high_string_notes\", \"widening_interval_range\"]",
+          "lesson_title": "tutorial 6 / part 2",
+          "raw_path": "data/book/mathrock教学课.txt",
+          "linked_kg_edges": "[\"tuning:open_minor_add9 -[enables]-> heuristic:movable_shape_drone\", \"technique:tapped_power_chord -[can_inspire]-> feature:tapped_dyads\", \"task:math_rock_riff_writing -[suggests]-> heuristic:theme_variation_layering\", \"technique:percussive_slap -[evokes]-> color:angular_math_rock_momentum\", \"feature:common_tone_top_strings -[constrains]-> caution:tuning_specific_shape_dependency\"]",
+          "source_type": "transcript",
+          "chunks_path": "data\\processed\\mathrock\\mathrock_text\\chunks.json",
+          "source_title": "mathrock教学课",
+          "image_refs": "[]",
+          "style_tags": "[\"math_rock\", \"midwest_emo\"]",
+          "chunk_id": "chunk_0007"
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.3159146308898926,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "funk十六分切分节奏怎么让riff更有groove funk",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0005",
+      "evidence_type": "text",
+      "source_id": "mathrock_text_course",
+      "title": "mathrock教学课",
+      "content": "we're already going to sit for this mad Rock midwest emo progression. we're going to look at this special shooting right here,it's going to be a drop bf sharp,we're going to have AC sharp right there and e. ,so we have the fifth right here in AB,and then we have the two. what could be denying as well? .we have e it's going to be four yep and then we have another EP shop right there for US. ,and then we have AC sharp finally just another two so pretty cool cord here we're not having. we don't have our thirds so there's no major on wine equality really to it. but the idea is it's gonna be within the fshop minor collection of notes so that key.so we're starting with this f sharpen the base and these cords right here. I'm defying the fifth rep,my first being up on the fourth through to the second.ring hammering onto the one right there through,these a shot that's going to be bse a shot in the Melody in the singing voice.all right,well,\nI have to set on the second string and then I'm getting the base again and going to the score right here.it's give me a major cord right here. that's sharp in the base,so it's give me f sharp minus seven,then.the seven would be the er OK yl,and this is going to be. it's going to be eighth fret,fourth,three non fret,third,three ten,three second,second ree.if you do a dead,not here,get some percussive flavor to it. what's more?\nOK,some corm or otic stuff here using tats,we're gonna outline this cord for US.right? it's gonna be borrowing the fifth rat. we're gonna do a base stream now,six stream that's gonna be the e note. singing voice is going to go up to a to the bso that's d to seven th threat thirty three. and the ribbon is going to be dumped. that's a dump,okay,so.it's going to be consistently sixteenth notes if we're in this tempo,but then we're going to do thirty second notes for these two notes that it's up.I'm going to tap the toll fret and the Melody. it's giving me an eno rt that's right.pulling off to the fifth fret,so taking off my third finger hammering on to the seventh fret of the fourth string to hit the a flat at the g sharp no de,OK,\nthat melodies and.finally,the tenth threat on this fit street that's give me another geek. it's the Melody da da da da.get right from the beginning.sliding up now right seventh fret bottom four strings.it's OK if you get that screen too,it kinda sounds cool,cool spanned field whole no dissonance. that's a captivating field to it,right?bright.dead node after that quick triplets from here,you don't have to do this,but I like to indo li shit make it a little more rhythmic son bsp.I'm gonna do power cords now using my fourth and second stream tenth to twelfth threat.I'm going to tap the fifteenth threat. sorry,\nthe seventeenth threat of those strings now .pulling off and then sliding down from twelve to ten and then tapping the fifteenth freight and then I'm holding that.and then bringing one of ten down suit,fifth third bread.b是a+b的a。人。 right a little bit of distance right here,but then we're going to clean it up by making the singing me lady go three to five on second,second street. that's gonna be at ob and the reason why i do a little bit of a down turk ia is because it's kind of quick to transition back to .doing finger picking it,you can do that as well though,but I just found myself going alright,right a little bit of a dissent twain rather.do I like that? and then I'm gonna do a little bit of a Grace note right here.\nnon diatonic note sliding into the sea shop from the sea sixth to seventh threat hammering onto second,second street and on'm barring the fifth threat.but for the court,so.and then.interesting sequence right here this is gonna be.算了。first of all,I'm going to do a hammer onto the eighth threat on the fourth string of my pinkie so da,da da da.tapping the t or f red again on the g tree,pulling off now to the fifth fret where I have my first finger barring.uh,the second tree pulling off on the tap to the fifth fret third tree pulling off now fourth stream to the fifth fret.tapping the ten th fret and then pulling off to the seventh fret on the fifth street.\nthere you go in a sudden ao nic sequence there that we're gonna do some harmonics here. ,what's cool is i kind of just made some random harmonics up here kind of what felt ribbon ici was thinking more about the ribbon.that's kind of what I was thinking was so up,so I kind of just went with what felt natural which was. ,you could do like fifth bred hormones and then i did just a one two right there,third and fourth stream.OK,the sequence for the w was two based Ada and the harmonics.dead note and advice again with the index middle and then. ,so what's going on here is I'm just using some ha amar onds from nowhere on the top string and then a slight harmonic on the nineteenth threat you can also do the twelve welf th route I like the resonance a little bit more on the.threaten this shooting really pretty and I'm going slap with my thumb hovering on to the third fret again. ,\nand then I'm going to do a triplet where it's going to be thirty second notes. that's that. ,I'm gonna hammer on from either the third or the fifth or fifth to the seventh threat and then harmonics SAP.can then finish with one more hemorrhoid,okay?so then,from the beginning we had.alright and then and then we're gonna do a slight variation at the second time around. it's gonna look a little like this.alright,so what's going on from the beginning? we have the same quartz there.something different right here,we're going to bar the seven th threat. then the top four strings singing Melody,I'm going to do another gray note pulling off from the eighth threat to the seven th threat on the third string.that's gonna be ctob.and then.\nthen I'm gonna do a fret on the aote for the fourth string.then tap the tool fret,see shop night pulling off,pulling off again seven fret ten fret fifth stream tab.once again,we're going to go to this sparring subfreight court and then same rhythmic stuff gone on here. but now I'm going to tap.the nineteenth threat and then seventeenth threat instead of seventeen fifteen .so there's the difference there now for the last section we had,and you can once again do the downward strom as well,add a little more twa into it.you get a little more,a little bit more of a discriminant field when you're a little more violent with the strings in a lower tuning,a little bit more of a broader.so it could sound slightly out of tune,but then come back in the tune it's kind a cool a little bit more attention.\nalright,so instead of open first string.我给大家。third,fret firing the entire third fret right here. third,fret first shrink.dumps up and then right barring the entire fifth rr AP base screen,sixth screen and then.bottom three strings I'm going to do a hammer on and then pull off fifth to seventh Fred. and I'm following them,I am im lodi CW and right here I'm gonna do tapping on tet fret second street and then I'm gonna hit the.fret or the fourth string I'm going to bar the seventh fret now do an attire HAV on here and then I'm going to HAV on to the ninth fret on the third string. and then,I'm gonna tap twelve fret. I'm gonna do some pull offs nine frets even fret.then I'm going to finish with the fifteenth threat on the fifth string.\nso you can clearly hear that singing millie right there,all right?it's so hot and then we're going to finish with just some.Nice chord right here,it's going to be a major chord right here.你埋着。 sea shot minor that's like a four cord in the key a bay three cord.then we're going to go to an e cord right here five.and then finished with a six corn and a shop lineup.the major have shown one,so we had the major shape,one shape,so we had an dar rhythmically. I was thinking.that was down up.在哪儿着？\nand then I'm going to do a triplet right here.so you can do a like this as well. I like to do fla MA cos trumping CON of that.that's safe right there,but you could do.okay one two three upright so.and then dead note,and then another upstroke.and then finally have shop water so.啰嗦。come on there,right there,so there you are. go US,thank you for watching statute for the next one.",
+      "score": 0.70721,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0005",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "math_rock",
+          "midwest_emo"
+        ],
+        "raw_metadata": {
+          "gp5_feature_triggers": "[\"alternate_tuning_detected\", \"chord_structure_missing_third\", \"dyad_intervals_power_chord\", \"dynamic_increase\", \"harmonic_notes_detected\", \"high_open_string_ratio\", \"interval_leaps_specific_to_tuning\", \"low_bass_pedal_sustained\", \"midi_velocity_zero_or_muted\", \"mixed_articulation_harmonic_slap\", \"note_duration_variance_high\", \"percussive_articulation_markers\", \"short_burst_fast_notes\", \"tapped_melody_sequence\", \"two_hand_tapping_detected\"]",
+          "linked_kg_nodes": "[\"caution:tuning_specific_shape_dependency\", \"chord:sus_add9_no_third\", \"color:angular_math_rock_momentum\", \"color:jangly_open_midwest_emo\", \"feature:hammer_pull_density\", \"feature:open_string_drone\", \"heuristic:theme_variation_layering\", \"melody:top_line_tapping\", \"rhythm:32nd_note_bursts\", \"task:math_rock_riff_writing\", \"technique:harp_harmonics\", \"technique:percussive_slap_dead_note\", \"technique:tapped_power_chord\", \"tuning:drop_b_fsharp\"]",
+          "lesson_title": "tutorial 5",
+          "linked_review_ids": "[\"chunk_0005:mathrock_text:001\", \"chunk_0005:mathrock_text:002\", \"chunk_0005:mathrock_text:003\", \"chunk_0005:mathrock_text:004\", \"chunk_0005:mathrock_text:005\", \"chunk_0005:mathrock_text:006\", \"chunk_0005:mathrock_text:007\"]",
+          "style_tags": "[\"math_rock\", \"midwest_emo\"]",
+          "review_jsonl": "data/processed/mathrock/mathrock_text/arrangement_kg_review.all_accept.jsonl",
+          "raw_path": "data/book/mathrock教学课.txt",
+          "source_title": "mathrock教学课",
+          "page_hint": "",
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0005",
+          "linked_kg_edges": "[\"tuning:drop_b_fsharp -[enables]-> feature:open_string_drone\", \"chord:sus_add9_no_third -[evokes]-> color:jangly_open_midwest_emo\", \"technique:tapped_power_chord -[suggests]-> heuristic:theme_variation_layering\", \"rhythm:32nd_note_bursts -[enables]-> color:angular_math_rock_momentum\", \"technique:percussive_slap_dead_note -[suggests]-> feature:hammer_pull_density\", \"technique:harp_harmonics -[can_inspire]-> task:math_rock_riff_writing\", \"melody:top_line_tapping -[constrains]-> caution:tuning_specific_shape_dependency\"]",
+          "source_type": "transcript",
+          "image_refs": "[]",
+          "chunks_path": "data\\processed\\mathrock\\mathrock_text\\chunks.json"
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.3177885413169861,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "funk十六分切分节奏怎么让riff更有groove funk",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    }
+  ],
+  "visual_evidence": [],
+  "kg_evidence": [
+    {
+      "evidence_id": "kg:technique:upstroke_hit_downstroke:ENABLES:feature:percussive_ghost_note",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "technique:upstroke_hit_downstroke -[ENABLES]-> feature:percussive_ghost_note",
+      "content": "technique:upstroke_hit_downstroke -[ENABLES]-> feature:percussive_ghost_note\nFunk/R&B rhythm guitar comping requiring tight, percussive groove without full chord sustain.\nThe core mechanic is a three-part right-hand motion: Upstroke -> Muted String Hit (Ghost) -> Downstroke. This creates a rhythmic 'filler' or syncopated accent between standard strums.\nright hand... upstroke hit the string... downstroke... hitting the strings with",
+      "score": 1.61,
+      "metadata": {
+        "source": "technique:upstroke_hit_downstroke",
+        "relation": "ENABLES",
+        "target": "feature:percussive_ghost_note",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Funk/R&B rhythm guitar comping requiring tight, percussive groove without full chord sustain.",
+        "review_note": "The core mechanic is a three-part right-hand motion: Upstroke -> Muted String Hit (Ghost) -> Downstroke. This creates a rhythmic 'filler' or syncopated accent between standard strums.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 6,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 9,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:voicing:sparse_funk_voicing:SUGGESTS:heuristic:leave_space_for_band",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "voicing:sparse_funk_voicing -[SUGGESTS]-> heuristic:leave_space_for_band",
+      "content": "voicing:sparse_funk_voicing -[SUGGESTS]-> heuristic:leave_space_for_band\nComping with 'chucks' (muted strums) in a dense band arrangement.\nFocus on 2-3 string voicings (e.g., minor 7th shapes) and vary the ratio of notes to muted 'chucks' to avoid frequency clashes with keys/horns and leave space for bass/drums.\nFocus on two or three strings at a time... less notes more chucks... allows a li",
+      "score": 1.45,
+      "metadata": {
+        "source": "voicing:sparse_funk_voicing",
+        "relation": "SUGGESTS",
+        "target": "heuristic:leave_space_for_band",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Comping with 'chucks' (muted strums) in a dense band arrangement.",
+        "review_note": "Focus on 2-3 string voicings (e.g., minor 7th shapes) and vary the ratio of notes to muted 'chucks' to avoid frequency clashes with keys/horns and leave space for bass/drums.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 4,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:heuristic:make_rhythm_part_a_hook:EVOKES:task:riff_writing",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "heuristic:make_rhythm_part_a_hook -[EVOKES]-> task:riff_writing",
+      "content": "heuristic:make_rhythm_part_a_hook -[EVOKES]-> task:riff_writing\nFunk/Pop rhythm guitar comping where static strumming feels generic.\nTransform standard chord comping into a signature hook by integrating melodic lines (pentatonic/scale) within the chord shape, rather than just strumming full voicings.\nwhat makes something more signature? is if you actually make a part from it some",
+      "score": 1.45,
+      "metadata": {
+        "source": "heuristic:make_rhythm_part_a_hook",
+        "relation": "EVOKES",
+        "target": "task:riff_writing",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Funk/Pop rhythm guitar comping where static strumming feels generic.",
+        "review_note": "Transform standard chord comping into a signature hook by integrating melodic lines (pentatonic/scale) within the chord shape, rather than just strumming full voicings.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 4,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 7,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:feature:staccato_bubble:ENABLES:heuristic:make_rhythm_part_a_hook",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "feature:staccato_bubble -[ENABLES]-> heuristic:make_rhythm_part_a_hook",
+      "content": "feature:staccato_bubble -[ENABLES]-> heuristic:make_rhythm_part_a_hook\nFunk/R&B rhythm guitar parts requiring melodic identity within the groove.\nBubble parts (staccato single notes/ostinatos) should be constructed as distinct phrases or counter-melodies rather than random notes to create a 'hook' that stands out in the mix.\nMake it feel like a phrase... hopefully will end up feeling like hooks... counte",
+      "score": 1.4,
+      "metadata": {
+        "source": "feature:staccato_bubble",
+        "relation": "ENABLES",
+        "target": "heuristic:make_rhythm_part_a_hook",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.9,
+        "context_condition": "Funk/R&B rhythm guitar parts requiring melodic identity within the groove.",
+        "review_note": "Bubble parts (staccato single notes/ostinatos) should be constructed as distinct phrases or counter-melodies rather than random notes to create a 'hook' that stands out in the mix.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 4,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 38,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:technique:downstroke_double_stop:ENABLES:color:driving_rimshot_quality",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "technique:downstroke_double_stop -[ENABLES]-> color:driving_rimshot_quality",
+      "content": "technique:downstroke_double_stop -[ENABLES]-> color:driving_rimshot_quality\nFunk/R&B rhythm guitar requiring aggressive, consistent attack without dynamic fluctuation from alternate picking.\nStrict all-downstroke picking on double stops ensures uniform accentuation and a 'rimshot' percussive tone, avoiding the softening effect of upstrokes.\nall downstrokes... changes the attack... not as driving... Rimba quality",
+      "score": 1.37,
+      "metadata": {
+        "source": "technique:downstroke_double_stop",
+        "relation": "ENABLES",
+        "target": "color:driving_rimshot_quality",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Funk/R&B rhythm guitar requiring aggressive, consistent attack without dynamic fluctuation from alternate picking.",
+        "review_note": "Strict all-downstroke picking on double stops ensures uniform accentuation and a 'rimshot' percussive tone, avoiding the softening effect of upstrokes.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 6,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:task:rhythm_guitar_arrangement:EVOKES:heuristic:guitar_as_percussion",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "task:rhythm_guitar_arrangement -[EVOKES]-> heuristic:guitar_as_percussion",
+      "content": "task:rhythm_guitar_arrangement -[EVOKES]-> heuristic:guitar_as_percussion\nTreating the guitar as a pitched percussion instrument (tambourine/shaker/bongos) within the rhythm section.\nThe guitar should weave in and out of the bass/drum foundation. It acts as a 'pitched tambourine'. This implies using muted strums or staccato notes that lock with the hi-hat or shaker patterns.\ncan kind of be like a pitched tambourine... or shaker... filling the same rhythm",
+      "score": 1.37,
+      "metadata": {
+        "source": "task:rhythm_guitar_arrangement",
+        "relation": "EVOKES",
+        "target": "heuristic:guitar_as_percussion",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Treating the guitar as a pitched percussion instrument (tambourine/shaker/bongos) within the rhythm section.",
+        "review_note": "The guitar should weave in and out of the bass/drum foundation. It acts as a 'pitched tambourine'. This implies using muted strums or staccato notes that lock with the hi-hat or shaker patterns.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 8,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:technique:right_hand_constant_motion:ENABLES:feature:sixteenth_note_undercurrent",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "technique:right_hand_constant_motion -[ENABLES]-> feature:sixteenth_note_undercurrent",
+      "content": "technique:right_hand_constant_motion -[ENABLES]-> feature:sixteenth_note_undercurrent\nMaintaining a consistent funk groove regardless of note density.\nThe right hand maintains constant 16th-note motion (motor); articulation is controlled by left-hand fretting pressure and right-hand strike intensity, not by stopping the hand.\nRight hand motor is just moving the whole time. It's just when do I press down.",
+      "score": 1.37,
+      "metadata": {
+        "source": "technique:right_hand_constant_motion",
+        "relation": "ENABLES",
+        "target": "feature:sixteenth_note_undercurrent",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Maintaining a consistent funk groove regardless of note density.",
+        "review_note": "The right hand maintains constant 16th-note motion (motor); articulation is controlled by left-hand fretting pressure and right-hand strike intensity, not by stopping the hand.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 14,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:task:rhythm_guitar_arrangement:SUGGESTS:heuristic:make_rhythm_part_a_hook",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "task:rhythm_guitar_arrangement -[SUGGESTS]-> heuristic:make_rhythm_part_a_hook",
+      "content": "task:rhythm_guitar_arrangement -[SUGGESTS]-> heuristic:make_rhythm_part_a_hook\nWhen composing rhythm guitar parts for pop/funk/R&B tracks where the guitar needs to define the song's identity.\nThe primary goal is to create a rhythm part that functions as an instrumental hook, distinct from generic comping. It should be memorable enough that cover bands must replicate it exactly.\nfind something that could stand up on its own... ribbon guitar part be an instru",
+      "score": 1.37,
+      "metadata": {
+        "source": "task:rhythm_guitar_arrangement",
+        "relation": "SUGGESTS",
+        "target": "heuristic:make_rhythm_part_a_hook",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "When composing rhythm guitar parts for pop/funk/R&B tracks where the guitar needs to define the song's identity.",
+        "review_note": "The primary goal is to create a rhythm part that functions as an instrumental hook, distinct from generic comping. It should be memorable enough that cover bands must replicate it exactly.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 1,
+          "generic_penalty": 0.0
+        }
+      },
+      "trace": {
+        "rank": 17,
+        "backend": "neo4j"
+      }
+    }
+  ],
+  "judgement": {
+    "sufficient": true,
+    "confidence": 0.71,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 2,
+    "text_count": 5,
+    "visual_count": 0,
+    "kg_count": 8,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [
+      "text:chunk_0011",
+      "text:chunk_0009",
+      "text:chunk_0008"
+    ],
+    "top_visual_ids": [],
+    "top_kg_ids": [
+      "kg:technique:upstroke_hit_downstroke:ENABLES:feature:percussive_ghost_note",
+      "kg:voicing:sparse_funk_voicing:SUGGESTS:heuristic:leave_space_for_band",
+      "kg:heuristic:make_rhythm_part_a_hook:EVOKES:task:riff_writing",
+      "kg:feature:staccato_bubble:ENABLES:heuristic:make_rhythm_part_a_hook",
+      "kg:technique:downstroke_double_stop:ENABLES:color:driving_rimshot_quality"
+    ],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。"
+  },
+  "timings": {
+    "model_load_seconds": 6.049373300003936,
+    "style_text_seconds": 0.332453400013037,
+    "kg_seconds": 0.4519570999982534,
+    "total_seconds": 6.890636700001778,
+    "kg_status": "neo4j"
+  }
+}

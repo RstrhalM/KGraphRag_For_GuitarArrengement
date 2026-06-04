@@ -1,0 +1,10 @@
+{
+  "review_file": "data\\processed\\mathrock\\mathrock_text\\arrangement_kg_review.all_accept.jsonl",
+  "output_dir": "data\\knowledge\\arrangement_kg_mathrock_text",
+  "accepted": 51,
+  "revised": 0,
+  "rejected": 0,
+  "pending": 0,
+  "curated_edges": 51,
+  "ingested_at": "2026-05-30T09:22:20.022366+00:00"
+}

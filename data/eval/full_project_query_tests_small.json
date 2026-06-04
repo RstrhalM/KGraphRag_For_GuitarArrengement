@@ -1,0 +1,49 @@
+[
+  {
+    "id": "whole_funk_muted_chuck_space",
+    "query": "funk rhythm guitar sixteenth muted chuck ghost note leave space for bass drums",
+    "text_sources": ["cory_wong_funk_core"],
+    "style_tags": ["funk", "rhythm_guitar"],
+    "kg_nodes_any": [
+      "feature:muted_chuck_density",
+      "feature:sixteenth_note_undercurrent",
+      "heuristic:leave_space_for_band"
+    ]
+  },
+  {
+    "id": "whole_mathrock_open_string_tapping",
+    "query": "math rock open string drone tapping riff clean wide interval texture",
+    "text_sources": ["mathrock_pdf_steve_h", "mathrock_text_course"],
+    "visual_sources": ["mathrock_pdf_steve_h"],
+    "style_tags": ["math_rock", "midwest_emo", "tapping"],
+    "kg_nodes_any": [
+      "technique:two_hand_tapping",
+      "feature:open_string_drone",
+      "pattern:wide_interval_leap_utilization"
+    ]
+  },
+  {
+    "id": "whole_fretboard_triad_arpeggio",
+    "query": "大三和弦 琶音 指型 根音 major triad arpeggio fretboard",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "visual_sources": ["fretboard_handbook_mineru"],
+    "visual_priorities": ["P2_arpeggios_chords"],
+    "style_tags": ["fretboard", "guitar_foundation"],
+    "kg_nodes_any": [
+      "concept:琶音",
+      "concept:三和弦",
+      "concept:大三和弦"
+    ]
+  },
+  {
+    "id": "whole_arrangement_diagnosis_muddy_dense",
+    "query": "guitar arrangement too dense muddy low strings need sparse voicing and muting advice",
+    "text_sources": ["cory_wong_funk_core", "mathrock_pdf_steve_h"],
+    "style_tags": ["funk", "rhythm_guitar", "math_rock"],
+    "kg_nodes_any": [
+      "caution:low_string_sympathetic_resonance",
+      "voicing:sparse_funk_voicing",
+      "heuristic:leave_space_for_band"
+    ]
+  }
+]

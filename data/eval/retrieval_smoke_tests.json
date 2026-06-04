@@ -1,0 +1,20 @@
+[
+  {
+    "name": "mathrock_dadgad_open_strings",
+    "query": "DADGAD open strings common tones tapping power chords math rock",
+    "expected_source_id": "mathrock_text_course",
+    "expected_style_tags": ["math_rock", "midwest_emo"]
+  },
+  {
+    "name": "funk_bubble_chuck",
+    "query": "funk rhythm guitar sixteenth note muted chuck bubble groove",
+    "expected_source_id": "cory_wong_funk_core",
+    "expected_style_tags": ["funk", "rhythm_guitar"]
+  },
+  {
+    "name": "fretboard_positions",
+    "query": "吉他指板 把位 音程 弦组 fretboard position interval",
+    "expected_source_id": "fretboard_handbook_mineru",
+    "expected_style_tags": ["fretboard", "guitar_foundation"]
+  }
+]

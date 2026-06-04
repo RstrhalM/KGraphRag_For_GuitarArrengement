@@ -1,0 +1,5172 @@
+{
+  "summary": {
+    "generated_at": "2026-06-01 12:32:16",
+    "tests": 22,
+    "bundle_pass": 22,
+    "bundle_pass_rate": 1.0,
+    "text_tests": 22,
+    "text_top1_accuracy": 1.0,
+    "text_recall_at_5": 1.0,
+    "text_precision_at_5_avg": 1.0,
+    "visual_tests": 10,
+    "visual_top1_accuracy": 1.0,
+    "visual_recall_at_5": 1.0,
+    "visual_precision_at_5_avg": 1.0,
+    "kg_tests": 22,
+    "kg_hit_rate": 1.0,
+    "duration_seconds_total": 1.3136143000156153,
+    "duration_seconds_avg": 0.0597097409098007,
+    "text_seconds_avg": 0.008671804540261457,
+    "visual_seconds_avg": 0.010100380002404563,
+    "kg_seconds_avg": 0.04636264545578425,
+    "embedding_cache": {
+      "enabled": true,
+      "path": "D:\\Guitar Arrangement Inspiration Agent\\KGraphRag2\\data\\cache\\embeddings.sqlite",
+      "rows": 32,
+      "by_model": [
+        {
+          "model": "qwen3-vl-embedding",
+          "input_type": "multimodal_text",
+          "rows": 10,
+          "hits": 10
+        },
+        {
+          "model": "text-embedding-v4",
+          "input_type": "openai_text",
+          "rows": 22,
+          "hits": 22
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "id": "funk_muted_chuck",
+      "query": "funk rhythm guitar sixteenth note muted chuck bubble groove",
+      "style_tags": [
+        "funk",
+        "rhythm_guitar"
+      ],
+      "expected": {
+        "text_sources": [
+          "cory_wong_funk_core"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "feature:muted_chuck_density",
+          "feature:sixteenth_note_undercurrent",
+          "feature:staccato_bubble"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.003510599985020235,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.04532380000455305,
+        "text_total_seconds": 0.048834399989573285,
+        "kg_seconds": 0.35631109998212196,
+        "total_seconds": 0.40520439998363145
+      },
+      "text_top": [
+        {
+          "id": "cory_wong_funk_core::chunk_0008:35e77e2ac999642d",
+          "distance": 0.3708086609840393,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "dynamics",
+            "funk",
+            "groove",
+            "rhythm_guitar",
+            "technique",
+            "timing"
+          ],
+          "snippet": "let's dive deeper into that bongo conga style to me,that world of ribbon guitar playing is the bubble. now you hear this sort of thing on a lot of songs,it's classic.billy IE,Jean,"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0011:a5b9585e51bd1ad5",
+          "distance": 0.500590980052948,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0011",
+          "title": null,
+          "style_tags": [
+            "cory_wong_style",
+            "funk",
+            "groove",
+            "lead_guitar",
+            "rhythm_guitar",
+            "riff_writing",
+            "rnb",
+            "technique"
+          ],
+          "snippet": "one of the signature moves that I have is hitting the strings.now that sounds a little bit weird on its own,why would I just hit the strings,but what it does is it helps me accompl"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0009:51dc9d9a660b7bf2",
+          "distance": 0.5016309022903442,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "arrangement_strategy",
+            "funk",
+            "practice_methodology",
+            "rhythm_guitar"
+          ],
+          "snippet": "now something to really note is.there's a difference between timing.patterns.and groove.they all kind of make up this thing that we call ribbon.那timing is。where you're placing some"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0012:e8918d113672d557",
+          "distance": 0.5185189843177795,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "advanced_technique",
+            "arrangement",
+            "comping",
+            "ensemble_playing",
+            "funk",
+            "groove",
+            "mixing_consideration",
+            "pop_funk",
+            "rhythm_guitar",
+            "rhythm_guitar_arrangement",
+            "riff_writing"
+          ],
+          "snippet": "another one of my signature guitar moves is this sort of thing.that sort of thing you hear me do that all the time now part of how I get that sound obviously it's double strokes it"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0004:7b29d2c8f6e5af03",
+          "distance": 0.543158233165741,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "ergonomics",
+            "funk",
+            "practicality",
+            "rhythm_guitar",
+            "riff_writing"
+          ],
+          "snippet": "that's just actually articulating and playing a different type of phrasing on it,but it's one way to use that voicing.嗯。minor seven chords are super common in funk music and especi"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "feature:muted_chuck_density",
+          "feature:sixteenth_note_undercurrent",
+          "feature:staccato_bubble"
+        ],
+        "expanded": [
+          "feature:muted_chuck_density",
+          "feature:sixteenth_note_undercurrent",
+          "feature:staccato_bubble"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "feature:muted_chuck_density",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "feature:sixteenth_note_undercurrent",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "feature:staccato_bubble",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "technique:caged_system_fragmentation",
+            "rel": "ENABLES",
+            "b": "feature:staccato_bubble"
+          },
+          {
+            "a": "feature:staccato_bubble",
+            "rel": "ENABLES",
+            "b": "technique:caged_system_fragmentation"
+          },
+          {
+            "a": "feature:staccato_bubble",
+            "rel": "ENABLES",
+            "b": "heuristic:make_rhythm_part_a_hook"
+          },
+          {
+            "a": "heuristic:make_rhythm_part_a_hook",
+            "rel": "ENABLES",
+            "b": "feature:staccato_bubble"
+          },
+          {
+            "a": "feature:muted_chuck_density",
+            "rel": "CAUTIONS",
+            "b": "caution:overcrowded_sixteenth_grid"
+          },
+          {
+            "a": "caution:overcrowded_sixteenth_grid",
+            "rel": "CAUTIONS",
+            "b": "feature:muted_chuck_density"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "funk_upstroke_downstroke",
+      "query": "upstroke hit downstroke muted strings funk rhythm guitar",
+      "style_tags": [
+        "funk",
+        "rhythm_guitar"
+      ],
+      "expected": {
+        "text_sources": [
+          "cory_wong_funk_core"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "technique:upstroke_hit_downstroke",
+          "technique:left_hand_muting",
+          "technique:right_hand_muting"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0064430999918840826,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.004125699982978404,
+        "text_total_seconds": 0.010568799974862486,
+        "kg_seconds": 0.03563570001279004,
+        "total_seconds": 0.046303700015414506
+      },
+      "text_top": [
+        {
+          "id": "cory_wong_funk_core::chunk_0011:a5b9585e51bd1ad5",
+          "distance": 0.3065931797027588,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0011",
+          "title": null,
+          "style_tags": [
+            "cory_wong_style",
+            "funk",
+            "groove",
+            "lead_guitar",
+            "rhythm_guitar",
+            "riff_writing",
+            "rnb",
+            "technique"
+          ],
+          "snippet": "one of the signature moves that I have is hitting the strings.now that sounds a little bit weird on its own,why would I just hit the strings,but what it does is it helps me accompl"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0012:e8918d113672d557",
+          "distance": 0.40383481979370117,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "advanced_technique",
+            "arrangement",
+            "comping",
+            "ensemble_playing",
+            "funk",
+            "groove",
+            "mixing_consideration",
+            "pop_funk",
+            "rhythm_guitar",
+            "rhythm_guitar_arrangement",
+            "riff_writing"
+          ],
+          "snippet": "another one of my signature guitar moves is this sort of thing.that sort of thing you hear me do that all the time now part of how I get that sound obviously it's double strokes it"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0008:35e77e2ac999642d",
+          "distance": 0.5288702249526978,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "dynamics",
+            "funk",
+            "groove",
+            "rhythm_guitar",
+            "technique",
+            "timing"
+          ],
+          "snippet": "let's dive deeper into that bongo conga style to me,that world of ribbon guitar playing is the bubble. now you hear this sort of thing on a lot of songs,it's classic.billy IE,Jean,"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0009:51dc9d9a660b7bf2",
+          "distance": 0.5457954406738281,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "arrangement_strategy",
+            "funk",
+            "practice_methodology",
+            "rhythm_guitar"
+          ],
+          "snippet": "now something to really note is.there's a difference between timing.patterns.and groove.they all kind of make up this thing that we call ribbon.那timing is。where you're placing some"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0004:7b29d2c8f6e5af03",
+          "distance": 0.556863009929657,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "ergonomics",
+            "funk",
+            "practicality",
+            "rhythm_guitar",
+            "riff_writing"
+          ],
+          "snippet": "that's just actually articulating and playing a different type of phrasing on it,but it's one way to use that voicing.嗯。minor seven chords are super common in funk music and especi"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "technique:upstroke_hit_downstroke",
+          "technique:left_hand_muting",
+          "technique:right_hand_muting"
+        ],
+        "expanded": [
+          "technique:upstroke_hit_downstroke",
+          "technique:left_hand_muting",
+          "technique:right_hand_muting"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "technique:upstroke_hit_downstroke",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 4
+          },
+          {
+            "id": "technique:left_hand_muting",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "technique:upstroke_hit_downstroke",
+            "rel": "ENABLES",
+            "b": "feature:percussive_ghost_note"
+          },
+          {
+            "a": "feature:percussive_ghost_note",
+            "rel": "ENABLES",
+            "b": "technique:upstroke_hit_downstroke"
+          },
+          {
+            "a": "technique:upstroke_hit_downstroke",
+            "rel": "SUGGESTS",
+            "b": "feature:sixteenth_note_undercurrent"
+          },
+          {
+            "a": "feature:sixteenth_note_undercurrent",
+            "rel": "SUGGESTS",
+            "b": "technique:upstroke_hit_downstroke"
+          },
+          {
+            "a": "technique:upstroke_hit_downstroke",
+            "rel": "CAN_INSPIRE",
+            "b": "task:riff_writing"
+          },
+          {
+            "a": "task:riff_writing",
+            "rel": "CAN_INSPIRE",
+            "b": "technique:upstroke_hit_downstroke"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "funk_sparse_voicing_space",
+      "query": "funk rhythm guitar sparse voicing leave space for bass drums keys horns",
+      "style_tags": [
+        "funk",
+        "rhythm_guitar"
+      ],
+      "expected": {
+        "text_sources": [
+          "cory_wong_funk_core"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 1.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "heuristic:leave_space_for_band",
+          "voicing:sparse_funk_voicing",
+          "feature:frequency_slotting"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.003951699996832758,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0024776999780442566,
+        "text_total_seconds": 0.006429399974877015,
+        "kg_seconds": 0.02377070000511594,
+        "total_seconds": 0.030276900011813268
+      },
+      "text_top": [
+        {
+          "id": "cory_wong_funk_core::chunk_0003:a2b99497714c5a28",
+          "distance": 0.466399610042572,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "blues_rock",
+            "funk",
+            "fusion",
+            "mixing_consideration",
+            "pop",
+            "pop_funk",
+            "rhythm_and_blues",
+            "rhythm_guitar"
+          ],
+          "snippet": "this next series of lessons is about cord voicings and cord moves that I use in my playing.especially,in the context of funk,music now most of these voice o icings start from the c"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0004:7b29d2c8f6e5af03",
+          "distance": 0.4765225648880005,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "ergonomics",
+            "funk",
+            "practicality",
+            "rhythm_guitar",
+            "riff_writing"
+          ],
+          "snippet": "that's just actually articulating and playing a different type of phrasing on it,but it's one way to use that voicing.嗯。minor seven chords are super common in funk music and especi"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0010:6445074c7afcb9f5",
+          "distance": 0.47879064083099365,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "ambient",
+            "arrangement",
+            "comping",
+            "funk",
+            "pop",
+            "production",
+            "rhythm_guitar",
+            "rock",
+            "song_structure",
+            "tone_design"
+          ],
+          "snippet": "now those are a couple of my main approaches to ribbon guitar,but some other things just to consider are ribbon IC density.range on the instrument.tone.and space.OK so.sometimes a "
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0008:35e77e2ac999642d",
+          "distance": 0.5168694257736206,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "dynamics",
+            "funk",
+            "groove",
+            "rhythm_guitar",
+            "technique",
+            "timing"
+          ],
+          "snippet": "let's dive deeper into that bongo conga style to me,that world of ribbon guitar playing is the bubble. now you hear this sort of thing on a lot of songs,it's classic.billy IE,Jean,"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0009:51dc9d9a660b7bf2",
+          "distance": 0.5176358222961426,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "arrangement_strategy",
+            "funk",
+            "practice_methodology",
+            "rhythm_guitar"
+          ],
+          "snippet": "now something to really note is.there's a difference between timing.patterns.and groove.they all kind of make up this thing that we call ribbon.那timing is。where you're placing some"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "heuristic:leave_space_for_band",
+          "voicing:sparse_funk_voicing",
+          "feature:frequency_slotting"
+        ],
+        "expanded": [
+          "heuristic:leave_space_for_band",
+          "voicing:sparse_funk_voicing",
+          "feature:frequency_slotting"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "heuristic:leave_space_for_band",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 5
+          },
+          {
+            "id": "voicing:sparse_funk_voicing",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 5
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "voicing:sparse_funk_voicing",
+            "rel": "ENABLES",
+            "b": "heuristic:leave_space_for_band"
+          },
+          {
+            "a": "heuristic:leave_space_for_band",
+            "rel": "ENABLES",
+            "b": "voicing:sparse_funk_voicing"
+          },
+          {
+            "a": "voicing:sparse_funk_voicing",
+            "rel": "ENABLES",
+            "b": "heuristic:leave_space_for_band"
+          },
+          {
+            "a": "heuristic:leave_space_for_band",
+            "rel": "ENABLES",
+            "b": "voicing:sparse_funk_voicing"
+          },
+          {
+            "a": "voicing:sparse_funk_voicing",
+            "rel": "SUGGESTS",
+            "b": "heuristic:leave_space_for_band"
+          },
+          {
+            "a": "heuristic:leave_space_for_band",
+            "rel": "SUGGESTS",
+            "b": "voicing:sparse_funk_voicing"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "funk_section_energy",
+      "query": "section build rhythm guitar verse chorus wider strum more velocity",
+      "style_tags": [
+        "funk",
+        "rhythm_guitar"
+      ],
+      "expected": {
+        "text_sources": [
+          "cory_wong_funk_core"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "heuristic:section_energy_stair_step",
+          "feature:section_energy_lift",
+          "arrangement:chorus_lift"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0019711999921128154,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0025560999929439276,
+        "text_total_seconds": 0.004527299985056743,
+        "kg_seconds": 0.038352200004737824,
+        "total_seconds": 0.042955599987180904
+      },
+      "text_top": [
+        {
+          "id": "cory_wong_funk_core::chunk_0011:a5b9585e51bd1ad5",
+          "distance": 0.44915640354156494,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0011",
+          "title": null,
+          "style_tags": [
+            "cory_wong_style",
+            "funk",
+            "groove",
+            "lead_guitar",
+            "rhythm_guitar",
+            "riff_writing",
+            "rnb",
+            "technique"
+          ],
+          "snippet": "one of the signature moves that I have is hitting the strings.now that sounds a little bit weird on its own,why would I just hit the strings,but what it does is it helps me accompl"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0009:51dc9d9a660b7bf2",
+          "distance": 0.48396050930023193,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "arrangement_strategy",
+            "funk",
+            "practice_methodology",
+            "rhythm_guitar"
+          ],
+          "snippet": "now something to really note is.there's a difference between timing.patterns.and groove.they all kind of make up this thing that we call ribbon.那timing is。where you're placing some"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0010:6445074c7afcb9f5",
+          "distance": 0.5034047365188599,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "ambient",
+            "arrangement",
+            "comping",
+            "funk",
+            "pop",
+            "production",
+            "rhythm_guitar",
+            "rock",
+            "song_structure",
+            "tone_design"
+          ],
+          "snippet": "now those are a couple of my main approaches to ribbon guitar,but some other things just to consider are ribbon IC density.range on the instrument.tone.and space.OK so.sometimes a "
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0008:35e77e2ac999642d",
+          "distance": 0.5125766396522522,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "dynamics",
+            "funk",
+            "groove",
+            "rhythm_guitar",
+            "technique",
+            "timing"
+          ],
+          "snippet": "let's dive deeper into that bongo conga style to me,that world of ribbon guitar playing is the bubble. now you hear this sort of thing on a lot of songs,it's classic.billy IE,Jean,"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0012:e8918d113672d557",
+          "distance": 0.5288156270980835,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "advanced_technique",
+            "arrangement",
+            "comping",
+            "ensemble_playing",
+            "funk",
+            "groove",
+            "mixing_consideration",
+            "pop_funk",
+            "rhythm_guitar",
+            "rhythm_guitar_arrangement",
+            "riff_writing"
+          ],
+          "snippet": "another one of my signature guitar moves is this sort of thing.that sort of thing you hear me do that all the time now part of how I get that sound obviously it's double strokes it"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "heuristic:section_energy_stair_step",
+          "feature:section_energy_lift",
+          "arrangement:chorus_lift"
+        ],
+        "expanded": [
+          "heuristic:section_energy_stair_step",
+          "feature:section_energy_lift",
+          "arrangement:chorus_lift"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "heuristic:section_energy_stair_step",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 3
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "voicing:sparse_to_dense_layering",
+            "rel": "ENABLES",
+            "b": "heuristic:section_energy_stair_step"
+          },
+          {
+            "a": "heuristic:section_energy_stair_step",
+            "rel": "ENABLES",
+            "b": "voicing:sparse_to_dense_layering"
+          },
+          {
+            "a": "heuristic:section_energy_stair_step",
+            "rel": "SUGGESTS",
+            "b": "task:rhythm_guitar_arrangement"
+          },
+          {
+            "a": "task:rhythm_guitar_arrangement",
+            "rel": "SUGGESTS",
+            "b": "heuristic:section_energy_stair_step"
+          },
+          {
+            "a": "heuristic:section_energy_stair_step",
+            "rel": "CAN_INSPIRE",
+            "b": "task:rhythm_guitar_arrangement"
+          },
+          {
+            "a": "task:rhythm_guitar_arrangement",
+            "rel": "CAN_INSPIRE",
+            "b": "heuristic:section_energy_stair_step"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "mathrock_dadgad_open_strings",
+      "query": "DADGAD open strings common tones tapping power chords math rock",
+      "style_tags": [
+        "math_rock",
+        "midwest_emo"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_text_course"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "tuning:DADGAD",
+          "feature:open_string_drone",
+          "technique:tapped_power_chords"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.004865199996856973,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0030444000149145722,
+        "text_total_seconds": 0.007909600011771545,
+        "kg_seconds": 0.0330340999935288,
+        "total_seconds": 0.04102760000387207
+      },
+      "text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0001:176e31d936698c97",
+          "distance": 0.29159998893737793,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0001",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "so what are the basics of math rock or midwest emo we're going to take a look at this little progression right here which is in the key of dd major,and i have it in a very common a"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.31076258420944214,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.3645613193511963,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0006:3f56b5f6baff9a3a",
+          "distance": 0.40908730030059814,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0005:fa0cdef4d3c15b2e",
+          "distance": 0.46052271127700806,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we're already going to sit for this mad Rock midwest emo progression. we're going to look at this special shooting right here,it's going to be a drop bf sharp,we're going to have A"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "tuning:DADGAD",
+          "feature:open_string_drone",
+          "technique:tapped_power_chords"
+        ],
+        "expanded": [
+          "tuning:DADGAD",
+          "feature:open_string_drone",
+          "technique:tapped_power_chords",
+          "technique:tapped_power_chord",
+          "feature:tapped_power_chords",
+          "feature:tapped_power_chords_melodic"
+        ],
+        "alias_hits": [
+          "technique:tapped_power_chord",
+          "feature:tapped_power_chords",
+          "feature:tapped_power_chords_melodic"
+        ],
+        "hits": [
+          {
+            "id": "feature:open_string_drone",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 6
+          },
+          {
+            "id": "technique:tapped_power_chord",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 6
+          },
+          {
+            "id": "tuning:DADGAD",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 4
+          },
+          {
+            "id": "feature:tapped_power_chords",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "feature:tapped_power_chords_melodic",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "tuning:DADGAD",
+            "rel": "ENABLES",
+            "b": "feature:movable_power_chord_shapes_top_strings"
+          },
+          {
+            "a": "feature:movable_power_chord_shapes_top_strings",
+            "rel": "ENABLES",
+            "b": "tuning:DADGAD"
+          },
+          {
+            "a": "tuning:DADGAD",
+            "rel": "ENABLES",
+            "b": "feature:open_string_drone"
+          },
+          {
+            "a": "feature:open_string_drone",
+            "rel": "ENABLES",
+            "b": "tuning:DADGAD"
+          },
+          {
+            "a": "tuning:DADGAD",
+            "rel": "ENABLES",
+            "b": "heuristic:ringing_open_string_anchor"
+          },
+          {
+            "a": "heuristic:ringing_open_string_anchor",
+            "rel": "ENABLES",
+            "b": "tuning:DADGAD"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "mathrock_alternate_tuning",
+      "query": "alternate tuning movable chord shapes open string drone midwest emo",
+      "style_tags": [
+        "math_rock",
+        "midwest_emo"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_text_course"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 2.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "heuristic:alternate_tuning_for_ease",
+          "feature:open_string_drone",
+          "tuning:open_tuning"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.003112600010354072,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0028554000018630177,
+        "text_total_seconds": 0.0059680000122170895,
+        "kg_seconds": 0.024006899999221787,
+        "total_seconds": 0.030056400020839646
+      },
+      "text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0001:176e31d936698c97",
+          "distance": 0.26568716764450073,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0001",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "so what are the basics of math rock or midwest emo we're going to take a look at this little progression right here which is in the key of dd major,and i have it in a very common a"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0006:3f56b5f6baff9a3a",
+          "distance": 0.29788637161254883,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.3462188243865967,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0005:fa0cdef4d3c15b2e",
+          "distance": 0.3475520610809326,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we're already going to sit for this mad Rock midwest emo progression. we're going to look at this special shooting right here,it's going to be a drop bf sharp,we're going to have A"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.35071486234664917,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "heuristic:alternate_tuning_for_ease",
+          "feature:open_string_drone",
+          "tuning:open_tuning"
+        ],
+        "expanded": [
+          "heuristic:alternate_tuning_for_ease",
+          "feature:open_string_drone",
+          "tuning:open_tuning"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "feature:open_string_drone",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 6
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "tuning:DADGAD",
+            "rel": "ENABLES",
+            "b": "feature:open_string_drone"
+          },
+          {
+            "a": "feature:open_string_drone",
+            "rel": "ENABLES",
+            "b": "tuning:DADGAD"
+          },
+          {
+            "a": "feature:open_string_drone",
+            "rel": "SUGGESTS",
+            "b": "heuristic:common_tone_anchor"
+          },
+          {
+            "a": "heuristic:common_tone_anchor",
+            "rel": "SUGGESTS",
+            "b": "feature:open_string_drone"
+          },
+          {
+            "a": "feature:open_string_drone",
+            "rel": "EVOKES",
+            "b": "color:jangly_open_midwest_emo"
+          },
+          {
+            "a": "color:jangly_open_midwest_emo",
+            "rel": "EVOKES",
+            "b": "feature:open_string_drone"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "mathrock_tapping_power_chord",
+      "query": "tapping power chord suspended chord math rock riff",
+      "style_tags": [
+        "math_rock",
+        "midwest_emo"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_text_course"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "technique:tapped_power_chords",
+          "technique:tapping_power_chords",
+          "voicing:suspended_power_chord"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0031109999981708825,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.004576299979817122,
+        "text_total_seconds": 0.007687299977988005,
+        "kg_seconds": 0.029275999986566603,
+        "total_seconds": 0.03704009999637492
+      },
+      "text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.3643859624862671,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.3723752498626709,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0001:176e31d936698c97",
+          "distance": 0.40787065029144287,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0001",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "so what are the basics of math rock or midwest emo we're going to take a look at this little progression right here which is in the key of dd major,and i have it in a very common a"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0006:3f56b5f6baff9a3a",
+          "distance": 0.4175037145614624,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0005:fa0cdef4d3c15b2e",
+          "distance": 0.4902395009994507,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we're already going to sit for this mad Rock midwest emo progression. we're going to look at this special shooting right here,it's going to be a drop bf sharp,we're going to have A"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "technique:tapped_power_chords",
+          "technique:tapping_power_chords",
+          "voicing:suspended_power_chord"
+        ],
+        "expanded": [
+          "technique:tapped_power_chords",
+          "technique:tapped_power_chord",
+          "feature:tapped_power_chords",
+          "feature:tapped_power_chords_melodic",
+          "technique:tapping_power_chords",
+          "technique:two_hand_tapping",
+          "voicing:suspended_power_chord",
+          "feature:tapped_dyads"
+        ],
+        "alias_hits": [
+          "technique:tapped_power_chord",
+          "feature:tapped_power_chords",
+          "feature:tapped_power_chords_melodic",
+          "technique:two_hand_tapping",
+          "feature:tapped_dyads"
+        ],
+        "hits": [
+          {
+            "id": "technique:tapped_power_chord",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 6
+          },
+          {
+            "id": "feature:tapped_dyads",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "technique:two_hand_tapping",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "feature:tapped_power_chords",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "feature:tapped_power_chords_melodic",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "technique:two_hand_tapping",
+            "rel": "ENABLES",
+            "b": "feature:tapped_power_chords"
+          },
+          {
+            "a": "feature:tapped_power_chords",
+            "rel": "ENABLES",
+            "b": "technique:two_hand_tapping"
+          },
+          {
+            "a": "technique:two_hand_tapping",
+            "rel": "CAN_INSPIRE",
+            "b": "feature:tapped_power_chords_melodic"
+          },
+          {
+            "a": "feature:tapped_power_chords_melodic",
+            "rel": "CAN_INSPIRE",
+            "b": "technique:two_hand_tapping"
+          },
+          {
+            "a": "technique:tapped_power_chord",
+            "rel": "SUGGESTS",
+            "b": "heuristic:theme_variation_layering"
+          },
+          {
+            "a": "heuristic:theme_variation_layering",
+            "rel": "SUGGESTS",
+            "b": "technique:tapped_power_chord"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "mathrock_non_diatonic_passing",
+      "query": "midwest emo chromatic passing chord jazzy non diatonic triad slide",
+      "style_tags": [
+        "math_rock",
+        "midwest_emo"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_text_course"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 3.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "heuristic:non_diatonic_passing_chords",
+          "color:jazzy_midwest_emo",
+          "technique:triad_slide"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.00461520001408644,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0029073999903630465,
+        "text_total_seconds": 0.007522600004449487,
+        "kg_seconds": 0.03697439999086782,
+        "total_seconds": 0.044579100009286776
+      },
+      "text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0001:176e31d936698c97",
+          "distance": 0.3728289008140564,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0001",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "so what are the basics of math rock or midwest emo we're going to take a look at this little progression right here which is in the key of dd major,and i have it in a very common a"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.397236704826355,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0006:3f56b5f6baff9a3a",
+          "distance": 0.39743566513061523,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0005:fa0cdef4d3c15b2e",
+          "distance": 0.3995070457458496,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we're already going to sit for this mad Rock midwest emo progression. we're going to look at this special shooting right here,it's going to be a drop bf sharp,we're going to have A"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.4382532238960266,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "heuristic:non_diatonic_passing_chords",
+          "color:jazzy_midwest_emo",
+          "technique:triad_slide"
+        ],
+        "expanded": [
+          "heuristic:non_diatonic_passing_chords",
+          "color:jazzy_midwest_emo",
+          "technique:triad_slide"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "color:jazzy_midwest_emo",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:non_diatonic_passing_chords",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "heuristic:non_diatonic_passing_chords",
+            "rel": "SUGGESTS",
+            "b": "color:jazzy_midwest_emo"
+          },
+          {
+            "a": "color:jazzy_midwest_emo",
+            "rel": "SUGGESTS",
+            "b": "heuristic:non_diatonic_passing_chords"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_root_fingering_forms",
+      "query": "根音 指型 五种 root fingering form",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P0_root_fingering_forms"
+        ],
+        "inferred_visual_priorities": [
+          "P0_root_fingering_forms"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 4.5
+        },
+        "kg_nodes_any": [
+          "concept:根音",
+          "concept:指型",
+          "concept:把位"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0018233000009786338,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0027680000057443976,
+        "text_total_seconds": 0.004591300006723031,
+        "visual_embedding_seconds": 0.0014570000057574362,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.03637149999849498,
+        "visual_total_seconds": 0.03786720000789501,
+        "kg_seconds": 0.02400649999617599,
+        "total_seconds": 0.06654830000479706
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0002:bff08bbea6ca1f56",
+          "distance": 0.3423212766647339,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习1 在下面图示空白处用字母填上对应的琴弦名称。做题时可以不看前面的内容，凭记忆进行填写。第6弦的名称已经给出。 ⑥6④③②① [IMAGE_BLOCK:images/fe57c06be60349e91861ff8b1d5ca2233520a6df3dc06711a0d746eaa348de7e.jpg] ## 练习2 当图中包含多个品格时，需要将上"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.36816591024398804,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0005:2f7c217cba975217",
+          "distance": 0.3834036588668823,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第8章 自然小调音阶 学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。 大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）： ## “全、半、全、全、半、全、全” 2级音和3级音之间、5级音和6级音之间是半音关系"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0013:8b3cf88540a7b050",
+          "distance": 0.38968074321746826,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0013",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 分割（Slash）和弦 分割和弦就是将三和弦或七和弦叠加在一个非和弦根音的低音上。这种和弦可以用这种方式来表达：C/D。当这个低音也是和弦中的音时，分割和弦就变成了一种和弦转位。否则，分割和弦就是延伸和弦或者变化和弦的一种声部构成。 ## 练习59 在下面的图示中画出 Slash 和弦。 [IMAGE_BLOCK:images/323a85babce1"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0004:f21d8b45bb8cfc41",
+          "distance": 0.3941381573677063,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习 1.每天花5分钟时间大声地念出指板上音符的名称。最好的方法是给那些你已经学过的歌曲或者乐句中的音符命名，但是也可以采用随机的音符来练习命名。所以，不要再做那种“这个手指按住这里”之类的练习了，大声地说出：“我在演奏第2弦第9品上的音符Ab音！”这个练习至少要坚持做一个星期。 2.接下来的7周时间里，每周都要着重练习一个自然音阶音符。从A音开始，每"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p014:af1f5dfaafd4bc331b51424c9497e14435fd6bfae20d720cef1b5b032136240b",
+          "distance": 0.5090816020965576,
+          "rerank_score": 6.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\af1f5dfaafd4bc331b51424c9497e14435fd6bfae20d720cef1b5b032136240b.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:27cc76634908dd1aa263d40b028c2df067a9b7cd0086cb49716815d05f9739a6",
+          "distance": 0.5100233554840088,
+          "rerank_score": 6.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\27cc76634908dd1aa263d40b028c2df067a9b7cd0086cb49716815d05f9739a6.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:d502da690fe431965bb7cfbb25884f52fa71e3449b72b8a0a2c5a5d3b6a74232",
+          "distance": 0.5275681018829346,
+          "rerank_score": 6.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4 | 练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\d502da690fe431965bb7cfbb25884f52fa71e3449b72b8a0a2c5a5d3b6a74232.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:390c9ca9c8c33fa97fafaffddd65050f4049a92d839a07cb279caac3c5049a13",
+          "distance": 0.5281671285629272,
+          "rerank_score": 6.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\390c9ca9c8c33fa97fafaffddd65050f4049a92d839a07cb279caac3c5049a13.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:f5458035580ef6687c4357684818cd39f2d499329404121c4b8b6e8eeef51a3b",
+          "distance": 0.5363999009132385,
+          "rerank_score": 6.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\f5458035580ef6687c4357684818cd39f2d499329404121c4b8b6e8eeef51a3b.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:根音",
+          "concept:指型",
+          "concept:把位"
+        ],
+        "expanded": [
+          "concept:根音",
+          "concept:root_pattern_cycle",
+          "concept:root_pattern_system",
+          "pattern:root_shape_1",
+          "pattern:root_shape_4",
+          "heuristic:power_chord_root_finding",
+          "concept:指型",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift",
+          "concept:把位",
+          "heuristic:minimize_position_shift",
+          "guitar_idiom:position_based_melodic_design"
+        ],
+        "alias_hits": [
+          "concept:root_pattern_cycle",
+          "concept:root_pattern_system",
+          "pattern:root_shape_1",
+          "pattern:root_shape_4",
+          "heuristic:power_chord_root_finding",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift",
+          "heuristic:minimize_position_shift",
+          "guitar_idiom:position_based_melodic_design"
+        ],
+        "hits": [
+          {
+            "id": "concept:five_major_scale_patterns",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:root_pattern_cycle",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:root_pattern_system",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "guitar_idiom:position_based_melodic_design",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:minimize_position_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:power_chord_root_finding",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_navigation",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_shapes",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_geometry_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_shape_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:root_shape_1",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:root_shape_4",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "concept:guitar_tuning",
+            "rel": "CONSTRAINS",
+            "b": "pattern:interval_shape_shift"
+          },
+          {
+            "a": "pattern:interval_shape_shift",
+            "rel": "CONSTRAINS",
+            "b": "concept:guitar_tuning"
+          },
+          {
+            "a": "interval:perfect_5th",
+            "rel": "ENABLES",
+            "b": "heuristic:power_chord_root_finding"
+          },
+          {
+            "a": "heuristic:power_chord_root_finding",
+            "rel": "ENABLES",
+            "b": "interval:perfect_5th"
+          },
+          {
+            "a": "scale:major_scale_patterns",
+            "rel": "ENABLES",
+            "b": "guitar_idiom:position_based_melodic_design"
+          },
+          {
+            "a": "guitar_idiom:position_based_melodic_design",
+            "rel": "ENABLES",
+            "b": "scale:major_scale_patterns"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_intervals_octave",
+      "query": "八度 音程 指板 interval octave",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P1_scales_intervals"
+        ],
+        "inferred_visual_priorities": [
+          "P1_scales_intervals"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 12.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "concept:八度",
+          "concept:音程",
+          "concept:指板"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.004971899994416162,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0030303000239655375,
+        "text_total_seconds": 0.0080022000183817,
+        "visual_embedding_seconds": 0.0013894999865442514,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.0047778000007383525,
+        "visual_total_seconds": 0.006201800017151982,
+        "kg_seconds": 0.03416139999171719,
+        "total_seconds": 0.048456699994858354
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0006:3b707c5df5138869",
+          "distance": 0.3244134783744812,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习22 回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。 弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。 ## 第10章 大调和纯音程 学习目"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0007:1a67e90416b5dc81",
+          "distance": 0.37774330377578735,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0007",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习26 按照图示中给出的音程和音符画出另外的音符。可先找到大音程或者纯音程，然后在需要的时候利用增、减的方法确定音符的位置。当同一个音程可以找到不同的音符时，把这些音符都标出来。第一个图示已经给出答案作为参考。 [IMAGE_BLOCK:images/25b8493f9159d471045a9c3bb03270a1c97732433c3b1bb0cb"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0002:bff08bbea6ca1f56",
+          "distance": 0.43413054943084717,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习1 在下面图示空白处用字母填上对应的琴弦名称。做题时可以不看前面的内容，凭记忆进行填写。第6弦的名称已经给出。 ⑥6④③②① [IMAGE_BLOCK:images/fe57c06be60349e91861ff8b1d5ca2233520a6df3dc06711a0d746eaa348de7e.jpg] ## 练习2 当图中包含多个品格时，需要将上"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.44614076614379883,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0005:2f7c217cba975217",
+          "distance": 0.4533599019050598,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第8章 自然小调音阶 学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。 大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）： ## “全、半、全、全、半、全、全” 2级音和3级音之间、5级音和6级音之间是半音关系"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p038:a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c",
+          "distance": 0.5439139008522034,
+          "rerank_score": 13.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大三度 | 大三度音程等同于两个全音的距离。它对于构建和弦和决定和弦的性质来说十分重要。 | 纯四度 | 吉他的调弦应用的便是纯四度。每根弦都比其下方的弦高四度，除了第2弦的B音比第3弦的G音高一个大三度音程外。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p038:c22f406257b38763731cc17b6a0564e099a2a5d59cb811c44777be49d02905eb",
+          "distance": 0.550625205039978,
+          "rerank_score": 13.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大二度音程等于一个全音。 | 大二度 | 纯一度就是同一个音重复演奏2次。 | 纯一度",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\c22f406257b38763731cc17b6a0564e099a2a5d59cb811c44777be49d02905eb.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p035:d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d",
+          "distance": 0.5457634329795837,
+          "rerank_score": 12.25,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 34,
+          "topic": "练习18 | 练习19 | 练习20",
+          "nearby_text": "回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。 | 练习19 | D小调五声音阶指型2 | (F#小调五声音阶指型5）",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p036:ed691e747eb5e90158e4503d87ce95254b472f07495e5d13d4fb9c95eb00e9ad",
+          "distance": 0.5528148412704468,
+          "rerank_score": 12.25,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 35,
+          "topic": "练习21 | 练习22",
+          "nearby_text": "D小调五声音阶 | 4) | 1） | 2)",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\ed691e747eb5e90158e4503d87ce95254b472f07495e5d13d4fb9c95eb00e9ad.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p040:fda2c29d65a27e594532d5907dc5c2a8b93b067fc73d189cc193602ebd5da08f",
+          "distance": 0.5624579191207886,
+          "rerank_score": 12.25,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 39,
+          "topic": "练习24 | 练习25",
+          "nearby_text": "1) | 2) | 3 | 4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\fda2c29d65a27e594532d5907dc5c2a8b93b067fc73d189cc193602ebd5da08f.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:八度",
+          "concept:音程",
+          "concept:指板"
+        ],
+        "expanded": [
+          "concept:八度",
+          "interval:octave",
+          "heuristic:octave_symmetry_at_12th_fret",
+          "technique:octave_displacement_rule",
+          "pattern:octave_minus_one_fret",
+          "concept:音程",
+          "concept:compound_interval",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift",
+          "interval:perfect_5th",
+          "interval:major_6th",
+          "concept:指板",
+          "concept:fretboard_geometry",
+          "heuristic:fretboard_navigation_logic"
+        ],
+        "alias_hits": [
+          "interval:octave",
+          "heuristic:octave_symmetry_at_12th_fret",
+          "technique:octave_displacement_rule",
+          "pattern:octave_minus_one_fret",
+          "concept:compound_interval",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift",
+          "interval:perfect_5th",
+          "interval:major_6th",
+          "concept:fretboard_geometry",
+          "heuristic:fretboard_navigation_logic"
+        ],
+        "hits": [
+          {
+            "id": "interval:major_6th",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 3
+          },
+          {
+            "id": "interval:perfect_5th",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 3
+          },
+          {
+            "id": "concept:compound_interval",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:fretboard_geometry",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:fretboard_navigation_logic",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:octave_symmetry_at_12th_fret",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "interval:octave",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_geometry_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_shape_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:octave_minus_one_fret",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "technique:octave_displacement_rule",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "concept:guitar_tuning",
+            "rel": "CONSTRAINS",
+            "b": "pattern:interval_shape_shift"
+          },
+          {
+            "a": "pattern:interval_shape_shift",
+            "rel": "CONSTRAINS",
+            "b": "concept:guitar_tuning"
+          },
+          {
+            "a": "interval:major_seventh",
+            "rel": "ENABLES",
+            "b": "pattern:octave_minus_one_fret"
+          },
+          {
+            "a": "pattern:octave_minus_one_fret",
+            "rel": "ENABLES",
+            "b": "interval:major_seventh"
+          },
+          {
+            "a": "interval:perfect_5th",
+            "rel": "ENABLES",
+            "b": "pattern:power_chord_shape"
+          },
+          {
+            "a": "pattern:power_chord_shape",
+            "rel": "ENABLES",
+            "b": "interval:perfect_5th"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_triad_arpeggio",
+      "query": "大三和弦 琶音 指型 根音 major triad arpeggio",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "inferred_visual_priorities": [
+          "P2_arpeggios_chords",
+          "P0_root_fingering_forms"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 15.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 1.5
+        },
+        "kg_nodes_any": [
+          "concept:琶音",
+          "concept:三和弦",
+          "concept:大三和弦"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.003364300006069243,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0026455000042915344,
+        "text_total_seconds": 0.006009800010360777,
+        "visual_embedding_seconds": 0.0014060999965295196,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.006009699980495498,
+        "visual_total_seconds": 0.007449800003087148,
+        "kg_seconds": 0.029511000000638887,
+        "total_seconds": 0.04305230002501048
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0008:1c0cc93845ddfef0",
+          "distance": 0.2513777017593384,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 小三和弦琵音 小三和弦是由根音、根音上方的小三度音和纯五度音组成的：1、b3、5。 ## 练习31 构建D小三和弦琶音的五种指型。注意不要用品位标记以下的音符，并且在画出音符时，保证所有的音符都在左手所在的把位以内，最多不要超出1品以外。 1)D小三和弦琶音 V [IMAGE_BLOCK:images/f09a862e2cade2cfda3e9353a"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0009:9e1e1a1699deb0da",
+          "distance": 0.32053303718566895,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第15章 七和弦琶音 学习目标：在指板上构建七和弦的琶音。 七和弦是学习三和弦之后的进阶，每个七和弦包含四个音。首先，还是先来学习七和弦的琶音，之后再来学习七和弦。七和弦琶音之间的音程关系和三和弦是相似的。 ## 大七和弦 在大三和弦的基础上增加一个大七度音就形成了大七和弦，其音符为：1、3、5和7。表示大七和弦的标记有以下几种：Cmaj7，Cma7，"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0007:1a67e90416b5dc81",
+          "distance": 0.34470134973526,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0007",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习26 按照图示中给出的音程和音符画出另外的音符。可先找到大音程或者纯音程，然后在需要的时候利用增、减的方法确定音符的位置。当同一个音程可以找到不同的音符时，把这些音符都标出来。第一个图示已经给出答案作为参考。 [IMAGE_BLOCK:images/25b8493f9159d471045a9c3bb03270a1c97732433c3b1bb0cb"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.36870110034942627,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0013:8b3cf88540a7b050",
+          "distance": 0.3726515769958496,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0013",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 分割（Slash）和弦 分割和弦就是将三和弦或七和弦叠加在一个非和弦根音的低音上。这种和弦可以用这种方式来表达：C/D。当这个低音也是和弦中的音时，分割和弦就变成了一种和弦转位。否则，分割和弦就是延伸和弦或者变化和弦的一种声部构成。 ## 练习59 在下面的图示中画出 Slash 和弦。 [IMAGE_BLOCK:images/323a85babce1"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p049:3473ccf4b0ddca16337f75a8662133621b1216ba3dfbf85b814b6a8b5475be1c",
+          "distance": 0.5181047916412354,
+          "rerank_score": 17.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 48,
+          "topic": "大三和弦 | 练习34 | 小三和弦 | 练习35",
+          "nearby_text": "1)C大三和弦 | 2)C大三和弦 | 3)C大三和弦 | 完成下面图示中的密集声部大三和弦。圈出每个和弦的根音，并写出指型的序号。当这些六根弦上的三和弦中包含有两种三和弦指型时，则将两个序号都写出来。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\3473ccf4b0ddca16337f75a8662133621b1216ba3dfbf85b814b6a8b5475be1c.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p049:009e1d43b54dfbb636e9b9a7cc6e2b351320257ed9a587bf454dde2c17df36c7",
+          "distance": 0.5195839405059814,
+          "rerank_score": 17.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 48,
+          "topic": "大三和弦 | 练习34 | 小三和弦 | 练习35",
+          "nearby_text": "1)C小三和弦 | 2)C小三和弦 | 3)C小三和弦 | 完成下面图示中的密集声部的C小三和弦。根音已经被圈出来了，请写出和弦指型的序号。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\009e1d43b54dfbb636e9b9a7cc6e2b351320257ed9a587bf454dde2c17df36c7.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p050:cca58c83e81e9167c7a622a30b0e81bc3f4613f91394affc899c46d81d9e69ea",
+          "distance": 0.5182892084121704,
+          "rerank_score": 17.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 49,
+          "topic": "减三和弦 | 练习36 | 增三和弦 | 练习37",
+          "nearby_text": "2)C减三和弦 | 1)C减三和弦 | 3)C减三和弦 | 完成下面图示中密集声部的C减三和弦。根音已经被圈出来了，请写出和弦指型的序号。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\cca58c83e81e9167c7a622a30b0e81bc3f4613f91394affc899c46d81d9e69ea.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p051:524e93470084f0cfb5adfd9a350701f856930f7a00d296466de4f938038c33af",
+          "distance": 0.5159707069396973,
+          "rerank_score": 17.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 50,
+          "topic": "转位 | 练习",
+          "nearby_text": "D大三和弦原位 | 当和弦的根音为弹奏的最低音时，这个和弦就称为和弦的原位。 | 转位 | 当和弦的三度音为弹奏的最低音时，这个和弦就称为和弦的第一转位。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\524e93470084f0cfb5adfd9a350701f856930f7a00d296466de4f938038c33af.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p048:3f5d0bc1badfed39b798af4bec9ca590df3e86cbdbddcbb96c5cc904f2e803a7",
+          "distance": 0.5203522443771362,
+          "rerank_score": 17.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 47,
+          "topic": "第14章 三和弦",
+          "nearby_text": "开放大三和弦声部（“牛仔和弦”） | 在指板上找到琶音在不同弦上的音，然后同时扫奏或拨奏，这样就产生了和弦。和弦中音符不同的排列方式称为声部。一个完整的三和弦声部仅需要3个音符，但吉他手在演奏三和弦时，常常会同时弹奏不同八度的同一音符，这样在演奏中可以同时扫过五根或者六根琴弦，而不必太精细于每个音符。最简单的和弦声部排列是这样的：基础的横按加上开放形式的和 | 相对于琶音是依次弹奏每一个音，和弦是同时扫奏或拨奏所有的音。琶音存在同一根弦上有2个音符的情况，但是在和弦中不会，因为一根弦一次只能发出一个音。这也是我们先学习琶音，再学习和弦的原因。相对于琶音而言，和弦会稍难一些。 | 学习目标：在指板上构建密集三和弦。弹奏密集三和弦的所有转位。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\3f5d0bc1badfed39b798af4bec9ca590df3e86cbdbddcbb96c5cc904f2e803a7.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:琶音",
+          "concept:三和弦",
+          "concept:大三和弦"
+        ],
+        "expanded": [
+          "concept:琶音",
+          "chord:major_triad",
+          "chord:triad_inversions",
+          "pattern:caged_system_shapes",
+          "concept:三和弦",
+          "chord:aug_triad",
+          "concept:大三和弦"
+        ],
+        "alias_hits": [
+          "chord:major_triad",
+          "chord:triad_inversions",
+          "pattern:caged_system_shapes",
+          "chord:aug_triad"
+        ],
+        "hits": [
+          {
+            "id": "chord:aug_triad",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "chord:major_triad",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "chord:triad_inversions",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_shapes",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "chord:aug_triad",
+            "rel": "ENABLES",
+            "b": "pattern:symmetric_fingering"
+          },
+          {
+            "a": "pattern:symmetric_fingering",
+            "rel": "ENABLES",
+            "b": "chord:aug_triad"
+          },
+          {
+            "a": "chord:triad_inversions",
+            "rel": "SUGGESTS",
+            "b": "heuristic:caged_system_mobility"
+          },
+          {
+            "a": "heuristic:caged_system_mobility",
+            "rel": "SUGGESTS",
+            "b": "chord:triad_inversions"
+          },
+          {
+            "a": "chord:major_triad",
+            "rel": "SUGGESTS",
+            "b": "pattern:caged_system_shapes"
+          },
+          {
+            "a": "pattern:caged_system_shapes",
+            "rel": "SUGGESTS",
+            "b": "chord:major_triad"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_common_chords_6_9",
+      "query": "其他常用和弦 指型 六和弦 九和弦 add9 6/9",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P3_common_scales_chords"
+        ],
+        "inferred_visual_priorities": [
+          "P3_common_scales_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 18.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "concept:六和弦",
+          "concept:九和弦",
+          "concept:常用和弦"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0032528999727219343,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0035194999945815653,
+        "text_total_seconds": 0.0067723999673035,
+        "visual_embedding_seconds": 0.0013799000007566065,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.004790699982549995,
+        "visual_total_seconds": 0.0062049999833106995,
+        "kg_seconds": 0.03653449998819269,
+        "total_seconds": 0.04960430000210181
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0010:adc5b4213726be6c",
+          "distance": 0.34163808822631836,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习44 运用指型2和指型5画出七和弦“1、5、7、3”常用声部构成。 [IMAGE_BLOCK:images/6e05e11e982d36687c5df5564b6bf1ef6efb314c6143bb7c6ebfe3a865bdf034.jpg] [IMAGE_BLOCK:images/c1b81c203b4a0affa11063cfd87b862"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0013:8b3cf88540a7b050",
+          "distance": 0.34321773052215576,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0013",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 分割（Slash）和弦 分割和弦就是将三和弦或七和弦叠加在一个非和弦根音的低音上。这种和弦可以用这种方式来表达：C/D。当这个低音也是和弦中的音时，分割和弦就变成了一种和弦转位。否则，分割和弦就是延伸和弦或者变化和弦的一种声部构成。 ## 练习59 在下面的图示中画出 Slash 和弦。 [IMAGE_BLOCK:images/323a85babce1"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.34607064723968506,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0009:9e1e1a1699deb0da",
+          "distance": 0.35777437686920166,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第15章 七和弦琶音 学习目标：在指板上构建七和弦的琶音。 七和弦是学习三和弦之后的进阶，每个七和弦包含四个音。首先，还是先来学习七和弦的琶音，之后再来学习七和弦。七和弦琶音之间的音程关系和三和弦是相似的。 ## 大七和弦 在大三和弦的基础上增加一个大七度音就形成了大七和弦，其音符为：1、3、5和7。表示大七和弦的标记有以下几种：Cmaj7，Cma7，"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0016:93c06caff1a60c29",
+          "distance": 0.3687537908554077,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0016",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习33 1)D增三和弦指型1 [IMAGE_BLOCK:images/e9b5e7ec9bc7597cbae8189f9771e6614100c452a02734945206b25d0ccc594d.jpg] 2）D增三和弦 指型2 [IMAGE_BLOCK:images/5a68f6f59f98ac3fc684152d7c958b740d02565"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p069:6adcb92bcf27554cc5f9bdb7c39dbcae6d5385f77864bee4163f9d3ccbb788e3",
+          "distance": 0.45005524158477783,
+          "rerank_score": 20.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。 | ·六九和弦：在六和弦的基础上再加入大九度音，三和弦的类型不 6/9—1、3、5、6、9变。这类和弦通常被认为是大和弦或者是小和弦，而不是属和 mi6/9—1、b3、5、6、9弦，它们不包含七度音。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\6adcb92bcf27554cc5f9bdb7c39dbcae6d5385f77864bee4163f9d3ccbb788e3.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:7915644f58172e192a14dbf16a653d9b27d31c9210b2d7fe4ad37199f9085bce",
+          "distance": 0.45943963527679443,
+          "rerank_score": 20.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。 | ·六九和弦：在六和弦的基础上再加入大九度音，三和弦的类型不 6/9—1、3、5、6、9变。这类和弦通常被认为是大和弦或者是小和弦，而不是属和 mi6/9—1、b3、5、6、9弦，它们不包含七度音。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\7915644f58172e192a14dbf16a653d9b27d31c9210b2d7fe4ad37199f9085bce.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:ee5c10ed920b19c453b2962073feb887d3e33c867763614b3808c08fac91d5eb",
+          "distance": 0.5340859889984131,
+          "rerank_score": 20.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。 | ·六九和弦：在六和弦的基础上再加入大九度音，三和弦的类型不 6/9—1、3、5、6、9变。这类和弦通常被认为是大和弦或者是小和弦，而不是属和 mi6/9—1、b3、5、6、9弦，它们不包含七度音。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\ee5c10ed920b19c453b2962073feb887d3e33c867763614b3808c08fac91d5eb.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:19c70069724de5b61cb416d5281ab07e0823e87d4ec934b7dac90aef049b1ab7",
+          "distance": 0.46501463651657104,
+          "rerank_score": 19.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "65 | 在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\19c70069724de5b61cb416d5281ab07e0823e87d4ec934b7dac90aef049b1ab7.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:48b8d933c0ef36d4e4bc329917be9ca10970107f7f0196ba8b6b12afc610a178",
+          "distance": 0.49176764488220215,
+          "rerank_score": 19.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "65 | 在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\48b8d933c0ef36d4e4bc329917be9ca10970107f7f0196ba8b6b12afc610a178.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:六和弦",
+          "concept:九和弦",
+          "concept:常用和弦"
+        ],
+        "expanded": [
+          "concept:六和弦",
+          "chord:6/9",
+          "chord:6_9",
+          "interval:major_6th",
+          "concept:九和弦",
+          "chord:add9",
+          "chord:extended_chords",
+          "concept:常用和弦"
+        ],
+        "alias_hits": [
+          "chord:6/9",
+          "chord:6_9",
+          "interval:major_6th",
+          "chord:add9",
+          "chord:extended_chords"
+        ],
+        "hits": [
+          {
+            "id": "interval:major_6th",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 3
+          },
+          {
+            "id": "chord:add9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "chord:6/9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "chord:6_9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "chord:extended_chords",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "chord:add9",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:dom9"
+          },
+          {
+            "a": "chord:dom9",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:add9"
+          },
+          {
+            "a": "chord:add9",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:dominant_9th"
+          },
+          {
+            "a": "chord:dominant_9th",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:add9"
+          },
+          {
+            "a": "chord:6_9",
+            "rel": "SUGGESTS",
+            "b": "color:stable_non_dominant"
+          },
+          {
+            "a": "color:stable_non_dominant",
+            "rel": "SUGGESTS",
+            "b": "chord:6_9"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "funk_ghost_note_left_hand_muting",
+      "query": "funk ghost note left hand muting sixteenth rhythm guitar tight groove",
+      "style_tags": [
+        "funk",
+        "rhythm_guitar"
+      ],
+      "expected": {
+        "text_sources": [
+          "cory_wong_funk_core"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "technique:left_hand_muting",
+          "feature:sixteenth_note_undercurrent"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0035450000141281635,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0028663999983109534,
+        "text_total_seconds": 0.006411400012439117,
+        "kg_seconds": 0.021740800002589822,
+        "total_seconds": 0.028232999989995733
+      },
+      "text_top": [
+        {
+          "id": "cory_wong_funk_core::chunk_0012:e8918d113672d557",
+          "distance": 0.4442821741104126,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "advanced_technique",
+            "arrangement",
+            "comping",
+            "ensemble_playing",
+            "funk",
+            "groove",
+            "mixing_consideration",
+            "pop_funk",
+            "rhythm_guitar",
+            "rhythm_guitar_arrangement",
+            "riff_writing"
+          ],
+          "snippet": "another one of my signature guitar moves is this sort of thing.that sort of thing you hear me do that all the time now part of how I get that sound obviously it's double strokes it"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0011:a5b9585e51bd1ad5",
+          "distance": 0.47418105602264404,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0011",
+          "title": null,
+          "style_tags": [
+            "cory_wong_style",
+            "funk",
+            "groove",
+            "lead_guitar",
+            "rhythm_guitar",
+            "riff_writing",
+            "rnb",
+            "technique"
+          ],
+          "snippet": "one of the signature moves that I have is hitting the strings.now that sounds a little bit weird on its own,why would I just hit the strings,but what it does is it helps me accompl"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0009:51dc9d9a660b7bf2",
+          "distance": 0.5086259841918945,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "arrangement_strategy",
+            "funk",
+            "practice_methodology",
+            "rhythm_guitar"
+          ],
+          "snippet": "now something to really note is.there's a difference between timing.patterns.and groove.they all kind of make up this thing that we call ribbon.那timing is。where you're placing some"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0008:35e77e2ac999642d",
+          "distance": 0.5444762706756592,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "dynamics",
+            "funk",
+            "groove",
+            "rhythm_guitar",
+            "technique",
+            "timing"
+          ],
+          "snippet": "let's dive deeper into that bongo conga style to me,that world of ribbon guitar playing is the bubble. now you hear this sort of thing on a lot of songs,it's classic.billy IE,Jean,"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0004:7b29d2c8f6e5af03",
+          "distance": 0.5575726628303528,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "ergonomics",
+            "funk",
+            "practicality",
+            "rhythm_guitar",
+            "riff_writing"
+          ],
+          "snippet": "that's just actually articulating and playing a different type of phrasing on it,but it's one way to use that voicing.嗯。minor seven chords are super common in funk music and especi"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "technique:left_hand_muting",
+          "feature:sixteenth_note_undercurrent"
+        ],
+        "expanded": [
+          "technique:left_hand_muting",
+          "feature:sixteenth_note_undercurrent"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "feature:sixteenth_note_undercurrent",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "technique:left_hand_muting",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "technique:right_hand_constant_motion",
+            "rel": "ENABLES",
+            "b": "feature:sixteenth_note_undercurrent"
+          },
+          {
+            "a": "feature:sixteenth_note_undercurrent",
+            "rel": "ENABLES",
+            "b": "technique:right_hand_constant_motion"
+          },
+          {
+            "a": "technique:upstroke_hit_downstroke",
+            "rel": "SUGGESTS",
+            "b": "feature:sixteenth_note_undercurrent"
+          },
+          {
+            "a": "feature:sixteenth_note_undercurrent",
+            "rel": "SUGGESTS",
+            "b": "technique:upstroke_hit_downstroke"
+          },
+          {
+            "a": "technique:left_hand_muting",
+            "rel": "ENABLES",
+            "b": "technique:upstroke_hit_downstroke"
+          },
+          {
+            "a": "technique:upstroke_hit_downstroke",
+            "rel": "ENABLES",
+            "b": "technique:left_hand_muting"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "funk_timing_groove_density",
+      "query": "funk timing groove density range tone space rhythm guitar",
+      "style_tags": [
+        "funk",
+        "rhythm_guitar"
+      ],
+      "expected": {
+        "text_sources": [
+          "cory_wong_funk_core"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "heuristic:leave_space_for_band",
+          "feature:staccato_bubble"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.001994399994146079,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0025624999834690243,
+        "text_total_seconds": 0.004556899977615103,
+        "kg_seconds": 0.02799040000536479,
+        "total_seconds": 0.03262459998950362
+      },
+      "text_top": [
+        {
+          "id": "cory_wong_funk_core::chunk_0010:6445074c7afcb9f5",
+          "distance": 0.34248244762420654,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "ambient",
+            "arrangement",
+            "comping",
+            "funk",
+            "pop",
+            "production",
+            "rhythm_guitar",
+            "rock",
+            "song_structure",
+            "tone_design"
+          ],
+          "snippet": "now those are a couple of my main approaches to ribbon guitar,but some other things just to consider are ribbon IC density.range on the instrument.tone.and space.OK so.sometimes a "
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0009:51dc9d9a660b7bf2",
+          "distance": 0.35896217823028564,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "arrangement_strategy",
+            "funk",
+            "practice_methodology",
+            "rhythm_guitar"
+          ],
+          "snippet": "now something to really note is.there's a difference between timing.patterns.and groove.they all kind of make up this thing that we call ribbon.那timing is。where you're placing some"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0011:a5b9585e51bd1ad5",
+          "distance": 0.5689826011657715,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0011",
+          "title": null,
+          "style_tags": [
+            "cory_wong_style",
+            "funk",
+            "groove",
+            "lead_guitar",
+            "rhythm_guitar",
+            "riff_writing",
+            "rnb",
+            "technique"
+          ],
+          "snippet": "one of the signature moves that I have is hitting the strings.now that sounds a little bit weird on its own,why would I just hit the strings,but what it does is it helps me accompl"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0007:2fb00c823010ed5c",
+          "distance": 0.5713531970977783,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0007",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "funk",
+            "groove",
+            "pop",
+            "rhythm_guitar",
+            "rnb",
+            "rock"
+          ],
+          "snippet": "today I want to give you a little ribbon guitar primer now I am.what I would consider a consummate ribbon guitar player I love,the ribbon guitar I love,the role and I think it's of"
+        },
+        {
+          "id": "cory_wong_funk_core::chunk_0008:35e77e2ac999642d",
+          "distance": 0.5728884935379028,
+          "source_id": "cory_wong_funk_core",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "comping",
+            "dynamics",
+            "funk",
+            "groove",
+            "rhythm_guitar",
+            "technique",
+            "timing"
+          ],
+          "snippet": "let's dive deeper into that bongo conga style to me,that world of ribbon guitar playing is the bubble. now you hear this sort of thing on a lot of songs,it's classic.billy IE,Jean,"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "heuristic:leave_space_for_band",
+          "feature:staccato_bubble"
+        ],
+        "expanded": [
+          "heuristic:leave_space_for_band",
+          "feature:staccato_bubble"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "heuristic:leave_space_for_band",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 5
+          },
+          {
+            "id": "feature:staccato_bubble",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "voicing:sparse_funk_voicing",
+            "rel": "ENABLES",
+            "b": "heuristic:leave_space_for_band"
+          },
+          {
+            "a": "heuristic:leave_space_for_band",
+            "rel": "ENABLES",
+            "b": "voicing:sparse_funk_voicing"
+          },
+          {
+            "a": "voicing:sparse_funk_voicing",
+            "rel": "ENABLES",
+            "b": "heuristic:leave_space_for_band"
+          },
+          {
+            "a": "heuristic:leave_space_for_band",
+            "rel": "ENABLES",
+            "b": "voicing:sparse_funk_voicing"
+          },
+          {
+            "a": "voicing:sparse_funk_voicing",
+            "rel": "SUGGESTS",
+            "b": "heuristic:leave_space_for_band"
+          },
+          {
+            "a": "heuristic:leave_space_for_band",
+            "rel": "SUGGESTS",
+            "b": "voicing:sparse_funk_voicing"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "mathrock_open_string_drone_odd_meter",
+      "query": "math rock open string drone odd meter clean tapping riff",
+      "style_tags": [
+        "math_rock",
+        "midwest_emo"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_text_course"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "feature:open_string_drone",
+          "technique:two_hand_tapping"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.003094599989708513,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.004968299996107817,
+        "text_total_seconds": 0.00806289998581633,
+        "kg_seconds": 0.02380630001425743,
+        "total_seconds": 0.031952999997884035
+      },
+      "text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0001:176e31d936698c97",
+          "distance": 0.3690664768218994,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0001",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "so what are the basics of math rock or midwest emo we're going to take a look at this little progression right here which is in the key of dd major,and i have it in a very common a"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.3889806270599365,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0006:3f56b5f6baff9a3a",
+          "distance": 0.399882972240448,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.4233332872390747,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0005:fa0cdef4d3c15b2e",
+          "distance": 0.4516993761062622,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we're already going to sit for this mad Rock midwest emo progression. we're going to look at this special shooting right here,it's going to be a drop bf sharp,we're going to have A"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "feature:open_string_drone",
+          "technique:two_hand_tapping"
+        ],
+        "expanded": [
+          "feature:open_string_drone",
+          "technique:two_hand_tapping"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "feature:open_string_drone",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 6
+          },
+          {
+            "id": "technique:two_hand_tapping",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "tuning:DADGAD",
+            "rel": "ENABLES",
+            "b": "feature:open_string_drone"
+          },
+          {
+            "a": "feature:open_string_drone",
+            "rel": "ENABLES",
+            "b": "tuning:DADGAD"
+          },
+          {
+            "a": "feature:open_string_drone",
+            "rel": "SUGGESTS",
+            "b": "heuristic:common_tone_anchor"
+          },
+          {
+            "a": "heuristic:common_tone_anchor",
+            "rel": "SUGGESTS",
+            "b": "feature:open_string_drone"
+          },
+          {
+            "a": "feature:open_string_drone",
+            "rel": "EVOKES",
+            "b": "color:jangly_open_midwest_emo"
+          },
+          {
+            "a": "color:jangly_open_midwest_emo",
+            "rel": "EVOKES",
+            "b": "feature:open_string_drone"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "mathrock_dyad_pull_off_open_string",
+      "query": "tapped dyads pull off to open string math rock melodic power chord",
+      "style_tags": [
+        "math_rock",
+        "midwest_emo"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_text_course"
+        ],
+        "visual_sources": [],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "feature:tapped_dyads",
+          "technique:pull-off_to_open_string",
+          "technique:tapped_power_chord"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": null,
+        "visual_recall5_ok": null,
+        "visual_precision5": null,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.004560700006550178,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0030264999950304627,
+        "text_total_seconds": 0.007587200001580641,
+        "kg_seconds": 0.02602020002086647,
+        "total_seconds": 0.03369280000333674
+      },
+      "text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0001:176e31d936698c97",
+          "distance": 0.3056407570838928,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0001",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "so what are the basics of math rock or midwest emo we're going to take a look at this little progression right here which is in the key of dd major,and i have it in a very common a"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.34270304441452026,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.34943217039108276,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0006:3f56b5f6baff9a3a",
+          "distance": 0.3598442077636719,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0004:048a87a7fe0883ef",
+          "distance": 0.40257853269577026,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "arrangement",
+            "composition",
+            "fingerstyle",
+            "jazz_influenced",
+            "math_rock",
+            "midwest_emo",
+            "technical"
+          ],
+          "snippet": "hey hey hey,let's do it. let's do another math Rock progression. shall we so this one kind of call we have another minor shape gone on AH be min,or we have?bf shocks of one five,we"
+        }
+      ],
+      "visual_top": [],
+      "kg": {
+        "expected": [
+          "feature:tapped_dyads",
+          "technique:pull-off_to_open_string",
+          "technique:tapped_power_chord"
+        ],
+        "expanded": [
+          "feature:tapped_dyads",
+          "technique:pull-off_to_open_string",
+          "technique:tapped_power_chord"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "technique:tapped_power_chord",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 6
+          },
+          {
+            "id": "feature:tapped_dyads",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "technique:pull-off_to_open_string",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "technique:tapped_power_chord",
+            "rel": "SUGGESTS",
+            "b": "heuristic:theme_variation_layering"
+          },
+          {
+            "a": "heuristic:theme_variation_layering",
+            "rel": "SUGGESTS",
+            "b": "technique:tapped_power_chord"
+          },
+          {
+            "a": "technique:tapped_power_chord",
+            "rel": "SUGGESTS",
+            "b": "feature:tapped_dyads"
+          },
+          {
+            "a": "feature:tapped_dyads",
+            "rel": "SUGGESTS",
+            "b": "technique:tapped_power_chord"
+          },
+          {
+            "a": "technique:tapped_power_chord",
+            "rel": "CAN_INSPIRE",
+            "b": "task:math_rock_riff_writing"
+          },
+          {
+            "a": "task:math_rock_riff_writing",
+            "rel": "CAN_INSPIRE",
+            "b": "technique:tapped_power_chord"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_root_octave_ambiguous",
+      "query": "根音 八度 指型 octave root pattern",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P1_scales_intervals"
+        ],
+        "inferred_visual_priorities": [
+          "P1_scales_intervals",
+          "P0_root_fingering_forms"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 7.5,
+          "P0_root_fingering_forms": 4.5
+        },
+        "kg_nodes_any": [
+          "concept:八度",
+          "concept:根音",
+          "concept:指型"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0032307000074069947,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0028950999840162694,
+        "text_total_seconds": 0.006125799991423264,
+        "visual_embedding_seconds": 0.0017260999884456396,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.007678800000576302,
+        "visual_total_seconds": 0.009452100028283894,
+        "kg_seconds": 0.08592230000067502,
+        "total_seconds": 0.10159000000567175
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0002:bff08bbea6ca1f56",
+          "distance": 0.33268237113952637,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习1 在下面图示空白处用字母填上对应的琴弦名称。做题时可以不看前面的内容，凭记忆进行填写。第6弦的名称已经给出。 ⑥6④③②① [IMAGE_BLOCK:images/fe57c06be60349e91861ff8b1d5ca2233520a6df3dc06711a0d746eaa348de7e.jpg] ## 练习2 当图中包含多个品格时，需要将上"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0005:2f7c217cba975217",
+          "distance": 0.33901524543762207,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第8章 自然小调音阶 学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。 大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）： ## “全、半、全、全、半、全、全” 2级音和3级音之间、5级音和6级音之间是半音关系"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.3470771908760071,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0006:3b707c5df5138869",
+          "distance": 0.3617541790008545,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习22 回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。 弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。 ## 第10章 大调和纯音程 学习目"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0004:f21d8b45bb8cfc41",
+          "distance": 0.3692930340766907,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习 1.每天花5分钟时间大声地念出指板上音符的名称。最好的方法是给那些你已经学过的歌曲或者乐句中的音符命名，但是也可以采用随机的音符来练习命名。所以，不要再做那种“这个手指按住这里”之类的练习了，大声地说出：“我在演奏第2弦第9品上的音符Ab音！”这个练习至少要坚持做一个星期。 2.接下来的7周时间里，每周都要着重练习一个自然音阶音符。从A音开始，每"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p035:d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d",
+          "distance": 0.4869011640548706,
+          "rerank_score": 9.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 34,
+          "topic": "练习18 | 练习19 | 练习20",
+          "nearby_text": "回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。 | 练习19 | D小调五声音阶指型2 | (F#小调五声音阶指型5）",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p035:220c776cc6654768ae42b830284921efab5f11ce9d1ddf94cf4e101eb5b6376f",
+          "distance": 0.5121297836303711,
+          "rerank_score": 9.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 34,
+          "topic": "练习18 | 练习19 | 练习20",
+          "nearby_text": "回到练习16中，写出每个图示中关系小调五声音阶的名称和指型序号，并且用方形画出关系小调五声音阶的根音。第一个图示的例子如右所示。 | 练习18 | A大调五声音阶指型4 | (F#小调五声音阶指型5）",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\220c776cc6654768ae42b830284921efab5f11ce9d1ddf94cf4e101eb5b6376f.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p038:a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c",
+          "distance": 0.5210354924201965,
+          "rerank_score": 7.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大三度 | 大三度音程等同于两个全音的距离。它对于构建和弦和决定和弦的性质来说十分重要。 | 纯四度 | 吉他的调弦应用的便是纯四度。每根弦都比其下方的弦高四度，除了第2弦的B音比第3弦的G音高一个大三度音程外。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p035:8922df0cd14551b3413fc931ac576bf37822609a953dd8365e4dcfefc04867a4",
+          "distance": 0.5211703777313232,
+          "rerank_score": 7.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 34,
+          "topic": "练习18 | 练习19 | 练习20",
+          "nearby_text": "\\_大调五声音阶 | 大调五声音阶 | 大调五声音阶 | 8",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\8922df0cd14551b3413fc931ac576bf37822609a953dd8365e4dcfefc04867a4.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p038:c22f406257b38763731cc17b6a0564e099a2a5d59cb811c44777be49d02905eb",
+          "distance": 0.5214274525642395,
+          "rerank_score": 7.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大二度音程等于一个全音。 | 大二度 | 纯一度就是同一个音重复演奏2次。 | 纯一度",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\c22f406257b38763731cc17b6a0564e099a2a5d59cb811c44777be49d02905eb.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:八度",
+          "concept:根音",
+          "concept:指型"
+        ],
+        "expanded": [
+          "concept:八度",
+          "interval:octave",
+          "heuristic:octave_symmetry_at_12th_fret",
+          "technique:octave_displacement_rule",
+          "pattern:octave_minus_one_fret",
+          "concept:根音",
+          "concept:root_pattern_cycle",
+          "concept:root_pattern_system",
+          "pattern:root_shape_1",
+          "pattern:root_shape_4",
+          "heuristic:power_chord_root_finding",
+          "concept:指型",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift"
+        ],
+        "alias_hits": [
+          "interval:octave",
+          "heuristic:octave_symmetry_at_12th_fret",
+          "technique:octave_displacement_rule",
+          "pattern:octave_minus_one_fret",
+          "concept:root_pattern_cycle",
+          "concept:root_pattern_system",
+          "pattern:root_shape_1",
+          "pattern:root_shape_4",
+          "heuristic:power_chord_root_finding",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift"
+        ],
+        "hits": [
+          {
+            "id": "concept:five_major_scale_patterns",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:root_pattern_cycle",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:root_pattern_system",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:octave_symmetry_at_12th_fret",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:power_chord_root_finding",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "interval:octave",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_navigation",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_shapes",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_geometry_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_shape_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:octave_minus_one_fret",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:root_shape_1",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:root_shape_4",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "technique:octave_displacement_rule",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "concept:guitar_tuning",
+            "rel": "CONSTRAINS",
+            "b": "pattern:interval_shape_shift"
+          },
+          {
+            "a": "pattern:interval_shape_shift",
+            "rel": "CONSTRAINS",
+            "b": "concept:guitar_tuning"
+          },
+          {
+            "a": "interval:major_seventh",
+            "rel": "ENABLES",
+            "b": "pattern:octave_minus_one_fret"
+          },
+          {
+            "a": "pattern:octave_minus_one_fret",
+            "rel": "ENABLES",
+            "b": "interval:major_seventh"
+          },
+          {
+            "a": "interval:perfect_5th",
+            "rel": "ENABLES",
+            "b": "heuristic:power_chord_root_finding"
+          },
+          {
+            "a": "heuristic:power_chord_root_finding",
+            "rel": "ENABLES",
+            "b": "interval:perfect_5th"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_perfect_fifth_power_chord_interval",
+      "query": "纯五度 音程 power chord root finding 指板",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P1_scales_intervals"
+        ],
+        "inferred_visual_priorities": [
+          "P1_scales_intervals"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 6.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "concept:音程",
+          "heuristic:power_chord_root_finding"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0050959999789483845,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.003140099986921996,
+        "text_total_seconds": 0.00823609996587038,
+        "visual_embedding_seconds": 0.001472900010412559,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.004314600024372339,
+        "visual_total_seconds": 0.005834199982928112,
+        "kg_seconds": 0.012897799984784797,
+        "total_seconds": 0.027064199995948002
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0006:3b707c5df5138869",
+          "distance": 0.2916039824485779,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习22 回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。 弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。 ## 第10章 大调和纯音程 学习目"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.3611282706260681,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0007:1a67e90416b5dc81",
+          "distance": 0.3700940012931824,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0007",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习26 按照图示中给出的音程和音符画出另外的音符。可先找到大音程或者纯音程，然后在需要的时候利用增、减的方法确定音符的位置。当同一个音程可以找到不同的音符时，把这些音符都标出来。第一个图示已经给出答案作为参考。 [IMAGE_BLOCK:images/25b8493f9159d471045a9c3bb03270a1c97732433c3b1bb0cb"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0002:bff08bbea6ca1f56",
+          "distance": 0.39016228914260864,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习1 在下面图示空白处用字母填上对应的琴弦名称。做题时可以不看前面的内容，凭记忆进行填写。第6弦的名称已经给出。 ⑥6④③②① [IMAGE_BLOCK:images/fe57c06be60349e91861ff8b1d5ca2233520a6df3dc06711a0d746eaa348de7e.jpg] ## 练习2 当图中包含多个品格时，需要将上"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0005:2f7c217cba975217",
+          "distance": 0.40144211053848267,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第8章 自然小调音阶 学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。 大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）： ## “全、半、全、全、半、全、全” 2级音和3级音之间、5级音和6级音之间是半音关系"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p038:a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c",
+          "distance": 0.5130190849304199,
+          "rerank_score": 6.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大三度 | 大三度音程等同于两个全音的距离。它对于构建和弦和决定和弦的性质来说十分重要。 | 纯四度 | 吉他的调弦应用的便是纯四度。每根弦都比其下方的弦高四度，除了第2弦的B音比第3弦的G音高一个大三度音程外。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p038:c22f406257b38763731cc17b6a0564e099a2a5d59cb811c44777be49d02905eb",
+          "distance": 0.5386521220207214,
+          "rerank_score": 6.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大二度音程等于一个全音。 | 大二度 | 纯一度就是同一个音重复演奏2次。 | 纯一度",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\c22f406257b38763731cc17b6a0564e099a2a5d59cb811c44777be49d02905eb.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p035:d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d",
+          "distance": 0.4804389476776123,
+          "rerank_score": 6.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 34,
+          "topic": "练习18 | 练习19 | 练习20",
+          "nearby_text": "回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。 | 练习19 | D小调五声音阶指型2 | (F#小调五声音阶指型5）",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p040:07f72703ce0a15cbaff2ec023bcd3e4d3cebb00d2c5efef55993c0c3233f7054",
+          "distance": 0.5178840160369873,
+          "rerank_score": 6.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 39,
+          "topic": "练习24 | 练习25",
+          "nearby_text": "6 | 7 | 8 | 9",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\07f72703ce0a15cbaff2ec023bcd3e4d3cebb00d2c5efef55993c0c3233f7054.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p040:fda2c29d65a27e594532d5907dc5c2a8b93b067fc73d189cc193602ebd5da08f",
+          "distance": 0.5234717130661011,
+          "rerank_score": 6.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 39,
+          "topic": "练习24 | 练习25",
+          "nearby_text": "1) | 2) | 3 | 4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\fda2c29d65a27e594532d5907dc5c2a8b93b067fc73d189cc193602ebd5da08f.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:音程",
+          "heuristic:power_chord_root_finding"
+        ],
+        "expanded": [
+          "concept:音程",
+          "concept:compound_interval",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift",
+          "interval:perfect_5th",
+          "interval:major_6th",
+          "heuristic:power_chord_root_finding"
+        ],
+        "alias_hits": [
+          "concept:compound_interval",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift",
+          "interval:perfect_5th",
+          "interval:major_6th"
+        ],
+        "hits": [
+          {
+            "id": "interval:major_6th",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 3
+          },
+          {
+            "id": "interval:perfect_5th",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 3
+          },
+          {
+            "id": "concept:compound_interval",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:power_chord_root_finding",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_geometry_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_shape_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "concept:guitar_tuning",
+            "rel": "CONSTRAINS",
+            "b": "pattern:interval_shape_shift"
+          },
+          {
+            "a": "pattern:interval_shape_shift",
+            "rel": "CONSTRAINS",
+            "b": "concept:guitar_tuning"
+          },
+          {
+            "a": "interval:perfect_5th",
+            "rel": "ENABLES",
+            "b": "pattern:power_chord_shape"
+          },
+          {
+            "a": "pattern:power_chord_shape",
+            "rel": "ENABLES",
+            "b": "interval:perfect_5th"
+          },
+          {
+            "a": "interval:perfect_5th",
+            "rel": "ENABLES",
+            "b": "heuristic:power_chord_root_finding"
+          },
+          {
+            "a": "heuristic:power_chord_root_finding",
+            "rel": "ENABLES",
+            "b": "interval:perfect_5th"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_caged_major_triad_shapes",
+      "query": "CAGED 大三和弦 五种指型 major triad shapes",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "inferred_visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 13.5,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "concept:大三和弦",
+          "concept:指型"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.003170800016960129,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.003116499981842935,
+        "text_total_seconds": 0.006287299998803064,
+        "visual_embedding_seconds": 0.004454799985978752,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.005037700000684708,
+        "visual_total_seconds": 0.009541199979139492,
+        "kg_seconds": 0.03326480000396259,
+        "total_seconds": 0.04918769997311756
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0008:1c0cc93845ddfef0",
+          "distance": 0.32726192474365234,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0008",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 小三和弦琵音 小三和弦是由根音、根音上方的小三度音和纯五度音组成的：1、b3、5。 ## 练习31 构建D小三和弦琶音的五种指型。注意不要用品位标记以下的音符，并且在画出音符时，保证所有的音符都在左手所在的把位以内，最多不要超出1品以外。 1)D小三和弦琶音 V [IMAGE_BLOCK:images/f09a862e2cade2cfda3e9353a"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0009:9e1e1a1699deb0da",
+          "distance": 0.3485286235809326,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第15章 七和弦琶音 学习目标：在指板上构建七和弦的琶音。 七和弦是学习三和弦之后的进阶，每个七和弦包含四个音。首先，还是先来学习七和弦的琶音，之后再来学习七和弦。七和弦琶音之间的音程关系和三和弦是相似的。 ## 大七和弦 在大三和弦的基础上增加一个大七度音就形成了大七和弦，其音符为：1、3、5和7。表示大七和弦的标记有以下几种：Cmaj7，Cma7，"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0015:eb93e80c83c5b010",
+          "distance": 0.3595445156097412,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0015",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习23 1.同度音在指板上为两根相邻弦相差5品位置的音。对于第3弦上的音，其在第2弦上的同度音为向下4品的位置。 1.b5 2.#4 3.4 2.大二度在同一根弦上的距离为2品。从一根弦到另一根弦上的大二度为向下3品的距离。而第3弦和第2弦之间的大二度为2品的距离。 4.b3 5.b3 3.大三度在同一根弦上的距离为4品。从一根弦到另一根弦上的大三度"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0013:8b3cf88540a7b050",
+          "distance": 0.3650639057159424,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0013",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 分割（Slash）和弦 分割和弦就是将三和弦或七和弦叠加在一个非和弦根音的低音上。这种和弦可以用这种方式来表达：C/D。当这个低音也是和弦中的音时，分割和弦就变成了一种和弦转位。否则，分割和弦就是延伸和弦或者变化和弦的一种声部构成。 ## 练习59 在下面的图示中画出 Slash 和弦。 [IMAGE_BLOCK:images/323a85babce1"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.37647193670272827,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p048:0a2a6f601b344ae09fe6e977704f1260fa55caf22a3f1f1cc9643aa2af5bde12",
+          "distance": 0.48721712827682495,
+          "rerank_score": 15.25,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 47,
+          "topic": "第14章 三和弦",
+          "nearby_text": "开放大三和弦声部（“牛仔和弦”） | 现在根据之前学习的各种琶音型式，我们来构建类似的六根弦上的连续密集声部三和弦，且每根弦上只有一个音符。在一个连续密集声部三和弦中，根音之后必定是三度音，三度音后是五度音，然后接着又是根音，接着再是三度音，以此类推。 | 1、3、5、1、3、5、1…. | 当我们构建这些指型图时，将会发现共有三种基本指型，它们重复出现并覆盖整个吉他指板：每种指型都是三和弦的每个音从六弦上开始的。不要尝试去一次弹奏每种指型的全部六根琴弦。我们将这每种指型分成四种以三根琴弦为一组的指型。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\0a2a6f601b344ae09fe6e977704f1260fa55caf22a3f1f1cc9643aa2af5bde12.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p051:4f88f53cedc0999c8cf7ae26e45330bb18f910bee111d5f3945410b902371eab",
+          "distance": 0.5616090893745422,
+          "rerank_score": 15.25,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 50,
+          "topic": "转位 | 练习",
+          "nearby_text": "D大三和弦第二转位 | 当和弦的五度音为弹奏的最低音时，这个和弦就称为和弦的第二转位。 | 练习 | 回到本章中的各个练习，并根据以上的内容来弹奏这些和弦三个音一组的转位。对于每种指型，你需要弹奏四种声部，分别从第6弦、第5弦、第4弦和第3弦开始。弹奏时，大声地说出和弦的名称、指型的序号、转位的名称以及它的最低音，就像这样：",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\4f88f53cedc0999c8cf7ae26e45330bb18f910bee111d5f3945410b902371eab.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p049:3473ccf4b0ddca16337f75a8662133621b1216ba3dfbf85b814b6a8b5475be1c",
+          "distance": 0.5650215148925781,
+          "rerank_score": 15.25,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 48,
+          "topic": "大三和弦 | 练习34 | 小三和弦 | 练习35",
+          "nearby_text": "1)C大三和弦 | 2)C大三和弦 | 3)C大三和弦 | 完成下面图示中的密集声部大三和弦。圈出每个和弦的根音，并写出指型的序号。当这些六根弦上的三和弦中包含有两种三和弦指型时，则将两个序号都写出来。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\3473ccf4b0ddca16337f75a8662133621b1216ba3dfbf85b814b6a8b5475be1c.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p050:cca58c83e81e9167c7a622a30b0e81bc3f4613f91394affc899c46d81d9e69ea",
+          "distance": 0.5662669539451599,
+          "rerank_score": 15.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 49,
+          "topic": "减三和弦 | 练习36 | 增三和弦 | 练习37",
+          "nearby_text": "2)C减三和弦 | 1)C减三和弦 | 3)C减三和弦 | 完成下面图示中密集声部的C减三和弦。根音已经被圈出来了，请写出和弦指型的序号。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\cca58c83e81e9167c7a622a30b0e81bc3f4613f91394affc899c46d81d9e69ea.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p051:524e93470084f0cfb5adfd9a350701f856930f7a00d296466de4f938038c33af",
+          "distance": 0.5264492034912109,
+          "rerank_score": 14.5,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P2_arpeggios_chords",
+          "page": 50,
+          "topic": "转位 | 练习",
+          "nearby_text": "D大三和弦原位 | 当和弦的根音为弹奏的最低音时，这个和弦就称为和弦的原位。 | 转位 | 当和弦的三度音为弹奏的最低音时，这个和弦就称为和弦的第一转位。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\524e93470084f0cfb5adfd9a350701f856930f7a00d296466de4f938038c33af.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:大三和弦",
+          "concept:指型"
+        ],
+        "expanded": [
+          "concept:大三和弦",
+          "chord:major_triad",
+          "concept:指型",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift"
+        ],
+        "alias_hits": [
+          "chord:major_triad",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift"
+        ],
+        "hits": [
+          {
+            "id": "chord:major_triad",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:five_major_scale_patterns",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_navigation",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_shapes",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_geometry_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_shape_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "concept:guitar_tuning",
+            "rel": "CONSTRAINS",
+            "b": "pattern:interval_shape_shift"
+          },
+          {
+            "a": "pattern:interval_shape_shift",
+            "rel": "CONSTRAINS",
+            "b": "concept:guitar_tuning"
+          },
+          {
+            "a": "concept:root_pattern_system",
+            "rel": "CONSTRAINS",
+            "b": "pattern:caged_system_navigation"
+          },
+          {
+            "a": "pattern:caged_system_navigation",
+            "rel": "CONSTRAINS",
+            "b": "concept:root_pattern_system"
+          },
+          {
+            "a": "concept:standard_tuning",
+            "rel": "CONSTRAINS",
+            "b": "pattern:interval_geometry_shift"
+          },
+          {
+            "a": "pattern:interval_geometry_shift",
+            "rel": "CONSTRAINS",
+            "b": "concept:standard_tuning"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_add9_not_dom9",
+      "query": "add9 加九和弦 不含七音 不要混淆 dominant 9",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P3_common_scales_chords"
+        ],
+        "inferred_visual_priorities": [
+          "P3_common_scales_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 11.5,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "concept:九和弦",
+          "concept:常用和弦"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0035549000022001565,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.0026732000114861876,
+        "text_total_seconds": 0.006228100013686344,
+        "visual_embedding_seconds": 0.001809200010029599,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.004370900016510859,
+        "visual_total_seconds": 0.006217000016476959,
+        "kg_seconds": 0.03220880002481863,
+        "total_seconds": 0.04474730000947602
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0010:adc5b4213726be6c",
+          "distance": 0.4788660407066345,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习44 运用指型2和指型5画出七和弦“1、5、7、3”常用声部构成。 [IMAGE_BLOCK:images/6e05e11e982d36687c5df5564b6bf1ef6efb314c6143bb7c6ebfe3a865bdf034.jpg] [IMAGE_BLOCK:images/c1b81c203b4a0affa11063cfd87b862"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0009:9e1e1a1699deb0da",
+          "distance": 0.49936044216156006,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第15章 七和弦琶音 学习目标：在指板上构建七和弦的琶音。 七和弦是学习三和弦之后的进阶，每个七和弦包含四个音。首先，还是先来学习七和弦的琶音，之后再来学习七和弦。七和弦琶音之间的音程关系和三和弦是相似的。 ## 大七和弦 在大三和弦的基础上增加一个大七度音就形成了大七和弦，其音符为：1、3、5和7。表示大七和弦的标记有以下几种：Cmaj7，Cma7，"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0011:95365aac865894db",
+          "distance": 0.5092611908912659,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0011",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习49 根据给出的声部构成，在下面的图示中构建延伸和弦。 [IMAGE_BLOCK:images/8b4316202b722a59012caf14d81fafb2e864d6437437f7193aa92f4485ecec90.jpg] [IMAGE_BLOCK:images/a5cad2ac1a60193c9315db6052c0675e341d9"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0013:8b3cf88540a7b050",
+          "distance": 0.5171869993209839,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0013",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 分割（Slash）和弦 分割和弦就是将三和弦或七和弦叠加在一个非和弦根音的低音上。这种和弦可以用这种方式来表达：C/D。当这个低音也是和弦中的音时，分割和弦就变成了一种和弦转位。否则，分割和弦就是延伸和弦或者变化和弦的一种声部构成。 ## 练习59 在下面的图示中画出 Slash 和弦。 [IMAGE_BLOCK:images/323a85babce1"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0015:eb93e80c83c5b010",
+          "distance": 0.532285213470459,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0015",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习23 1.同度音在指板上为两根相邻弦相差5品位置的音。对于第3弦上的音，其在第2弦上的同度音为向下4品的位置。 1.b5 2.#4 3.4 2.大二度在同一根弦上的距离为2品。从一根弦到另一根弦上的大二度为向下3品的距离。而第3弦和第2弦之间的大二度为2品的距离。 4.b3 5.b3 3.大三度在同一根弦上的距离为4品。从一根弦到另一根弦上的大三度"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p069:48b8d933c0ef36d4e4bc329917be9ca10970107f7f0196ba8b6b12afc610a178",
+          "distance": 0.4792149066925049,
+          "rerank_score": 12.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "65 | 在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\48b8d933c0ef36d4e4bc329917be9ca10970107f7f0196ba8b6b12afc610a178.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:19c70069724de5b61cb416d5281ab07e0823e87d4ec934b7dac90aef049b1ab7",
+          "distance": 0.5053410530090332,
+          "rerank_score": 12.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "65 | 在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\19c70069724de5b61cb416d5281ab07e0823e87d4ec934b7dac90aef049b1ab7.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:7915644f58172e192a14dbf16a653d9b27d31c9210b2d7fe4ad37199f9085bce",
+          "distance": 0.5568053722381592,
+          "rerank_score": 12.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。 | ·六九和弦：在六和弦的基础上再加入大九度音，三和弦的类型不 6/9—1、3、5、6、9变。这类和弦通常被认为是大和弦或者是小和弦，而不是属和 mi6/9—1、b3、5、6、9弦，它们不包含七度音。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\7915644f58172e192a14dbf16a653d9b27d31c9210b2d7fe4ad37199f9085bce.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:ee5c10ed920b19c453b2962073feb887d3e33c867763614b3808c08fac91d5eb",
+          "distance": 0.5573607087135315,
+          "rerank_score": 12.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。 | ·六九和弦：在六和弦的基础上再加入大九度音，三和弦的类型不 6/9—1、3、5、6、9变。这类和弦通常被认为是大和弦或者是小和弦，而不是属和 mi6/9—1、b3、5、6、9弦，它们不包含七度音。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\ee5c10ed920b19c453b2962073feb887d3e33c867763614b3808c08fac91d5eb.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p069:6adcb92bcf27554cc5f9bdb7c39dbcae6d5385f77864bee4163f9d3ccbb788e3",
+          "distance": 0.5620306730270386,
+          "rerank_score": 12.75,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P3_common_scales_chords",
+          "page": 68,
+          "topic": "第21章 其他常用和弦 | 练习58",
+          "nearby_text": "在下面的练习中，给出了和弦的名称及声部构成，在图示中画出这些和弦。然后试着为每个和弦音找出相应的按弦手指，每个和弦至少可以找出一种合适的指法，也可以运用大拇指。 | 练习58 | ·加九和弦：在三和弦中仅加入九度音，而没有七度音。注意不要 add9-1、3、5、9把加九和弦同属九和弦(C9:1、3、5、b7、9)或大九和弦(Cma9: mi(add9)-1、b3、5、91、3、5、7、9）混淆。 | ·六九和弦：在六和弦的基础上再加入大九度音，三和弦的类型不 6/9—1、3、5、6、9变。这类和弦通常被认为是大和弦或者是小和弦，而不是属和 mi6/9—1、b3、5、6、9弦，它们不包含七度音。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\6adcb92bcf27554cc5f9bdb7c39dbcae6d5385f77864bee4163f9d3ccbb788e3.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:九和弦",
+          "concept:常用和弦"
+        ],
+        "expanded": [
+          "concept:九和弦",
+          "chord:add9",
+          "chord:6/9",
+          "chord:6_9",
+          "chord:extended_chords",
+          "concept:常用和弦"
+        ],
+        "alias_hits": [
+          "chord:add9",
+          "chord:6/9",
+          "chord:6_9",
+          "chord:extended_chords"
+        ],
+        "hits": [
+          {
+            "id": "chord:add9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 2
+          },
+          {
+            "id": "chord:6/9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "chord:6_9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "chord:extended_chords",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "chord:add9",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:dom9"
+          },
+          {
+            "a": "chord:dom9",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:add9"
+          },
+          {
+            "a": "chord:add9",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:dominant_9th"
+          },
+          {
+            "a": "chord:dominant_9th",
+            "rel": "CONFLICTS_WITH",
+            "b": "chord:add9"
+          },
+          {
+            "a": "chord:6_9",
+            "rel": "SUGGESTS",
+            "b": "color:stable_non_dominant"
+          },
+          {
+            "a": "color:stable_non_dominant",
+            "rel": "SUGGESTS",
+            "b": "chord:6_9"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_pentatonic_two_notes_per_string",
+      "query": "五声音阶 每根弦两个音 pentatonic two notes per string",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P1_scales_intervals"
+        ],
+        "inferred_visual_priorities": [
+          "P1_scales_intervals"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 5.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "scale:pentatonic_major",
+          "heuristic:two_notes_per_string_geometry"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0030632000125478953,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.003624999983003363,
+        "text_total_seconds": 0.006688199995551258,
+        "visual_embedding_seconds": 0.0014430999872274697,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.004641199979232624,
+        "visual_total_seconds": 0.0061194000008981675,
+        "kg_seconds": 0.032344000006560236,
+        "total_seconds": 0.04523940000217408
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0005:2f7c217cba975217",
+          "distance": 0.3354637622833252,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第8章 自然小调音阶 学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。 大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）： ## “全、半、全、全、半、全、全” 2级音和3级音之间、5级音和6级音之间是半音关系"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0002:bff08bbea6ca1f56",
+          "distance": 0.3398534059524536,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习1 在下面图示空白处用字母填上对应的琴弦名称。做题时可以不看前面的内容，凭记忆进行填写。第6弦的名称已经给出。 ⑥6④③②① [IMAGE_BLOCK:images/fe57c06be60349e91861ff8b1d5ca2233520a6df3dc06711a0d746eaa348de7e.jpg] ## 练习2 当图中包含多个品格时，需要将上"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0006:3b707c5df5138869",
+          "distance": 0.3581664562225342,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习22 回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。 弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。 ## 第10章 大调和纯音程 学习目"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0004:f21d8b45bb8cfc41",
+          "distance": 0.3659512996673584,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习 1.每天花5分钟时间大声地念出指板上音符的名称。最好的方法是给那些你已经学过的歌曲或者乐句中的音符命名，但是也可以采用随机的音符来练习命名。所以，不要再做那种“这个手指按住这里”之类的练习了，大声地说出：“我在演奏第2弦第9品上的音符Ab音！”这个练习至少要坚持做一个星期。 2.接下来的7周时间里，每周都要着重练习一个自然音阶音符。从A音开始，每"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.37857747077941895,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p035:d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d",
+          "distance": 0.4528388977050781,
+          "rerank_score": 6.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 34,
+          "topic": "练习18 | 练习19 | 练习20",
+          "nearby_text": "回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。 | 练习19 | D小调五声音阶指型2 | (F#小调五声音阶指型5）",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p035:220c776cc6654768ae42b830284921efab5f11ce9d1ddf94cf4e101eb5b6376f",
+          "distance": 0.4964612126350403,
+          "rerank_score": 6.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 34,
+          "topic": "练习18 | 练习19 | 练习20",
+          "nearby_text": "回到练习16中，写出每个图示中关系小调五声音阶的名称和指型序号，并且用方形画出关系小调五声音阶的根音。第一个图示的例子如右所示。 | 练习18 | A大调五声音阶指型4 | (F#小调五声音阶指型5）",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\220c776cc6654768ae42b830284921efab5f11ce9d1ddf94cf4e101eb5b6376f.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p038:a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c",
+          "distance": 0.47164255380630493,
+          "rerank_score": 5.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大三度 | 大三度音程等同于两个全音的距离。它对于构建和弦和决定和弦的性质来说十分重要。 | 纯四度 | 吉他的调弦应用的便是纯四度。每根弦都比其下方的弦高四度，除了第2弦的B音比第3弦的G音高一个大三度音程外。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\a9aeebcb3ca3013ba8215cbd266747b7b6dc087d3e8521b1039f8898dc388e0c.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p040:07f72703ce0a15cbaff2ec023bcd3e4d3cebb00d2c5efef55993c0c3233f7054",
+          "distance": 0.49076759815216064,
+          "rerank_score": 5.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 39,
+          "topic": "练习24 | 练习25",
+          "nearby_text": "6 | 7 | 8 | 9",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\07f72703ce0a15cbaff2ec023bcd3e4d3cebb00d2c5efef55993c0c3233f7054.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p038:c06a5ebd8a8adaf77734d7afb6a66faa80a7505bc9115091785d5e808b81f41d",
+          "distance": 0.49242156744003296,
+          "rerank_score": 5.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P1_scales_intervals",
+          "page": 37,
+          "topic": "纯一度 | 大二度 | 大三度 | 纯四度",
+          "nearby_text": "大三度 | 大三度音程等同于两个全音的距离。它对于构建和弦和决定和弦的性质来说十分重要。 | 纯四度 | 吉他的调弦应用的便是纯四度。每根弦都比其下方的弦高四度，除了第2弦的B音比第3弦的G音高一个大三度音程外。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\c06a5ebd8a8adaf77734d7afb6a66faa80a7505bc9115091785d5e808b81f41d.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "scale:pentatonic_major",
+          "heuristic:two_notes_per_string_geometry"
+        ],
+        "expanded": [
+          "scale:pentatonic_major",
+          "heuristic:two_notes_per_string_geometry"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "scale:pentatonic_major",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 3
+          },
+          {
+            "id": "heuristic:two_notes_per_string_geometry",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "scale:pentatonic_major",
+            "rel": "ENABLES",
+            "b": "idiom:two_notes_per_string_pattern"
+          },
+          {
+            "a": "idiom:two_notes_per_string_pattern",
+            "rel": "ENABLES",
+            "b": "scale:pentatonic_major"
+          },
+          {
+            "a": "scale:pentatonic_major",
+            "rel": "ENABLES",
+            "b": "guitar_idiom:open_string_resonance_in_key_of_g_d_a_e"
+          },
+          {
+            "a": "guitar_idiom:open_string_resonance_in_key_of_g_d_a_e",
+            "rel": "ENABLES",
+            "b": "scale:pentatonic_major"
+          },
+          {
+            "a": "scale:pentatonic_major",
+            "rel": "ENABLES",
+            "b": "heuristic:two_notes_per_string_geometry"
+          },
+          {
+            "a": "heuristic:two_notes_per_string_geometry",
+            "rel": "ENABLES",
+            "b": "scale:pentatonic_major"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "fretboard_root_pattern_cycle_overlap",
+      "query": "五种根音型式 循环 重叠 root pattern cycle overlap",
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation"
+      ],
+      "expected": {
+        "text_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_sources": [
+          "fretboard_handbook_mineru"
+        ],
+        "visual_priorities": [
+          "P0_root_fingering_forms"
+        ],
+        "inferred_visual_priorities": [
+          "P0_root_fingering_forms"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 13.0
+        },
+        "kg_nodes_any": [
+          "concept:根音",
+          "concept:指型"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0031802000012248755,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.002592500008177012,
+        "text_total_seconds": 0.005772700009401888,
+        "visual_embedding_seconds": 0.001438500010408461,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.004642200015950948,
+        "visual_total_seconds": 0.00611610000487417,
+        "kg_seconds": 0.022208300011698157,
+        "total_seconds": 0.034176899993326515
+      },
+      "text_top": [
+        {
+          "id": "fretboard_handbook_mineru::chunk_0002:bff08bbea6ca1f56",
+          "distance": 0.3719998598098755,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习1 在下面图示空白处用字母填上对应的琴弦名称。做题时可以不看前面的内容，凭记忆进行填写。第6弦的名称已经给出。 ⑥6④③②① [IMAGE_BLOCK:images/fe57c06be60349e91861ff8b1d5ca2233520a6df3dc06711a0d746eaa348de7e.jpg] ## 练习2 当图中包含多个品格时，需要将上"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0012:028b12be27ed38ff",
+          "distance": 0.3889769911766052,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0012",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习52 用以上所学习的三步寻找Ionian的方法，填写下面的空格。 1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G 2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A 3.EDorian Ionian从E到E 8.FDorian Ionian从F到F 4.A "
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0005:2f7c217cba975217",
+          "distance": 0.39181697368621826,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 第8章 自然小调音阶 学习目标：构建自然小调音阶的五种指型。理解关系小调和关系大调。 大调音阶只有一种构建公式，但对于小调音阶来说却有许多种构建方式，每一种都有它自己的公式。当人们提到“小调音阶”时，首先想到的应该是自然小调音阶。下面是它的构建公式（大声地读出来）： ## “全、半、全、全、半、全、全” 2级音和3级音之间、5级音和6级音之间是半音关系"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0004:f21d8b45bb8cfc41",
+          "distance": 0.4014818072319031,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 练习 1.每天花5分钟时间大声地念出指板上音符的名称。最好的方法是给那些你已经学过的歌曲或者乐句中的音符命名，但是也可以采用随机的音符来练习命名。所以，不要再做那种“这个手指按住这里”之类的练习了，大声地说出：“我在演奏第2弦第9品上的音符Ab音！”这个练习至少要坚持做一个星期。 2.接下来的7周时间里，每周都要着重练习一个自然音阶音符。从A音开始，每"
+        },
+        {
+          "id": "fretboard_handbook_mineru::chunk_0013:8b3cf88540a7b050",
+          "distance": 0.40471160411834717,
+          "source_id": "fretboard_handbook_mineru",
+          "chunk_id": "chunk_0013",
+          "title": null,
+          "style_tags": [
+            "fretboard",
+            "guitar_foundation"
+          ],
+          "snippet": "## 分割（Slash）和弦 分割和弦就是将三和弦或七和弦叠加在一个非和弦根音的低音上。这种和弦可以用这种方式来表达：C/D。当这个低音也是和弦中的音时，分割和弦就变成了一种和弦转位。否则，分割和弦就是延伸和弦或者变化和弦的一种声部构成。 ## 练习59 在下面的图示中画出 Slash 和弦。 [IMAGE_BLOCK:images/323a85babce1"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "fretboard_handbook:p014:af1f5dfaafd4bc331b51424c9497e14435fd6bfae20d720cef1b5b032136240b",
+          "distance": 0.5677374005317688,
+          "rerank_score": 14.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\af1f5dfaafd4bc331b51424c9497e14435fd6bfae20d720cef1b5b032136240b.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:27cc76634908dd1aa263d40b028c2df067a9b7cd0086cb49716815d05f9739a6",
+          "distance": 0.5689221620559692,
+          "rerank_score": 14.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\27cc76634908dd1aa263d40b028c2df067a9b7cd0086cb49716815d05f9739a6.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:d502da690fe431965bb7cfbb25884f52fa71e3449b72b8a0a2c5a5d3b6a74232",
+          "distance": 0.5746957063674927,
+          "rerank_score": 14.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4 | 练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\d502da690fe431965bb7cfbb25884f52fa71e3449b72b8a0a2c5a5d3b6a74232.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:f5458035580ef6687c4357684818cd39f2d499329404121c4b8b6e8eeef51a3b",
+          "distance": 0.5764782428741455,
+          "rerank_score": 14.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\f5458035580ef6687c4357684818cd39f2d499329404121c4b8b6e8eeef51a3b.jpg"
+        },
+        {
+          "id": "fretboard_handbook:p014:e6cdbd16559a30dcaacfc5049d15927fe64e005083abf4195dca1af9eefe36e3",
+          "distance": 0.5778679847717285,
+          "rerank_score": 14.0,
+          "source_id": "fretboard_handbook_mineru",
+          "priority": "P0_root_fingering_forms",
+          "page": 13,
+          "topic": "练习4 | 练习5",
+          "nearby_text": "练习5 | 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 | 在下面的图示中，每个音符都属于两种根音型式。补全两种型式剩下的音符并且标出指型序号。第一个图示作为例子已给出答案。 | 练习4",
+          "path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\images\\e6cdbd16559a30dcaacfc5049d15927fe64e005083abf4195dca1af9eefe36e3.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "concept:根音",
+          "concept:指型"
+        ],
+        "expanded": [
+          "concept:根音",
+          "concept:root_pattern_cycle",
+          "concept:root_pattern_system",
+          "pattern:root_shape_1",
+          "pattern:root_shape_4",
+          "heuristic:power_chord_root_finding",
+          "concept:指型",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift"
+        ],
+        "alias_hits": [
+          "concept:root_pattern_cycle",
+          "concept:root_pattern_system",
+          "pattern:root_shape_1",
+          "pattern:root_shape_4",
+          "heuristic:power_chord_root_finding",
+          "concept:five_major_scale_patterns",
+          "pattern:caged_system_shapes",
+          "pattern:caged_system_navigation",
+          "pattern:interval_geometry_shift",
+          "pattern:interval_shape_shift"
+        ],
+        "hits": [
+          {
+            "id": "concept:five_major_scale_patterns",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:root_pattern_cycle",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "concept:root_pattern_system",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "heuristic:power_chord_root_finding",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_navigation",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:caged_system_shapes",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_geometry_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:interval_shape_shift",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:root_shape_1",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:root_shape_4",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "concept:guitar_tuning",
+            "rel": "CONSTRAINS",
+            "b": "pattern:interval_shape_shift"
+          },
+          {
+            "a": "pattern:interval_shape_shift",
+            "rel": "CONSTRAINS",
+            "b": "concept:guitar_tuning"
+          },
+          {
+            "a": "interval:perfect_5th",
+            "rel": "ENABLES",
+            "b": "heuristic:power_chord_root_finding"
+          },
+          {
+            "a": "heuristic:power_chord_root_finding",
+            "rel": "ENABLES",
+            "b": "interval:perfect_5th"
+          },
+          {
+            "a": "concept:root_pattern_cycle",
+            "rel": "ENABLES",
+            "b": "heuristic:fretboard_navigation_logic"
+          },
+          {
+            "a": "heuristic:fretboard_navigation_logic",
+            "rel": "ENABLES",
+            "b": "concept:root_pattern_cycle"
+          }
+        ],
+        "available": true
+      }
+    }
+  ]
+}

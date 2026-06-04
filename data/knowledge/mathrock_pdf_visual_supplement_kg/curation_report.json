@@ -1,0 +1,10 @@
+{
+  "review_file": "data\\processed\\mathrock\\pdf_kg_multimodal_supplement\\arrangement_kg_review.synced.jsonl",
+  "output_dir": "data\\knowledge\\mathrock_pdf_visual_supplement_kg",
+  "accepted": 17,
+  "revised": 0,
+  "rejected": 0,
+  "pending": 0,
+  "curated_edges": 17,
+  "ingested_at": "2026-06-01T15:18:04.125810+00:00"
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "funk_note_location_prereq",
+    "query": "Cory Wong funk 课程里为什么要求先掌握指板音名和 circle of fourths",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["note location", "circle of fourths", "circle of fifths"]
+  },
+  {
+    "id": "funk_muted_chuck_density",
+    "query": "funk rhythm guitar 里 muted chuck ghost note 作为十六分律动怎么安排",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["muted", "chuck", "sixteenth", "ghost"]
+  },
+  {
+    "id": "funk_leave_space_for_band",
+    "query": "funk 吉他伴奏为什么要给 bass 和 drums 留空间",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["space", "bass", "drums", "band"]
+  },
+  {
+    "id": "funk_right_hand_pocket",
+    "query": "Cory Wong funk 右手节奏 pocket 和 groove 的训练重点",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["right hand", "pocket", "groove", "rhythm"]
+  },
+  {
+    "id": "funk_syncopation_comping",
+    "query": "funk comping 如何用 syncopation 和短促和弦切分",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["syncopation", "comping", "rhythm", "chord"]
+  },
+  {
+    "id": "funk_percussive_guitar_role",
+    "query": "funk guitar 在乐队中更像打击乐还是和声乐器，如何处理 percussive attack",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["percussive", "attack", "rhythm", "guitar"]
+  },
+  {
+    "id": "funk_triads_relative_minor",
+    "query": "funk 课程中 major minor triads 和 relative minor 为什么是前置知识",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["major", "minor", "triads", "relative minor"]
+  },
+  {
+    "id": "funk_caged_system",
+    "query": "CAGED system 在 Cory Wong 课程里如何组织 chord shape 和 scale shape",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["caged", "chord shapes", "scale shapes"]
+  },
+  {
+    "id": "mathrock_text_dadgad_open_drone",
+    "query": "math rock 文本课 DADGAD 调弦如何产生 open string drone 和 common tone",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["dadgad", "open", "common tone", "drone"]
+  },
+  {
+    "id": "mathrock_text_tapped_power_chords",
+    "query": "math rock 文本课里 tapped power chords 如何在旋律中使用",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["tap", "power chord", "tapped", "melody"]
+  },
+  {
+    "id": "mathrock_text_hammer_pull_slide",
+    "query": "math rock riff 用 hammer on pull off slide 制造高密度连奏",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["hammer", "pull", "slide", "legato"]
+  },
+  {
+    "id": "mathrock_text_percussive_slap",
+    "query": "math rock midwest emo 编配里 percussive slap 和 dead note 的作用",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["percussive", "slap", "dead", "rhythm"]
+  },
+  {
+    "id": "mathrock_text_theme_variation",
+    "query": "math rock progression 如何从简单主题逐步加复杂 theme variation",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["theme", "variation", "progression", "complex"]
+  },
+  {
+    "id": "mathrock_text_open_string_pull_off",
+    "query": "midwest emo 乐句里 slide 后 pull off 到 open string 的色彩",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["slide", "pull off", "open string"]
+  },
+  {
+    "id": "mathrock_text_harp_harmonics",
+    "query": "math rock 教学课里 harp harmonics 可以怎样启发 riff writing",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["harp", "harmonics", "riff"]
+  },
+  {
+    "id": "mathrock_text_alternate_tuning_dependency",
+    "query": "为什么 math rock 的指型常常依赖 alternate tuning，不能直接搬到标准调弦",
+    "text_sources": ["mathrock_text_course"],
+    "expected_keywords_any": ["alternate tuning", "tuning", "shape", "dependency"]
+  },
+  {
+    "id": "mathrock_pdf_finger_tapping_types",
+    "query": "Math Rock PDF 中点弦技巧包括哪些类型，双手点弦和持续音点弦怎么练",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["点弦", "双手点弦", "持续音", "tapping"]
+  },
+  {
+    "id": "mathrock_pdf_tapping_evenness",
+    "query": "Math Rock PDF 里点弦练习为什么强调音量均匀和手指力量平衡",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["均匀", "手指力量", "点弦", "音量"]
+  },
+  {
+    "id": "mathrock_pdf_muting_tapping_noise",
+    "query": "点弦时如何用食指内侧和拨弦手掌消音避免杂音",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["消音", "杂音", "食指", "手掌"]
+  },
+  {
+    "id": "mathrock_pdf_facgce_theory",
+    "query": "FACGCE 调弦在 Math Rock PDF 中如何用开放弦和和弦指型构建声音",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["FACGCE", "开放弦", "和弦", "调弦"]
+  },
+  {
+    "id": "mathrock_pdf_daeacse_scales",
+    "query": "DAEAC#E 调弦的大调与小调音阶为什么有重复音和开放弦选择",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["DAEAC#E", "大调", "小调", "音阶"]
+  },
+  {
+    "id": "mathrock_pdf_shell_voicing",
+    "query": "Math Rock PDF 中 shell voicing 如何用于 m7 G7 maj7 进行",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["shell", "voicing", "G7", "maj7"]
+  },
+  {
+    "id": "mathrock_pdf_extended_chords",
+    "query": "CM9 Dsus4 Em9 Gsus2 C6/9 这类扩展和弦在 PDF 里如何组织",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["扩展壳式和弦", "延伸和弦", "壳式按法", "extended"]
+  },
+  {
+    "id": "mathrock_pdf_jazz_voicing_progressions",
+    "query": "Math Rock PDF 后半部分的 jazz voicing progression 如何连接 C6 G6/9 Bm7",
+    "text_sources": ["mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["C6", "G6/9", "Bm7", "jazz"]
+  },
+  {
+    "id": "fretboard_note_location",
+    "query": "吉他指板手册如何训练在每根弦上找到音名和根音",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["根音", "指板", "音名", "六根弦"]
+  },
+  {
+    "id": "fretboard_intervals_octave",
+    "query": "指板手册里八度音和不同弦组之间的品位关系怎么记忆",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["八度", "品", "弦", "指板"]
+  },
+  {
+    "id": "fretboard_major_triad_arpeggio",
+    "query": "大三和弦琶音由根音大三度纯五度构成，如何在六根弦上练指型",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["大三和弦", "琶音", "根音", "纯五度"]
+  },
+  {
+    "id": "fretboard_minor_diminished_augmented",
+    "query": "小三和弦 减三和弦 增三和弦的琶音指型有什么音程差异",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["小三和弦", "减三和弦", "增三和弦", "琶音"]
+  },
+  {
+    "id": "fretboard_seventh_arpeggios",
+    "query": "大七 小七 属七 小七减五 减七和弦琶音在指板手册中怎么练",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["大七", "小七", "属七", "减七"]
+  },
+  {
+    "id": "fretboard_open_major_triad_voicing",
+    "query": "开放大三和弦声部和牛仔和弦为什么先学琶音再学和弦",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["开放大三和弦", "牛仔和弦", "琶音", "声部"]
+  },
+  {
+    "id": "fretboard_closed_triad_voicing",
+    "query": "密集三和弦和闭合排列在指板上如何构建转位",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["密集三和弦", "转位", "声部", "指板"]
+  },
+  {
+    "id": "fretboard_six_nine_add9",
+    "query": "加九和弦 六九和弦 和属九大九有什么区别",
+    "text_sources": ["fretboard_handbook_mineru"],
+    "expected_keywords_any": ["加九", "六九", "属九", "大九"]
+  },
+  {
+    "id": "cross_open_string_texture",
+    "query": "开放弦持续音在 math rock 和指板和弦声部里分别有什么作用",
+    "text_sources": ["mathrock_text_course", "mathrock_pdf_steve_h", "fretboard_handbook_mineru"],
+    "expected_keywords_any": ["open string", "开放弦", "common tone", "声部"]
+  },
+  {
+    "id": "cross_sparse_vs_dense_arrangement",
+    "query": "编配太密时，funk 的留白和 math rock 的开放弦密集织体有什么不同",
+    "text_sources": ["cory_wong_funk_core", "mathrock_text_course", "mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["space", "open string", "dense", "rhythm"]
+  },
+  {
+    "id": "cross_gp5_tapping_features",
+    "query": "如果 GP5 检测到大量 tapping hammer pull off open string，应匹配哪些教材证据",
+    "text_sources": ["mathrock_text_course", "mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["tapping", "hammer", "pull", "open string"]
+  },
+  {
+    "id": "cross_gp5_funk_16th_muting",
+    "query": "如果 GP5 里十六分音符很多且有 muted strum，应该检索 funk 哪些证据",
+    "text_sources": ["cory_wong_funk_core"],
+    "expected_keywords_any": ["sixteenth", "muted", "strum", "rhythm"]
+  },
+  {
+    "id": "cross_voicing_advice",
+    "query": "想把普通和弦进行改成更有风格的 guitar voicing，可以参考 funk sparse voicing 还是 math rock maj9 shell voicing",
+    "text_sources": ["cory_wong_funk_core", "mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["voicing", "maj9", "shell", "sparse"]
+  },
+  {
+    "id": "cross_arpeggio_to_riff",
+    "query": "如何把指板手册里的琶音指型转化成 math rock riff 或填充句",
+    "text_sources": ["fretboard_handbook_mineru", "mathrock_text_course"],
+    "expected_keywords_any": ["琶音", "arpeggio", "riff", "指型"]
+  },
+  {
+    "id": "cross_alternate_tuning_limit",
+    "query": "为什么特殊调弦下的和弦指型不能直接套用到标准调弦指板知识",
+    "text_sources": ["mathrock_text_course", "mathrock_pdf_steve_h", "fretboard_handbook_mineru"],
+    "expected_keywords_any": ["tuning", "调弦", "指型", "standard"]
+  },
+  {
+    "id": "cross_rhythm_plus_harmony",
+    "query": "如何同时考虑 funk 节奏律动和 math rock 扩展和弦色彩来做吉他编配",
+    "text_sources": ["cory_wong_funk_core", "mathrock_pdf_steve_h"],
+    "expected_keywords_any": ["rhythm", "groove", "extended", "和弦"]
+  }
+]

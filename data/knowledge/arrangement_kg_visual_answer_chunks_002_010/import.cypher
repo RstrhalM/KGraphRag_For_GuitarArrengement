@@ -1,0 +1,286 @@
+// Generated from curated KG JSONL.
+CREATE CONSTRAINT kg_node_id IF NOT EXISTS FOR (n:KGNode) REQUIRE n.id IS UNIQUE;
+
+MERGE (n:KGNode {id: "caution:avoid_muddy_lower_extensions"}) SET n.type = "caution", n.name = "avoid_muddy_lower_extensions";
+MERGE (n:KGNode {id: "caution:cross_string_complexity"}) SET n.type = "caution", n.name = "cross_string_complexity";
+MERGE (n:KGNode {id: "caution:fretboard_span_complexity"}) SET n.type = "caution", n.name = "fretboard_span_complexity";
+MERGE (n:KGNode {id: "caution:major_scale_step_error"}) SET n.type = "caution", n.name = "major_scale_step_error";
+MERGE (n:KGNode {id: "caution:misidentifying_EF_BC_intervals"}) SET n.type = "caution", n.name = "misidentifying_EF_BC_intervals";
+MERGE (n:KGNode {id: "caution:muddy_low_end_fingering_difficulty"}) SET n.type = "caution", n.name = "muddy_low_end_fingering_difficulty";
+MERGE (n:KGNode {id: "caution:power_chord_ambiguity"}) SET n.type = "caution", n.name = "power_chord_ambiguity";
+MERGE (n:KGNode {id: "chord:augmented_triad"}) SET n.type = "chord", n.name = "augmented_triad";
+MERGE (n:KGNode {id: "chord:diminished_triad"}) SET n.type = "chord", n.name = "diminished_triad";
+MERGE (n:KGNode {id: "chord:dom13_or_maj13"}) SET n.type = "chord", n.name = "dom13_or_maj13";
+MERGE (n:KGNode {id: "chord:extended_dominant"}) SET n.type = "chord", n.name = "extended_dominant";
+MERGE (n:KGNode {id: "chord:maj7"}) SET n.type = "chord", n.name = "maj7";
+MERGE (n:KGNode {id: "chord:major_triad"}) SET n.type = "chord", n.name = "major_triad";
+MERGE (n:KGNode {id: "color:bright_lyrical"}) SET n.type = "color", n.name = "bright_lyrical";
+MERGE (n:KGNode {id: "color:bright_spacious_tone"}) SET n.type = "color", n.name = "bright_spacious_tone";
+MERGE (n:KGNode {id: "color:country_soul_voicing"}) SET n.type = "color", n.name = "country_soul_voicing";
+MERGE (n:KGNode {id: "color:open_ambiguous_tonal_center"}) SET n.type = "color", n.name = "open_ambiguous_tonal_center";
+MERGE (n:KGNode {id: "concept:close_voicing_seventh_chords"}) SET n.type = "concept", n.name = "close_voicing_seventh_chords";
+MERGE (n:KGNode {id: "concept:close_voicing_triads"}) SET n.type = "concept", n.name = "close_voicing_triads";
+MERGE (n:KGNode {id: "concept:compound_interval"}) SET n.type = "concept", n.name = "compound_interval";
+MERGE (n:KGNode {id: "concept:extended_chord_voicing"}) SET n.type = "concept", n.name = "extended_chord_voicing";
+MERGE (n:KGNode {id: "concept:five_major_scale_patterns"}) SET n.type = "concept", n.name = "five_major_scale_patterns";
+MERGE (n:KGNode {id: "concept:fretboard_geometry"}) SET n.type = "concept", n.name = "fretboard_geometry";
+MERGE (n:KGNode {id: "concept:relative_keys"}) SET n.type = "concept", n.name = "relative_keys";
+MERGE (n:KGNode {id: "concept:root_pattern_cycle"}) SET n.type = "concept", n.name = "root_pattern_cycle";
+MERGE (n:KGNode {id: "concept:root_pattern_system"}) SET n.type = "concept", n.name = "root_pattern_system";
+MERGE (n:KGNode {id: "concept:standard_tuning"}) SET n.type = "concept", n.name = "standard_tuning";
+MERGE (n:KGNode {id: "guitar_idiom:drop_2_voicing_root_6_string"}) SET n.type = "guitar_idiom", n.name = "drop_2_voicing_root_6_string";
+MERGE (n:KGNode {id: "guitar_idiom:root_6_string_shell_voicing"}) SET n.type = "guitar_idiom", n.name = "root_6_string_shell_voicing";
+MERGE (n:KGNode {id: "guitar_idiom:vertical_voicing_expansion"}) SET n.type = "guitar_idiom", n.name = "vertical_voicing_expansion";
+MERGE (n:KGNode {id: "heuristic:economy_of_motion_in_arrangement"}) SET n.type = "heuristic", n.name = "economy_of_motion_in_arrangement";
+MERGE (n:KGNode {id: "heuristic:extension_on_top"}) SET n.type = "heuristic", n.name = "extension_on_top";
+MERGE (n:KGNode {id: "heuristic:fretboard_navigation_logic"}) SET n.type = "heuristic", n.name = "fretboard_navigation_logic";
+MERGE (n:KGNode {id: "heuristic:interval_shift_exception_g2_b3"}) SET n.type = "heuristic", n.name = "interval_shift_exception_g2_b3";
+MERGE (n:KGNode {id: "heuristic:minimize_position_shift"}) SET n.type = "heuristic", n.name = "minimize_position_shift";
+MERGE (n:KGNode {id: "heuristic:octave_symmetry_at_12th_fret"}) SET n.type = "heuristic", n.name = "octave_symmetry_at_12th_fret";
+MERGE (n:KGNode {id: "heuristic:power_chord_root_finding"}) SET n.type = "heuristic", n.name = "power_chord_root_finding";
+MERGE (n:KGNode {id: "heuristic:rapid_chord_identification"}) SET n.type = "heuristic", n.name = "rapid_chord_identification";
+MERGE (n:KGNode {id: "heuristic:symmetrical_fretboard_mapping"}) SET n.type = "heuristic", n.name = "symmetrical_fretboard_mapping";
+MERGE (n:KGNode {id: "heuristic:two_notes_per_string_geometry"}) SET n.type = "heuristic", n.name = "two_notes_per_string_geometry";
+MERGE (n:KGNode {id: "heuristic:vertical_voicing_derivation"}) SET n.type = "heuristic", n.name = "vertical_voicing_derivation";
+MERGE (n:KGNode {id: "interval:major_3rd"}) SET n.type = "interval", n.name = "major_3rd";
+MERGE (n:KGNode {id: "interval:major_6th"}) SET n.type = "interval", n.name = "major_6th";
+MERGE (n:KGNode {id: "interval:major_7th"}) SET n.type = "interval", n.name = "major_7th";
+MERGE (n:KGNode {id: "interval:minor_7th"}) SET n.type = "interval", n.name = "minor_7th";
+MERGE (n:KGNode {id: "interval:natural_semitone_BC_EF"}) SET n.type = "interval", n.name = "natural_semitone_BC_EF";
+MERGE (n:KGNode {id: "interval:octave"}) SET n.type = "interval", n.name = "octave";
+MERGE (n:KGNode {id: "interval:perfect_4th_or_11th"}) SET n.type = "interval", n.name = "perfect_4th_or_11th";
+MERGE (n:KGNode {id: "interval:perfect_5th"}) SET n.type = "interval", n.name = "perfect_5th";
+MERGE (n:KGNode {id: "note:natural_semitones"}) SET n.type = "note", n.name = "natural_semitones";
+MERGE (n:KGNode {id: "pattern:caged_system_navigation"}) SET n.type = "pattern", n.name = "caged_system_navigation";
+MERGE (n:KGNode {id: "pattern:caged_system_shapes"}) SET n.type = "pattern", n.name = "caged_system_shapes";
+MERGE (n:KGNode {id: "pattern:dominant_7th_shell"}) SET n.type = "pattern", n.name = "dominant_7th_shell";
+MERGE (n:KGNode {id: "pattern:interval_geometry_shift"}) SET n.type = "pattern", n.name = "interval_geometry_shift";
+MERGE (n:KGNode {id: "pattern:linear_visualization"}) SET n.type = "pattern", n.name = "linear_visualization";
+MERGE (n:KGNode {id: "pattern:relative_minor_mapping"}) SET n.type = "pattern", n.name = "relative_minor_mapping";
+MERGE (n:KGNode {id: "pattern:root_shape_1"}) SET n.type = "pattern", n.name = "root_shape_1";
+MERGE (n:KGNode {id: "pattern:root_shape_4"}) SET n.type = "pattern", n.name = "root_shape_4";
+MERGE (n:KGNode {id: "pattern:string_set_grouping"}) SET n.type = "pattern", n.name = "string_set_grouping";
+MERGE (n:KGNode {id: "pattern:universal_shell_voicing_shape"}) SET n.type = "pattern", n.name = "universal_shell_voicing_shape";
+MERGE (n:KGNode {id: "rule:alphabet_rule_no_mixing_accidentals"}) SET n.type = "rule", n.name = "alphabet_rule_no_mixing_accidentals";
+MERGE (n:KGNode {id: "scale:major_pentatonic"}) SET n.type = "scale", n.name = "major_pentatonic";
+MERGE (n:KGNode {id: "scale:major_scale"}) SET n.type = "scale", n.name = "major_scale";
+MERGE (n:KGNode {id: "scale:natural_minor"}) SET n.type = "scale", n.name = "natural_minor";
+MERGE (n:KGNode {id: "scale:pentatonic_major"}) SET n.type = "scale", n.name = "pentatonic_major";
+MERGE (n:KGNode {id: "strategy:mood_switching_via_root_shift"}) SET n.type = "strategy", n.name = "mood_switching_via_root_shift";
+MERGE (n:KGNode {id: "string_set:E_A_strings"}) SET n.type = "string_set", n.name = "E_A_strings";
+MERGE (n:KGNode {id: "technique:arpeggio_to_chord_conversion"}) SET n.type = "technique", n.name = "arpeggio_to_chord_conversion";
+MERGE (n:KGNode {id: "technique:barre_chord_foundation"}) SET n.type = "technique", n.name = "barre_chord_foundation";
+MERGE (n:KGNode {id: "technique:index_finger_muting"}) SET n.type = "technique", n.name = "index_finger_muting";
+MERGE (n:KGNode {id: "technique:minimal_position_shift"}) SET n.type = "technique", n.name = "minimal_position_shift";
+MERGE (n:KGNode {id: "technique:octave_displacement_rule"}) SET n.type = "technique", n.name = "octave_displacement_rule";
+MERGE (n:KGNode {id: "technique:omit_11th"}) SET n.type = "technique", n.name = "omit_11th";
+MERGE (n:KGNode {id: "technique:omit_3rd"}) SET n.type = "technique", n.name = "omit_3rd";
+MERGE (n:KGNode {id: "technique:omit_4th_and_7th"}) SET n.type = "technique", n.name = "omit_4th_and_7th";
+MERGE (n:KGNode {id: "technique:omit_root_and_5th"}) SET n.type = "technique", n.name = "omit_root_and_5th";
+MERGE (n:KGNode {id: "technique:open_voicing_spacing"}) SET n.type = "technique", n.name = "open_voicing_spacing";
+MERGE (n:KGNode {id: "technique:single_string_scale_run"}) SET n.type = "technique", n.name = "single_string_scale_run";
+
+MATCH (source:KGNode {id: "concept:root_pattern_cycle"})
+MATCH (target:KGNode {id: "heuristic:fretboard_navigation_logic"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0002:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.95, context_condition: "编配跨把位乐句、设计模进（Sequence）或构建长线条独奏时", review_note: "教材揭示了吉他指板根音位置的几何循环规律（Pattern 1-5 首尾相接）。在编曲中，利用这种重叠关系（如 Pattern 1 的顶部与 Pattern 2 的底部共用根音）可以实现无缝的把位切换，避免乐句中断，是编写流畅 Solo 和 Bass Line 的核心逻辑。", evidence: "指型1...指型2...指型3...指型4...指型5...这些根音在指板上构成了一个循环不断的重复...每个指型都和随后的指型有所重叠。", needs_visual_context: false, review_id: "chunk_0002:visual_answer_002_013:001", chunk_id: "chunk_0002", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "pattern:root_shape_1"})
+MATCH (target:KGNode {id: "string_set:E_A_strings"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0002:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "确定低音根音位置或构建强力和弦（Power Chord）基础时", review_note: "指型1明确根音位于第6弦和第5弦，且两音相差2品（纯四度音程关系）。这是吉他低音声部最稳固的几何结构，编曲时应优先在此弦组寻找根音以确立调性中心。", evidence: "指型1的根音在第2和第5弦上[OCR修正：结合图示应为6和5弦]，两个根音相差2品！", needs_visual_context: true, review_id: "chunk_0002:visual_answer_002_013:002", chunk_id: "chunk_0002", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "pattern:root_shape_4"})
+MATCH (target:KGNode {id: "technique:barre_chord_foundation"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0002:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.85, context_condition: "在高把位编配和弦 Voicing 或快速定位高音区根音时", review_note: "指型4显示根音同时存在于第6弦和第1弦（八度关系），且中间跨越了第4弦的根音。这种“外弦同音、内弦支撑”的结构是大横按和弦及高把位封闭和弦的典型指法依据，有助于在编曲中保持声部平衡。", evidence: "指型4的根音在第1弦、第6弦和第4弦上，相差2品！...用1指同时按住...第1弦和第6弦", needs_visual_context: true, review_id: "chunk_0002:visual_answer_002_013:003", chunk_id: "chunk_0002", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:natural_semitone_BC_EF"})
+MATCH (target:KGNode {id: "caution:major_scale_step_error"})
+MERGE (source)-[r:CAUTIONS {review_id: "chunk_0002:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.9, context_condition: "在单弦上编写旋律线（Melodic Line）或推导音阶指型时", review_note: "B-C 和 E-F 之间为半音（相邻品格），其余自然音级间为全音（隔一品）。在单弦旋律编配中，若忽略此物理间距差异，会导致音准错误或指法逻辑混乱。这是所有吉他旋律编写的底层约束。", evidence: "B和C之间是半音，E和F之间也是半音...间隔一个品格...称为一个全音...相邻品格...称为一个半音。", needs_visual_context: false, review_id: "chunk_0002:visual_answer_002_013:004", chunk_id: "chunk_0002", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:fretboard_geometry"})
+MATCH (target:KGNode {id: "heuristic:octave_symmetry_at_12th_fret"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0003:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "编配高把位独奏或和弦Voicing时，需要快速定位同音异弦位置", review_note: "利用第12品与空弦音相同的八度对称性，可作为指板导航的绝对锚点。在编曲中，若需将低音线条移至高音区（如Octave Riff），可直接以12品为镜像参考，简化跨把位计算。", evidence: "练习8图示及文字：'吉他弦的第12品和空弦的音符是相同的...可以从第12品向前推算'", needs_visual_context: false, review_id: "chunk_0003:visual_answer_002_013:001", chunk_id: "chunk_0003", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "technique:minimal_position_shift"})
+MATCH (target:KGNode {id: "heuristic:economy_of_motion_in_arrangement"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0003:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.85, context_condition: "编写流畅的吉他独奏线（Solo Line）或快速乐句连接时", review_note: "编曲时应优先选择手指移动幅度最小的指法路径。避免为了理论上的'正确音名'而设计大跨度跳跃，除非为了特定的音色对比。保持手部稳定有助于提高演奏准确性和速度。", evidence: "第5章文字：'使用最小的把位移动...尽量在接近当前所在的把位附近寻找...不要总是抬起手指'", needs_visual_context: false, review_id: "chunk_0003:visual_answer_002_013:002", chunk_id: "chunk_0003", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:root_pattern_system"})
+MATCH (target:KGNode {id: "pattern:caged_system_navigation"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0003:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.8, context_condition: "在不同把位间转换和弦或即兴时，利用已知根音推导其他音级", review_note: "通过固定的根音指型（如CAGED系统隐含逻辑）作为参照系，可以快速推导相邻弦组的音符位置。例如利用'根音指型5'中2弦与4弦根音相距3品的几何关系，无需逐个计算半音即可构建声部。", evidence: "方法2文字及图示：'根音指型5...根音在第2弦和第4弦上，距离为3品...由此得出组成这些根音型式的其他音符'", needs_visual_context: false, review_id: "chunk_0003:visual_answer_002_013:003", chunk_id: "chunk_0003", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "note:natural_semitones"})
+MATCH (target:KGNode {id: "caution:misidentifying_EF_BC_intervals"})
+MERGE (source)-[r:CAUTIONS {review_id: "chunk_0003:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.75, context_condition: "在指板上进行全音/半音阶推算或构建自定义音阶时", review_note: "在指板几何推算中，必须特别注意E-F和B-C之间无黑键（半音）的特殊性。这是导致初学者在跨弦推算音程时出现'一品误差'的主要原因，编曲时需校验这两处的音程距离是否为1品而非2品。", evidence: "练习6/8文字：'记住F和E之间是半音，C和B之间也是半音...从上图中可以看到...'", needs_visual_context: false, review_id: "chunk_0003:visual_answer_002_013:004", chunk_id: "chunk_0003", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:standard_tuning"})
+MATCH (target:KGNode {id: "heuristic:interval_shift_exception_g2_b3"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0004:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 1.0, context_condition: "在指板上构建跨弦音阶、Riff或和弦Voicing时，计算相邻弦的音程位移", review_note: "吉他标准调弦中，除第2弦(B)与第3弦(G)之间外，相邻弦的同音/同音程关系通常相差3品（全音）或4品（半音）。但在2-3弦组上，由于大三度调弦差异，该位移缩减为2品（全音）或3品（半音）。这是编配跨弦乐句时必须处理的几何异常点。", evidence: "当从一根弦向上至另外一根弦时...通常是相差3品的距离。但有一个特例，就是第2弦与第3弦，这时一个全音是相差2品的距离。", needs_visual_context: false, review_id: "chunk_0004:visual_answer_002_013:001", chunk_id: "chunk_0004", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "technique:single_string_scale_run"})
+MATCH (target:KGNode {id: "pattern:linear_visualization"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0004:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.85, context_condition: "编写线性独奏乐句(Solo lines)或需要清晰展示音阶结构的Riff时", review_note: "单弦演奏能直观呈现全/半音结构，适合用于编写具有强烈方向感的线性乐句，或在编曲初期验证调式音阶构成，避免多弦指法带来的视觉干扰。", evidence: "当在一根弦上演奏大调音阶时，全音和半音的关系很容易看清楚...注意应用大调音阶公式...在一根弦上写出相应的大调音阶。", needs_visual_context: false, review_id: "chunk_0004:visual_answer_002_013:002", chunk_id: "chunk_0004", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:five_major_scale_patterns"})
+MATCH (target:KGNode {id: "heuristic:minimize_position_shift"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0004:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "设计流畅的Solo连接段或伴奏织体时", review_note: "使用五种标准指型的核心目的是将音符限制在最小把位范围内（通常每弦3音），减少左手横向移动。这有助于在快速乐句或复杂和声进行中保持声部连接的连贯性和可预测性。", evidence: "构建一些标准的指型，这样就可以减少把位的移动...在和弦转换或调式转换中顺畅地演奏SOLO...尽可能使用最小的把位移动。", needs_visual_context: false, review_id: "chunk_0004:visual_answer_002_013:003", chunk_id: "chunk_0004", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "scale:major_scale"})
+MATCH (target:KGNode {id: "rule:alphabet_rule_no_mixing_accidentals"})
+MERGE (source)-[r:CAUTIONS {review_id: "chunk_0004:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.7, context_condition: "推导非C大调音阶构成音或标记和弦延伸音时", review_note: "在确定调式音阶音符名称时，必须遵循“字母表规则”（每个字母只用一次），严禁混用升号和降号（如同时出现F#和Gb）。这直接影响和弦理论中延伸音（如b9, #11）的正确标记和理解。", evidence: "在一个音阶中不要混用升号和降号...在一个音阶中每个字母标记只能用一次...D大调音阶中包含了两个带有临时记号音符F#音和C#音", needs_visual_context: false, review_id: "chunk_0004:visual_answer_002_013:004", chunk_id: "chunk_0004", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "scale:pentatonic_major"})
+MATCH (target:KGNode {id: "heuristic:two_notes_per_string_geometry"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0005:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.95, context_condition: "编配快速独奏乐句（licks）或跨弦 Riff 时", review_note: "大调五声音阶在吉他指板上呈现“每根弦2个音符”的几何规律。这种对称性消除了七声音阶中常见的“3-2”或“2-3”音符分布带来的指法切换障碍，极大简化了横向移动和跨弦演奏的物理难度，是构建高可玩性（playability）Solo的基础语汇。", evidence: "在五声音阶的每种指型中，每根琴弦上都只有2个音符...这让五声音阶演奏起来非常容易", needs_visual_context: false, review_id: "chunk_0005:visual_answer_002_013:001", chunk_id: "chunk_0005", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:relative_keys"})
+MATCH (target:KGNode {id: "strategy:mood_switching_via_root_shift"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0005:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "ColorEmotion", confidence: 0.85, context_condition: "在不改变和弦进行或音阶指型的前提下，通过强调不同根音来转换乐曲情绪色彩", review_note: "利用关系大小调共享同一组音符的特性（如C大调与A小调），编曲者可以通过改变低音线条（Bass Line）或旋律重心（从1级音移至6级音），在同一套指法素材中实现从“明亮/开阔”到“忧郁/内省”的情绪瞬间切换，无需重新学习新把位。", evidence: "E小调是G大调的关系小调...唯一不同的地方就是指型中的根音不同", needs_visual_context: false, review_id: "chunk_0005:visual_answer_002_013:002", chunk_id: "chunk_0005", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "scale:natural_minor"})
+MATCH (target:KGNode {id: "caution:avoid_muddy_lower_extensions"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0005:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.7, context_condition: "在低音区使用自然小调音阶构建 Riff 或 Bass Line 时", review_note: "虽然文本主要讲音阶构建，但结合自然小调公式（全半全全...），其2级音和6级音（相对于大调的4、7级缺失）决定了其听感。在编曲中需注意，自然小调缺乏导音（7级半音倾向），若在高把位独奏可能显得“平淡”，需配合和声或推弦技巧增强张力；反之，其柔和特性适合抒情段落。", evidence: "2级音和3级音之间、5级音和6级音之间是半音关系...首先想到的应该是自然小调音阶", needs_visual_context: false, review_id: "chunk_0005:visual_answer_002_013:003", chunk_id: "chunk_0005", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "technique:omit_4th_and_7th"})
+MATCH (target:KGNode {id: "color:open_ambiguous_tonal_center"})
+MERGE (source)-[r:EVOKES {review_id: "chunk_0005:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "ColorEmotion", confidence: 0.8, context_condition: "需要模糊调性中心或适应多种和弦背景的即兴/编曲场景", review_note: "通过从大调音阶中移除4级（Fa）和7级（Si），五声音阶消除了最强烈的调性冲突音（如Fa与Mi的小二度冲突）。这使得该音阶具有极高的“和声兼容性”，能在不产生不协和音程的情况下覆盖更多和弦变化，适合风格融合或背景不明的编曲段落。", evidence: "大调五声音阶没有4级音和7级音...五声音阶是许多摇滚乐、布鲁斯音乐和乡村音乐独奏的基础", needs_visual_context: false, review_id: "chunk_0005:visual_answer_002_013:004", chunk_id: "chunk_0005", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:standard_tuning"})
+MATCH (target:KGNode {id: "pattern:interval_geometry_shift"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0006:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 1.0, context_condition: "在指板上构建双音（Double Stops）、和弦Voicing或跨弦Riff时，涉及第2弦（B弦）与第3弦（G弦）的交互。", review_note: "吉他标准调弦中唯一的非四度关系（G-B大三度）导致所有跨越这两根弦的音程指法发生几何偏移。编曲时必须应用'补偿规则'：同度/八度需调整品位差，纯四/五度、大六/七度的指型在跨越2-3弦时需额外移动1品（通常是向高音方向多移1品或向低音方向少移1品），否则音准错误。这是吉他指板逻辑的核心约束。", evidence: "练习23解答：纯四度...第3弦到第2弦...向上1品；纯五度...第3弦和第2弦之间是向上3品...只要跨越了第2弦，其相差的距离就都是2品。", needs_visual_context: false, review_id: "chunk_0006:visual_answer_002_013:001", chunk_id: "chunk_0006", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:perfect_5th"})
+MATCH (target:KGNode {id: "heuristic:power_chord_root_finding"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0006:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "编写强力和弦（Power Chords）或低音线条时，需要快速定位根音下方的五度音或上方的五度音。", review_note: "利用纯五度在相邻弦上的固定指型规律（通常为同把位下移2品，跨越2-3弦时下移3品），可以建立无需思考的肌肉记忆映射。这对于在低频区快速构建Root-5th Bass Line或Power Chord至关重要，避免了逐音计算的延迟。", evidence: "练习23解答：纯五度在相邻的弦上为向上升高2品的距离...在第3弦和第2弦之间是向上3品的距离。", needs_visual_context: false, review_id: "chunk_0006:visual_answer_002_013:002", chunk_id: "chunk_0006", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:major_6th"})
+MATCH (target:KGNode {id: "color:country_soul_voicing"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0006:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "ColorEmotion", confidence: 0.85, context_condition: "编配Country、Soul或R&B风格的吉他伴奏/独奏过门时。", review_note: "大六度音程（尤其是低弦上的Root-6th结构）具有明亮且略带怀旧的色彩。指板上大六度的几何特征（相邻弦+4品，跨越2-3弦+5品）允许在保持手型不变的情况下进行平行移动，非常适合编写滑音连奏（Legato Slides）或双音旋律线。", evidence: "练习23解答：大六度在相邻的弦上为向上4品的距离...从第3弦到第2弦时，大六度为向上5品。", needs_visual_context: false, review_id: "chunk_0006:visual_answer_002_013:003", chunk_id: "chunk_0006", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "scale:major_pentatonic"})
+MATCH (target:KGNode {id: "pattern:relative_minor_mapping"})
+MERGE (source)-[r:CAN_INSPIRE {review_id: "chunk_0006:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "在同一把位即兴切换大调与小调色彩，或设计模进乐句时。", review_note: "大调五声音阶与其关系小调五声音阶共享完全相同的指板图形（Shape），仅根音位置不同（大调根音位于小调根音下方小三度/上方大六度）。编曲时可利用这一几何重合性，在不改变左手把位的前提下，通过强调不同的根音目标来瞬间切换情绪色彩（Major Brightness vs Minor Bluesiness）。", evidence: "练习22图示：同一组指型（如指型1）既标记为G大调五声，也标记为E小调五声，根音位置相应偏移。", needs_visual_context: false, review_id: "chunk_0006:visual_answer_002_013:004", chunk_id: "chunk_0006", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:octave"})
+MATCH (target:KGNode {id: "technique:octave_displacement_rule"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0006:visual_answer_002_013:005"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.95, context_condition: "编写八度双音（Octaves，如Wes Montgomery风格）或加厚单音旋律线时。", review_note: "八度音程在指板上的形态严格遵循'根音指型'的几何位移。关键约束在于跨越2-3弦时，由于调弦差异，指法必须从'隔一弦同品'调整为'隔一弦+1品'（或根据具体弦组调整）。掌握此规律可确保在快速演奏八度旋律时音准无误，且能平滑连接不同弦组的乐句。", evidence: "练习23解答：八度的型式和五种根音指型的型式相同。（结合练习20/21根音指型图及标准调弦常识推导）", needs_visual_context: false, review_id: "chunk_0006:visual_answer_002_013:005", chunk_id: "chunk_0006", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:major_7th"})
+MATCH (target:KGNode {id: "caution:fretboard_span_complexity"})
+MERGE (source)-[r:CAUTIONS {review_id: "chunk_0006:visual_answer_002_013:006"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.8, context_condition: "在低把位或宽跨度乐句中构建大七度双音或和弦内音时。", review_note: "大七度是指板上跨度较大的音程之一（通常跨越两根弦且品位差较大，或同弦大跨度）。在非高把位区域，大七度的指法往往涉及较大的手指伸展或跨弦跳跃（如从6弦到4弦/3弦的特定组合）。编曲时应注意避免在快速乐句中连续使用难以转换的大七度指型，或利用'比八度低1品'的启发式规则简化寻找过程。", evidence: "练习23解答：大七度跨越一根琴弦时为向上1品的距离...对于第5弦和第4弦开始的大七度存在跨越两根琴弦的型式...", needs_visual_context: false, review_id: "chunk_0006:visual_answer_002_013:006", chunk_id: "chunk_0006", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:compound_interval"})
+MATCH (target:KGNode {id: "guitar_idiom:vertical_voicing_expansion"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0007:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "编配和弦 Voicing 或设计大跨度独奏乐句时", review_note: "复合音程（如9度、13度）在吉他上通常体现为跨弦的大跨度指法。理解其几何结构有助于构建开放、通透的和弦声部，避免中频拥挤，是爵士/融合风格编曲的核心语汇。", evidence: "练习28图示展示了9、13、#11等复合音程在指板上的具体把位分布，显示了根音与延伸音的垂直空间关系。", needs_visual_context: false, review_id: "chunk_0007:visual_answer_002_013:001", chunk_id: "chunk_0007", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "chord:major_triad"})
+MATCH (target:KGNode {id: "pattern:caged_system_shapes"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0007:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.95, context_condition: "在全指板范围内即兴或编写旋律线时", review_note: "大三和弦琶音的五种指型（CAGED系统基础）提供了将和声内容转化为线性旋律的标准化路径。掌握这五种几何形状可确保在任何把位都能快速提取和弦内音，是连接和声与旋律的关键桥梁。", evidence: "练习30图示列出了D大三和弦的5种指型（指型1-5），覆盖了从低把位到高把位的完整指板逻辑。", needs_visual_context: false, review_id: "chunk_0007:visual_answer_002_013:002", chunk_id: "chunk_0007", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:major_6th"})
+MATCH (target:KGNode {id: "color:bright_lyrical"})
+MERGE (source)-[r:EVOKES {review_id: "chunk_0007:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "ColorEmotion", confidence: 0.8, context_condition: "编写双音（Double stops）或抒情旋律片段时", review_note: "大六度音程在吉他相邻弦（如3-2弦或4-3弦）上具有独特的明亮且略带怀旧的色彩，常用于乡村、流行或爵士 ballad 的过门填充，比三度更开阔，比八度更紧凑。", evidence: "练习24-5及26-10图示展示了MA6在指板上的多种形态，暗示了其作为独立色彩音程的可用性。", needs_visual_context: false, review_id: "chunk_0007:visual_answer_002_013:003", chunk_id: "chunk_0007", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:perfect_5th"})
+MATCH (target:KGNode {id: "caution:power_chord_ambiguity"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0007:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.85, context_condition: "使用失真音色或需要明确调性中心时", review_note: "纯五度（Power Chord核心）缺乏三度音，因此在听感上是中性的。在编曲中若需明确大/小调情绪，必须引入三度音；若需保持摇滚/金属的力量感与模糊性，则应保留纯五度并避免三度干扰。", evidence: "练习24-2及26-9图示强调P5的指型，结合摇滚语境，这是构建强力和弦的基础，但也意味着调式色彩的缺失。", needs_visual_context: false, review_id: "chunk_0007:visual_answer_002_013:004", chunk_id: "chunk_0007", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:minor_7th"})
+MATCH (target:KGNode {id: "pattern:dominant_7th_shell"})
+MERGE (source)-[r:CAN_INSPIRE {review_id: "chunk_0007:visual_answer_002_013:005"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.8, context_condition: "构建爵士/放克节奏吉他声部时", review_note: "小七度音程常与根音或三度音结合构成属七和弦的骨架（Shell Voicing）。在编曲中，仅使用根音+小七度（或三度+小七度）可以留出频段给贝斯或键盘，同时保持和声功能。", evidence: "练习26-6及26-10展示了mi7的指型，这些形状往往是属七和弦指法的一部分。", needs_visual_context: false, review_id: "chunk_0007:visual_answer_002_013:005", chunk_id: "chunk_0007", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "chord:augmented_triad"})
+MATCH (target:KGNode {id: "heuristic:symmetrical_fretboard_mapping"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0008:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.95, context_condition: "编配增三和弦（Aug）的琶音或声部时", review_note: "利用增三和弦的对称性（大三度堆叠），指板上任意根音位置平移3个品位（或4个品位）即可得到相同的和弦结构。这允许在编曲中通过简单的几何平移来模进乐句，或在不同把位间无缝切换而不改变指法逻辑。", evidence: "增三和弦...形成了一种对称的构建关系...每个音都可以看作是根音。练习37图示显示同一指型在不同把位的重复规律。", needs_visual_context: false, review_id: "chunk_0008:visual_answer_002_013:001", chunk_id: "chunk_0008", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:close_voicing_triads"})
+MATCH (target:KGNode {id: "pattern:string_set_grouping"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0008:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "在吉他上构建密集排列（Close Voicing）的三和弦声部时", review_note: "由于吉他定弦特性，完整的六弦密集三和弦无法在一个把位内用标准指法一次性按出（跨度太大）。编曲时应将其拆解为“三根弦为一组”的单元（如6-5-4弦，5-4-3弦等），这种分组是编写流畅Voice Leading（声部连接）的基础模块。", evidence: "不要尝试去一次弹奏每种指型的全部六根琴弦。我们将这每种指型分成四种以三根琴弦为一组的指型。", needs_visual_context: false, review_id: "chunk_0008:visual_answer_002_013:002", chunk_id: "chunk_0008", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "technique:arpeggio_to_chord_conversion"})
+MATCH (target:KGNode {id: "heuristic:vertical_voicing_derivation"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0008:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.85, context_condition: "从单音旋律/琶音线推导和弦伴奏织体时", review_note: "教材揭示了和弦Voicing的本质来源：将横向的琶音音符（1-3-5）在垂直方向上同时发声。编曲时，若已知某把位的琶音指型，只需调整节奏为同时拨奏并剔除同弦冲突音，即可快速生成该把位的和弦按法，无需死记硬背新指型。", evidence: "相对于琶音是依次弹奏...和弦是同时扫奏...在指板上找到琶音在不同弦上的音，然后同时扫奏...产生了和弦。", needs_visual_context: false, review_id: "chunk_0008:visual_answer_002_013:003", chunk_id: "chunk_0008", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "chord:diminished_triad"})
+MATCH (target:KGNode {id: "caution:cross_string_complexity"})
+MERGE (source)-[r:CAUTIONS {review_id: "chunk_0008:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.75, context_condition: "编配减三和弦（Dim）的分解乐句或快速经过句时", review_note: "减三和弦的小三度+小三度结构导致其在某些CAGED指型中需要频繁的跨弦（String Skipping）或非相邻弦跳跃。在编写高速Riff时需注意这种指法带来的右手难度，必要时可简化为相邻弦组的局部Voicing。", evidence: "练习32...其中在有些指型中需要越弦演奏。[IMAGE_BLOCK]显示指型中存在非连续弦的音符分布。", needs_visual_context: true, review_id: "chunk_0008:visual_answer_002_013:004", chunk_id: "chunk_0008", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:close_voicing_seventh_chords"})
+MATCH (target:KGNode {id: "caution:muddy_low_end_fingering_difficulty"})
+MERGE (source)-[r:CAUTIONS {review_id: "chunk_0009:visual_answer_002_013:001"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.95, context_condition: "在吉他上编配密集排列的七和弦（Close Voicing）时", review_note: "教材明确指出，密集七和弦在吉他上往往难以按奏（手指跨度不够），且包含较多相近的低音，导致音色暗淡浑浊。这是编曲中需要避免或优化的物理限制。", evidence: "对于七和弦来说，密集和弦有时在吉他上是很难弹奏的...含有较多相近的低音，使得音色也会变得暗淡浑浊。", needs_visual_context: false, review_id: "chunk_0009:visual_answer_002_013:001", chunk_id: "chunk_0009", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "technique:open_voicing_spacing"})
+MATCH (target:KGNode {id: "color:bright_spacious_tone"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0009:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "ColorEmotion", confidence: 0.9, context_condition: "将和弦内音进行八度移位以构建开放排列（Open Voicing）时", review_note: "通过将音符升高或降低八度使音高分散，可以获得更宽广、悦耳的和弦声音，解决密集排列的浑浊问题。", evidence: "常常需要将其中的某些音符升高或降低一个八度...得到更加宽广的和弦声音。", needs_visual_context: false, review_id: "chunk_0009:visual_answer_002_013:002", chunk_id: "chunk_0009", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "chord:maj7"})
+MATCH (target:KGNode {id: "guitar_idiom:drop_2_voicing_root_6_string"})
+MERGE (source)-[r:CAN_INSPIRE {review_id: "chunk_0009:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.85, context_condition: "编配根音在6弦的大七和弦，追求清晰明亮的听感时", review_note: "教材建议将三度音移高八度形成'1-5-7-3(10)'结构，随后又建议将五度音再移高八度形成'1-7-3-5'。这种特定的声部排列（对应Drop 2逻辑）能避开低音浑浊区，是常用的七和弦指型。", evidence: "把和弦中的五度音升高一个八度，这样就变成了“1、7、10、12”，也就是“1、7、3、5”。", needs_visual_context: false, review_id: "chunk_0009:visual_answer_002_013:003", chunk_id: "chunk_0009", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "guitar_idiom:root_6_string_shell_voicing"})
+MATCH (target:KGNode {id: "technique:index_finger_muting"})
+MERGE (source)-[r:CONSTRAINS {review_id: "chunk_0009:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 0.9, context_condition: "使用根音在6弦的'1-7-3-5'常用声部指型进行向下扫弦时", review_note: "该指型的物理特性要求左手食指必须同时承担两个任务：按住6弦根音并对相邻的5弦进行消音，否则会产生不需要的杂音。这是编配该Voicing时的关键演奏约束。", evidence: "左手的1指需要同时完成以下两项任务：（1）牢牢按住六弦上的和弦根音。（2）对第5弦进行消音。", needs_visual_context: false, review_id: "chunk_0009:visual_answer_002_013:004", chunk_id: "chunk_0009", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "pattern:universal_shell_voicing_shape"})
+MATCH (target:KGNode {id: "heuristic:rapid_chord_identification"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0009:visual_answer_002_013:005"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.85, context_condition: "需要在指板上快速构建不同性质的七和弦（maj7, m7, dom7等）时", review_note: "教材指出'1-7-3-5'这一声部结构适用于所有类型的七和弦。掌握这一通用几何形状（Shell Voicing），可以通过改变内部音程性质（如3音的大小、7音的大小）快速切换和弦色彩，是高效的编曲启发。", evidence: "“1、7、3、5”是ma7、mi7、dom7、mi7(b5)和dim7这些和弦指型4中的常用声部构成。", needs_visual_context: false, review_id: "chunk_0009:visual_answer_002_013:005", chunk_id: "chunk_0009", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "interval:major_3rd"})
+MATCH (target:KGNode {id: "interval:perfect_4th_or_11th"})
+MERGE (source)-[r:CONFLICTS_WITH {review_id: "chunk_0010:visual_answer_002_013:002"}]->(target)
+SET r += { knowledge_type: "Caution", confidence: 1.0, context_condition: "构建大和弦或属和弦的延伸和弦（特别是包含11度音）时", review_note: "大三度与纯十一度（即四度）在同时发声时会产生不和谐的小九度冲突。这是编曲中处理延伸和弦色彩时的关键避坑点。", evidence: "当弹奏一个和弦时，如果和弦中包含了大三度，那么四度和五度音听上去就会不和谐...这种不和谐会非常明显。", needs_visual_context: false, review_id: "chunk_0010:visual_answer_002_013:002", chunk_id: "chunk_0010", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "chord:dom13_or_maj13"})
+MATCH (target:KGNode {id: "technique:omit_11th"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0010:visual_answer_002_013:003"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "构建十三和弦Voicing且保留三度音时", review_note: "若决定保留三度音以明确和弦大小性质，则必须省略十一度音，仅保留9度和13度作为延伸音，以维持声部清晰度。", evidence: "构建大十三和弦或者属十三和弦时，可去掉十一度音。Cma13 一1、3、5、7、9、13", needs_visual_context: false, review_id: "chunk_0010:visual_answer_002_013:003", chunk_id: "chunk_0010", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "chord:extended_dominant"})
+MATCH (target:KGNode {id: "technique:omit_3rd"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0010:visual_answer_002_013:004"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.9, context_condition: "构建高叠置属和弦（如11、13和弦）且希望保留11度音的张力时", review_note: "为了容纳11度音而不产生冲突，另一种策略是直接省略三度音。此时和弦的大小性质由贝司或其他乐器暗示，吉他专注于延伸音的色彩。", evidence: "去除三度音，特别是在延伸属和弦中。C11 →1、5、b7、9、11", needs_visual_context: false, review_id: "chunk_0010:visual_answer_002_013:004", chunk_id: "chunk_0010", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:extended_chord_voicing"})
+MATCH (target:KGNode {id: "heuristic:extension_on_top"})
+MERGE (source)-[r:SUGGESTS {review_id: "chunk_0010:visual_answer_002_013:005"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.85, context_condition: "在指板上排列超过4个音符的延伸和弦时", review_note: "为了获得清晰的听感和符合现代审美的声部排列，建议将延伸音（9/11/13）放置在Voicing的最高声部（Top Note），并通过八度位移调整内部音符。", evidence: "通常，让延伸音在和弦的最高处比较好。", needs_visual_context: false, review_id: "chunk_0010:visual_answer_002_013:005", chunk_id: "chunk_0010", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };
+
+MATCH (source:KGNode {id: "concept:extended_chord_voicing"})
+MATCH (target:KGNode {id: "technique:omit_root_and_5th"})
+MERGE (source)-[r:ENABLES {review_id: "chunk_0010:visual_answer_002_013:006"}]->(target)
+SET r += { knowledge_type: "GuitarIdiom", confidence: 0.8, context_condition: "在有贝司手伴奏的乐队编曲中，或手指跨度受限时", review_note: "吉他作为和声乐器，在延伸和弦中可以大胆省略根音（由贝司承担）和五度音（功能性弱），从而为9/11/13等色彩音腾出指板空间。", evidence: "可以尝试去掉五度音和（或）根音，听听会产生什么效果...忽略哪个音取决于所演奏的音乐风格，或者贝司及其他乐器是如何演奏的。", needs_visual_context: false, review_id: "chunk_0010:visual_answer_002_013:006", chunk_id: "chunk_0010", review_decision: "accept", revision_status: "accepted", ingested_at: "2026-05-29T15:24:02.586285+00:00", source_review_file: "data\\processed\\mineru_full_gpu\\kg_visual_answer_reprocess_chunks_002_013\\arrangement_kg_review.all_accept.filtered_import.jsonl" };

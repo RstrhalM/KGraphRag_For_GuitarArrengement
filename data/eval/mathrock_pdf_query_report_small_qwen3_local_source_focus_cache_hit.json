@@ -1,0 +1,948 @@
+{
+  "summary": {
+    "generated_at": "2026-06-02 19:33:28",
+    "retrieval_mode": "source_focus",
+    "primary_sources": [
+      "mathrock_pdf_steve_h"
+    ],
+    "tests": 3,
+    "bundle_pass": 3,
+    "bundle_pass_rate": 1.0,
+    "text_tests": 3,
+    "text_top1_accuracy": 1.0,
+    "text_recall_at_5": 1.0,
+    "text_precision_at_5_avg": 1.0,
+    "visual_tests": 3,
+    "visual_top1_accuracy": 1.0,
+    "visual_recall_at_5": 1.0,
+    "visual_precision_at_5_avg": 1.0,
+    "kg_tests": 3,
+    "kg_hit_rate": 1.0,
+    "duration_seconds_total": 0.6400333999918075,
+    "duration_seconds_avg": 0.21334446666393583,
+    "text_seconds_avg": 0.0329014999976304,
+    "visual_seconds_avg": 0.034306299998812996,
+    "kg_seconds_avg": 0.14604696667326303,
+    "embedding_cache": {
+      "enabled": true,
+      "path": "D:\\Guitar Arrangement Inspiration Agent\\KGraphRag2\\data\\cache\\embeddings.sqlite",
+      "rows": 316,
+      "by_model": [
+        {
+          "model": "models/embedding/qwen3-embedding-0.6b",
+          "input_type": "local_text",
+          "rows": 7,
+          "hits": 3
+        },
+        {
+          "model": "qwen3-vl-embedding",
+          "input_type": "image",
+          "rows": 265,
+          "hits": 45
+        },
+        {
+          "model": "qwen3-vl-embedding",
+          "input_type": "multimodal_text",
+          "rows": 15,
+          "hits": 26
+        },
+        {
+          "model": "text-embedding-v4",
+          "input_type": "openai_text",
+          "rows": 29,
+          "hits": 32
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "id": "pdf_tapping_simultaneous_rhythm_lead",
+      "query": "math rock two hand tapping simultaneous rhythm and lead clean solo guitar arrangement",
+      "retrieval_mode": "source_focus",
+      "primary_sources": [
+        "mathrock_pdf_steve_h"
+      ],
+      "style_tags": [
+        "math_rock",
+        "midwest_emo",
+        "tapping"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_pdf_steve_h"
+        ],
+        "visual_sources": [
+          "mathrock_pdf_steve_h"
+        ],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 0.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "technique:two_hand_tapping",
+          "guitar_idiom:simultaneous_rhythm_lead",
+          "guitar_idiom:solo_guitar_arrangement"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0034794999955920503,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.07286960000055842,
+        "text_total_seconds": 0.07634909999615047,
+        "visual_embedding_seconds": 0.002037500002188608,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.08617160000721924,
+        "visual_total_seconds": 0.08826309999858495,
+        "kg_seconds": 0.3570287000038661,
+        "total_seconds": 0.5217038999981014
+      },
+      "text_top": [
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0002:67b07db8d9ca01ff",
+          "distance": 0.38347023725509644,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 双⼿点弦与交替⼿指点弦 双⼿点弦主要包括交替点弦（双⼿轮流击弦），这可能是数学摇滚吉他⼿最常⽤的点弦技法。但有时你也会需要双⼿同步点奏音符，或⽤按弦⼿凭空锤音并保持音符以构建功能性和声（如⻉斯线）。以下范例（练习1.d）节选⾃我改编的《圣诞⽼人进城》曲谱。为清晰起⻅我将两个声部分开记谱，但实际需同步点奏。我发现让⼤脑同时处理两个点弦音符要困难得多。亲⾃"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0003:0706f2ad25ca70e7",
+          "distance": 0.3983055353164673,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## ⼿指控制+拨弦和弦 现在我们来学习同时拨弦的技巧。这能为你的和弦带来截然不同的质感——因为所有琴弦是被同时拨响，⽽非拨⽚扫弦的连续发声方式。它能提供更精准的动态控制、更高的演奏准确度，以及整体音色的变化。 入⻔练习2.g将不同⼿指组合（注意符头标注的使⽤⼿指）与拇指练习相结合。 [IMAGE_BLOCK:images/82b3d390df1caea14"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0004:bce3a40858737f47",
+          "distance": 0.4094688296318054,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 为何某些特殊调弦如此动听 你可能在想\"为什么有些特殊调弦听起来如此美妙？\" 关键在于音符的选择与各音之间的音程关系。借助基础乐理知识，我可以解释其原理（若您对下文探讨的理论概念理解尚不清晰，建议先学习本指南乐理章节中关于和弦构成的部分后再回看）。 观察标准调弦E A D G B E各弦的音程关系，可⻅主要由四度音程构成，唯有⼀处三度音程（即相邻两弦的音"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0009:4d84c31483c11e31",
+          "distance": 0.4174475073814392,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 扩展壳式和弦排列 扩展壳式和弦按法是⼀种特殊的和弦排列方式。它包含定义延伸和弦所需的核心音符（三度音与七度音），并与根音结合形成⼀、三、七音结构。这种按法能保留延伸和弦的整体调性（⼤调、⼩调等），同时进⾏精简处理。这类和弦具有实⽤价值，例如在合奏场景中，当其他乐⼿已演奏密集和声时，使⽤壳式和弦（或仅⽤三度/七度音）更为适宜。相比完整和弦，它们更适配增益"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0010:682452221dec009a",
+          "distance": 0.43961620330810547,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 习题答案 调性练习 1. E⼤调 - A⼤调 - G#⼩调 - F#⼩调 - E⼤调 = E⼤调：I - IV - iii - ii - I 2. D⼩调 - G属 - C⼤调 = C⼤调：ii - V - I 3. D⼤调 - E⼩调 - F#减 - G⼤调 = G⼤调：V - vi - vii - I 4. C⼤调 - G⼤调 - A⼩调 - E⼩"
+        }
+      ],
+      "support_text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.22842800617218018,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.22896045446395874,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0005:fa0cdef4d3c15b2e",
+          "distance": 0.25687360763549805,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0005",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we're already going to sit for this mad Rock midwest emo progression. we're going to look at this special shooting right here,it's going to be a drop bf sharp,we're going to have A"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p026:67b2ebfdbc78a35c746c708a30dba26a18c2568b2811afbcc146b28062334eee",
+          "distance": 0.4861794114112854,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 25,
+          "topic": "练习3.f在先前练习基础上扩展，结合拨⽚与双指拨弦技巧，并在最后⼩节加入全部三根备⽤⼿指的运⽤ | 练习3.g演⽰如何仅⽤混合拨弦技术组合两个音符，创造新颖乐思 | 混合拨弦技巧与⼒量发展的情境化练习",
+          "nearby_text": "练习3.f在先前练习基础上扩展，结合拨⽚与双指拨弦技巧，并在最后⼩节加入全部三根备⽤⼿指的运⽤ | 练习3.g演⽰如何仅⽤混合拨弦技术组合两个音符，创造新颖乐思 | 混合拨弦技巧与⼒量发展的情境化练习 | 练习3.h改编⾃Sting的歌曲《英国人在纽约》的主和弦进⾏。虽非数学摇滚⻛格，但作为适应性练习非常实⽤。⽤拨⽚演奏每个和弦的最低音，⼿指拨奏其余和弦形态。",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\67b2ebfdbc78a35c746c708a30dba26a18c2568b2811afbcc146b28062334eee.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p021:b7797b8676eef652b7d4e802d3176ad5c5ef7d0019046c882d9a95fb00c39877",
+          "distance": 0.49027520418167114,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 20,
+          "topic": "⼿指控制+拨弦和弦 | 情境化指弹练习",
+          "nearby_text": "练习2.h在前⼀练习基础上增加了⼀根⼿指。熟练后，可逐步添加更多⼿指，最终实现所有⼿指与拇指的协同演奏。 | 情境化指弹练习 | 让我们以情境化的指弹练习结束本节，使练习更具音乐性。 | 练习2.i展⽰了如何通过加入击弦技巧进⾏指弹式琶音演奏。虽然较为基础，却是理想的入⻔起点。数学摇滚吉他⼿常运⽤这种击弦技巧，你应同时结合勾弦及两者混合技法。预先摆好和弦⼿型并准备击勾弦将⼤有裨益。若效果不佳，可思考击弦时的⼿指落位顺序。 | 入⻔练习2.g将不同⼿指组合（注意符头标注的使⽤⼿指）与拇指练习相结合。",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\b7797b8676eef652b7d4e802d3176ad5c5ef7d0019046c882d9a95fb00c39877.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:page:p078",
+          "distance": 0.5010564923286438,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 77,
+          "topic": "琶音/riff/节拍谱例密集页，整页适合作视觉证据。",
+          "nearby_text": "78 D ⼤七和弦（ IV 级） F# ⼩七和弦（ vi 级） 三 上也 这是另⼀个基于 I-IV 和弦进⾏的数学摇滚⻛格 riff 范例。本次采⽤了快速 和弦转换与非常规节拍来增强音乐性，典型展现了数学摇滚吉他⻛格的 特征。若将第⼀⼩节视为三拍与四拍的组合，第⼆⼩节拆分为三组三 拍，会更容易理解。 C ⼤七和弦（ I 级） F ⼤七和弦 (IV 级 ) C",
+          "path": "data\\processed\\mathrock\\pdf_page_images\\mathrock_pdf_page_078.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p019:bb371f205382904cfc3b0ca70af0e42ef2b4a409f05fa8428532a223ea0296ce",
+          "distance": 0.5157843828201294,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 18,
+          "topic": null,
+          "nearby_text": "练习2.b为每⼩节增加⼀个⼿指的拨弦，练习2.c专为三指加拇指的常⻅拨弦模式设计（我发现这比全指加拇指更常⽤），最后练习2.d采⽤相同模式但加入⼩指。注意调整为5/4拍以适配额外⼿指。切记精准度比速度更重要！ | 熟悉拨弦模式后，可尝试将其应⽤到已知的和弦指型中。",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\bb371f205382904cfc3b0ca70af0e42ef2b4a409f05fa8428532a223ea0296ce.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p037:0f7e0b37016fdef91e7b35f84ebb9504a38ade78bdb19614f17414dfddef355a",
+          "distance": 0.5192096829414368,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 36,
+          "topic": "DAEAC#E调弦法和弦指法",
+          "nearby_text": "DAEAC#E调弦法和弦指法 | 以下是从第六或第五弦起始的推荐和弦指型。虽存在其他变体，但这些饱满的指型适合入⻔练习。包含⼤调、⼩调、属七及半减七和弦指型，均基于开放调弦法设计，音色浑然⼀体。所有指型可移动变调，适⽤于不同调式音乐。已提供",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\0f7e0b37016fdef91e7b35f84ebb9504a38ade78bdb19614f17414dfddef355a.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "technique:two_hand_tapping",
+          "guitar_idiom:simultaneous_rhythm_lead",
+          "guitar_idiom:solo_guitar_arrangement"
+        ],
+        "expanded": [
+          "technique:two_hand_tapping",
+          "guitar_idiom:simultaneous_rhythm_lead",
+          "guitar_idiom:solo_guitar_arrangement"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "technique:two_hand_tapping",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 4
+          },
+          {
+            "id": "guitar_idiom:simultaneous_rhythm_lead",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "guitar_idiom:solo_guitar_arrangement",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "technique:two_hand_tapping",
+            "rel": "ENABLES",
+            "b": "feature:tapped_power_chords"
+          },
+          {
+            "a": "feature:tapped_power_chords",
+            "rel": "ENABLES",
+            "b": "technique:two_hand_tapping"
+          },
+          {
+            "a": "technique:two_hand_tapping",
+            "rel": "ENABLES",
+            "b": "guitar_idiom:simultaneous_rhythm_lead"
+          },
+          {
+            "a": "guitar_idiom:simultaneous_rhythm_lead",
+            "rel": "ENABLES",
+            "b": "technique:two_hand_tapping"
+          },
+          {
+            "a": "technique:two_hand_tapping",
+            "rel": "ENABLES",
+            "b": "guitar_idiom:solo_guitar_arrangement"
+          },
+          {
+            "a": "guitar_idiom:solo_guitar_arrangement",
+            "rel": "ENABLES",
+            "b": "technique:two_hand_tapping"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "pdf_facgce_open_string_voicing",
+      "query": "FACGCE tuning open strings Fmaj9 movable barre shapes math rock voicing",
+      "retrieval_mode": "source_focus",
+      "primary_sources": [
+        "mathrock_pdf_steve_h"
+      ],
+      "style_tags": [
+        "alternate_tuning",
+        "math_rock",
+        "midwest_emo",
+        "voicing"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_pdf_steve_h"
+        ],
+        "visual_sources": [
+          "mathrock_pdf_steve_h"
+        ],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 3.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "tuning:FACGCE",
+          "chord:open_Fmaj9",
+          "pattern:movable_barre_shapes_root_6"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.003577800001949072,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.008092299991403706,
+        "text_total_seconds": 0.011670099993352778,
+        "visual_embedding_seconds": 0.0014296999870566651,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.006313899997621775,
+        "visual_total_seconds": 0.007776400001603179,
+        "kg_seconds": 0.04556090000551194,
+        "total_seconds": 0.06512159999692813
+      },
+      "text_top": [
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0004:bce3a40858737f47",
+          "distance": 0.3202035427093506,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 为何某些特殊调弦如此动听 你可能在想\"为什么有些特殊调弦听起来如此美妙？\" 关键在于音符的选择与各音之间的音程关系。借助基础乐理知识，我可以解释其原理（若您对下文探讨的理论概念理解尚不清晰，建议先学习本指南乐理章节中关于和弦构成的部分后再回看）。 观察标准调弦E A D G B E各弦的音程关系，可⻅主要由四度音程构成，唯有⼀处三度音程（即相邻两弦的音"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0009:4d84c31483c11e31",
+          "distance": 0.3539261221885681,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 扩展壳式和弦排列 扩展壳式和弦按法是⼀种特殊的和弦排列方式。它包含定义延伸和弦所需的核心音符（三度音与七度音），并与根音结合形成⼀、三、七音结构。这种按法能保留延伸和弦的整体调性（⼤调、⼩调等），同时进⾏精简处理。这类和弦具有实⽤价值，例如在合奏场景中，当其他乐⼿已演奏密集和声时，使⽤壳式和弦（或仅⽤三度/七度音）更为适宜。相比完整和弦，它们更适配增益"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0002:67b07db8d9ca01ff",
+          "distance": 0.36214351654052734,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 双⼿点弦与交替⼿指点弦 双⼿点弦主要包括交替点弦（双⼿轮流击弦），这可能是数学摇滚吉他⼿最常⽤的点弦技法。但有时你也会需要双⼿同步点奏音符，或⽤按弦⼿凭空锤音并保持音符以构建功能性和声（如⻉斯线）。以下范例（练习1.d）节选⾃我改编的《圣诞⽼人进城》曲谱。为清晰起⻅我将两个声部分开记谱，但实际需同步点奏。我发现让⼤脑同时处理两个点弦音符要困难得多。亲⾃"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0006:dccc49bfd0728fb5",
+          "distance": 0.38305407762527466,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0006",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 为何掌握调号至关重要？ 明确调性对创作和演奏歌曲⼤有裨益。⾸先，它能精准定位可⽤的和弦、音符及音阶/琶音体系。 以C⼤调为例，其音阶包含以下音符： <table><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>3</td><t"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0010:682452221dec009a",
+          "distance": 0.3837738633155823,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 习题答案 调性练习 1. E⼤调 - A⼤调 - G#⼩调 - F#⼩调 - E⼤调 = E⼤调：I - IV - iii - ii - I 2. D⼩调 - G属 - C⼤调 = C⼤调：ii - V - I 3. D⼤调 - E⼩调 - F#减 - G⼤调 = G⼤调：V - vi - vii - I 4. C⼤调 - G⼤调 - A⼩调 - E⼩"
+        }
+      ],
+      "support_text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0007:72c0b258e8a92c07",
+          "distance": 0.23755550384521484,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0007",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we'll find more vents,one there.using some cool ideas of how we take an alternate tuning in an open minor or major court with some extensions,we might have thirteen and how we.can "
+        },
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.2529938220977783,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.26376187801361084,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "mathrock_pdf_steve_h:page:p033",
+          "distance": 0.46014904975891113,
+          "rerank_score": 1.0,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 32,
+          "topic": "特殊调弦/指型/音阶密集页，整页保留上下文。",
+          "nearby_text": "33 Chord shapes starting from fifth string: Fmai9 Bm7b5 O O O O O O ×× ×× 从第五弦起始的和弦指型： B ⼩七减五和弦 C ⼤七和弦 C ⼤九和弦 ✘ ✘ ✘ ✘ FACGCE 调式中的⼀些和弦进⾏FACGCE 调式中的⼀些和弦进⾏ 我将留待你⾃⾏尝试上述和弦来创作和弦进⾏。不过，我想分",
+          "path": "data\\processed\\mathrock\\pdf_page_images\\mathrock_pdf_page_033.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:page:p034",
+          "distance": 0.3994715213775635,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 33,
+          "topic": "特殊调弦/指型/音阶密集页，整页保留上下文。",
+          "nearby_text": "34 ✘ ⼝ xoo ✘ ✘ ○ FACGCE 调弦的⼤调与⼩调音阶FACGCE 调弦的⼤调与⼩调音阶 以下列出适⽤于主奏、旋律创作、点弦 riff 、 riff 间过渡乐句等场景的潜在音阶。音 阶并非完全连续排列，部分音符在不同弦上重复出现。如此设计旨在提供尽可能多 的音符选择，通过听觉辨别可轻松掌握连续音符⾛向。 本教程未覆盖整个指板，如需完整指板音阶推",
+          "path": "data\\processed\\mathrock\\pdf_page_images\\mathrock_pdf_page_034.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p067:453abdc92272702f3f1d53ed0110eef727bb4d495ba1d760a7015fc672b62500",
+          "distance": 0.41592592000961304,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 66,
+          "topic": null,
+          "nearby_text": "和弦进⾏⼀带有熟悉的上升感，但基于第三音构建的⼩和弦（G#m）被替换为平⾏⼩调（E⼩调）中借⽤的⼤三和弦。这引入了出人意料的音响效果，听众的⽿朵本能期待听到⼩三和弦。这是个相当精妙的技巧，效果出众。我最初是在TubeLord的歌曲中接触到这个⼿法。在我的乐队Mountains的歌曲《Restarts》前奏部分也运⽤了此技巧，不妨听听看能否辨识出那个借来的和弦 | https://open.spotify.com/album/40YDxR2agQg5XKds5E6Ryt | 在和声进⾏⼆中，减七和弦(vii°)被替换为平⾏⼩调(B⼩调)借来的⼤七和弦。这是缓解减和弦带来不必要紧张感的巧妙⼿法。尝试依次演奏AM7、A#m7b5和BM7和弦，能获得酷炫的半音效果！ | 3.",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\453abdc92272702f3f1d53ed0110eef727bb4d495ba1d760a7015fc672b62500.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:page:p037",
+          "distance": 0.42295217514038086,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 36,
+          "topic": "特殊调弦/指型/音阶密集页，整页保留上下文。",
+          "nearby_text": "37 FACGCE idea 5: FACGCE 创意方案 4 ： https://drive.google.com/file/d/1ZweUbjAy56KkvnQKch776DwC0W AhA5I/view?usp=sharing FACGCE 创意方案 5 ： https://drive.google.com/file/d/1oAEXzfVEBEV4Rd",
+          "path": "data\\processed\\mathrock\\pdf_page_images\\mathrock_pdf_page_037.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:page:p035",
+          "distance": 0.4263728857040405,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 34,
+          "topic": "特殊调弦/指型/音阶密集页，整页保留上下文。",
+          "nearby_text": "35 FACGCE idea 1: FACGCE 调音⼩调实⽤笔记 FACGCE 理论与实践的融合思路FACGCE 理论与实践的融合思路 以下是我在 FACGCE 调式中记录的五种创作构思。⼤部分围绕已学和弦展开，包含 ⼤量即兴段落以激活思维，帮助您发现和弦间编写乐句的潜在音型与把位模式。建 议逐乐句慢速练习，逐步构建完整乐思。每个构思均附视频链接，助您深入",
+          "path": "data\\processed\\mathrock\\pdf_page_images\\mathrock_pdf_page_035.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "tuning:FACGCE",
+          "chord:open_Fmaj9",
+          "pattern:movable_barre_shapes_root_6"
+        ],
+        "expanded": [
+          "tuning:FACGCE",
+          "chord:open_Fmaj9",
+          "pattern:movable_barre_shapes_root_6"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "tuning:FACGCE",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 4
+          },
+          {
+            "id": "chord:open_Fmaj9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "pattern:movable_barre_shapes_root_6",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "tuning:FACGCE",
+            "rel": "ENABLES",
+            "b": "chord:open_Fmaj9"
+          },
+          {
+            "a": "chord:open_Fmaj9",
+            "rel": "ENABLES",
+            "b": "tuning:FACGCE"
+          },
+          {
+            "a": "tuning:FACGCE",
+            "rel": "SUGGESTS",
+            "b": "pattern:movable_barre_shapes_root_6"
+          },
+          {
+            "a": "pattern:movable_barre_shapes_root_6",
+            "rel": "SUGGESTS",
+            "b": "tuning:FACGCE"
+          },
+          {
+            "a": "tuning:FACGCE",
+            "rel": "CONSTRAINS",
+            "b": "scale:major_box_pattern_6th_string_root"
+          },
+          {
+            "a": "scale:major_box_pattern_6th_string_root",
+            "rel": "CONSTRAINS",
+            "b": "tuning:FACGCE"
+          }
+        ],
+        "available": true
+      }
+    },
+    {
+      "id": "pdf_clean_maj9_ambient_texture",
+      "query": "math rock clean open string maj9 lush ambient texture arpeggio intro bridge",
+      "retrieval_mode": "source_focus",
+      "primary_sources": [
+        "mathrock_pdf_steve_h"
+      ],
+      "style_tags": [
+        "fretboard",
+        "guitar_foundation",
+        "math_rock",
+        "midwest_emo",
+        "voicing"
+      ],
+      "expected": {
+        "text_sources": [
+          "mathrock_pdf_steve_h"
+        ],
+        "visual_sources": [
+          "mathrock_pdf_steve_h"
+        ],
+        "visual_priorities": [],
+        "inferred_visual_priorities": [
+          "P2_arpeggios_chords"
+        ],
+        "visual_priority_scores": {
+          "P3_common_scales_chords": 0.0,
+          "P2_arpeggios_chords": 3.0,
+          "P1_scales_intervals": 0.0,
+          "P0_root_fingering_forms": 0.0
+        },
+        "kg_nodes_any": [
+          "chord:maj9",
+          "color:lush_ambient_texture",
+          "voicing:open_string_maj9_cluster"
+        ]
+      },
+      "metrics": {
+        "text_top1_ok": true,
+        "text_recall5_ok": true,
+        "text_precision5": 1.0,
+        "visual_top1_ok": true,
+        "visual_recall5_ok": true,
+        "visual_precision5": 1.0,
+        "kg_ok": true,
+        "bundle_ok": true
+      },
+      "timings": {
+        "text_embedding_seconds": 0.0037211000017123297,
+        "text_embedding_cache_hit": true,
+        "text_search_seconds": 0.006964200001675636,
+        "text_total_seconds": 0.010685300003387965,
+        "visual_embedding_seconds": 0.0015329000016208738,
+        "visual_embedding_cache_hit": true,
+        "visual_search_seconds": 0.005311799992341548,
+        "visual_total_seconds": 0.006879399996250868,
+        "kg_seconds": 0.03555130001041107,
+        "total_seconds": 0.053207899996777996
+      },
+      "text_top": [
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0004:bce3a40858737f47",
+          "distance": 0.35717475414276123,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0004",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 为何某些特殊调弦如此动听 你可能在想\"为什么有些特殊调弦听起来如此美妙？\" 关键在于音符的选择与各音之间的音程关系。借助基础乐理知识，我可以解释其原理（若您对下文探讨的理论概念理解尚不清晰，建议先学习本指南乐理章节中关于和弦构成的部分后再回看）。 观察标准调弦E A D G B E各弦的音程关系，可⻅主要由四度音程构成，唯有⼀处三度音程（即相邻两弦的音"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0009:4d84c31483c11e31",
+          "distance": 0.3705107569694519,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0009",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 扩展壳式和弦排列 扩展壳式和弦按法是⼀种特殊的和弦排列方式。它包含定义延伸和弦所需的核心音符（三度音与七度音），并与根音结合形成⼀、三、七音结构。这种按法能保留延伸和弦的整体调性（⼤调、⼩调等），同时进⾏精简处理。这类和弦具有实⽤价值，例如在合奏场景中，当其他乐⼿已演奏密集和声时，使⽤壳式和弦（或仅⽤三度/七度音）更为适宜。相比完整和弦，它们更适配增益"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0002:67b07db8d9ca01ff",
+          "distance": 0.3834487795829773,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 双⼿点弦与交替⼿指点弦 双⼿点弦主要包括交替点弦（双⼿轮流击弦），这可能是数学摇滚吉他⼿最常⽤的点弦技法。但有时你也会需要双⼿同步点奏音符，或⽤按弦⼿凭空锤音并保持音符以构建功能性和声（如⻉斯线）。以下范例（练习1.d）节选⾃我改编的《圣诞⽼人进城》曲谱。为清晰起⻅我将两个声部分开记谱，但实际需同步点奏。我发现让⼤脑同时处理两个点弦音符要困难得多。亲⾃"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0003:0706f2ad25ca70e7",
+          "distance": 0.4068213701248169,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## ⼿指控制+拨弦和弦 现在我们来学习同时拨弦的技巧。这能为你的和弦带来截然不同的质感——因为所有琴弦是被同时拨响，⽽非拨⽚扫弦的连续发声方式。它能提供更精准的动态控制、更高的演奏准确度，以及整体音色的变化。 入⻔练习2.g将不同⼿指组合（注意符头标注的使⽤⼿指）与拇指练习相结合。 [IMAGE_BLOCK:images/82b3d390df1caea14"
+        },
+        {
+          "id": "mathrock_pdf_steve_h::chunk_0010:682452221dec009a",
+          "distance": 0.4091675281524658,
+          "source_id": "mathrock_pdf_steve_h",
+          "chunk_id": "chunk_0010",
+          "title": null,
+          "style_tags": [
+            "alternate_tuning",
+            "math_rock",
+            "midwest_emo",
+            "tapping",
+            "voicing"
+          ],
+          "snippet": "## 习题答案 调性练习 1. E⼤调 - A⼤调 - G#⼩调 - F#⼩调 - E⼤调 = E⼤调：I - IV - iii - ii - I 2. D⼩调 - G属 - C⼤调 = C⼤调：ii - V - I 3. D⼤调 - E⼩调 - F#减 - G⼤调 = G⼤调：V - vi - vii - I 4. C⼤调 - G⼤调 - A⼩调 - E⼩"
+        }
+      ],
+      "support_text_top": [
+        {
+          "id": "mathrock_text_course::chunk_0007:72c0b258e8a92c07",
+          "distance": 0.2419927716255188,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0007",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "we'll find more vents,one there.using some cool ideas of how we take an alternate tuning in an open minor or major court with some extensions,we might have thirteen and how we.can "
+        },
+        {
+          "id": "mathrock_text_course::chunk_0003:84fc5e4e5f05affe",
+          "distance": 0.24701142311096191,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0003",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "math Rock and midwest emo it looks pretty tricky right,is it yes sort of well if you play like this it is but what if we break it down a little bit we go to a lot of alternate shoo"
+        },
+        {
+          "id": "mathrock_text_course::chunk_0002:e79260005031f347",
+          "distance": 0.24835193157196045,
+          "source_id": "mathrock_text_course",
+          "chunk_id": "chunk_0002",
+          "title": null,
+          "style_tags": [
+            "math_rock",
+            "midwest_emo"
+          ],
+          "snippet": "all right,guys,so for this math Rock midwest emo progression,we're looking at a tune in dad gatt.gad gad what are the codes we're looking at here the key is going to be centered ar"
+        }
+      ],
+      "visual_top": [
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p067:453abdc92272702f3f1d53ed0110eef727bb4d495ba1d760a7015fc672b62500",
+          "distance": 0.5573234558105469,
+          "rerank_score": 0.75,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 66,
+          "topic": null,
+          "nearby_text": "和弦进⾏⼀带有熟悉的上升感，但基于第三音构建的⼩和弦（G#m）被替换为平⾏⼩调（E⼩调）中借⽤的⼤三和弦。这引入了出人意料的音响效果，听众的⽿朵本能期待听到⼩三和弦。这是个相当精妙的技巧，效果出众。我最初是在TubeLord的歌曲中接触到这个⼿法。在我的乐队Mountains的歌曲《Restarts》前奏部分也运⽤了此技巧，不妨听听看能否辨识出那个借来的和弦 | https://open.spotify.com/album/40YDxR2agQg5XKds5E6Ryt | 在和声进⾏⼆中，减七和弦(vii°)被替换为平⾏⼩调(B⼩调)借来的⼤七和弦。这是缓解减和弦带来不必要紧张感的巧妙⼿法。尝试依次演奏AM7、A#m7b5和BM7和弦，能获得酷炫的半音效果！ | 3.",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\453abdc92272702f3f1d53ed0110eef727bb4d495ba1d760a7015fc672b62500.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p078:f9c4d79826ed121574f604ea4b24497e5f6ef828400975d1ba24056ae77f235a",
+          "distance": 0.5405898094177246,
+          "rerank_score": 0.5,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 77,
+          "topic": null,
+          "nearby_text": "本节内容到此结束。随着时间推移，当你投入更多时间运⽤我提供的这两种方法时，它们将帮助你更好地内化指板上音符的位置，并对创作即兴段落、乐句、歌曲构思等起到关键作⽤。 | ⽬前就到这⾥，恭喜你坚持学完！希望你收获颇丰并享受这个过程。更多更新即将推出！ | 感谢您的支持与耐心。 | 祝⼀切顺利， | 这是另⼀个基于I-IV和弦进⾏的数学摇滚⻛格riff范例。本次采⽤了快速和弦转换与非常规节拍来增强音乐性，典型展现了数学摇滚吉他⻛格的特征。若将第⼀⼩节视为三拍与四拍的组合，第⼆⼩节拆分为三组三拍，会更容易理解。",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\f9c4d79826ed121574f604ea4b24497e5f6ef828400975d1ba24056ae77f235a.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p062:3d5f88929db9c3662b0dea0792712ba5f772087cb6874ccd41216c0bf26577d7",
+          "distance": 0.5408599376678467,
+          "rerank_score": 0.5,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 61,
+          "topic": "和弦进⾏",
+          "nearby_text": "现在试着从左到右弹奏⽰例⼆（⻅下方）中的和弦，听起来熟悉吗？这是The Fall of Troy乐队歌曲F.C.P.R.E.M.I.X前奏部分使⽤的和弦！ | 尝试⽤这个和弦进⾏实验，比如按以下顺序开始：G#m7 - F#m7 - A#m7- Bma7，⽤你常⽤的各种节奏型扫弦。接着改为琶音演奏（连续弹奏音符），然后结合两种方式，最后可以打乱和弦顺序，例如：Bma7 - A#m7- F#m7 - G#m7会形成优美的下⾏模式，或调整为上⾏进⾏。美妙极了。 | 和弦进⾏与混合和弦类型 | 关于和弦的内容还没讲完。抱歉！ | 下⼀步是运⽤已学和弦进⾏和弦编配。此外，我们应考虑通过两种方式装饰和弦：⽤同根音和弦（含转位形式）替换原和弦，或直接进⾏和弦替代。⾸先我们将探讨和弦进⾏的基本构建方法，随后讲解和弦装饰技巧。这两部分内容理解难度不⼤，我将尽量以简明清晰的方式助你掌握。",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\3d5f88929db9c3662b0dea0792712ba5f772087cb6874ccd41216c0bf26577d7.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p051:f5a1231ab0bab8751141282b772f559088fb8d34bc06a6be58bd14b007b8e763",
+          "distance": 0.5492719411849976,
+          "rerank_score": 0.5,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 50,
+          "topic": null,
+          "nearby_text": "10fr",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\f5a1231ab0bab8751141282b772f559088fb8d34bc06a6be58bd14b007b8e763.jpg"
+        },
+        {
+          "id": "mathrock_pdf_steve_h:mineru:p033:9ed53806fff183b09cbaf3e2567910c6331f48ab28f5cd80392ef44ed53a2a88",
+          "distance": 0.550563633441925,
+          "rerank_score": 0.5,
+          "source_id": "mathrock_pdf_steve_h",
+          "priority": null,
+          "page": 32,
+          "topic": null,
+          "nearby_text": "C⼤七和弦 | B⼩七减五和弦 | C⼤九和弦 | Chord shapes starting from fift从第五弦起始的和弦指型： | FACGCE调式中的⼀些和弦进⾏",
+          "path": "data\\processed\\mathrock\\pdf_mineru\\Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans\\auto\\images\\9ed53806fff183b09cbaf3e2567910c6331f48ab28f5cd80392ef44ed53a2a88.jpg"
+        }
+      ],
+      "kg": {
+        "expected": [
+          "chord:maj9",
+          "color:lush_ambient_texture",
+          "voicing:open_string_maj9_cluster"
+        ],
+        "expanded": [
+          "chord:maj9",
+          "color:lush_ambient_texture",
+          "voicing:open_string_maj9_cluster"
+        ],
+        "alias_hits": [],
+        "hits": [
+          {
+            "id": "chord:maj9",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "color:lush_ambient_texture",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          },
+          {
+            "id": "voicing:open_string_maj9_cluster",
+            "labels": [
+              "KGNode"
+            ],
+            "degree": 1
+          }
+        ],
+        "sample_edges": [
+          {
+            "a": "tuning:DAEAC#E",
+            "rel": "ENABLES",
+            "b": "voicing:open_string_maj9_cluster"
+          },
+          {
+            "a": "voicing:open_string_maj9_cluster",
+            "rel": "ENABLES",
+            "b": "tuning:DAEAC#E"
+          },
+          {
+            "a": "chord:maj9",
+            "rel": "EVOKES",
+            "b": "color:lush_ambient_texture"
+          },
+          {
+            "a": "color:lush_ambient_texture",
+            "rel": "EVOKES",
+            "b": "chord:maj9"
+          }
+        ],
+        "available": true
+      }
+    }
+  ]
+}

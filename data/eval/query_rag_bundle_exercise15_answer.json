@@ -1,0 +1,695 @@
+{
+  "query": "练习15答案里D大调指型1对应哪个小调指型",
+  "analysis": {
+    "query": "练习15答案里D大调指型1对应哪个小调指型",
+    "intent": "visual_voicing_lookup",
+    "style_hints": [],
+    "theory_terms": [
+      "大调",
+      "小调",
+      "指型"
+    ],
+    "technique_terms": [],
+    "needs_fretboard_text": true,
+    "needs_visual": true,
+    "needs_style_text": false,
+    "needs_kg": false,
+    "confidence": 0.65,
+    "matched_rules": [
+      "fretboard_terms",
+      "visual_terms"
+    ]
+  },
+  "plan": [
+    {
+      "name": "fretboard_text",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+      "query": "练习15答案里D大调指型1对应哪个小调指型",
+      "top_k": 5,
+      "reason": "指板/理论/练习题干证据"
+    },
+    {
+      "name": "visual_caption",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+      "query": "练习15答案里D大调指型1对应哪个小调指型 指型图 和弦图 voicing",
+      "top_k": 5,
+      "reason": "具体图形/指法/voicing/答案图证据"
+    }
+  ],
+  "text_evidence": [
+    {
+      "evidence_id": "text:fretboard_text_0143",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习15\nD大调指型1（B小调指型2）\nG大调指型4（E小调指型5）\nC大调指型2（A小调指型3）\nE大调指型5（C#小调指型1）\nBb大调指型3（G小调指型4）\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 1.06868,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0143",
+        "page_hint": "68",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "review_jsonl": "",
+          "chunk_id": "fretboard_text_0143",
+          "linked_kg_nodes": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ac046f1b37c66ec6255a0b7ef2a757ad7c0e9ae28da8cf7a96b0916b85d77e2c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\464fad4e8ea83f72b5f37371eb5d835f36dc03153324a328af64a1bef85b7b7b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9638beb838c84cca083f4e4e8890f9dd60446e003235a3ad65b4f70ca2a3498c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\23a2cefa4eb416d4d1e5a18fbaca9c680bdb7c468b61907043870915dd8eb2ff.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b0e741c4c6076e68e7a4aaf03d0154cc6c1fcad501dfb1eb6d8776eb14ce2e98.jpg\"]",
+          "linked_review_ids": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "lesson_title": "",
+          "source_type": "clean_markdown",
+          "gp5_feature_triggers": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "page_hint": "68",
+          "linked_kg_edges": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json"
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.08132100105285645,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0045",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习15\n回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如：\nD大调指型1 (B小调指型2)\n再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 1.0636,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0045",
+        "page_hint": "26",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "lesson_title": "",
+          "chunk_id": "fretboard_text_0045",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_nodes": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6bf08545fb324ceef97dce49a035a6b474ab171276e257aa2479c8538ab431a6.jpg\"]",
+          "linked_kg_edges": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "gp5_feature_triggers": "[]",
+          "source_type": "clean_markdown",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "page_hint": "26",
+          "review_jsonl": ""
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.08640152215957642,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0044",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习14\n回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。\nE小调指型5(G大调指型4）\n再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 1.02168,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0044",
+        "page_hint": "26",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_review_ids": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "page_hint": "26",
+          "chunk_id": "fretboard_text_0044",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "gp5_feature_triggers": "[]",
+          "linked_kg_edges": "[]",
+          "lesson_title": "",
+          "source_type": "clean_markdown",
+          "review_jsonl": "",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0b2c654cc033443dc9a9ab711f4f8aaeed89249dd2d0601e5743f6cd919ae824.jpg\"]",
+          "linked_kg_nodes": "[]",
+          "source_title": "吉他指板手册正文清洗层"
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.10331505537033081,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0142",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习13\nE小调指型5\n2C小调指型2\nE小调指型\nA小调指型3\nD小调指型3\n小调指型4\n小调指型\nBb小调指型3\n小调指型2\nF小调指型5\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.99045,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0142",
+        "page_hint": "68",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "lesson_title": "",
+          "gp5_feature_triggers": "[]",
+          "linked_kg_edges": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "page_hint": "68",
+          "linked_kg_nodes": "[]",
+          "review_jsonl": "",
+          "source_type": "clean_markdown",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_review_ids": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "chunk_id": "fretboard_text_0142",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\aa757a54a06b630efa6d927ec30bfa29c8f1248240b24dee45d9bf6359d391bf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0b5a30842ced8eddce90c21ed678b2ae4825d95d6534bf697c0df5a282c76ca9.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6c9b9bc6504ddf3616f1e23fff369c976a6348e8c442b529274d1a7404b9f7b7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\217ec23fcb2ada251b0e2538a412339a4a7f868ab7acc55d4b93d2eea272f5f4.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\af2a615fdd8ba99273b1419c09377083cf872bd70bfd1180cc658eb649c94f56.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2623d9690382e6b1c283766fbfd29add42a7670ed3b45be90a1d901e454b48b8.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b1e6190512cdab9ca3c8339b6f9be813e237271028b880d565192a7002895f5d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\90a49dd549b660d978eedc8b143046e04f3b91efd5265dea71f0ed49fca6773a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\741955881ca28a7155fb1a55d54878c09664beb6ffc964aea969fa148e75a49e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fadbf75f0081959d1d1fe1471f9b042f9838467ecc44698ef2ed9587029a3ba6.jpg\"]"
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.10954666137695312,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0053",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习19\n回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。\nD小调五声音阶指型2\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 0.9881,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0053",
+        "page_hint": "29",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[]",
+          "source_type": "clean_markdown",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_kg_edges": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d189bc7ade098216ca2646aaa05d19aa749d6b282ad2b365e744bfd6fe77268d.jpg\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "gp5_feature_triggers": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "page_hint": "29",
+          "chunk_id": "fretboard_text_0053",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "review_jsonl": "",
+          "linked_review_ids": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "lesson_title": ""
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.11190426349639893,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    }
+  ],
+  "visual_evidence": [
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E15_1",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 15 小题: 1\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: D大调指型1 (B小调指型2)\n根音: D / B\n性质/调式: Major / Minor\n位置/指型: 指型1 / 指型2\n方向: horizontal\n把位: II\n品位范围: 约为第2-6品\n可见标签: D大调 指型1, B小调 指型2\n按点概述: 横向六线谱，包含实心圆点（音阶音）、带圈圆点（根音）和方形框（关系小调根音）。罗马数字II位于第二弦下方。\ncaption: D大调指型1与B小调指型2的指板图示。图中标注了D大调音阶位置，并用方框特别标出了关系小调B小调的根音位置。把位标记为罗马数字II，展示了大调与其关系小调在同一指型下的根音对应关系。\n检索关键词: D大调, B小调, 关系小调, 指型1, 指型2, 根音标记, 吉他指板, Roman numeral II\n编配价值: 用于理解大调音阶与其关系小调在指板上的重叠区域，通过方框标记辅助记忆关系小调根音位置，便于在D大调指型中快速切换至B小调视角进行即兴或编配。\n题目上下文: 回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+      "score": 1.10625,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E15_1",
+        "page_hint": "data/练习解答（图片）/练习15.png",
+        "exercise_number": 15,
+        "subquestion_number": 1,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_01.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "visible_structure": "{}",
+          "source_id": "fretboard_handbook_question_answer",
+          "visual_id": "fretboard_answer_E15_1",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "evidence_type": "fretboard_diagram",
+          "quality_or_mode": "Major / Minor",
+          "confidence": 0.95,
+          "musical_object": "D大调指型1 (B小调指型2)",
+          "source_image": "data/练习解答（图片）/练习15.png",
+          "position_or_shape": "指型1 / 指型2",
+          "entities": "{}",
+          "image_type": "scale_pattern",
+          "uncertain_fields": "[]",
+          "topic_hint": "D大调指型1 (B小调指型2)",
+          "page": "data/练习解答（图片）/练习15.png",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_01.png",
+          "caption": "D大调指型1与B小调指型2的指板图示。图中标注了D大调音阶位置，并用方框特别标出了关系小调B小调的根音位置。把位标记为罗马数字II，展示了大调与其关系小调在同一指型下的根音对应关系。",
+          "nearby_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "visual_type": "scale_pattern",
+          "exercise_number": 15,
+          "visual_granularity": "question_answer_crop",
+          "tuning": "",
+          "question_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "arrangement_value": "用于理解大调音阶与其关系小调在指板上的重叠区域，通过方框标记辅助记忆关系小调根音位置，便于在D大调指型中快速切换至B小调视角进行即兴或编配。",
+          "root": "D / B",
+          "key": "",
+          "mapping_method": "exercise_level_fallback",
+          "intervals": "[]",
+          "segment_id": "fretboard_answer_E15_1",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_01.png",
+          "priority": "fretboard_foundation_answer",
+          "subquestion_number": 1,
+          "caption_layer": "fretboard_answer_caption_v1",
+          "retrieval_keywords": "[\"D大调\", \"B小调\", \"关系小调\", \"指型1\", \"指型2\", \"根音标记\", \"吉他指板\", \"Roman numeral II\"]",
+          "topic": "D大调指型1 (B小调指型2)"
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.09375441074371338,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E15_4",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 15 小题: 4\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: E 大调指型 5 (C# 小调指型 1)\n根音: E / C#\n性质/调式: Major / Relative Minor\n位置/指型: 指型 5 / 指型 1\n方向: horizontal\n品位范围: 约为 7-12 品\n可见标签: E 大调 指型 5, (C# 小调 指型 1)\n按点概述: 横向六线谱，包含 E 大调音阶指型点阵。图中用方框圈出了 C# 小调的根音位置（位于 6 弦 9 品、4 弦 6 品、2 弦 9 品）。\ncaption: E 大调指型 5 (对应关系小调 C# 小调指型 1) 的吉他指板图解。图中展示了该把位的音阶分布，并用方形标记了关系小调 C#m 的根音位置，用于练习大调与其关系小调指型的转换与根音识别。\n检索关键词: E Major, C# Minor, Relative Minor, Scale Pattern, Root Note, Fretboard Diagram, 指型 5, 指型 1, 关系小调根音\n编配价值: 展示 E 大调第 5 种指型及其关系小调 C# 小调第 1 种指型的重叠区域。通过方框高亮 C# 根音，帮助乐手在演奏大调音阶时快速定位并切换至关系小调主音，强化调式互换与即兴 Solo 的根音意识。\n题目上下文: 回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+      "score": 1.0928,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E15_4",
+        "page_hint": "data/练习解答（图片）/练习15.png",
+        "exercise_number": 15,
+        "subquestion_number": 4,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_04.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "evidence_type": "fretboard_diagram",
+          "quality_or_mode": "Major / Relative Minor",
+          "question_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "source_id": "fretboard_handbook_question_answer",
+          "segment_id": "fretboard_answer_E15_4",
+          "priority": "fretboard_foundation_answer",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_04.png",
+          "nearby_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "image_type": "scale_pattern",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "arrangement_value": "展示 E 大调第 5 种指型及其关系小调 C# 小调第 1 种指型的重叠区域。通过方框高亮 C# 根音，帮助乐手在演奏大调音阶时快速定位并切换至关系小调主音，强化调式互换与即兴 Solo 的根音意识。",
+          "visual_granularity": "question_answer_crop",
+          "source_image": "data/练习解答（图片）/练习15.png",
+          "musical_object": "E 大调指型 5 (C# 小调指型 1)",
+          "position_or_shape": "指型 5 / 指型 1",
+          "entities": "{}",
+          "topic": "E 大调指型 5 (C# 小调指型 1)",
+          "root": "E / C#",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "mapping_method": "exercise_level_fallback",
+          "caption": "E 大调指型 5 (对应关系小调 C# 小调指型 1) 的吉他指板图解。图中展示了该把位的音阶分布，并用方形标记了关系小调 C#m 的根音位置，用于练习大调与其关系小调指型的转换与根音识别。",
+          "retrieval_keywords": "[\"E Major\", \"C# Minor\", \"Relative Minor\", \"Scale Pattern\", \"Root Note\", \"Fretboard Diagram\", \"指型 5\", \"指型 1\", \"关系小调根音\"]",
+          "uncertain_fields": "[\"fret_range\"]",
+          "visual_id": "fretboard_answer_E15_4",
+          "topic_hint": "E 大调指型 5 (C# 小调指型 1)",
+          "visible_structure": "{}",
+          "key": "",
+          "page": "data/练习解答（图片）/练习15.png",
+          "visual_type": "scale_pattern",
+          "subquestion_number": 4,
+          "confidence": 1.0,
+          "tuning": "",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_04.png",
+          "intervals": "[]",
+          "exercise_number": 15
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.1071978211402893,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E15_8",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 15 小题: 8\n证据类型: fretboard_diagram\n视觉类型: mode_fretboard_map\n对象: Gb 大调指型 5 (Eb 小调指型 1)\n根音: Gb / Eb\n性质/调式: Major / Minor\n位置/指型: 指型 5 / 指型 1\n方向: horizontal\n把位: III\n可见标签: Gb 大调 指型 5, Eb 小调 指型 1\n按点概述: 横向指板图，罗马数字 III 标记把位。图中包含实心圆点（音阶音）和带方框的圆点（根音）。根据标题推断，方框圈出的音符分别为 Gb 大调根音和 Eb 小调根音。\ncaption: Gb 大调指型 5 (对应关系小调 Eb 小调指型 1) 的横向指板图。位于第 III 把位。图中用方框标出了关系小调的根音位置，展示了大调与其关系小调在同一指型下的根音对应关系。\n检索关键词: Gb Major, Eb Minor, Pattern 5, Pattern 1, Relative Minor, Root Note, Fretboard Diagram, Position III\n编配价值: 用于理解大调指型与关系小调指型的重叠逻辑。通过在同一把位（III把位）识别 Gb 大调与 Eb 小调的根音位置，帮助乐手在独奏或即兴中快速切换调式中心，掌握相对大小调的指板映射。\n题目上下文: 回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+      "score": 1.09203,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E15_8",
+        "page_hint": "data/练习解答（图片）/练习15.png",
+        "exercise_number": 15,
+        "subquestion_number": 8,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_08.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "intervals": "[]",
+          "mapping_method": "exercise_level_fallback",
+          "source_image": "data/练习解答（图片）/练习15.png",
+          "visual_granularity": "question_answer_crop",
+          "tuning": "",
+          "question_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "confidence": 0.95,
+          "page": "data/练习解答（图片）/练习15.png",
+          "topic_hint": "Gb 大调指型 5 (Eb 小调指型 1)",
+          "image_type": "mode_fretboard_map",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "subquestion_number": 8,
+          "root": "Gb / Eb",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_08.png",
+          "position_or_shape": "指型 5 / 指型 1",
+          "segment_id": "fretboard_answer_E15_8",
+          "caption": "Gb 大调指型 5 (对应关系小调 Eb 小调指型 1) 的横向指板图。位于第 III 把位。图中用方框标出了关系小调的根音位置，展示了大调与其关系小调在同一指型下的根音对应关系。",
+          "visual_id": "fretboard_answer_E15_8",
+          "entities": "{}",
+          "uncertain_fields": "[\"fret_range\"]",
+          "arrangement_value": "用于理解大调指型与关系小调指型的重叠逻辑。通过在同一把位（III把位）识别 Gb 大调与 Eb 小调的根音位置，帮助乐手在独奏或即兴中快速切换调式中心，掌握相对大小调的指板映射。",
+          "visible_structure": "{}",
+          "topic": "Gb 大调指型 5 (Eb 小调指型 1)",
+          "source_id": "fretboard_handbook_question_answer",
+          "priority": "fretboard_foundation_answer",
+          "musical_object": "Gb 大调指型 5 (Eb 小调指型 1)",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_08.png",
+          "evidence_type": "fretboard_diagram",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "key": "",
+          "exercise_number": 15,
+          "caption_layer": "fretboard_answer_caption_v1",
+          "nearby_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "visual_type": "mode_fretboard_map",
+          "retrieval_keywords": "[\"Gb Major\", \"Eb Minor\", \"Pattern 5\", \"Pattern 1\", \"Relative Minor\", \"Root Note\", \"Fretboard Diagram\", \"Position III\"]",
+          "quality_or_mode": "Major / Minor"
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.10797160863876343,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E14_3",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 14 小题: 3\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: E小调指型1 (G大调指型5)\n根音: E / G\n性质/调式: Natural Minor / Major\n位置/指型: 指型1 / 指型5\n答案项: 3: E小调指型1 (G大调指型5)\n方向: horizontal\n把位: IV\n可见标签: E 小调 指型 1, (G 大调 指型 5)\n按点概述: 横向指板图，下方标注罗马数字 IV。图中包含多个实心圆点（音阶音），其中部分圆点外有圆圈标记（推断为 E 小调根音），另有一个圆点外加方框标记（推断为关系大调 G 大调根音）。\ncaption: 练习14第3题答案：E小调指型1（对应G大调指型5）的横向指板图。图示位于IV把位，用圆圈标出小调根音，用方框标出关系大调根音。\n检索关键词: E小调, G大调, 指型1, 指型5, 关系大调, 根音位置, IV把位, 吉他指板\n编配价值: 展示小调指型与其关系大调指型的重叠关系，通过方框高亮关系大调根音，辅助理解调式互换及在指板上快速定位相对调中心。\n题目上下文: 回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+      "score": 1.06752,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E14_3",
+        "page_hint": "data/练习解答（图片）/练习13-练习14.png",
+        "exercise_number": 14,
+        "subquestion_number": 3,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_03.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "source_id": "fretboard_handbook_question_answer",
+          "visual_type": "scale_pattern",
+          "root": "E / G",
+          "priority": "fretboard_foundation_answer",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_03.png",
+          "source_image": "data/练习解答（图片）/练习13-练习14.png",
+          "question_text": "回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "arrangement_value": "展示小调指型与其关系大调指型的重叠关系，通过方框高亮关系大调根音，辅助理解调式互换及在指板上快速定位相对调中心。",
+          "mapping_method": "exercise_level_fallback",
+          "visible_structure": "{}",
+          "exercise_number": 14,
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "position_or_shape": "指型1 / 指型5",
+          "confidence": 0.95,
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "visual_id": "fretboard_answer_E14_3",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_03.png",
+          "subquestion_number": 3,
+          "tuning": "",
+          "key": "",
+          "quality_or_mode": "Natural Minor / Major",
+          "page": "data/练习解答（图片）/练习13-练习14.png",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "segment_id": "fretboard_answer_E14_3",
+          "visual_granularity": "question_answer_crop",
+          "retrieval_keywords": "[\"E小调\", \"G大调\", \"指型1\", \"指型5\", \"关系大调\", \"根音位置\", \"IV把位\", \"吉他指板\"]",
+          "image_type": "scale_pattern",
+          "evidence_type": "fretboard_diagram",
+          "caption": "练习14第3题答案：E小调指型1（对应G大调指型5）的横向指板图。图示位于IV把位，用圆圈标出小调根音，用方框标出关系大调根音。",
+          "nearby_text": "回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "topic": "E小调指型1 (G大调指型5)",
+          "topic_hint": "E小调指型1 (G大调指型5)",
+          "uncertain_fields": "[\"fret_range\"]",
+          "musical_object": "E小调指型1 (G大调指型5)",
+          "intervals": "[]",
+          "entities": "{}"
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.1074819564819336,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E12_1",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 12 小题: 1\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: D大调 指型1\n根音: D\n性质/调式: Major Scale (Ionian)\n位置/指型: 指型1 (Pattern 1)\n方向: horizontal\n品位范围: 约为第5-8品\n可见标签: 1) D大调 指型1\n按点概述: 图中展示了D大调音阶在指板上的分布，包含多个按点（黑点）和两个圈出的根音（Root notes）。根据D大调指型1的常见把位推断，根音位于5弦7品和3弦7品附近。\ncaption: D大调音阶指型1（Pattern 1）的指板图示。图中标注了该调式在特定把位下的音符排列，其中根音D被圆圈特别标记。此图为横向六线谱风格，展示了从低音弦到高音弦的音阶指法分布，用于练习D Major Scale的第一种指型。\n检索关键词: D大调, D Major, 指型1, Pattern 1, 大调音阶, Major Scale, 吉他指板, 根音, 音阶指法\n编配价值: 提供了D大调基础指型（通常对应Mi型或Sol型变体，取决于起始根音位置）的视觉参考，帮助学习者掌握D大调在低把位到中把位的音阶连接，明确根音位置以建立调性中心感，适用于即兴solo构建及调内和弦推导的基础训练。\n题目上下文: 利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。 2 G大调指型\\_ 3)C大调指型一 = 1 51 Bb大调指型\\_ = 6 G大调指型 9 IV A大调指型\\_ 8 Gb大调指型 I三I 101 Eb大调指型 三 弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。",
+      "score": 1.04362,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E12_1",
+        "page_hint": "data/练习解答（图片）/练习12.png",
+        "exercise_number": 12,
+        "subquestion_number": 1,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_12_12/question_segments_v2/crops/exercise_12_01.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "uncertain_fields": "[\"fret_range\", \"string_position\"]",
+          "position_or_shape": "指型1 (Pattern 1)",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "key": "",
+          "musical_object": "D大调 指型1",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "image_type": "scale_pattern",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_12_12/question_segments_v2/crops/exercise_12_01.png",
+          "visible_structure": "{}",
+          "topic_hint": "D大调 指型1",
+          "quality_or_mode": "Major Scale (Ionian)",
+          "visual_type": "scale_pattern",
+          "retrieval_keywords": "[\"D大调\", \"D Major\", \"指型1\", \"Pattern 1\", \"大调音阶\", \"Major Scale\", \"吉他指板\", \"根音\", \"音阶指法\"]",
+          "question_text": "利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。 2 G大调指型\\_ 3)C大调指型一 = 1 51 Bb大调指型\\_ = 6 G大调指型 9 IV A大调指型\\_ 8 Gb大调指型 I三I 101 Eb大调指型 三 弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。",
+          "page": "data/练习解答（图片）/练习12.png",
+          "caption": "D大调音阶指型1（Pattern 1）的指板图示。图中标注了该调式在特定把位下的音符排列，其中根音D被圆圈特别标记。此图为横向六线谱风格，展示了从低音弦到高音弦的音阶指法分布，用于练习D Major Scale的第一种指型。",
+          "source_image": "data/练习解答（图片）/练习12.png",
+          "visual_id": "fretboard_answer_E12_1",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_12_12/question_segments_v2/crops/exercise_12_01.png",
+          "source_id": "fretboard_handbook_question_answer",
+          "subquestion_number": 1,
+          "nearby_text": "利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。 2 G大调指型\\_ 3)C大调指型一 = 1 51 Bb大调指型\\_ = 6 G大调指型 9 IV A大调指型\\_ 8 Gb大调指型 I三I 101 Eb大调指型 三 弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。",
+          "topic": "D大调 指型1",
+          "evidence_type": "fretboard_diagram",
+          "visual_granularity": "question_answer_crop",
+          "exercise_number": 12,
+          "priority": "fretboard_foundation_answer",
+          "entities": "{}",
+          "mapping_method": "exercise_level_fallback",
+          "confidence": 0.95,
+          "arrangement_value": "提供了D大调基础指型（通常对应Mi型或Sol型变体，取决于起始根音位置）的视觉参考，帮助学习者掌握D大调在低把位到中把位的音阶连接，明确根音位置以建立调性中心感，适用于即兴solo构建及调内和弦推导的基础训练。",
+          "segment_id": "fretboard_answer_E12_1",
+          "intervals": "[]",
+          "root": "D",
+          "tuning": ""
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.10638159513473511,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "练习15答案里D大调指型1对应哪个小调指型 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    }
+  ],
+  "kg_evidence": [],
+  "judgement": {
+    "sufficient": true,
+    "confidence": 0.71,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 2,
+    "text_count": 5,
+    "visual_count": 5,
+    "kg_count": 0,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [
+      "text:fretboard_text_0143",
+      "text:fretboard_text_0045",
+      "text:fretboard_text_0044"
+    ],
+    "top_visual_ids": [
+      "visual_caption:fretboard_answer_E15_1",
+      "visual_caption:fretboard_answer_E15_4",
+      "visual_caption:fretboard_answer_E15_8"
+    ],
+    "top_kg_ids": [],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。"
+  },
+  "timings": {
+    "model_load_seconds": 6.47684410000511,
+    "fretboard_text_seconds": 0.3063311000005342,
+    "visual_caption_seconds": 0.22012189999804832,
+    "total_seconds": 7.060622800010606
+  }
+}
