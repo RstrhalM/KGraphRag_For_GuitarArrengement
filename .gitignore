@@ -48,6 +48,8 @@ data/archive/
 !data/
 !data/eval/
 !data/eval/*.md
+data/eval/manual_queries/
+data/eval/manual_query_log.jsonl
 !data/knowledge/
 !data/knowledge/**/*.json
 !data/knowledge/**/*.jsonl

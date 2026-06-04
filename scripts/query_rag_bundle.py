@@ -15,6 +15,7 @@ import re
 import sys
 import time
 from dataclasses import asdict, dataclass, field
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -37,6 +38,18 @@ COLLECTIONS = {
 }
 
 TEXT_COLLECTIONS = {"fretboard_text", "style_text"}
+
+
+@lru_cache(maxsize=2)
+def get_cached_embedder(model: str, device: str, max_length: int) -> LocalTransformerEmbedder:
+    return LocalTransformerEmbedder(model, device=device, max_length=max_length)
+
+
+@lru_cache(maxsize=2)
+def get_cached_chroma_client(chroma_path: str) -> Any:
+    import chromadb
+
+    return chromadb.PersistentClient(path=chroma_path)
 
 FRETBOARD_TERMS = [
     "指板",
@@ -727,17 +740,15 @@ def build_answer_seed(bundle: EvidenceBundle | None, analysis: QueryAnalysis, te
 
 
 def run_bundle(args: argparse.Namespace) -> EvidenceBundle:
-    import chromadb
-
     started = time.perf_counter()
     context = json.loads(args.context_json) if args.context_json else {}
     analysis = analyze_query(args.query, context=context)
     plan = plan_retrieval(analysis, args.top_k)
 
     model_started = time.perf_counter()
-    embedder = LocalTransformerEmbedder(args.model, device=args.device, max_length=args.max_length)
+    embedder = get_cached_embedder(args.model, args.device, args.max_length)
     model_seconds = time.perf_counter() - model_started
-    client = chromadb.PersistentClient(path=str(args.chroma_path))
+    client = get_cached_chroma_client(str(args.chroma_path))
 
     results: dict[str, list[EvidenceItem]] = {}
     timings: dict[str, float] = {"model_load_seconds": model_seconds}

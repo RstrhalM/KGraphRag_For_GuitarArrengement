@@ -21,6 +21,7 @@
           <button class="nav-button" data-view="datasets">Datasets</button>
           <button class="nav-button" data-view="chunks">Chunks</button>
           <button class="nav-button" data-view="visuals">Visual Evidence</button>
+          <button class="nav-button" data-view="query">RAG Query</button>
           <button class="nav-button" data-view="graph">Graph</button>
           <button class="nav-button" data-view="reports">Eval Reports</button>
         </nav>
@@ -117,6 +118,66 @@
               <div id="graph-edge-list" class="edge-list"></div>
             </div>
           </section>
+        </section>
+
+        <section id="query" class="view">
+          <div class="query-layout">
+            <section class="panel">
+              <div class="panel-header">
+                <h2>Manual Query Collector</h2>
+                <span class="muted">面向编曲用户，不面向练习编号</span>
+              </div>
+              <div class="query-editor">
+                <label for="rag-query">Query</label>
+                <textarea id="rag-query" rows="6" placeholder="例如：我想把 Fmaj7 琶音发展成 math rock 风格的开放弦 riff，有哪些把位和指型可选？"></textarea>
+                <div class="form-grid">
+                  <label>
+                    Tags
+                    <input id="rag-tags" type="text" placeholder="mathrock, riff, visual" />
+                  </label>
+                  <label>
+                    Top K
+                    <input id="rag-top-k" type="number" min="1" max="12" value="5" />
+                  </label>
+                  <label>
+                    KG Limit
+                    <input id="rag-kg-limit" type="number" min="0" max="30" value="8" />
+                  </label>
+                </div>
+                <label for="rag-notes">Notes</label>
+                <textarea id="rag-notes" rows="3" placeholder="记录你希望这条 query 评测什么：风格边界、视觉指型召回、KG 关系、耗时等。"></textarea>
+                <div class="toolbar query-actions">
+                  <button id="rag-run" class="primary-button">运行 Query 层</button>
+                  <button id="rag-save" class="secondary-button">只保存草稿</button>
+                  <span id="rag-status" class="muted"></span>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <h2>Query 设计提示</h2>
+              </div>
+              <div id="query-guidance" class="query-guidance"></div>
+            </section>
+          </div>
+
+          <div class="two-column query-results-row">
+            <section class="panel">
+              <div class="panel-header">
+                <h2>Evidence Bundle</h2>
+                <span id="rag-result-summary" class="muted"></span>
+              </div>
+              <div id="rag-result" class="query-result empty">运行一条 query 后查看召回证据。</div>
+            </section>
+            <section class="panel">
+              <div class="panel-header">
+                <h2>人工 Query 历史</h2>
+                <button id="query-log-refresh" class="secondary-button">刷新</button>
+              </div>
+              <div id="query-log-list" class="list-pane query-log-list"></div>
+            </section>
+          </div>
         </section>
 
         <section id="reports" class="view">

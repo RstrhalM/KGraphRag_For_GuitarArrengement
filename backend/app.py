@@ -1,22 +1,33 @@
 from __future__ import annotations
 
+import argparse
+import hashlib
 import json
 import mimetypes
 import re
 from collections import Counter
+from dataclasses import asdict
+from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
+import sys
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, Field
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 FRONTEND = ROOT / "frontend"
+SCRIPTS = ROOT / "scripts"
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+
+from query_rag_bundle import DEFAULT_LOCAL_MODEL, render_markdown, run_bundle
 
 CHUNK_SOURCES: dict[str, Path] = {
     "mathrock_text_course": DATA / "processed" / "mathrock" / "mathrock_text" / "chunks.json",
@@ -118,12 +129,53 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+QUERY_LOG = DATA / "eval" / "manual_query_log.jsonl"
+QUERY_REPORT_DIR = DATA / "eval" / "manual_queries"
+
+
+class QueryRunRequest(BaseModel):
+    query: str = Field(..., min_length=2, max_length=1200)
+    notes: str = Field(default="", max_length=2000)
+    tags: list[str] = Field(default_factory=list)
+    context: dict[str, Any] = Field(default_factory=dict)
+    top_k: int = Field(default=5, ge=1, le=12)
+    kg_limit: int = Field(default=8, ge=0, le=30)
+
+
+class QuerySaveRequest(BaseModel):
+    query: str = Field(..., min_length=2, max_length=1200)
+    notes: str = Field(default="", max_length=2000)
+    tags: list[str] = Field(default_factory=list)
+    context: dict[str, Any] = Field(default_factory=dict)
+    status: str = Field(default="draft", max_length=40)
+
 
 def safe_rel(path: Path) -> str:
     try:
         return str(path.resolve().relative_to(ROOT.resolve()))
     except ValueError:
         return str(path)
+
+
+def utc_timestamp() -> str:
+    return datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+
+
+def query_report_stem(query: str) -> str:
+    now = datetime.now().strftime("%Y%m%d_%H%M%S")
+    digest = hashlib.sha1(query.encode("utf-8")).hexdigest()[:10]
+    return f"manual_query_{now}_{digest}"
+
+
+def append_query_log(row: dict[str, Any]) -> None:
+    QUERY_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with QUERY_LOG.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def read_query_log(limit: int = 80) -> list[dict[str, Any]]:
+    rows = read_jsonl(QUERY_LOG)
+    return list(reversed(rows[-limit:]))
 
 
 def resolve_workspace_path(raw_path: str) -> Path:
@@ -844,6 +896,151 @@ def reports() -> dict[str, Any]:
         for path in report_files()
     ]
     return {"items": items}
+
+
+@app.get("/api/query/prompts")
+def query_prompts() -> dict[str, Any]:
+    return {
+        "principles": [
+            {
+                "title": "面向编曲任务，不面向练习编号",
+                "text": "正式 query 应描述你要解决的编曲问题。练习答案图只作为指型/和弦图/音阶图的可视化证据参与召回。",
+            },
+            {
+                "title": "写清风格目标",
+                "text": "尽量写出 funk、math rock、midwest emo、blues、jazz fusion 等风格，或描述 groove、开放弦、切分、riff 密度等声音目标。",
+            },
+            {
+                "title": "写清素材和限制",
+                "text": "给出和弦、调性、音阶、riff 材料、把位限制、是否需要开放弦、是否要省略音、是否面向伴奏或主奏。",
+            },
+            {
+                "title": "让视觉 caption 做证据",
+                "text": "如果你需要具体指型、voicing、同把位大小调映射，可以在 query 里写“给我可视化指型/把位参考”。",
+            },
+        ],
+        "templates": [
+            {
+                "label": "和声材料 -> 风格 riff",
+                "query": "我想把 Fmaj7 琶音发展成 math rock 风格的开放弦 riff，有哪些把位和指型可选？",
+                "tags": ["mathrock", "riff", "fretboard"],
+            },
+            {
+                "label": "节奏风格 -> voicing",
+                "query": "funk 十六分切分节奏里，如何选择更省动作的双音或三音和弦指型，让 riff 更有 groove？",
+                "tags": ["funk", "rhythm", "voicing"],
+            },
+            {
+                "label": "调性转换 -> 同把位指型",
+                "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+                "tags": ["fretboard", "relative-minor", "visual"],
+            },
+            {
+                "label": "谱例分析 -> 编配建议",
+                "query": "一段 120bpm 的 Am-F-C-G 进行想做成 math rock 伴奏，节奏、开放弦和 tapping 可以怎么安排？",
+                "tags": ["workflow", "mathrock", "arrangement"],
+            },
+            {
+                "label": "约束型指型推荐",
+                "query": "在 5 到 9 品范围内，用 E 小调五声音阶做 funk riff，哪些指型适合和闷音切分结合？",
+                "tags": ["funk", "constraint", "visual"],
+            },
+        ],
+        "evaluation_axes": [
+            "是否命中正确意图：风格编配、指板/把位、视觉指型、KG 关系",
+            "是否召回至少两类互相支持的证据：文本、视觉 caption、KG",
+            "视觉证据是否服务于具体指型/voicing/riff，而不是练习编号本身",
+            "风格 query 是否能保持风格边界，不被其他教材误召回",
+            "耗时是否符合后端常驻 embedding 模型后的交互要求",
+        ],
+    }
+
+
+@app.get("/api/query/logs")
+def query_logs(limit: int = Query(default=80, ge=1, le=300)) -> dict[str, Any]:
+    return {"items": read_query_log(limit)}
+
+
+@app.post("/api/query/save")
+def save_query(request: QuerySaveRequest) -> dict[str, Any]:
+    row = {
+        "timestamp": utc_timestamp(),
+        "status": request.status,
+        "query": request.query.strip(),
+        "notes": request.notes.strip(),
+        "tags": request.tags,
+        "context": request.context,
+    }
+    append_query_log(row)
+    return {"ok": True, "item": row}
+
+
+@app.post("/api/query/run")
+def run_query(request: QueryRunRequest) -> dict[str, Any]:
+    query = request.query.strip()
+    if not query:
+        raise HTTPException(status_code=400, detail="Query is empty")
+    QUERY_REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    stem = query_report_stem(query)
+    report_md = QUERY_REPORT_DIR / f"{stem}.md"
+    report_json = QUERY_REPORT_DIR / f"{stem}.json"
+    context = dict(request.context or {})
+    if request.notes:
+        context["human_notes"] = request.notes
+    if request.tags:
+        context["human_tags"] = request.tags
+    args = argparse.Namespace(
+        query=query,
+        context_json=json.dumps(context, ensure_ascii=False),
+        top_k=request.top_k,
+        kg_limit=request.kg_limit,
+        chroma_path=DATA / "chroma",
+        model=DEFAULT_LOCAL_MODEL,
+        device="auto",
+        max_length=2048,
+        batch_size=8,
+        env_file=ROOT / ".env",
+        report_md=report_md,
+        report_json=report_json,
+    )
+    try:
+        bundle = run_bundle(args)
+    except Exception as exc:
+        append_query_log(
+            {
+                "timestamp": utc_timestamp(),
+                "status": "run_error",
+                "query": query,
+                "notes": request.notes.strip(),
+                "tags": request.tags,
+                "error": str(exc),
+            }
+        )
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    payload = asdict(bundle)
+    report_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    report_md.write_text(render_markdown(bundle), encoding="utf-8")
+    log_row = {
+        "timestamp": utc_timestamp(),
+        "status": "ran",
+        "query": query,
+        "notes": request.notes.strip(),
+        "tags": request.tags,
+        "intent": bundle.analysis.intent,
+        "style_hints": bundle.analysis.style_hints,
+        "judgement": bundle.judgement,
+        "timings": bundle.timings,
+        "report_md": safe_rel(report_md),
+        "report_json": safe_rel(report_json),
+    }
+    append_query_log(log_row)
+    return {
+        "ok": True,
+        "bundle": payload,
+        "report_md": safe_rel(report_md),
+        "report_json": safe_rel(report_json),
+        "log_item": log_row,
+    }
 
 
 @app.get("/api/report")

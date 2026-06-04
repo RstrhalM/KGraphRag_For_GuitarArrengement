@@ -11,6 +11,7 @@ const titles = {
   datasets: ["Datasets", "教材、视觉清单、知识图谱文件概览"],
   chunks: ["Chunks", "查看教材分块、图片引用和原文"],
   visuals: ["Visual Evidence", "查看视觉证据、caption 和原图"],
+  query: ["RAG Query", "采集人工 query，运行本地文本/视觉/KG evidence bundle"],
   graph: ["Graph", "搜索 Neo4j 导入前后的本地知识边"],
   reports: ["Eval Reports", "浏览 RAG 与视觉 caption 评测报告"],
 };
@@ -24,6 +25,19 @@ async function api(path) {
   const contentType = response.headers.get("content-type") || "";
   if (contentType.includes("application/json")) return response.json();
   return response.text();
+}
+
+async function apiJson(path, payload) {
+  const response = await fetch(path, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`${response.status} ${text}`);
+  }
+  return response.json();
 }
 
 function el(tag, className, text) {
@@ -53,6 +67,17 @@ function listText(value) {
   if (Array.isArray(value)) return value.filter(Boolean).join(", ");
   if (value && typeof value === "object") return JSON.stringify(value);
   return value ?? "";
+}
+
+function parseTags(value) {
+  return String(value || "")
+    .split(/[,\s，、]+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function setQueryStatus(text) {
+  document.getElementById("rag-status").textContent = text || "";
 }
 
 function visualExerciseLabel(item) {
@@ -412,6 +437,192 @@ async function loadGraph() {
   await searchGraph();
 }
 
+async function loadQueryWorkbench() {
+  const prompts = await api("/api/query/prompts");
+  renderQueryGuidance(prompts);
+  await loadQueryLogs();
+}
+
+function renderQueryGuidance(data) {
+  const container = document.getElementById("query-guidance");
+  clear(container);
+  const principleList = el("div", "guidance-grid");
+  (data.principles || []).forEach((item) => {
+    const card = el("div", "guidance-card");
+    card.innerHTML = `<strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p>`;
+    principleList.append(card);
+  });
+  container.append(principleList);
+
+  const templateTitle = el("h3", "", "可直接改写的 query 模板");
+  container.append(templateTitle);
+  const templateList = el("div", "template-list");
+  (data.templates || []).forEach((item) => {
+    const card = el("button", "template-card");
+    card.innerHTML = `
+      <strong>${escapeHtml(item.label)}</strong>
+      <span>${escapeHtml(item.query)}</span>
+      <small>${escapeHtml((item.tags || []).join(", "))}</small>
+    `;
+    card.addEventListener("click", () => {
+      document.getElementById("rag-query").value = item.query;
+      document.getElementById("rag-tags").value = (item.tags || []).join(", ");
+    });
+    templateList.append(card);
+  });
+  container.append(templateList);
+
+  const axesTitle = el("h3", "", "本阶段评测关注点");
+  container.append(axesTitle);
+  const axes = el("ul", "axis-list");
+  (data.evaluation_axes || []).forEach((axis) => axes.append(el("li", "", axis)));
+  container.append(axes);
+}
+
+function collectQueryPayload() {
+  return {
+    query: document.getElementById("rag-query").value.trim(),
+    notes: document.getElementById("rag-notes").value.trim(),
+    tags: parseTags(document.getElementById("rag-tags").value),
+    top_k: Number(document.getElementById("rag-top-k").value || 5),
+    kg_limit: Number(document.getElementById("rag-kg-limit").value || 8),
+    context: {
+      source: "frontend_manual_query_workbench",
+      intended_user_scope: "guitar_arrangement_user",
+      exercise_queries_are_regression_tests_only: true,
+    },
+  };
+}
+
+async function saveManualQuery() {
+  const payload = collectQueryPayload();
+  if (!payload.query) {
+    alert("先写一条 query。");
+    return;
+  }
+  setQueryStatus("保存中...");
+  try {
+    await apiJson("/api/query/save", { ...payload, status: "draft" });
+    setQueryStatus("已保存草稿");
+    await loadQueryLogs();
+  } catch (error) {
+    console.error(error);
+    setQueryStatus("保存失败");
+    alert(`保存失败：${error.message}`);
+  }
+}
+
+async function runManualQuery() {
+  const payload = collectQueryPayload();
+  if (!payload.query) {
+    alert("先写一条 query。");
+    return;
+  }
+  const runButton = document.getElementById("rag-run");
+  runButton.disabled = true;
+  setQueryStatus("运行中，首次加载本地 embedding 模型会稍慢...");
+  try {
+    const data = await apiJson("/api/query/run", payload);
+    renderQueryResult(data);
+    await loadQueryLogs();
+    setQueryStatus("运行完成");
+  } catch (error) {
+    console.error(error);
+    setQueryStatus("运行失败");
+    alert(`运行失败：${error.message}`);
+  } finally {
+    runButton.disabled = false;
+  }
+}
+
+function renderEvidenceSection(title, items) {
+  const section = el("section", "evidence-section");
+  section.append(el("h3", "", `${title} (${items.length})`));
+  if (!items.length) {
+    section.append(el("p", "muted", "没有召回证据"));
+    return section;
+  }
+  items.slice(0, 8).forEach((item, index) => {
+    const card = el("div", "evidence-card");
+    card.innerHTML = `
+      <div class="evidence-title">
+        <strong>${index + 1}. ${escapeHtml(item.evidence_id)}</strong>
+        <span>${Number(item.score || 0).toFixed(3)}</span>
+      </div>
+      <div class="badges">
+        <span class="badge">${escapeHtml(item.evidence_type)}</span>
+        <span class="badge">${escapeHtml(item.source_id)}</span>
+      </div>
+      <p>${escapeHtml(item.content || "")}</p>
+    `;
+    section.append(card);
+  });
+  return section;
+}
+
+function renderQueryResult(data) {
+  const bundle = data.bundle || {};
+  const judgement = bundle.judgement || {};
+  const analysis = bundle.analysis || {};
+  document.getElementById("rag-result-summary").textContent =
+    `${analysis.intent || "unknown"} · sufficient=${judgement.sufficient} · confidence=${judgement.confidence}`;
+  const pane = document.getElementById("rag-result");
+  pane.classList.remove("empty");
+  clear(pane);
+
+  const summary = el("div", "query-summary");
+  summary.innerHTML = `
+    <h3>Analysis</h3>
+    <div class="metadata-grid">
+      <div class="meta-label">Intent</div><div>${escapeHtml(analysis.intent)}</div>
+      <div class="meta-label">Style</div><div>${escapeHtml(listText(analysis.style_hints))}</div>
+      <div class="meta-label">Theory</div><div>${escapeHtml(listText(analysis.theory_terms))}</div>
+      <div class="meta-label">Technique</div><div>${escapeHtml(listText(analysis.technique_terms))}</div>
+      <div class="meta-label">Report</div><div>${escapeHtml(data.report_md || "")}</div>
+    </div>
+  `;
+  pane.append(summary);
+
+  const judge = el("div", "query-judge");
+  judge.innerHTML = `
+    <h3>Judgement</h3>
+    <pre>${escapeHtml(JSON.stringify(judgement, null, 2))}</pre>
+    <h3>Timings</h3>
+    <pre>${escapeHtml(JSON.stringify(bundle.timings || {}, null, 2))}</pre>
+  `;
+  pane.append(judge);
+  pane.append(renderEvidenceSection("Text Evidence", bundle.text_evidence || []));
+  pane.append(renderEvidenceSection("Visual Evidence", bundle.visual_evidence || []));
+  pane.append(renderEvidenceSection("KG Evidence", bundle.kg_evidence || []));
+}
+
+async function loadQueryLogs() {
+  const data = await api("/api/query/logs?limit=120");
+  const list = document.getElementById("query-log-list");
+  clear(list);
+  (data.items || []).forEach((item) => {
+    const row = el("div", "list-item");
+    const judgement = item.judgement || {};
+    row.innerHTML = `
+      <strong>${escapeHtml(item.query || "")}</strong>
+      <p>${escapeHtml(item.notes || item.intent || item.status || "")}</p>
+      <div class="badges">
+        <span class="badge">${escapeHtml(item.status || "draft")}</span>
+        ${item.intent ? `<span class="badge">${escapeHtml(item.intent)}</span>` : ""}
+        ${judgement.sufficient !== undefined ? `<span class="badge">sufficient ${escapeHtml(judgement.sufficient)}</span>` : ""}
+        ${(item.tags || []).map((tag) => `<span class="badge">${escapeHtml(tag)}</span>`).join("")}
+      </div>
+    `;
+    row.addEventListener("click", () => {
+      document.getElementById("rag-query").value = item.query || "";
+      document.getElementById("rag-notes").value = item.notes || "";
+      document.getElementById("rag-tags").value = (item.tags || []).join(", ");
+    });
+    list.append(row);
+  });
+  if (!data.items || !data.items.length) list.append(el("div", "list-item", "还没有人工 query 记录"));
+}
+
 async function searchGraph() {
   const q = document.getElementById("graph-query").value.trim();
   const params = new URLSearchParams({ q, limit: "45" });
@@ -551,6 +762,7 @@ async function loadView(view) {
     if (view === "datasets") await loadSources();
     if (view === "chunks") await loadChunks();
     if (view === "visuals") await loadVisuals();
+    if (view === "query") await loadQueryWorkbench();
     if (view === "graph") await loadGraph();
     if (view === "reports") await loadReports();
   } catch (error) {
@@ -572,6 +784,9 @@ document.getElementById("visual-search").addEventListener("click", loadVisuals);
 document.getElementById("visual-query").addEventListener("keydown", (event) => {
   if (event.key === "Enter") loadVisuals();
 });
+document.getElementById("rag-run").addEventListener("click", runManualQuery);
+document.getElementById("rag-save").addEventListener("click", saveManualQuery);
+document.getElementById("query-log-refresh").addEventListener("click", loadQueryLogs);
 document.getElementById("graph-search").addEventListener("click", searchGraph);
 document.getElementById("graph-query").addEventListener("keydown", (event) => {
   if (event.key === "Enter") searchGraph();
