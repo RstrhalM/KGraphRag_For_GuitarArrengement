@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import mimetypes
+import os
 import re
 from collections import Counter
 from dataclasses import asdict
@@ -995,9 +996,9 @@ def run_query(request: QueryRunRequest) -> dict[str, Any]:
         top_k=request.top_k,
         kg_limit=request.kg_limit,
         chroma_path=DATA / "chroma",
-        model=DEFAULT_LOCAL_MODEL,
-        device="auto",
-        max_length=2048,
+        model=os.environ.get("LOCAL_EMBEDDING_MODEL", DEFAULT_LOCAL_MODEL),
+        device=os.environ.get("LOCAL_EMBEDDING_DEVICE", "auto"),
+        max_length=int(os.environ.get("LOCAL_EMBEDDING_MAX_LENGTH", "2048")),
         batch_size=8,
         env_file=ROOT / ".env",
         report_md=report_md,

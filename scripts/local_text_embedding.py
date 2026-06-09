@@ -9,7 +9,10 @@ from typing import Any
 import torch
 
 
-DEFAULT_LOCAL_MODEL = "Qwen/Qwen3-Embedding-0.6B"
+ROOT = Path(__file__).resolve().parents[1]
+LOCAL_QWEN3_MODEL = ROOT / "models" / "embedding" / "qwen3-embedding-0.6b"
+REMOTE_QWEN3_MODEL = "Qwen/Qwen3-Embedding-0.6B"
+DEFAULT_LOCAL_MODEL = str(LOCAL_QWEN3_MODEL) if LOCAL_QWEN3_MODEL.exists() else REMOTE_QWEN3_MODEL
 
 
 class LocalTransformerEmbedder:
@@ -28,11 +31,24 @@ class LocalTransformerEmbedder:
         max_length: int = 2048,
         normalize: bool = True,
         trust_remote_code: bool = True,
+        local_files_only: bool | None = None,
     ) -> None:
         try:
             from transformers import AutoModel, AutoTokenizer
         except ImportError as exc:
             raise RuntimeError("Missing dependency: install transformers and torch") from exc
+
+        model_path = Path(model_name_or_path)
+        if not model_path.is_absolute():
+            workspace_model_path = ROOT / model_path
+            if workspace_model_path.exists():
+                model_path = workspace_model_path
+        if model_path.exists():
+            model_name_or_path = str(model_path)
+            if local_files_only is None:
+                local_files_only = True
+        elif local_files_only is None:
+            local_files_only = os.environ.get("TRANSFORMERS_OFFLINE") == "1" or os.environ.get("HF_HUB_OFFLINE") == "1"
 
         self.model_name_or_path = model_name_or_path
         self.max_length = max_length
@@ -42,8 +58,16 @@ class LocalTransformerEmbedder:
         self.device = device
 
         started = time.perf_counter()
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=trust_remote_code)
-        self.model = AutoModel.from_pretrained(model_name_or_path, trust_remote_code=trust_remote_code)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name_or_path,
+            trust_remote_code=trust_remote_code,
+            local_files_only=bool(local_files_only),
+        )
+        self.model = AutoModel.from_pretrained(
+            model_name_or_path,
+            trust_remote_code=trust_remote_code,
+            local_files_only=bool(local_files_only),
+        )
         self.model.eval()
         self.model.to(self.device)
         self.load_seconds = time.perf_counter() - started
