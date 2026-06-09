@@ -79,14 +79,20 @@ VISUAL_TERMS = [
     "图",
     "图示",
     "指法",
+    "指型",
     "指型图",
     "和弦图",
     "答案图",
     "答案",
+    "把位",
+    "同把位",
+    "映射",
+    "参考",
     "省略",
     "高把位",
     "低把位",
     "按法",
+    "排列",
     "shape",
     "diagram",
     "voicing",
@@ -129,6 +135,16 @@ KG_TERMS = [
     "发展",
     "迁移",
     "编配",
+    "编",
+    "写",
+    "写一段",
+    "伴奏",
+    "主奏",
+    "分解",
+    "对位",
+    "改写",
+    "生成",
+    "推荐",
     "启发",
     "关系",
     "搭配",
@@ -286,6 +302,8 @@ def analyze_query(query: str, context: dict[str, Any] | None = None) -> QueryAna
         matched_rules.append("style_or_technique_terms")
 
     needs_kg = has_any(query, KG_TERMS) or bool(context.get("gp5_features"))
+    if style_hints and (technique_terms or theory_terms) and has_any(query, KG_TERMS + ["riff", "voicing", "groove"]):
+        needs_kg = True
     if needs_kg:
         matched_rules.append("arrangement_or_relation_terms")
 
@@ -407,6 +425,28 @@ def token_boost(query: str, text: str) -> float:
     return min(0.25, matches * 0.025)
 
 
+def style_source_boost(query: str, source_id: str, title: str, document: str, metadata: dict[str, Any]) -> float:
+    style_hints = infer_style_hints(query)
+    if not style_hints:
+        return 0.0
+    blob = " ".join([source_id, title, document[:500], json.dumps(metadata, ensure_ascii=False)]).lower()
+    boost = 0.0
+    for style in style_hints:
+        if style == "funk":
+            if "funk" in blob or "cory_wong" in blob or "cory wong" in blob:
+                boost += 0.18
+            if "mathrock" in blob or "math rock" in blob:
+                boost -= 0.12
+        elif style == "mathrock":
+            if "mathrock" in blob or "math rock" in blob or "midwest" in blob:
+                boost += 0.18
+            if "cory_wong" in blob or "cory wong" in blob:
+                boost -= 0.08
+        elif style.lower() in blob:
+            boost += 0.12
+    return boost
+
+
 def evidence_from_chroma_hit(
     task: SearchTask,
     item_id: str,
@@ -424,7 +464,11 @@ def evidence_from_chroma_hit(
         or metadata.get("lesson_title")
         or task.name
     )
-    score = normalize_distance(distance) + token_boost(task.query, document + " " + json.dumps(metadata, ensure_ascii=False))
+    score = (
+        normalize_distance(distance)
+        + token_boost(task.query, document + " " + json.dumps(metadata, ensure_ascii=False))
+        + style_source_boost(task.query, source_id, title, document, metadata)
+    )
     evidence_type = "visual_caption" if task.name == "visual_caption" else "text"
     return EvidenceItem(
         evidence_id=f"{evidence_type}:{chunk_id}",
@@ -457,9 +501,12 @@ def search_chroma(
         return []
     collection = client.get_collection(task.collection)
     embedding = embedder.embed([task.query], batch_size=batch_size)[0]
+    candidate_count = task.top_k
+    if task.name in {"style_text", "visual_caption"}:
+        candidate_count = min(max(task.top_k * 5, task.top_k), collection.count())
     result = collection.query(
         query_embeddings=[embedding],
-        n_results=task.top_k,
+        n_results=candidate_count,
         include=["documents", "metadatas", "distances"],
     )
     items: list[EvidenceItem] = []
@@ -474,7 +521,7 @@ def search_chroma(
     ):
         items.append(evidence_from_chroma_hit(task, item_id, document or "", metadata or {}, float(distance), rank))
     items.sort(key=lambda item: item.score, reverse=True)
-    return items
+    return items[: task.top_k]
 
 
 def kg_terms_from_query(query: str) -> list[str]:
@@ -688,7 +735,17 @@ def judge_bundle(analysis: QueryAnalysis, text: list[EvidenceItem], visual: list
     if kg and not text:
         warnings.append("kg_without_text_grounding")
     if analysis.style_hints and text:
-        style_blob = json.dumps([item.metadata for item in text], ensure_ascii=False).lower()
+        style_blob = " ".join(
+            value
+            for item in text
+            for value in [
+                json.dumps(item.metadata, ensure_ascii=False),
+                item.source_id,
+                item.title,
+                item.content[:500],
+            ]
+            if value
+        ).lower()
         if not any(style.lower() in style_blob for style in analysis.style_hints):
             warnings.append("possible_style_mismatch")
     evidence_types = sum(bool(group) for group in [text, visual, kg])
