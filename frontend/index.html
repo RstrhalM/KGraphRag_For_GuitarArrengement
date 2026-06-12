@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guitar Knowledge Workbench</title>
-    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/styles.css?v=session-memory-20260610" />
   </head>
   <body>
     <div class="app-shell">
@@ -13,7 +13,7 @@
           <span class="brand-mark">KG</span>
           <div>
             <strong>Guitar Workbench</strong>
-            <small>Phase 1 Read-only</small>
+            <small>Agentic RAG Workbench</small>
           </div>
         </div>
         <nav>
@@ -22,6 +22,8 @@
           <button class="nav-button" data-view="chunks">Chunks</button>
           <button class="nav-button" data-view="visuals">Visual Evidence</button>
           <button class="nav-button" data-view="query">RAG Query</button>
+          <button class="nav-button" data-view="fullchain">Full Chain</button>
+          <button class="nav-button" data-view="memory">Memory</button>
           <button class="nav-button" data-view="graph">Graph</button>
           <button class="nav-button" data-view="reports">Eval Reports</button>
         </nav>
@@ -31,9 +33,9 @@
         <header class="topbar">
           <div>
             <h1 id="page-title">Dashboard</h1>
-            <p id="page-subtitle">本地知识库只读工作台</p>
+            <p id="page-subtitle">本地知识库与 Agentic RAG 研发工作台</p>
           </div>
-          <button id="refresh-button" class="secondary-button">刷新</button>
+          <button id="refresh-button" class="secondary-button" type="button">刷新</button>
         </header>
 
         <section id="dashboard" class="view active">
@@ -70,7 +72,7 @@
               <h2>Chunk Viewer</h2>
               <div class="toolbar">
                 <input id="chunk-query" type="search" placeholder="搜索 chunk 文本或 id" />
-                <button id="chunk-search" class="secondary-button">搜索</button>
+                <button id="chunk-search" class="secondary-button" type="button">搜索</button>
               </div>
             </div>
             <div class="chunk-workspace">
@@ -88,7 +90,7 @@
               <div class="toolbar">
                 <select id="visual-source"></select>
                 <input id="visual-query" type="search" placeholder="搜索 visual_id / caption / topic" />
-                <button id="visual-search" class="secondary-button">搜索</button>
+                <button id="visual-search" class="secondary-button" type="button">搜索</button>
               </div>
             </div>
             <div class="split">
@@ -107,7 +109,7 @@
                 <select id="graph-relation"><option value="">全部关系</option></select>
                 <select id="graph-source-group"><option value="">全部来源</option></select>
                 <select id="graph-knowledge-type"><option value="">全部类型</option></select>
-                <button id="graph-search" class="secondary-button">搜索图谱</button>
+                <button id="graph-search" class="secondary-button" type="button">搜索图谱</button>
               </div>
             </div>
             <div class="graph-layout">
@@ -143,12 +145,50 @@
                     KG Limit
                     <input id="rag-kg-limit" type="number" min="0" max="30" value="8" />
                   </label>
+                  <label>
+                    Visual Library
+                    <select id="rag-visual-collection">
+                      <option value="formal" selected>正式视觉库 · 389</option>
+                      <option value="mathrock_mixed_trial">Math Rock 混合试验库 · 398</option>
+                    </select>
+                  </label>
                 </div>
+                <div class="form-grid">
+                  <label>
+                    Rerank
+                    <select id="rag-rerank-backend">
+                      <option value="none" selected>关闭</option>
+                      <option value="local">本地 Qwen3</option>
+                      <option value="env">使用环境变量</option>
+                    </select>
+                  </label>
+                  <label>
+                    Weight
+                    <input id="rag-rerank-weight" type="number" min="0" max="1" step="0.05" value="0.35" />
+                  </label>
+                  <label>
+                    Batch
+                    <input id="rag-rerank-batch-size" type="number" min="1" max="16" value="4" />
+                  </label>
+                  <label>
+                    Max Len
+                    <input id="rag-rerank-max-length" type="number" min="256" max="8192" step="256" value="1024" />
+                  </label>
+                </div>
+                <label>
+                  Rerank Model
+                  <input id="rag-rerank-model" type="text" value="models/reranker/qwen3-reranker-0.6b" />
+                </label>
                 <label for="rag-notes">Notes</label>
                 <textarea id="rag-notes" rows="3" placeholder="记录你希望这条 query 评测什么：风格边界、视觉指型召回、KG 关系、耗时等。"></textarea>
+                <label class="inline-check">
+                  <input id="rag-use-normalizer" type="checkbox" checked />
+                  使用 LLM Query Normalizer
+                </label>
                 <div class="toolbar query-actions">
-                  <button id="rag-run" class="primary-button">运行 Query 层</button>
-                  <button id="rag-save" class="secondary-button">只保存草稿</button>
+                  <button id="rag-run" class="primary-button" type="button">运行 Query 层</button>
+                  <button id="rag-normalize" class="secondary-button" type="button">只规范化</button>
+                  <button id="rag-save" class="secondary-button" type="button">只保存草稿</button>
                   <span id="rag-status" class="muted"></span>
                 </div>
               </div>
@@ -173,11 +213,128 @@
             <section class="panel">
               <div class="panel-header">
                 <h2>人工 Query 历史</h2>
-                <button id="query-log-refresh" class="secondary-button">刷新</button>
+                <button id="query-log-refresh" class="secondary-button" type="button">刷新</button>
               </div>
               <div id="query-log-list" class="list-pane query-log-list"></div>
             </section>
           </div>
+        </section>
+
+        <section id="fullchain" class="view">
+          <div class="query-layout">
+            <section class="panel">
+              <div class="panel-header">
+                <h2>Full Chain Test</h2>
+                <span class="muted">Query -> RAG -> Rerank -> Answer Composer</span>
+              </div>
+              <div class="query-editor">
+                <label for="chain-query">编曲 Query</label>
+                <textarea id="chain-query" rows="6" placeholder="例如：我想把 Fmaj7 琶音发展成 math rock 风格的开放弦 riff，请给我指型参考和编配建议。"></textarea>
+                <div class="form-grid">
+                  <label>
+                    Tags
+                    <input id="chain-tags" type="text" placeholder="mathrock, fullchain" />
+                  </label>
+                  <label>
+                    Top K
+                    <input id="chain-top-k" type="number" min="1" max="12" value="5" />
+                  </label>
+                  <label>
+                    KG Limit
+                    <input id="chain-kg-limit" type="number" min="0" max="30" value="8" />
+                  </label>
+                  <label>
+                    Visual Library
+                    <select id="chain-visual-collection">
+                      <option value="formal">正式视觉库 · 389</option>
+                      <option value="mathrock_mixed_trial" selected>Math Rock 混合试验库 · 398</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="form-grid">
+                  <label>
+                    Rerank
+                    <select id="chain-rerank-backend">
+                      <option value="none">关闭</option>
+                      <option value="local" selected>本地 Qwen3</option>
+                      <option value="env">使用环境变量</option>
+                    </select>
+                  </label>
+                  <label>
+                    Weight
+                    <input id="chain-rerank-weight" type="number" min="0" max="1" step="0.05" value="0.35" />
+                  </label>
+                  <label>
+                    Batch
+                    <input id="chain-rerank-batch-size" type="number" min="1" max="16" value="4" />
+                  </label>
+                  <label>
+                    Max Len
+                    <input id="chain-rerank-max-length" type="number" min="256" max="8192" step="256" value="1024" />
+                  </label>
+                </div>
+                <label>
+                  Rerank Model
+                  <input id="chain-rerank-model" type="text" value="models/reranker/qwen3-reranker-0.6b" />
+                </label>
+                <label for="chain-notes">测试备注</label>
+                <textarea id="chain-notes" rows="3" placeholder="记录这条 query 想验证：最终建议是否可执行、是否引用正确证据、是否有幻觉。"></textarea>
+                <label class="inline-check">
+                  <input id="chain-use-normalizer" type="checkbox" checked />
+                  使用 LLM Query Normalizer
+                </label>
+                <div class="toolbar query-actions">
+                  <button id="chain-run" class="primary-button" type="button">运行全链路</button>
+                  <span id="chain-status" class="muted"></span>
+                </div>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-header">
+                <h2>全链路检查点</h2>
+              </div>
+              <ul class="axis-list">
+                <li>答案是否明确引用 evidence_id。</li>
+                <li>建议是否能直接用于吉他编曲。</li>
+                <li>视觉证据是否只作为指型/把位/voicing 参考。</li>
+                <li>KG 是否提供风格、技法、约束或迁移关系。</li>
+                <li>不确定点是否被明确标出。</li>
+              </ul>
+            </section>
+          </div>
+          <section class="panel query-results-row">
+            <div class="panel-header">
+              <h2>Full Chain Result</h2>
+              <span id="chain-result-summary" class="muted"></span>
+            </div>
+            <div id="chain-result" class="query-result empty">运行全链路后查看最终回答和证据。</div>
+          </section>
+        </section>
+
+        <section id="memory" class="view">
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <h2>Session Memory</h2>
+                <p class="muted">查看每次人工 query、规范化、RAG、Full Chain 和反馈事件。</p>
+              </div>
+              <div class="toolbar">
+                <input id="memory-query" type="search" placeholder="搜索 query / intent / tag" />
+                <select id="memory-status">
+                  <option value="">全部状态</option>
+                  <option value="draft">draft</option>
+                  <option value="normalized">normalized</option>
+                  <option value="ran">ran</option>
+                  <option value="run_error">run_error</option>
+                </select>
+                <button id="memory-search" class="secondary-button" type="button">搜索</button>
+              </div>
+            </div>
+            <div class="two-column">
+              <div id="memory-list" class="list-pane query-log-list"></div>
+              <div id="memory-detail" class="detail-pane empty">选择一条 session 查看完整记忆。</div>
+            </div>
+          </section>
         </section>
 
         <section id="reports" class="view">
@@ -195,6 +352,6 @@
       </main>
     </div>
 
-    <script src="/static/app.js"></script>
+    <script src="/static/app.js?v=session-memory-20260610"></script>
   </body>
 </html>

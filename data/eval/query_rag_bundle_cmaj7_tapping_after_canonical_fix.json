@@ -1,0 +1,3729 @@
+{
+  "query": "给我一个Cmaj7两手点弦琶音谱例",
+  "analysis": {
+    "query": "Cmaj7 two-hand tapping arpeggio pattern diagram",
+    "intent": "mixed_arrangement",
+    "style_hints": [],
+    "theory_terms": [
+      "Cmaj7"
+    ],
+    "technique_terms": [
+      "tapping",
+      "点弦"
+    ],
+    "needs_fretboard_text": true,
+    "needs_visual": true,
+    "needs_style_text": false,
+    "needs_kg": true,
+    "confidence": 0.79,
+    "matched_rules": [
+      "llm_plan:fretboard_text",
+      "llm_plan:visual_caption",
+      "llm_plan:kg"
+    ]
+  },
+  "plan": [
+    {
+      "name": "fretboard_text",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+      "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+      "top_k": 5,
+      "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+    },
+    {
+      "name": "visual_caption",
+      "backend": "chroma",
+      "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+      "query": "Cmaj7 two-hand tapping arpeggio pattern diagram fretboard map",
+      "top_k": 5,
+      "reason": "User explicitly asked for a 'score/example' (谱例) of a specific physical technique (two-hand tapping), which requires visual evidence of finger positions and tapping points on the fretboard."
+    },
+    {
+      "name": "kg",
+      "backend": "neo4j_or_file",
+      "collection": null,
+      "query": "two-hand tapping arpeggio voicing constraints and ergonomic patterns for maj7 chords",
+      "top_k": 8,
+      "reason": "To provide arrangement heuristics and ergonomic constraints for executing two-hand tapping arpeggios effectively."
+    }
+  ],
+  "text_evidence": [
+    {
+      "evidence_id": "text:fretboard_text_0108",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "学习目标：构建七和弦的常备声部。\n前面我们已学习了密集和弦，实际上对于三和弦和七和弦而言，开放和弦有时更加悦耳好听并且更加容易弹奏。\n对于七和弦来说，密集和弦有时在吉他上是很难弹奏的。按弦的手指有时够不到并按住全部的音符。例如，像Amaj7这样的密集和弦。\n和弦中的音符在指板上的跨度太大，以致很难全部按住。同时，这样的和弦中也含有较多相近的低音，使得音色也会变得暗淡浑浊。\n为了找到和弦中更有用的和弦音，常常需要将其中的某些音符升高或降低一个八度，这样就可以得到更加宽广的和弦声音。下面来尝试一下。密集大七和弦Amaj7包含了“1、3、5、7”四个音符，如果将三度音升高一个八度，那么就变成了“1、5、7、10”。这样它就变成了开放和弦，因为所有的音在音高上都分散开来而不是局促在一起了。在指板上，可以用五度音程来演奏Amaj7和弦，这样就用到了指型4。\n由于在和弦中十度音和三度音产生的和弦性质是相同的，因此可以用“1、5、7、3”来表示这个和弦的构成，这样更便于识别和弦音。也就是说，即使把和弦中的某些音符升高或降低了一个八度，也可以用原来的音符来表示它。\n最上面两根琴弦上的五度音听起来还是有些暗沉，可以把和弦中的五度音升高一个八度，这样就变成了“1、7、10、12”，也就是“1、7、3、5”。\n在用向下扫弦的方法演奏这个和弦时，左手的1指需要同时完成以下两项任务：（1）牢牢按住六弦上的和弦根音。（2）对第5弦进行消音。如果是拨弦而不是扫弦时，注意不要拨奏第5弦。\n“1、7、3、5”是ma7、mi7、dom7、mi7(b5)和dim7这些和弦指型4中的常用声部构成。尽管这些和弦有多种不同的声部构成可以选择，但常用声部构成可以让你在指板上迅速地找出该和弦。在练习过程中，首先要掌握的是指型2和指型4的和弦常用声部构成，即根音在第6弦和第5弦上的和弦，它们也是最容易的声部构成。掌握了它们，就基本可以写出一首歌的和弦进行了。然后，你就可以学习其他声部构成的和弦了，它们会让音乐更有色彩或者和弦进行更加流畅。最终的目标是要掌握和弦五种指型中的常用声部构成。\n七和弦常用声部构成表\n\n[图示引用 4 张，详见 image_refs]",
+      "score": 0.92195,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0108",
+        "page_hint": "51",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_title": "吉他指板手册正文清洗层",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_edges": "[]",
+          "review_jsonl": "",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\530d4efe467fbf8b61260ac47fc8282cdb89fa8148d93dea37ad8ce0406a0d8d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\33b8159428f446970ffdd6b0a125c27dd7bf26c94345cd9e67c7ef2d0112440d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9a8e283a7962aa92f29ca3c2c080d96e5767c42cdc41e873f7feae04cc2a0d7d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\dea1567ec2f9de31a02846495b3a87bb1a36e0a1bb177c57d39b41a695cf6c4a.jpg\"]",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "gp5_feature_triggers": "[]",
+          "linked_kg_nodes": "[]",
+          "chunk_id": "fretboard_text_0108",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "lesson_title": "",
+          "page_hint": "51",
+          "source_type": "clean_markdown"
+        },
+        "domain_rerank": {
+          "delta": 0.11,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [
+              "maj7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.2130502462387085,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0130",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习\n录制三分钟下面这些常用的调式和弦进行。演奏时不需要使用任何风格的节奏型，每个和弦仅用清音弹奏一下，然后使其一直在节拍器的四拍中发音即可，反复演奏直至录满三分钟。然后录下一个和弦进行。录完之后进行回放，找出每个和弦进行所对应的调式，并且跟着录下的和弦进行来弹奏。\nIC IGIFIGI-C lonian\nICma7IDl-C Lydian\nICmi7 IF9 ICmi7IDmi7l-C Dorian\nICmiIDb1-CPhrygian\nIC7IBbma7l-CMixolydian\nICmiIBb IAbIBb丨-CAeolian",
+      "score": 0.84381,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0130",
+        "page_hint": "59",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "gp5_feature_triggers": "[]",
+          "page_hint": "59",
+          "source_title": "吉他指板手册正文清洗层",
+          "source_type": "clean_markdown",
+          "lesson_title": "",
+          "chunk_id": "fretboard_text_0130",
+          "linked_review_ids": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "review_jsonl": "",
+          "linked_kg_edges": "[]",
+          "linked_kg_nodes": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "image_refs": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.21118640899658203,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0114",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习\n弹奏本章中学过的所有声部构成，并且再次强调首先要掌握指型4和指型2的声部构成。\n然后试着做这样的练习：任意选择一个和弦（比如ma7）和根音（比如C），演奏这个和弦所有指型的所有声部构成。从琴颈上的最低音弹奏到最高音。弹奏的同时，大声说出和弦的名称、指型的序号和声部构成，像这样：\n“C大七和弦，指型1，‘1、3、7、1’…\nC大七和弦，指型1，‘3、7、1、5.’.\nC大七和弦，指型2，‘1、5、3、3’\nC大七和弦，指型3，‘5、1、3、7’\nC大七和弦，指型4，‘1、7、3、5’\nC大七和弦，指型5，‘1、5、7、3’.”\n选择另外一个和弦（或者另外一个根音），重复这一练习。",
+      "score": 0.82764,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0114",
+        "page_hint": "51",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "image_refs": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "source_type": "clean_markdown",
+          "linked_kg_edges": "[]",
+          "gp5_feature_triggers": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_nodes": "[]",
+          "page_hint": "51",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "lesson_title": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "review_jsonl": "",
+          "chunk_id": "fretboard_text_0114",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 6,
+        "distance": 0.2273586392402649,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0119",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习49\n根据给出的声部构成，在下面的图示中构建延伸和弦。\n5）F#7(#11)\n6Db13\n7）A13(#11)\n8 E13\n10）F9（#11)\n弹奏上页练习中的延伸和弦，弹奏时大声说出和弦名称、指型序号和声部构成。\n“C九和弦，指型1，‘1、3、b7、.\nG大十三和弦，指型4，‘1、3、7、13..”\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.82585,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0119",
+        "page_hint": "54",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunk_id": "fretboard_text_0119",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8b4316202b722a59012caf14d81fafb2e864d6437437f7193aa92f4485ecec90.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a5cad2ac1a60193c9315db6052c0675e341d917de749624c743318e926326571.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e52abc16b7b425d06daad05ac1e338afacee60bc2d28ff1fed7b974f403709f4.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5f1c68a4f3fe4d3897cea4581f30853e91f9716d90cd55a954185c6eded6e36b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\521c7f42f623227908b8bb9deffb2b6440e1c6721ab3a0d15912fa49ebd1a32e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\15fd64c9a2661d2891b291c8023e112fdba0547ff7a2637f6c1515c246d3c9e2.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9f7008faf63d7b3092fb669815debe554590d4419d952fdfee2730fb4bb984b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3cca6a7cf27f7ebcd590b11ed719e40b1800fe26343244801616db510a7fe90a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6e35ced523269fc162dda3d7ba946caa642d152c744433112fe23e4ba1d56a14.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f18a803a6e3dca466ce984fee05cb9060bbd4826cc8d1a548f3886d9fb4cdb25.jpg\"]",
+          "lesson_title": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "gp5_feature_triggers": "[]",
+          "source_type": "clean_markdown",
+          "linked_kg_edges": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "page_hint": "54",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_review_ids": "[]",
+          "linked_kg_nodes": "[]",
+          "review_jsonl": ""
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 8,
+        "distance": 0.2291487455368042,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0028",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习10\n在正确的弦上，画出指板图上方所写的音符。可以运用自然音阶推算的方法，也可以采用五种根音指型的方法。有时可能需要运用各种不同的方法：\n·从每根弦的空弦音向上推算\n·从每根弦的第12品向下推算\n·从另外一个熟悉的音符（比如，第7品的D音）向上或者向下推算\n·选择一个临近的音符（比如E音)，首先找到它所在的位置\nF\nVI\n2)\nF#\nIV\nII\nG\nV\nA\nV\nEb\nVII\nB\n三\nDb\nXI\n10)\nC\nxV\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.81855,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0028",
+        "page_hint": "17",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "page_hint": "17",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\91fe5bc494d4625ffbc478053306e4ba6cd1a9b60dc591b26c2049669e905c20.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b7a4b341c58db24ff4c20d3e44ed3f291a00c2e0ddfbf3c7d8ec737856a4db3d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9e5b8859f3b89310e8c8d3750ecf53c9d12197b5b80b9e2d55ca93422384d9cf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3a8441dbc4ef1afc5b8d231f3382630de87d2e062a060c1408b4cdbb2ab7febf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\50c5a42c86a7809411315b0b0f67ca48734208338751013c70ca1e744e870fb6.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f2d1a903a076cfdb42e520b1277352833e07c9ebe4e145b7742b01e6022b674b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a37ef064a65a12f223ec569b59369572170de879ebfef5f45c0c21f57ba9328e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3f95f14312e41aeda0655632bcdb085e617ea85bb2a8263ed6d35a1778d0aa1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6981e345f733dc3854e60aef3bc67aed6ad169474efcc1c90bb789aa1cebae21.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a2ad3fd939cbdbc25a770aa91c46e25738a71bd1fcb6808764b1e87ee4136342.jpg\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "lesson_title": "",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_review_ids": "[]",
+          "chunk_id": "fretboard_text_0028",
+          "linked_kg_edges": "[]",
+          "gp5_feature_triggers": "[]",
+          "review_jsonl": "",
+          "linked_kg_nodes": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "source_type": "clean_markdown",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 10,
+        "distance": 0.23645126819610596,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0033",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习11\n在下图中，以给出的音符为起始音，在一根弦上写出相应的大调音阶。注意应用大调音阶公式和字母表规则。在写出音符的同时大声朗读出来。\n2)\n4)\n5)\n10）\n现在弹奏上面指板图中的音阶，注意在弹奏的同时要大声地说出音阶的名称和每个音符的名字：“d大调:D…E…·F#…G…A…B…C#…D…”\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.8109,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0033",
+        "page_hint": "20",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunk_id": "fretboard_text_0033",
+          "linked_kg_nodes": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "gp5_feature_triggers": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "page_hint": "20",
+          "linked_kg_edges": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_review_ids": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0058fbf60def1e6417812920f6558cc1fe2871e06e57b859238da40b1bfa802e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\733d105ce793fc0e3ad70054cbc71f15595dd6a810ff3978361d3959b9630f1d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ffaf557cd9e2b7ed9b7db216391e65f0c9a6b3dff5ef2164e43bc0bc8c5443bd.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a5e0bc7c0d841ead4adf7ccee2c8f1235961796b3021efe39134e137d3d5297e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2e03b6ab8dfdf93f3e392bd533231311a35c7bb76bf032a17340262a5cec4a1b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\84c935cf5637d28acebb01ebed5029c93820d72325f89c39e939ce7004d0a023.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f31637ca83232656dfe25e8f2c5503c9edbd4de5ffdb7cdf86296041e557c1a7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9d82485664d11b0778730e2f74370fb0110805fff707ec44c23277dd195b9e7b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\66c6ce0189241b2e2b56853875f6bf3b07338dbdd0a45f7e99ccf834b644c799.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9157452dde322fed412218a9ee021541e9f39715eeeaa2973d16d6422459d69.jpg\"]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_id": "fretboard_handbook_clean_text",
+          "lesson_title": "",
+          "review_jsonl": "",
+          "source_type": "clean_markdown"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 15,
+        "distance": 0.24409735202789307,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0129",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习54\n写出各种调式的音阶，其中Ionian（大调）音阶和Aeolian（自然小调）音阶已经给出。可以参考以上练习中的指板指型，也可以参考之前学过的C大调（Ionian）音阶的全音和半音关系。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 0.80813,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0129",
+        "page_hint": "59",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_edges": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "chunk_id": "fretboard_text_0129",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b9cb1861b464a7605684a595f56a5b5030c412e1edba53d7d2455e94def109e8.jpg\"]",
+          "linked_review_ids": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "review_jsonl": "",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_type": "clean_markdown",
+          "page_hint": "59",
+          "lesson_title": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "gp5_feature_triggers": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 19,
+        "distance": 0.24686837196350098,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0112",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习46\n运用指型1画出七和弦“3、7、1、5”的常用声部构成。\n1）Dma7\n2D7\n3）Dmi7\n4）Dmi7（b5)\n5）Ddim7\n某些指型1中的常用声部构成可去掉五度音，而增加一个八度音，这对于多数基本的和弦都是适用的。例如，这时的和弦声部构成为：1、3、7、1。但对于mi7(b5)和dim7和弦不适用，因为对于这两个和弦，b5是影响它们性质的重要音符。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.76056,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0112",
+        "page_hint": "51",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "gp5_feature_triggers": "[]",
+          "linked_kg_edges": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\bbd082cfae9b3a6aa3e429554c9f09e9493de9bf1e948444e5c9bdc4d64b4ee7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d903805c7f8078b075f6342e68c28a1ce5d7cc44f5c75e78c0308211beef8fa4.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\7a89f1577236e2dc6d3a11513869fc04c75f93ea0df20d68d1d6e8e928c86ae0.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d561fbee4cd65ad2c1787ec56045cef59d840d640d455c0a096e01349b0a5785.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e9bb354c9a87c943be8da97a8644dfc3b99976b400bf445fc53fda9f1e65a7b1.jpg\"]",
+          "lesson_title": "",
+          "review_jsonl": "",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_title": "吉他指板手册正文清洗层",
+          "page_hint": "51",
+          "linked_kg_nodes": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "chunk_id": "fretboard_text_0112",
+          "source_type": "clean_markdown"
+        },
+        "domain_rerank": {
+          "delta": -0.04,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.22443705797195435,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0110",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习44\n运用指型2和指型5画出七和弦“1、5、7、3”常用声部构成。\n5）Cdim7\n6)Fma7\n9）Fmi7(b5）\n10）Fdim7\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.76037,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0110",
+        "page_hint": "51",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "page_hint": "51",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_kg_nodes": "[]",
+          "lesson_title": "",
+          "review_jsonl": "",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_review_ids": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6e05e11e982d36687c5df5564b6bf1ef6efb314c6143bb7c6ebfe3a865bdf034.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c1b81c203b4a0affa11063cfd87b8627df6d36c753dfa86742120bbb24181d88.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\4fb8627d4a7f56e0684494b4c46a958d2961ba08e6eef3eec3cd5251f3a100e1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\eb3a223830948fcdd696767fb230909cf2cad117c1f9fe48614dac412e012abb.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\cd63f8da64e26007e5c348521538fe92e189f9c1ce52404953e6654da77ff64f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\afcffe30761b1877a5c57dcbf12d8547057d7f8de41f1c98f861393e4356c6f2.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\1ed9db65873fd0bbf1776f6ccc4553841c30fab6dfed05445cf0e9d5f83e718b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\bdac3adbeba0a6fcec48417fe860507b893e85def1daf21e97439bada9504611.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\517cb92e015e39c48291ee127427ccb4a6fdd07014460f4f33a226a352dd6193.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b6d2c9837f9d276f2ee2911e9650b5ba365381126898c60653c4cc320af2d8bd.jpg\"]",
+          "chunk_id": "fretboard_text_0110",
+          "source_type": "clean_markdown",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_edges": "[]",
+          "gp5_feature_triggers": "[]"
+        },
+        "domain_rerank": {
+          "delta": -0.04,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.2246280312538147,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0099",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习38\n在F大三和弦的基础上增加大七度音，并画出六根弦上D大七和弦琶音的五种指型，根音已圈出。\n1）Fma7琶音\n=\n2)Fma7琶音 指型2\n3)Fma7琶音 指型3\nV\nVI\n4)Fma7琶音\nIX\n5)Fma7琶音\nXII\n弹奏以上这些F大七和弦琶音，弹奏前先大声说出指型的序号。同时，要注意仔细体会大七和弦的色彩。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.75775,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0099",
+        "page_hint": "48",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_kg_nodes": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a3768c239997f81afde17999a69756c2ce9bbae1d337310ff09078ea7bdbbbfc.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\46720b122c738a3f6d9ce5a2807c4c1bc4d791fc7340312b92d0d6386d1a909e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\1468904dc1fedcf27d06f1d9420039a0ccf921fa984d9939247803b792666ad2.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e279561afc589fd0a9c41b07aacd7a3cc59e294079d7829aac84203e89d087a9.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b3ae7f305a0303edcd7ec3891641b189dd6de902ebddaeb1feb40c8eae68913e.jpg\"]",
+          "page_hint": "48",
+          "linked_review_ids": "[]",
+          "gp5_feature_triggers": "[]",
+          "source_type": "clean_markdown",
+          "chunk_id": "fretboard_text_0099",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_id": "fretboard_handbook_clean_text",
+          "lesson_title": "",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_edges": "[]",
+          "review_jsonl": ""
+        },
+        "domain_rerank": {
+          "delta": -0.04,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.227245032787323,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "top_k": 5,
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        }
+      }
+    }
+  ],
+  "visual_evidence": [
+    {
+      "evidence_id": "visual_caption:mr_style_010",
+      "evidence_type": "visual_caption",
+      "source_id": "canonical_visual",
+      "title": "Cmaj7_tapping_arpeggio",
+      "content": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 73\n图像类型: tab_excerpt\n主题: Cmaj7_tapping_arpeggio\n调弦: standard\n调性: C major\n根音: C\n和弦: Cmaj7\n音程: major_7th, perfect_5th, major_3rd\n技法: tapping, pull_off, hammer_on, let_ring, sustained_note\n指型: T (Tap), P (Pull-off)\n弦组: 6 strings\n品位范围: 0-15\n开放弦: 1st string (high E), 2nd string (B), 3rd string (G), 5th string (A), 6th string (E)\n包含音: C, E, G, B\ncaption: C大七和弦（Cmaj7）点弦琶音谱例。展示标准调弦下结合开放弦持续音与高把位点弦（T/P）的演奏技法。乐谱包含明确的“持续音”与“let ring”标记，强调声部延留与数学摇滚风格的复调听感，涵盖根音、三音、五音及七音的分解排列。\n编配价值: 该谱例展示了Math Rock编配中利用开放弦作为Pedal Point（持续低音/高音）构建宽广声场的技巧。通过点弦技法在不改变左手把位的情况下扩展音域，实现类似键盘的琶音织体，适合用于器乐摇滚的Intro或过渡段落，增加音乐的立体感与流动性。\n附近文字: Cmaj7 点弦琶音谱例 读取点弦标记、开放弦/持续音、把位…",
+      "score": 8.16,
+      "metadata": {
+        "collection": "canonical_visual_sidecar",
+        "chunk_id": "mr_style_010",
+        "visual_id": "mr_style_010",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "canonical_terms": [
+          "tuning:standard",
+          "visual_type:tab_excerpt",
+          "visual_subtype:tapping_example",
+          "style:math_rock",
+          "style:guitar_arrangement",
+          "root:c",
+          "chord_quality:maj7",
+          "chord:c_maj7",
+          "technique:tapping",
+          "technique:pull_off",
+          "technique:let_ring",
+          "technique:open_string"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_retrieval": {
+          "matched_query_terms": [
+            "chord:c_maj7",
+            "chord_quality:maj7",
+            "root:c",
+            "technique:tapping",
+            "tuning:standard",
+            "visual_subtype:tapping_example",
+            "visual_type:tab_excerpt"
+          ],
+          "matched_required_terms": [
+            "chord:c_maj7",
+            "chord_quality:maj7",
+            "technique:tapping",
+            "tuning:standard"
+          ],
+          "matched_optional_terms": [
+            "visual_subtype:tapping_example"
+          ],
+          "matched_negative_terms": [],
+          "missing_required_terms": [],
+          "matched_required_key_terms": [],
+          "matched_required_tuning_terms": [
+            "tuning:standard"
+          ],
+          "item_terms": [
+            "chord:c_maj7",
+            "chord_quality:maj7",
+            "root:c",
+            "style:guitar_arrangement",
+            "style:math_rock",
+            "technique:let_ring",
+            "technique:open_string",
+            "technique:pull_off",
+            "technique:tapping",
+            "tuning:standard",
+            "visual_subtype:tapping_example",
+            "visual_type:tab_excerpt"
+          ]
+        },
+        "raw_metadata": {
+          "visual_id": "mr_style_010",
+          "image_type": "tab_excerpt",
+          "topic": "Cmaj7_tapping_arpeggio",
+          "tuning": "standard",
+          "key": "C major",
+          "root": "C",
+          "entities": {
+            "chords": [
+              "Cmaj7"
+            ],
+            "scales": [],
+            "intervals": [
+              "major_7th",
+              "perfect_5th",
+              "major_3rd"
+            ],
+            "techniques": [
+              "tapping",
+              "pull_off",
+              "hammer_on",
+              "let_ring",
+              "sustained_note"
+            ],
+            "fingerings": [
+              "T (Tap)",
+              "P (Pull-off)"
+            ]
+          },
+          "visible_structure": {
+            "string_set": "6 strings",
+            "fret_range": "0-15",
+            "open_strings": [
+              "1st string (high E)",
+              "2nd string (B)",
+              "3rd string (G)",
+              "5th string (A)",
+              "6th string (E)"
+            ],
+            "omitted_tones": [],
+            "included_tones": [
+              "C",
+              "E",
+              "G",
+              "B"
+            ]
+          },
+          "caption": "C大七和弦（Cmaj7）点弦琶音谱例。展示标准调弦下结合开放弦持续音与高把位点弦（T/P）的演奏技法。乐谱包含明确的“持续音”与“let ring”标记，强调声部延留与数学摇滚风格的复调听感，涵盖根音、三音、五音及七音的分解排列。",
+          "arrangement_value": "该谱例展示了Math Rock编配中利用开放弦作为Pedal Point（持续低音/高音）构建宽广声场的技巧。通过点弦技法在不改变左手把位的情况下扩展音域，实现类似键盘的琶音织体，适合用于器乐摇滚的Intro或过渡段落，增加音乐的立体感与流动性。",
+          "confidence": 1.0,
+          "uncertain_fields": [],
+          "caption_text": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 73\n图像类型: tab_excerpt\n主题: Cmaj7_tapping_arpeggio\n调弦: standard\n调性: C major\n根音: C\n和弦: Cmaj7\n音程: major_7th, perfect_5th, major_3rd\n技法: tapping, pull_off, hammer_on, let_ring, sustained_note\n指型: T (Tap), P (Pull-off)\n弦组: 6 strings\n品位范围: 0-15\n开放弦: 1st string (high E), 2nd string (B), 3rd string (G), 5th string (A), 6th string (E)\n包含音: C, E, G, B\ncaption: C大七和弦（Cmaj7）点弦琶音谱例。展示标准调弦下结合开放弦持续音与高把位点弦（T/P）的演奏技法。乐谱包含明确的“持续音”与“let ring”标记，强调声部延留与数学摇滚风格的复调听感，涵盖根音、三音、五音及七音的分解排列。\n编配价值: 该谱例展示了Math Rock编配中利用开放弦作为Pedal Point（持续低音/高音）构建宽广声场的技巧。通过点弦技法在不改变左手把位的情况下扩展音域，实现类似键盘的琶音织体，适合用于器乐摇滚的Intro或过渡段落，增加音乐的立体感与流动性。\n附近文字: Cmaj7 点弦琶音谱例 读取点弦标记、开放弦/持续音、把位移动和乐句轮廓。 教材章节语境：Math Rock 吉他编配与演奏。",
+          "source_metadata": {
+            "source_id": "mathrock_pdf",
+            "source_title": "Math Rock 吉他教材",
+            "source_type": "manual_semantic_crop",
+            "visual_role": "style_visual_evidence",
+            "page": 73,
+            "priority": "P1_mathrock_style_trial",
+            "visual_granularity": "single_retrievable_unit",
+            "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_010.png",
+            "image_paths": null,
+            "body_image_paths": null,
+            "body_visual_ids": null,
+            "exercise_numbers": null,
+            "answer_metadata": null,
+            "topic_hint": "Cmaj7 点弦琶音谱例",
+            "nearby_text": "Cmaj7 点弦琶音谱例 读取点弦标记、开放弦/持续音、把位移动和乐句轮廓。 教材章节语境：Math Rock 吉他编配与演奏。",
+            "style_tags": [
+              "math_rock",
+              "guitar_arrangement"
+            ]
+          }
+        },
+        "domain_rerank": {
+          "delta": 1.18,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [
+              "maj7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "matched_canonical_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "root:c",
+              "technique:tapping",
+              "tuning:standard",
+              "visual_subtype:tapping_example",
+              "visual_type:tab_excerpt"
+            ],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_optional_terms": [
+              "visual_subtype:tapping_example"
+            ],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:standard"
+            ],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "backend": "canonical_visual_sidecar"
+      }
+    },
+    {
+      "evidence_id": "visual_caption:mr_style_015",
+      "evidence_type": "visual_caption",
+      "source_id": "canonical_visual",
+      "title": "math_rock_I_IV_riff_irregular_meters",
+      "content": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 78\n图像类型: tab_excerpt\n主题: math_rock_I_IV_riff_irregular_meters\n调弦: standard\n调性: C major\n根音: C\n和弦: Cmaj7, Fmaj7\n技法: rapid_chord_changes, irregular_meter_grouping\n指型: x32000, xx3210, x35453, xx3565\n弦组: 6 strings\n品位范围: open-15\n开放弦: 3rd string (G), 2nd string (B), 1st string (E)\n包含音: Root, Major 3rd, Perfect 5th, Major 7th\ncaption: Math Rock风格I-IV和弦进行Riff谱例。包含C大七与F大七和弦的快速转换，采用6/8与9/8非常规节拍混合。谱面展示了开放把位与高把位封闭和弦的交替，体现了数学摇滚中复杂的节奏分组（3+4拍与3组3拍）及编配特征。\n编配价值: 该Riff展示了Math Rock核心的节奏错位与和声色彩。通过I-IV级大七和弦的快速切换配合不规则节拍（6/8转9/8），打破传统律动惯性。编配上利用开放弦与高把位Voicing的音色对比，增强 riff 的颗粒感与空间感，适合用于构建复杂且具听感的器乐段落。\n附近文字: I-IV 和弦进行中的快速转换与 6/8、9/8 非常规节拍 riff 读取节拍变化、和弦…",
+      "score": 6.08,
+      "metadata": {
+        "collection": "canonical_visual_sidecar",
+        "chunk_id": "mr_style_015",
+        "visual_id": "mr_style_015",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "canonical_terms": [
+          "tuning:standard",
+          "visual_type:tab_excerpt",
+          "visual_subtype:riff_tab",
+          "style:math_rock",
+          "style:guitar_arrangement",
+          "root:c",
+          "chord_quality:maj7",
+          "chord:c_maj7",
+          "root:f",
+          "chord:f_maj7",
+          "technique:rapid_chord_changes",
+          "technique:irregular_meter",
+          "technique:open_string",
+          "technique:voicing",
+          "meter:6_8",
+          "meter:9_8"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_retrieval": {
+          "matched_query_terms": [
+            "chord:c_maj7",
+            "chord_quality:maj7",
+            "root:c",
+            "tuning:standard",
+            "visual_type:tab_excerpt"
+          ],
+          "matched_required_terms": [
+            "chord:c_maj7",
+            "chord_quality:maj7",
+            "tuning:standard"
+          ],
+          "matched_optional_terms": [],
+          "matched_negative_terms": [],
+          "missing_required_terms": [
+            "technique:tapping"
+          ],
+          "matched_required_key_terms": [],
+          "matched_required_tuning_terms": [
+            "tuning:standard"
+          ],
+          "item_terms": [
+            "chord:c_maj7",
+            "chord:f_maj7",
+            "chord_quality:maj7",
+            "meter:6_8",
+            "meter:9_8",
+            "root:c",
+            "root:f",
+            "style:guitar_arrangement",
+            "style:math_rock",
+            "technique:irregular_meter",
+            "technique:open_string",
+            "technique:rapid_chord_changes",
+            "technique:voicing",
+            "tuning:standard",
+            "visual_subtype:riff_tab",
+            "visual_type:tab_excerpt"
+          ]
+        },
+        "raw_metadata": {
+          "visual_id": "mr_style_015",
+          "image_type": "tab_excerpt",
+          "topic": "math_rock_I_IV_riff_irregular_meters",
+          "tuning": "standard",
+          "key": "C major",
+          "root": "C",
+          "entities": {
+            "chords": [
+              "Cmaj7",
+              "Fmaj7"
+            ],
+            "scales": [],
+            "intervals": [],
+            "techniques": [
+              "rapid_chord_changes",
+              "irregular_meter_grouping"
+            ],
+            "fingerings": [
+              "x32000",
+              "xx3210",
+              "x35453",
+              "xx3565"
+            ]
+          },
+          "visible_structure": {
+            "string_set": "6 strings",
+            "fret_range": "open-15",
+            "open_strings": [
+              "3rd string (G)",
+              "2nd string (B)",
+              "1st string (E)"
+            ],
+            "omitted_tones": [],
+            "included_tones": [
+              "Root",
+              "Major 3rd",
+              "Perfect 5th",
+              "Major 7th"
+            ]
+          },
+          "caption": "Math Rock风格I-IV和弦进行Riff谱例。包含C大七与F大七和弦的快速转换，采用6/8与9/8非常规节拍混合。谱面展示了开放把位与高把位封闭和弦的交替，体现了数学摇滚中复杂的节奏分组（3+4拍与3组3拍）及编配特征。",
+          "arrangement_value": "该Riff展示了Math Rock核心的节奏错位与和声色彩。通过I-IV级大七和弦的快速切换配合不规则节拍（6/8转9/8），打破传统律动惯性。编配上利用开放弦与高把位Voicing的音色对比，增强 riff 的颗粒感与空间感，适合用于构建复杂且具听感的器乐段落。",
+          "confidence": 1.0,
+          "uncertain_fields": [],
+          "caption_text": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 78\n图像类型: tab_excerpt\n主题: math_rock_I_IV_riff_irregular_meters\n调弦: standard\n调性: C major\n根音: C\n和弦: Cmaj7, Fmaj7\n技法: rapid_chord_changes, irregular_meter_grouping\n指型: x32000, xx3210, x35453, xx3565\n弦组: 6 strings\n品位范围: open-15\n开放弦: 3rd string (G), 2nd string (B), 1st string (E)\n包含音: Root, Major 3rd, Perfect 5th, Major 7th\ncaption: Math Rock风格I-IV和弦进行Riff谱例。包含C大七与F大七和弦的快速转换，采用6/8与9/8非常规节拍混合。谱面展示了开放把位与高把位封闭和弦的交替，体现了数学摇滚中复杂的节奏分组（3+4拍与3组3拍）及编配特征。\n编配价值: 该Riff展示了Math Rock核心的节奏错位与和声色彩。通过I-IV级大七和弦的快速切换配合不规则节拍（6/8转9/8），打破传统律动惯性。编配上利用开放弦与高把位Voicing的音色对比，增强 riff 的颗粒感与空间感，适合用于构建复杂且具听感的器乐段落。\n附近文字: I-IV 和弦进行中的快速转换与 6/8、9/8 非常规节拍 riff 读取节拍变化、和弦转换和 Math Rock riff 的编配价值。 教材章节语境：Math Rock 吉他编配与演奏。",
+          "source_metadata": {
+            "source_id": "mathrock_pdf",
+            "source_title": "Math Rock 吉他教材",
+            "source_type": "manual_semantic_crop",
+            "visual_role": "style_visual_evidence",
+            "page": 78,
+            "priority": "P1_mathrock_style_trial",
+            "visual_granularity": "single_retrievable_unit",
+            "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_015.png",
+            "image_paths": null,
+            "body_image_paths": null,
+            "body_visual_ids": null,
+            "exercise_numbers": null,
+            "answer_metadata": null,
+            "topic_hint": "I-IV 和弦进行中的快速转换与 6/8、9/8 非常规节拍 riff",
+            "nearby_text": "I-IV 和弦进行中的快速转换与 6/8、9/8 非常规节拍 riff 读取节拍变化、和弦转换和 Math Rock riff 的编配价值。 教材章节语境：Math Rock 吉他编配与演奏。",
+            "style_tags": [
+              "math_rock",
+              "guitar_arrangement"
+            ]
+          }
+        },
+        "domain_rerank": {
+          "delta": 0.91,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [
+              "maj7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "tapping"
+            ],
+            "matched_canonical_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "root:c",
+              "tuning:standard",
+              "visual_type:tab_excerpt"
+            ],
+            "missing_required_terms": [
+              "technique:tapping"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "tuning:standard"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:standard"
+            ],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "backend": "canonical_visual_sidecar"
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E44_1",
+      "evidence_type": "visual_caption",
+      "source_id": "canonical_visual",
+      "title": "Cma7 (1 5 7 3)",
+      "content": "来源: 吉他指板手册\n练习: 44 小题: 1\n证据类型: fretboard_diagram\n视觉类型: chord_diagram\n对象: Cma7 (1 5 7 3)\n根音: C\n性质/调式: major seventh\n位置/指型: III (3rd position/fret)\n音程: 1, 5, 7, 3\n方向: vertical\n把位: III\n品位范围: unknown\n可见标签: 1) Cma7, 1 5 7 3, III\n按点概述: 垂直指板图，左侧标记罗马数字 III。根音(1)位于第5弦（推断）带双圈标记；5音、7音、3音分别位于下方不同弦的品格上，构成四音符和弦指型。\ncaption: 题号1) Cma7和弦指法图，标注声部构成“1 5 7 3”。图示为垂直指板，把位标记为罗马数字 III。根音1以双圈强调，其余按点分布显示该把位下的C大七和弦常用声部排列。\n检索关键词: Cma7, C major 7, 1 5 7 3, III把位, 七和弦声部构成, 吉他指板图\n编配价值: 展示了C大七和弦在第三把位基于“1-5-7-3”间隔排列的Voicing，根音位于低音区，适合用于伴奏编配中确立调性及提供开阔的和声色彩。\n题目上下文: 运用指型2和指型5画出七和弦“1、5、7、3”常用声部构成。 5）Cdim7 6)Fma7 9）Fmi7(b5） 10）Fdim7",
+      "score": 4.18,
+      "metadata": {
+        "collection": "canonical_visual_sidecar",
+        "chunk_id": "fretboard_answer_E44_1",
+        "visual_id": "fretboard_answer_E44_1",
+        "exercise_number": 44,
+        "subquestion_number": 1,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_43_46/question_segments_v2/crops/exercise_44_01.png",
+        "canonical_terms": [
+          "root:c",
+          "chord_quality:maj7",
+          "interval:perfect_unison",
+          "interval:perfect_5th",
+          "interval:major_7th",
+          "interval:major_3rd",
+          "concept:voicing",
+          "fret_region:low"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_retrieval": {
+          "matched_query_terms": [
+            "chord_quality:maj7",
+            "root:c",
+            "tuning:standard"
+          ],
+          "matched_required_terms": [
+            "chord_quality:maj7",
+            "tuning:standard"
+          ],
+          "matched_optional_terms": [],
+          "matched_negative_terms": [],
+          "missing_required_terms": [
+            "chord:c_maj7",
+            "technique:tapping"
+          ],
+          "matched_required_key_terms": [],
+          "matched_required_tuning_terms": [
+            "tuning:standard"
+          ],
+          "item_terms": [
+            "chord_quality:maj7",
+            "concept:voicing",
+            "fret_region:low",
+            "interval:major_3rd",
+            "interval:major_7th",
+            "interval:perfect_5th",
+            "interval:perfect_unison",
+            "root:c",
+            "tuning:standard"
+          ]
+        },
+        "raw_metadata": {
+          "visual_id": "fretboard_answer_E44_1",
+          "source_id": "fretboard_handbook_question_answer",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "exercise_number": 44,
+          "subquestion_number": 1,
+          "evidence_type": "fretboard_diagram",
+          "visual_type": "chord_diagram",
+          "musical_object": "Cma7 (1 5 7 3)",
+          "root": "C",
+          "quality_or_mode": "major seventh",
+          "position_or_shape": "III (3rd position/fret)",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_43_46/question_segments_v2/crops/exercise_44_01.png",
+          "source_image": "data/练习解答（图片）/练习43-46.png",
+          "question_text": "运用指型2和指型5画出七和弦“1、5、7、3”常用声部构成。 5）Cdim7 6)Fma7 9）Fmi7(b5） 10）Fdim7",
+          "caption_layer": "fretboard_answer_caption_v1"
+        },
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.64,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [
+              "maj7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "tapping"
+            ],
+            "matched_canonical_terms": [
+              "chord_quality:maj7",
+              "root:c",
+              "tuning:standard"
+            ],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "technique:tapping"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "chord_quality:maj7",
+              "tuning:standard"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:standard"
+            ],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "backend": "canonical_visual_sidecar"
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E24_3",
+      "evidence_type": "visual_caption",
+      "source_id": "canonical_visual",
+      "title": "MA7 (Major 7th) chord shape",
+      "content": "来源: 吉他指板手册\n练习: 24 小题: 3\n证据类型: fretboard_diagram\n视觉类型: chord_diagram\n对象: MA7 (Major 7th) chord shape\n根音: unknown\n性质/调式: Major 7th\n答案项: 3): MA7\n方向: vertical\n品位范围: 推断为开放把位或低把位\n可见标签: 3), MA7\n按点概述: 6弦空弦(推断)，5弦2品，4弦1品，3弦2品，2弦1品，1弦空弦(推断)。共6个按点/音。\ncaption: 题号3对应的和弦指法图，上方标注答案为“MA7”。图示为垂直六线格，包含6个黑点表示的按弦位置，推测为大七和弦（Major 7th）的一种常见封闭或开放指型。\n检索关键词: MA7, Major 7, 大七和弦, 和弦指法图, Exercise 24, 音程推算\n编配价值: 展示了大七和弦在指板上的具体构成形态，可用于理解和弦内音（Root, 3, 5, 7）在相邻弦上的排列逻辑及指法记忆。\n题目上下文: 运用大调音阶推算的方法标出下列图示中的音程。可将大音程标为MA，纯音程标为P。 1) 2) 3 4 6 7 8 9 10）",
+      "score": 3.71,
+      "metadata": {
+        "collection": "canonical_visual_sidecar",
+        "chunk_id": "fretboard_answer_E24_3",
+        "visual_id": "fretboard_answer_E24_3",
+        "exercise_number": 24,
+        "subquestion_number": 3,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_24_26/question_segments_v2/crops/exercise_24_03.png",
+        "canonical_terms": [
+          "chord_quality:maj7",
+          "visual_type:chord_diagram",
+          "technique:open_string"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_retrieval": {
+          "matched_query_terms": [
+            "chord_quality:maj7",
+            "tuning:standard"
+          ],
+          "matched_required_terms": [
+            "chord_quality:maj7",
+            "tuning:standard"
+          ],
+          "matched_optional_terms": [],
+          "matched_negative_terms": [],
+          "missing_required_terms": [
+            "chord:c_maj7",
+            "technique:tapping"
+          ],
+          "matched_required_key_terms": [],
+          "matched_required_tuning_terms": [
+            "tuning:standard"
+          ],
+          "item_terms": [
+            "chord_quality:maj7",
+            "technique:open_string",
+            "tuning:standard",
+            "visual_type:chord_diagram"
+          ]
+        },
+        "raw_metadata": {
+          "visual_id": "fretboard_answer_E24_3",
+          "source_id": "fretboard_handbook_question_answer",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "exercise_number": 24,
+          "subquestion_number": 3,
+          "evidence_type": "fretboard_diagram",
+          "visual_type": "chord_diagram",
+          "musical_object": "MA7 (Major 7th) chord shape",
+          "root": "unknown",
+          "quality_or_mode": "Major 7th",
+          "position_or_shape": "",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_24_26/question_segments_v2/crops/exercise_24_03.png",
+          "source_image": "data/练习解答（图片）/练习24-26.png",
+          "question_text": "运用大调音阶推算的方法标出下列图示中的音程。可将大音程标为MA，纯音程标为P。 1) 2) 3 4 6 7 8 9 10）",
+          "caption_layer": "fretboard_answer_caption_v1"
+        },
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.52,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [
+              "maj7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "tapping"
+            ],
+            "matched_canonical_terms": [
+              "chord_quality:maj7",
+              "tuning:standard"
+            ],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "technique:tapping"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "chord_quality:maj7",
+              "tuning:standard"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:standard"
+            ],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "backend": "canonical_visual_sidecar"
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E24_8",
+      "evidence_type": "visual_caption",
+      "source_id": "canonical_visual",
+      "title": "MA7 chord shape",
+      "content": "来源: 吉他指板手册\n练习: 24 小题: 8\n证据类型: fretboard_diagram\n视觉类型: chord_diagram\n对象: MA7 chord shape\n根音: unknown\n性质/调式: Major 7th (MA7)\n位置/指型: unknown\n答案项: 8: MA7\n方向: vertical\n可见标签: 8), MA7\n按点概述: 6个按点，分布在约5-6根弦上，呈不规则指型排列\ncaption: 练习24第8题答案图示。垂直吉他指板图，上方标注“MA7”，显示一个包含6个音符的大七和弦（Major 7th）指法形状。\n检索关键词: MA7, Major 7, 大七和弦, 指板图, Exercise 24, 和弦指型\n编配价值: 提供大七和弦的封闭或开放把位指法参考，用于理解和声色彩及在指板上的音程分布结构。\n题目上下文: 运用大调音阶推算的方法标出下列图示中的音程。可将大音程标为MA，纯音程标为P。 1) 2) 3 4 6 7 8 9 10）",
+      "score": 3.71,
+      "metadata": {
+        "collection": "canonical_visual_sidecar",
+        "chunk_id": "fretboard_answer_E24_8",
+        "visual_id": "fretboard_answer_E24_8",
+        "exercise_number": 24,
+        "subquestion_number": 8,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_24_26/question_segments_v2/crops/exercise_24_08.png",
+        "canonical_terms": [
+          "chord_quality:maj7",
+          "visual_type:chord_diagram"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_retrieval": {
+          "matched_query_terms": [
+            "chord_quality:maj7",
+            "tuning:standard"
+          ],
+          "matched_required_terms": [
+            "chord_quality:maj7",
+            "tuning:standard"
+          ],
+          "matched_optional_terms": [],
+          "matched_negative_terms": [],
+          "missing_required_terms": [
+            "chord:c_maj7",
+            "technique:tapping"
+          ],
+          "matched_required_key_terms": [],
+          "matched_required_tuning_terms": [
+            "tuning:standard"
+          ],
+          "item_terms": [
+            "chord_quality:maj7",
+            "tuning:standard",
+            "visual_type:chord_diagram"
+          ]
+        },
+        "raw_metadata": {
+          "visual_id": "fretboard_answer_E24_8",
+          "source_id": "fretboard_handbook_question_answer",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "exercise_number": 24,
+          "subquestion_number": 8,
+          "evidence_type": "fretboard_diagram",
+          "visual_type": "chord_diagram",
+          "musical_object": "MA7 chord shape",
+          "root": "unknown",
+          "quality_or_mode": "Major 7th (MA7)",
+          "position_or_shape": "unknown",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_24_26/question_segments_v2/crops/exercise_24_08.png",
+          "source_image": "data/练习解答（图片）/练习24-26.png",
+          "question_text": "运用大调音阶推算的方法标出下列图示中的音程。可将大音程标为MA，纯音程标为P。 1) 2) 3 4 6 7 8 9 10）",
+          "caption_layer": "fretboard_answer_caption_v1"
+        },
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.52,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [
+              "maj7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "tapping"
+            ],
+            "matched_canonical_terms": [
+              "chord_quality:maj7",
+              "tuning:standard"
+            ],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "technique:tapping"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "chord_quality:maj7",
+              "tuning:standard"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:standard"
+            ],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "backend": "canonical_visual_sidecar"
+      }
+    }
+  ],
+  "kg_evidence": [
+    {
+      "evidence_id": "kg:pattern:shell_voicing_1-7-3-5:SUGGESTS:concept:universal_heuristic",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "pattern:shell_voicing_1-7-3-5 -[SUGGESTS]-> concept:universal_heuristic",
+      "content": "pattern:shell_voicing_1-7-3-5 -[SUGGESTS]-> concept:universal_heuristic\n构建指型4（根音在第6或第5弦）的七和弦常用声部时\n提取了具体的通用声部排列逻辑 '1-7-3-5'（即根音、七音、三音、五音），适用于maj7, m7, dom7等多种七和弦类型，是高效的编曲启发式规则。\n“1、7、3、5”是ma7、mi7、dom7、mi7(b5)和dim7这些和弦指型4中的常用声部构成。",
+      "score": 1.26,
+      "metadata": {
+        "source": "pattern:shell_voicing_1-7-3-5",
+        "relation": "SUGGESTS",
+        "target": "concept:universal_heuristic",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "构建指型4（根音在第6或第5弦）的七和弦常用声部时",
+        "review_note": "提取了具体的通用声部排列逻辑 '1-7-3-5'（即根音、七音、三音、五音），适用于maj7, m7, dom7等多种七和弦类型，是高效的编曲启发式规则。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.15,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [
+              "maj7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 13,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:technique:register_specific_triads:CONSTRAINS:voicing:string_set_selection",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "technique:register_specific_triads -[CONSTRAINS]-> voicing:string_set_selection",
+      "content": "technique:register_specific_triads -[CONSTRAINS]-> voicing:string_set_selection\nSelecting voicings based on desired tonal range and interaction with other band members.\nMap triad shapes to specific string sets: Strings 1-2-3 (High/Bright), 2-3-4 (Mid), 3-4-5 (Low-Mid), 4-5-6 (Low/Thick). Use higher sets for funk/pop clarity, lower sets for rock/blues weight.\nStrings one,two,three... two,three,four... three,four,five... four,five,six.",
+      "score": 1.19,
+      "metadata": {
+        "source": "technique:register_specific_triads",
+        "relation": "CONSTRAINS",
+        "target": "voicing:string_set_selection",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Selecting voicings based on desired tonal range and interaction with other band members.",
+        "review_note": "Map triad shapes to specific string sets: Strings 1-2-3 (High/Bright), 2-3-4 (Mid), 3-4-5 (Low-Mid), 4-5-6 (Low/Thick). Use higher sets for funk/pop clarity, lower sets for rock/blues weight.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.0,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 9,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:voicing:sparse_funk_voicing:SUGGESTS:heuristic:leave_space_for_band",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "voicing:sparse_funk_voicing -[SUGGESTS]-> heuristic:leave_space_for_band",
+      "content": "voicing:sparse_funk_voicing -[SUGGESTS]-> heuristic:leave_space_for_band\nComping with 'chucks' (muted strums) in a dense band arrangement.\nFocus on 2-3 string voicings (e.g., minor 7th shapes) and vary the ratio of notes to muted 'chucks' to avoid frequency clashes with keys/horns and leave space for bass/drums.\nFocus on two or three strings at a time... less notes more chucks... allows a li",
+      "score": 1.19,
+      "metadata": {
+        "source": "voicing:sparse_funk_voicing",
+        "relation": "SUGGESTS",
+        "target": "heuristic:leave_space_for_band",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Comping with 'chucks' (muted strums) in a dense band arrangement.",
+        "review_note": "Focus on 2-3 string voicings (e.g., minor 7th shapes) and vary the ratio of notes to muted 'chucks' to avoid frequency clashes with keys/horns and leave space for bass/drums.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.0,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 14,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:heuristic:make_rhythm_part_a_hook:EVOKES:task:riff_writing",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "heuristic:make_rhythm_part_a_hook -[EVOKES]-> task:riff_writing",
+      "content": "heuristic:make_rhythm_part_a_hook -[EVOKES]-> task:riff_writing\nFunk/Pop rhythm guitar comping where static strumming feels generic.\nTransform standard chord comping into a signature hook by integrating melodic lines (pentatonic/scale) within the chord shape, rather than just strumming full voicings.\nwhat makes something more signature? is if you actually make a part from it some",
+      "score": 1.19,
+      "metadata": {
+        "source": "heuristic:make_rhythm_part_a_hook",
+        "relation": "EVOKES",
+        "target": "task:riff_writing",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Funk/Pop rhythm guitar comping where static strumming feels generic.",
+        "review_note": "Transform standard chord comping into a signature hook by integrating melodic lines (pentatonic/scale) within the chord shape, rather than just strumming full voicings.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.0,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 28,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:tuning:DAEAC#E:ENABLES:voicing:open_string_maj9_cluster",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "tuning:DAEAC#E -[ENABLES]-> voicing:open_string_maj9_cluster",
+      "content": "tuning:DAEAC#E -[ENABLES]-> voicing:open_string_maj9_cluster\n编配 DAEAC#E 调弦下的和声织体时\n图示显示该调弦下，利用空弦（D-A-E-A-C#-E）可轻松构建包含根音、3音、7音及9音的 Maj9 和弦，且无需大跨度指法。这种 Voicing 利用了调弦特性产生的自然共鸣，适合 Math Rock 中清澈、延音长的背景铺底。\nPage 38 diagrams show Dmaj9 and Amaj9 shapes utilizing multiple open strings (x0",
+      "score": 1.18,
+      "metadata": {
+        "source": "tuning:DAEAC#E",
+        "relation": "ENABLES",
+        "target": "voicing:open_string_maj9_cluster",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "编配 DAEAC#E 调弦下的和声织体时",
+        "review_note": "图示显示该调弦下，利用空弦（D-A-E-A-C#-E）可轻松构建包含根音、3音、7音及9音的 Maj9 和弦，且无需大跨度指法。这种 Voicing 利用了调弦特性产生的自然共鸣，适合 Math Rock 中清澈、延音长的背景铺底。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.07,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 12,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:style:midwest_emo:EVOKES:feature:open_string_drone",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "style:midwest_emo -[EVOKES]-> feature:open_string_drone",
+      "content": "style:midwest_emo -[EVOKES]-> feature:open_string_drone\nB minor 11 voicing utilizing open B (2nd string) and F# (1st/6th strings) as common tones while moving inner voices.\nMidwest Emo relies on 'jangly' textures created by sustaining open strings that act as pedal tones or extensions (9th/11th) against movable shapes.\nBm11 chord with open strings acting as the 9 (C#) and root/5th, creating a full",
+      "score": 1.18,
+      "metadata": {
+        "source": "style:midwest_emo",
+        "relation": "EVOKES",
+        "target": "feature:open_string_drone",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "B minor 11 voicing utilizing open B (2nd string) and F# (1st/6th strings) as common tones while moving inner voices.",
+        "review_note": "Midwest Emo relies on 'jangly' textures created by sustaining open strings that act as pedal tones or extensions (9th/11th) against movable shapes.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.07,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "c"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 20,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:extension:#11_or_b13:SUGGESTS:note:natural_5th_and_9th_inclusion",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "extension:#11_or_b13 -[SUGGESTS]-> note:natural_5th_and_9th_inclusion",
+      "content": "extension:#11_or_b13 -[SUGGESTS]-> note:natural_5th_and_9th_inclusion\n构建含有 #11 或 b13 的变化和弦时\n与 'alt' 和弦不同，当明确指定 #11 或 b13 时，除非特殊情况，否则应保留自然的五度音和九度音。这为吉他编曲提供了更丰富的声部连接可能性（如保留根-5-9骨架），增加了Voicing的丰满度，而非像alt和弦那样极度精简。\n当和弦中出现#11或b13时，除特殊情况外，和弦中的五度音和九度音都是自然音。",
+      "score": 1.16,
+      "metadata": {
+        "source": "extension:#11_or_b13",
+        "relation": "SUGGESTS",
+        "target": "note:natural_5th_and_9th_inclusion",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 1.0,
+        "context_condition": "构建含有 #11 或 b13 的变化和弦时",
+        "review_note": "与 'alt' 和弦不同，当明确指定 #11 或 b13 时，除非特殊情况，否则应保留自然的五度音和九度音。这为吉他编曲提供了更丰富的声部连接可能性（如保留根-5-9骨架），增加了Voicing的丰满度，而非像alt和弦那样极度精简。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.0,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:concept:standard_tuning:CONSTRAINS:pattern:interval_geometry_shift",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "concept:standard_tuning -[CONSTRAINS]-> pattern:interval_geometry_shift",
+      "content": "concept:standard_tuning -[CONSTRAINS]-> pattern:interval_geometry_shift\n在指板上构建双音（Double Stops）、和弦Voicing或跨弦Riff时，涉及第2弦（B弦）与第3弦（G弦）的交互。\n吉他标准调弦中唯一的非四度关系（G-B大三度）导致所有跨越这两根弦的音程指法发生几何偏移。编曲时必须应用'补偿规则'：同度/八度需调整品位差，纯四/五度、大六/七度的指型在跨越2-3弦时需额外移动1品（通常是向高音方向多移1品或向低音方向少移1品），否则音准错误。这是吉他指板逻辑的核心约束。\n练习23解答：纯四度...第3弦到第2弦...向上1品；纯五度...第3弦和第2弦之间是向上3品...只要跨越了第2弦，其相差的距离就都是2品。",
+      "score": 1.16,
+      "metadata": {
+        "source": "concept:standard_tuning",
+        "relation": "CONSTRAINS",
+        "target": "pattern:interval_geometry_shift",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 1.0,
+        "context_condition": "在指板上构建双音（Double Stops）、和弦Voicing或跨弦Riff时，涉及第2弦（B弦）与第3弦（G弦）的交互。",
+        "review_note": "吉他标准调弦中唯一的非四度关系（G-B大三度）导致所有跨越这两根弦的音程指法发生几何偏移。编曲时必须应用'补偿规则'：同度/八度需调整品位差，纯四/五度、大六/七度的指型在跨越2-3弦时需额外移动1品（通常是向高音方向多移1品或向低音方向少移1品），否则音准错误。这是吉他指板逻辑的核心约束。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.0,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:concept:standard_tuning:CONSTRAINS:heuristic:interval_shift_exception_g2_b3",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "concept:standard_tuning -[CONSTRAINS]-> heuristic:interval_shift_exception_g2_b3",
+      "content": "concept:standard_tuning -[CONSTRAINS]-> heuristic:interval_shift_exception_g2_b3\n在指板上构建跨弦音阶、Riff或和弦Voicing时，计算相邻弦的音程位移\n吉他标准调弦中，除第2弦(B)与第3弦(G)之间外，相邻弦的同音/同音程关系通常相差3品（全音）或4品（半音）。但在2-3弦组上，由于大三度调弦差异，该位移缩减为2品（全音）或3品（半音）。这是编配跨弦乐句时必须处理的几何异常点。\n当从一根弦向上至另外一根弦时...通常是相差3品的距离。但有一个特例，就是第2弦与第3弦，这时一个全音是相差2品的距离。",
+      "score": 1.16,
+      "metadata": {
+        "source": "concept:standard_tuning",
+        "relation": "CONSTRAINS",
+        "target": "heuristic:interval_shift_exception_g2_b3",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 1.0,
+        "context_condition": "在指板上构建跨弦音阶、Riff或和弦Voicing时，计算相邻弦的音程位移",
+        "review_note": "吉他标准调弦中，除第2弦(B)与第3弦(G)之间外，相邻弦的同音/同音程关系通常相差3品（全音）或4品（半音）。但在2-3弦组上，由于大三度调弦差异，该位移缩减为2品（全音）或3品（半音）。这是编配跨弦乐句时必须处理的几何异常点。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.0,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 6,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:chord:dom7_alt:CONSTRAINS:note:natural_5th_and_9th_exclusion",
+      "evidence_type": "kg",
+      "source_id": "Caution",
+      "title": "chord:dom7_alt -[CONSTRAINS]-> note:natural_5th_and_9th_exclusion",
+      "content": "chord:dom7_alt -[CONSTRAINS]-> note:natural_5th_and_9th_exclusion\n编配标有 'alt' 的属和弦（如 G7alt）时\n教材明确指出，当和弦标记为 'alt' 时，必须省略自然五度音和自然九度音。这是为了避免与变化延伸音（b5/#5, b9/#9）产生小二度冲突，确保和声色彩的清晰度。在吉他Voicing中，这意味着不能简单套用标准属七指型，需主动移除3弦或2弦上的自然5/9音。\n但是在标有“alt”的和弦中，不会出现自然音阶的五度音和九度音。",
+      "score": 1.16,
+      "metadata": {
+        "source": "chord:dom7_alt",
+        "relation": "CONSTRAINS",
+        "target": "note:natural_5th_and_9th_exclusion",
+        "knowledge_type": "Caution",
+        "confidence": 1.0,
+        "context_condition": "编配标有 'alt' 的属和弦（如 G7alt）时",
+        "review_note": "教材明确指出，当和弦标记为 'alt' 时，必须省略自然五度音和自然九度音。这是为了避免与变化延伸音（b5/#5, b9/#9）产生小二度冲突，确保和声色彩的清晰度。在吉他Voicing中，这意味着不能简单套用标准属七指型，需主动移除3弦或2弦上的自然5/9音。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.0,
+          "constraints": {
+            "target_keys": [
+              "c_major"
+            ],
+            "target_roots": [
+              "c"
+            ],
+            "chord_qualities": [
+              "maj7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:c_major",
+              "chord_quality:maj7",
+              "technique:two_hand_tapping",
+              "concept:arpeggio",
+              "tuning:standard",
+              "root:c",
+              "visual_type:scale_pattern",
+              "technique:tapping",
+              "chord:c_maj7",
+              "visual_type:tab_excerpt",
+              "visual_subtype:tapping_example"
+            ],
+            "required_terms": [
+              "tuning:standard",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "chord:c_maj7"
+            ],
+            "optional_terms": [
+              "visual_type:scale_pattern",
+              "visual_subtype:tapping_example"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:facgce",
+              "tuning:drop",
+              "tuning:drop_d",
+              "tuning:open",
+              "tuning:alternate"
+            ],
+            "target_tuning": "standard",
+            "requires_exact_key": true,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "tapping",
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "chord:c_maj7",
+              "chord_quality:maj7",
+              "technique:tapping",
+              "tuning:standard"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 7,
+        "backend": "neo4j"
+      }
+    }
+  ],
+  "judgement": {
+    "sufficient": true,
+    "confidence": 0.89,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 3,
+    "text_count": 25,
+    "visual_count": 36,
+    "kg_count": 23,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [
+      "text:fretboard_text_0108",
+      "text:fretboard_text_0130",
+      "text:fretboard_text_0114"
+    ],
+    "top_visual_ids": [
+      "visual_caption:mr_style_010",
+      "visual_caption:mr_style_015",
+      "visual_caption:fretboard_answer_E44_1"
+    ],
+    "top_kg_ids": [
+      "kg:pattern:shell_voicing_1-7-3-5:SUGGESTS:concept:universal_heuristic",
+      "kg:technique:register_specific_triads:CONSTRAINS:voicing:string_set_selection",
+      "kg:voicing:sparse_funk_voicing:SUGGESTS:heuristic:leave_space_for_band",
+      "kg:heuristic:make_rhythm_part_a_hook:EVOKES:task:riff_writing",
+      "kg:tuning:DAEAC#E:ENABLES:voicing:open_string_maj9_cluster"
+    ],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+    "query_plan": {
+      "raw_query": "给我一个Cmaj7两手点弦琶音谱例",
+      "normalized_query": "Cmaj7 two-hand tapping arpeggio pattern diagram",
+      "intent": "mixed_arrangement",
+      "confidence": 0.79,
+      "style_hints": [],
+      "key_or_tonality": "",
+      "meter_or_rhythm": "",
+      "tempo_hint": "",
+      "target_tuning": "standard",
+      "harmonic_materials": [
+        "Cmaj7"
+      ],
+      "melodic_materials": [],
+      "techniques": [
+        "tapping",
+        "点弦"
+      ],
+      "fretboard_constraints": [],
+      "arrangement_goals": [],
+      "target_keys": [
+        "c_major"
+      ],
+      "target_roots": [
+        "c"
+      ],
+      "chord_qualities": [
+        "maj7"
+      ],
+      "scale_or_mode": [],
+      "fret_region": "",
+      "position_constraints": [],
+      "requires_exact_key": true,
+      "requires_exact_chord": true,
+      "visual_evidence_required": true,
+      "allow_alternate_tuning": false,
+      "allow_exercise_reference": true,
+      "canonical_terms": [
+        "key:c_major",
+        "chord_quality:maj7",
+        "technique:two_hand_tapping",
+        "concept:arpeggio",
+        "tuning:standard",
+        "root:c",
+        "visual_type:scale_pattern",
+        "technique:tapping"
+      ],
+      "required_terms": [
+        "tuning:standard",
+        "key:c_major",
+        "chord_quality:maj7",
+        "visual_type:scale_pattern"
+      ],
+      "optional_terms": [
+        "visual_type:scale_pattern"
+      ],
+      "negative_constraints": [
+        "tuning:dadgad",
+        "tuning:facgce",
+        "tuning:drop",
+        "tuning:drop_d",
+        "tuning:open",
+        "tuning:alternate"
+      ],
+      "retrieval_plan": {
+        "fretboard_text": {
+          "enabled": true,
+          "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+          "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+        },
+        "style_text": {
+          "enabled": false,
+          "query": "Cmaj7 two-hand tapping arpeggio pattern diagram",
+          "reason": "User requested a specific technical example rather than a general style course, though tapping is common in math rock, the core request is technical/visual."
+        },
+        "visual_caption": {
+          "enabled": true,
+          "query": "Cmaj7 two-hand tapping arpeggio pattern diagram fretboard map",
+          "reason": "User explicitly asked for a 'score/example' (谱例) of a specific physical technique (two-hand tapping), which requires visual evidence of finger positions and tapping points on the fretboard."
+        },
+        "kg": {
+          "enabled": true,
+          "query": "two-hand tapping arpeggio voicing constraints and ergonomic patterns for maj7 chords",
+          "reason": "To provide arrangement heuristics and ergonomic constraints for executing two-hand tapping arpeggios effectively."
+        }
+      },
+      "composer_intent": {
+        "answer_type": "",
+        "must_include": [],
+        "avoid": [],
+        "uncertainty_notes": []
+      },
+      "eval_tags": []
+    },
+    "visual_collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+    "model_rerank": {
+      "text": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "visual": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "kg": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      }
+    }
+  },
+  "timings": {
+    "model_load_seconds": 4.905599699995946,
+    "fretboard_text_seconds": 0.3265559999854304,
+    "visual_caption_seconds": 0.20267769999918528,
+    "kg_seconds": 0.35322329998598434,
+    "canonical_visual_seconds": 0.03636569998343475,
+    "model_rerank_seconds": 3.809999907389283e-05,
+    "total_seconds": 6.671314200008055,
+    "kg_status": "neo4j"
+  }
+}

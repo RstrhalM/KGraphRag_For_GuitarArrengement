@@ -1,0 +1,89 @@
+{
+  "query_plan": {
+    "raw_query": "给我一个6/8转9/8的I-IV数摇riff",
+    "normalized_query": "math rock riff composition in 6/8 to 9/8 time signature using I-IV chord progression",
+    "intent": "mixed_arrangement",
+    "confidence": 0.8700000000000001,
+    "style_hints": [
+      "mathrock"
+    ],
+    "key_or_tonality": "",
+    "meter_or_rhythm": "",
+    "tempo_hint": "",
+    "target_tuning": "standard",
+    "harmonic_materials": [],
+    "melodic_materials": [],
+    "techniques": [
+      "riff"
+    ],
+    "fretboard_constraints": [],
+    "arrangement_goals": [],
+    "target_keys": [],
+    "target_roots": [],
+    "chord_qualities": [
+      "major"
+    ],
+    "scale_or_mode": [],
+    "fret_region": "",
+    "position_constraints": [],
+    "requires_exact_key": false,
+    "requires_exact_chord": false,
+    "visual_evidence_required": true,
+    "allow_alternate_tuning": false,
+    "allow_exercise_reference": true,
+    "canonical_terms": [
+      "tuning:standard",
+      "concept:riff_composition",
+      "chord_quality:maj",
+      "technique:riff"
+    ],
+    "required_terms": [
+      "tuning:standard",
+      "chord_quality:maj"
+    ],
+    "optional_terms": [
+      "technique:palm_mute",
+      "technique:tapping"
+    ],
+    "negative_constraints": [
+      "tuning:dadgad",
+      "tuning:facgce",
+      "tuning:drop",
+      "tuning:drop_d",
+      "tuning:open",
+      "tuning:alternate"
+    ],
+    "retrieval_plan": {
+      "fretboard_text": {
+        "enabled": true,
+        "query": "I-IV chord voicings and scale patterns suitable for math rock riffs",
+        "reason": "To provide theoretical background on chord construction and scale choices for the requested progression."
+      },
+      "style_text": {
+        "enabled": true,
+        "query": "math rock composition techniques 6/8 to 9/8 time signature changes riff writing",
+        "reason": "To retrieve stylistic guidelines specific to math rock, especially regarding odd time signatures and rhythmic displacement."
+      },
+      "visual_caption": {
+        "enabled": true,
+        "query": "math rock riff tab notation 6/8 9/8 I-IV progression fingerings",
+        "reason": "User needs a concrete riff example; visual captions provide specific fretboard positions and rhythmic notation evidence."
+      },
+      "kg": {
+        "enabled": true,
+        "query": "how to arrange math rock riff I-IV progression time signature change 6/8 to 9/8",
+        "reason": "To provide compositional heuristics, arrangement tips, and structural advice for transitioning between time signatures in a math rock context."
+      }
+    },
+    "composer_intent": {
+      "answer_type": "",
+      "must_include": [],
+      "avoid": [],
+      "uncertainty_notes": []
+    },
+    "eval_tags": [],
+    "prompt_versions": {
+      "query_normalizer": "query_normalizer_v1.1"
+    }
+  }
+}

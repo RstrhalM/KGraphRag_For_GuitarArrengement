@@ -6,6 +6,7 @@ import json
 import mimetypes
 import os
 import re
+import time
 from collections import Counter
 from dataclasses import asdict
 from datetime import datetime
@@ -28,7 +29,14 @@ SCRIPTS = ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-from query_rag_bundle import DEFAULT_LOCAL_MODEL, render_markdown, run_bundle
+from answer_composer import compose_answer, render_answer_markdown
+from prompt_registry import get_prompt_registry, get_prompt_versions
+from query_normalizer import normalize_query
+from query_rag_bundle import DEFAULT_LOCAL_MODEL, VISUAL_COLLECTIONS, render_markdown, run_bundle
+try:
+    from .session_memory import SessionMemoryStore
+except ImportError:  # Allow `python backend/app.py` style local debugging.
+    from session_memory import SessionMemoryStore
 
 CHUNK_SOURCES: dict[str, Path] = {
     "mathrock_text_course": DATA / "processed" / "mathrock" / "mathrock_text" / "chunks.json",
@@ -130,8 +138,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.middleware("http")
+async def add_local_dev_cache_headers(request, call_next):
+    response = await call_next(request)
+    if request.url.path == "/" or request.url.path.startswith("/static/"):
+        response.headers["Cache-Control"] = "no-store, max-age=0"
+    return response
+
 QUERY_LOG = DATA / "eval" / "manual_query_log.jsonl"
+QUERY_FEEDBACK_LOG = DATA / "eval" / "query_normalizer_feedback.jsonl"
 QUERY_REPORT_DIR = DATA / "eval" / "manual_queries"
+SESSION_MEMORY = SessionMemoryStore(DATA / "eval" / "session_memory")
+
+VISUAL_COLLECTION_LABELS = {
+    "formal": "正式视觉库 · 389",
+    "mathrock_mixed_trial": "Math Rock 混合试验库 · 398",
+}
 
 
 class QueryRunRequest(BaseModel):
@@ -141,6 +164,23 @@ class QueryRunRequest(BaseModel):
     context: dict[str, Any] = Field(default_factory=dict)
     top_k: int = Field(default=5, ge=1, le=12)
     kg_limit: int = Field(default=8, ge=0, le=30)
+    use_normalizer: bool = True
+    rerank_backend: str = Field(default="none", max_length=20)
+    rerank_model: str = Field(default="models/reranker/qwen3-reranker-0.6b", max_length=300)
+    rerank_weight: float = Field(default=0.35, ge=0.0, le=1.0)
+    rerank_batch_size: int = Field(default=4, ge=1, le=16)
+    rerank_max_length: int = Field(default=1024, ge=256, le=8192)
+    visual_collection: str = Field(default="formal", max_length=40)
+    compose_answer: bool = False
+    session_id: str = Field(default="", max_length=120)
+
+
+class QueryNormalizeRequest(BaseModel):
+    query: str = Field(..., min_length=2, max_length=1200)
+    notes: str = Field(default="", max_length=2000)
+    tags: list[str] = Field(default_factory=list)
+    context: dict[str, Any] = Field(default_factory=dict)
+    session_id: str = Field(default="", max_length=120)
 
 
 class QuerySaveRequest(BaseModel):
@@ -149,6 +189,23 @@ class QuerySaveRequest(BaseModel):
     tags: list[str] = Field(default_factory=list)
     context: dict[str, Any] = Field(default_factory=dict)
     status: str = Field(default="draft", max_length=40)
+    session_id: str = Field(default="", max_length=120)
+
+
+class QueryFeedbackRequest(BaseModel):
+    query: str = Field(..., min_length=2, max_length=1200)
+    source: str = Field(default="normalize", max_length=40)
+    normalized_query: str = Field(default="", max_length=2000)
+    intent: str = Field(default="", max_length=80)
+    expected_intent: str = Field(default="", max_length=80)
+    expected_tools: list[str] = Field(default_factory=list)
+    scores: dict[str, int] = Field(default_factory=dict)
+    failure_tags: list[str] = Field(default_factory=list)
+    notes: str = Field(default="", max_length=3000)
+    query_plan: dict[str, Any] = Field(default_factory=dict)
+    bundle_summary: dict[str, Any] = Field(default_factory=dict)
+    report_md: str = Field(default="", max_length=500)
+    session_id: str = Field(default="", max_length=120)
 
 
 def safe_rel(path: Path) -> str:
@@ -174,9 +231,92 @@ def append_query_log(row: dict[str, Any]) -> None:
         fh.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def append_feedback_log(row: dict[str, Any]) -> None:
+    QUERY_FEEDBACK_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with QUERY_FEEDBACK_LOG.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def rerank_request_config(request: QueryRunRequest) -> dict[str, Any]:
+    backend = (request.rerank_backend or "none").strip().lower()
+    if backend not in {"none", "local", "env"}:
+        backend = "none"
+    return {
+        "backend": backend,
+        "model": request.rerank_model.strip() or "models/reranker/qwen3-reranker-0.6b",
+        "weight": request.rerank_weight,
+        "batch_size": request.rerank_batch_size,
+        "max_length": request.rerank_max_length,
+    }
+
+
+def resolve_visual_collection(profile: str) -> tuple[str, str]:
+    normalized = (profile or "formal").strip().lower()
+    if normalized not in VISUAL_COLLECTIONS:
+        normalized = "formal"
+    return normalized, VISUAL_COLLECTIONS[normalized]
+
+
+def apply_rerank_env(config: dict[str, Any]) -> dict[str, str | None]:
+    keys = ["RERANK_BACKEND", "RERANK_MODEL", "RERANK_WEIGHT", "RERANK_BATCH_SIZE", "RERANK_MAX_LENGTH"]
+    previous = {key: os.environ.get(key) for key in keys}
+    if config["backend"] != "env":
+        os.environ["RERANK_BACKEND"] = str(config["backend"])
+        os.environ["RERANK_MODEL"] = str(config["model"])
+        os.environ["RERANK_WEIGHT"] = str(config["weight"])
+        os.environ["RERANK_BATCH_SIZE"] = str(config["batch_size"])
+        os.environ["RERANK_MAX_LENGTH"] = str(config["max_length"])
+    return previous
+
+
+def restore_rerank_env(previous: dict[str, str | None]) -> None:
+    for key, value in previous.items():
+        if value is None:
+            os.environ.pop(key, None)
+        else:
+            os.environ[key] = value
+
+
+def render_query_plan_markdown(query_plan: dict[str, Any] | None, normalizer_error: str = "") -> str:
+    lines: list[str] = ["", "## LLM QueryPlan", ""]
+    if normalizer_error:
+        lines.extend(["", f"- Normalizer error: `{normalizer_error}`", ""])
+    if query_plan:
+        lines.extend(["```json", json.dumps(query_plan, ensure_ascii=False, indent=2), "```", ""])
+    else:
+        lines.append("未使用 LLM normalizer；本次由规则层直接规划检索。")
+    return "\n".join(lines)
+
+
 def read_query_log(limit: int = 80) -> list[dict[str, Any]]:
     rows = read_jsonl(QUERY_LOG)
     return list(reversed(rows[-limit:]))
+
+
+def read_feedback_log(limit: int = 80) -> list[dict[str, Any]]:
+    rows = read_jsonl(QUERY_FEEDBACK_LOG)
+    return list(reversed(rows[-limit:]))
+
+
+def bundle_summary_from_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    judgement = payload.get("judgement") or {}
+    answer = payload.get("composed_answer") or {}
+    answer_seed = payload.get("answer_seed") or {}
+    return {
+        "text_count": len(payload.get("text_evidence") or []),
+        "visual_count": len(payload.get("visual_evidence") or []),
+        "kg_count": len(payload.get("kg_evidence") or []),
+        "sufficient": judgement.get("sufficient"),
+        "confidence": judgement.get("confidence"),
+        "model_rerank": answer_seed.get("model_rerank", {}),
+        "answer_summary": answer.get("summary", ""),
+        "theory_check_count": len(answer.get("theory_checks") or []),
+        "prompt_versions": payload.get("prompt_versions") or answer_seed.get("prompt_versions", {}),
+    }
+
+
+def append_memory_session(row: dict[str, Any]) -> dict[str, Any]:
+    return SESSION_MEMORY.append_session(row)
 
 
 def resolve_workspace_path(raw_path: str) -> Path:
@@ -957,9 +1097,82 @@ def query_prompts() -> dict[str, Any]:
     }
 
 
+@app.get("/api/prompts/versions")
+def prompt_versions() -> dict[str, Any]:
+    return {
+        "active": get_prompt_versions(include_planned=False),
+        "registry": get_prompt_registry(),
+    }
+
+
 @app.get("/api/query/logs")
 def query_logs(limit: int = Query(default=80, ge=1, le=300)) -> dict[str, Any]:
     return {"items": read_query_log(limit)}
+
+
+@app.get("/api/query/feedback")
+def query_feedback_logs(limit: int = Query(default=80, ge=1, le=300)) -> dict[str, Any]:
+    return {"items": read_feedback_log(limit)}
+
+
+@app.get("/api/memory/sessions")
+def memory_sessions(
+    limit: int = Query(default=80, ge=1, le=300),
+    status: str = "",
+    q: str = "",
+    tag: str = "",
+) -> dict[str, Any]:
+    return {
+        "items": SESSION_MEMORY.list_sessions(limit=limit, status=status.strip(), q=q.strip(), tag=tag.strip()),
+        "store": safe_rel(SESSION_MEMORY.session_log),
+    }
+
+
+@app.get("/api/memory/session")
+def memory_session(session_id: str) -> dict[str, Any]:
+    session = SESSION_MEMORY.get_session(session_id.strip())
+    if not session:
+        raise HTTPException(status_code=404, detail=f"Session not found: {session_id}")
+    return {"item": session}
+
+
+@app.post("/api/query/feedback")
+def save_query_feedback(request: QueryFeedbackRequest) -> dict[str, Any]:
+    allowed_score_keys = {
+        "schema_score",
+        "intent_score",
+        "tool_selection_score",
+        "slot_score",
+        "tool_query_score",
+        "downstream_score",
+        "overall_score",
+    }
+    scores = {
+        key: int(value)
+        for key, value in request.scores.items()
+        if key in allowed_score_keys and isinstance(value, int | float)
+    }
+    row = {
+        "timestamp": utc_timestamp(),
+        "status": "feedback",
+        "query": request.query.strip(),
+        "source": request.source,
+        "normalized_query": request.normalized_query.strip(),
+        "intent": request.intent,
+        "expected_intent": request.expected_intent,
+        "expected_tools": request.expected_tools,
+        "scores": scores,
+        "failure_tags": request.failure_tags,
+        "notes": request.notes.strip(),
+        "query_plan": request.query_plan,
+        "bundle_summary": request.bundle_summary,
+        "report_md": request.report_md,
+        "session_id": request.session_id.strip(),
+    }
+    append_feedback_log(row)
+    if request.session_id.strip():
+        SESSION_MEMORY.append_event(request.session_id.strip(), "feedback_saved", row)
+    return {"ok": True, "item": row, "feedback_log": safe_rel(QUERY_FEEDBACK_LOG)}
 
 
 @app.post("/api/query/save")
@@ -973,7 +1186,65 @@ def save_query(request: QuerySaveRequest) -> dict[str, Any]:
         "context": request.context,
     }
     append_query_log(row)
-    return {"ok": True, "item": row}
+    session = append_memory_session(
+        {
+            **row,
+            "session_id": request.session_id.strip(),
+            "memory_type": "query_draft",
+            "source": "frontend_manual_query_workbench",
+        }
+    )
+    return {"ok": True, "item": row, "session": session, "session_id": session["session_id"]}
+
+
+@app.post("/api/query/normalize")
+def normalize_manual_query(request: QueryNormalizeRequest) -> dict[str, Any]:
+    query = request.query.strip()
+    if not query:
+        raise HTTPException(status_code=400, detail="Query is empty")
+    context = dict(request.context or {})
+    if request.notes:
+        context["human_notes"] = request.notes.strip()
+    if request.tags:
+        context["human_tags"] = request.tags
+    try:
+        query_plan = normalize_query(query, context=context, env_file=ROOT / ".env")
+    except Exception as exc:
+        append_query_log(
+            {
+                "timestamp": utc_timestamp(),
+                "status": "normalize_error",
+                "query": query,
+                "notes": request.notes.strip(),
+                "tags": request.tags,
+                "error": str(exc),
+            }
+        )
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    row = {
+        "timestamp": utc_timestamp(),
+        "status": "normalized",
+        "query": query,
+        "normalized_query": query_plan.get("normalized_query", ""),
+        "notes": request.notes.strip(),
+        "tags": request.tags,
+        "intent": query_plan.get("intent", ""),
+        "style_hints": query_plan.get("style_hints", []),
+        "query_plan": query_plan,
+        "prompt_versions": get_prompt_versions(),
+    }
+    append_query_log(row)
+    session = append_memory_session(
+        {
+            **row,
+            "session_id": request.session_id.strip(),
+            "memory_type": "query_normalization",
+            "source": "frontend_manual_query_workbench",
+            "notes": request.notes.strip(),
+            "context": context,
+        }
+    )
+    return {"ok": True, "query_plan": query_plan, "log_item": row, "session": session, "session_id": session["session_id"]}
 
 
 @app.post("/api/query/run")
@@ -982,7 +1253,8 @@ def run_query(request: QueryRunRequest) -> dict[str, Any]:
     if not query:
         raise HTTPException(status_code=400, detail="Query is empty")
     QUERY_REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    stem = query_report_stem(query)
+    visual_profile, visual_collection = resolve_visual_collection(request.visual_collection)
+    stem = f"{query_report_stem(query)}_{visual_profile}"
     report_md = QUERY_REPORT_DIR / f"{stem}.md"
     report_json = QUERY_REPORT_DIR / f"{stem}.json"
     context = dict(request.context or {})
@@ -990,6 +1262,32 @@ def run_query(request: QueryRunRequest) -> dict[str, Any]:
         context["human_notes"] = request.notes
     if request.tags:
         context["human_tags"] = request.tags
+    rerank_config = rerank_request_config(request)
+    context["rerank_config"] = rerank_config
+    context["prompt_versions"] = get_prompt_versions()
+    context["visual_collection"] = {
+        "profile": visual_profile,
+        "collection": visual_collection,
+        "label": VISUAL_COLLECTION_LABELS[visual_profile],
+    }
+    query_plan: dict[str, Any] | None = None
+    normalizer_error = ""
+    if request.use_normalizer:
+        try:
+            query_plan = normalize_query(query, context=context, env_file=ROOT / ".env")
+            context["query_plan"] = query_plan
+            context["query_normalizer"] = {
+                "provider": "llm_api",
+                "status": "ok",
+                "spec": "QUERY_NORMALIZATION_PROMPT_SPEC.md",
+            }
+        except Exception as exc:
+            normalizer_error = str(exc)
+            context["query_normalizer"] = {
+                "provider": "llm_api",
+                "status": "error_fallback_to_rules",
+                "error": normalizer_error,
+            }
     args = argparse.Namespace(
         query=query,
         context_json=json.dumps(context, ensure_ascii=False),
@@ -1000,47 +1298,108 @@ def run_query(request: QueryRunRequest) -> dict[str, Any]:
         device=os.environ.get("LOCAL_EMBEDDING_DEVICE", "auto"),
         max_length=int(os.environ.get("LOCAL_EMBEDDING_MAX_LENGTH", "2048")),
         batch_size=8,
+        visual_collection=visual_collection,
         env_file=ROOT / ".env",
         report_md=report_md,
         report_json=report_json,
     )
+    previous_rerank_env = apply_rerank_env(rerank_config)
     try:
         bundle = run_bundle(args)
     except Exception as exc:
-        append_query_log(
-            {
-                "timestamp": utc_timestamp(),
-                "status": "run_error",
-                "query": query,
-                "notes": request.notes.strip(),
-                "tags": request.tags,
-                "error": str(exc),
-            }
-        )
+        error_row = {
+            "timestamp": utc_timestamp(),
+            "status": "run_error",
+            "query": query,
+            "notes": request.notes.strip(),
+            "tags": request.tags,
+            "rerank_config": rerank_config,
+            "error": str(exc),
+            "session_id": request.session_id.strip(),
+            "memory_type": "rag_run_error",
+            "source": context.get("source", "frontend_manual_query_workbench"),
+        }
+        append_query_log(error_row)
+        append_memory_session(error_row)
         raise HTTPException(status_code=500, detail=str(exc)) from exc
+    finally:
+        restore_rerank_env(previous_rerank_env)
     payload = asdict(bundle)
+    payload["rerank_config"] = rerank_config
+    payload["visual_collection"] = context["visual_collection"]
+    payload["prompt_versions"] = context["prompt_versions"]
+    if query_plan:
+        payload["query_plan"] = query_plan
+    if normalizer_error:
+        payload["normalizer_error"] = normalizer_error
+    composed_answer: dict[str, Any] | None = None
+    answer_error = ""
+    if request.compose_answer:
+        try:
+            answer_started = time.perf_counter()
+            composed_answer = compose_answer(payload, env_file=ROOT / ".env")
+            payload["composed_answer"] = composed_answer
+            bundle.timings["answer_composer_seconds"] = time.perf_counter() - answer_started
+            payload["timings"] = bundle.timings
+        except Exception as exc:
+            answer_error = str(exc)
+            payload["answer_composer_error"] = answer_error
     report_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    report_md.write_text(render_markdown(bundle), encoding="utf-8")
+    report_md.write_text(
+        render_markdown(bundle)
+        + render_query_plan_markdown(query_plan, normalizer_error)
+        + (render_answer_markdown(composed_answer or {}) if request.compose_answer and composed_answer else "")
+        + (f"\n\n## Answer Composer Error\n\n`{answer_error}`\n" if answer_error else ""),
+        encoding="utf-8",
+    )
     log_row = {
         "timestamp": utc_timestamp(),
         "status": "ran",
         "query": query,
+        "normalized_query": query_plan.get("normalized_query", "") if query_plan else "",
         "notes": request.notes.strip(),
         "tags": request.tags,
         "intent": bundle.analysis.intent,
         "style_hints": bundle.analysis.style_hints,
         "judgement": bundle.judgement,
         "timings": bundle.timings,
+        "rerank_config": rerank_config,
+        "visual_collection": context["visual_collection"],
+        "prompt_versions": context["prompt_versions"],
+        "model_rerank": bundle.answer_seed.get("model_rerank", {}),
+        "normalizer_used": request.use_normalizer,
+        "normalizer_error": normalizer_error,
+        "compose_answer": request.compose_answer,
+        "answer_summary": composed_answer.get("summary", "") if composed_answer else "",
+        "answer_composer_error": answer_error,
+        "query_plan": query_plan,
         "report_md": safe_rel(report_md),
         "report_json": safe_rel(report_json),
     }
     append_query_log(log_row)
+    session = append_memory_session(
+        {
+            **log_row,
+            "session_id": request.session_id.strip(),
+            "memory_type": "full_chain_run" if request.compose_answer else "rag_run",
+            "source": context.get("source", "frontend_manual_query_workbench"),
+            "context": context,
+            "bundle_summary": bundle_summary_from_payload(payload),
+            "answer_status": "ok" if composed_answer else ("error" if answer_error else "not_requested"),
+        }
+    )
     return {
         "ok": True,
         "bundle": payload,
         "report_md": safe_rel(report_md),
         "report_json": safe_rel(report_json),
         "log_item": log_row,
+        "session": session,
+        "session_id": session["session_id"],
+        "query_plan": query_plan,
+        "normalizer_error": normalizer_error,
+        "composed_answer": composed_answer,
+        "answer_composer_error": answer_error,
     }
 
 

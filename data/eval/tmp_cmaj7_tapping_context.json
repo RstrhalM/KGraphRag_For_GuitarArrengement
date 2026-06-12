@@ -1,0 +1,96 @@
+{
+  "query_plan": {
+    "raw_query": "给我一个Cmaj7两手点弦琶音谱例",
+    "normalized_query": "Cmaj7 two-hand tapping arpeggio pattern diagram",
+    "intent": "mixed_arrangement",
+    "confidence": 0.79,
+    "style_hints": [],
+    "key_or_tonality": "",
+    "meter_or_rhythm": "",
+    "tempo_hint": "",
+    "target_tuning": "standard",
+    "harmonic_materials": [
+      "Cmaj7"
+    ],
+    "melodic_materials": [],
+    "techniques": [
+      "tapping",
+      "点弦"
+    ],
+    "fretboard_constraints": [],
+    "arrangement_goals": [],
+    "target_keys": [
+      "c_major"
+    ],
+    "target_roots": [
+      "c"
+    ],
+    "chord_qualities": [
+      "maj7"
+    ],
+    "scale_or_mode": [],
+    "fret_region": "",
+    "position_constraints": [],
+    "requires_exact_key": true,
+    "requires_exact_chord": true,
+    "visual_evidence_required": true,
+    "allow_alternate_tuning": false,
+    "allow_exercise_reference": true,
+    "canonical_terms": [
+      "key:c_major",
+      "chord_quality:maj7",
+      "technique:two_hand_tapping",
+      "concept:arpeggio",
+      "tuning:standard",
+      "root:c",
+      "visual_type:scale_pattern",
+      "technique:tapping"
+    ],
+    "required_terms": [
+      "tuning:standard",
+      "key:c_major",
+      "chord_quality:maj7",
+      "visual_type:scale_pattern"
+    ],
+    "optional_terms": [
+      "visual_type:scale_pattern"
+    ],
+    "negative_constraints": [
+      "tuning:dadgad",
+      "tuning:facgce",
+      "tuning:drop",
+      "tuning:drop_d",
+      "tuning:open",
+      "tuning:alternate"
+    ],
+    "retrieval_plan": {
+      "fretboard_text": {
+        "enabled": true,
+        "query": "Cmaj7 arpeggio notes and intervals for two-hand tapping technique",
+        "reason": "To retrieve theoretical basis and note composition of Cmaj7 arpeggios suitable for tapping."
+      },
+      "style_text": {
+        "enabled": false,
+        "query": "Cmaj7 two-hand tapping arpeggio pattern diagram",
+        "reason": "User requested a specific technical example rather than a general style course, though tapping is common in math rock, the core request is technical/visual."
+      },
+      "visual_caption": {
+        "enabled": true,
+        "query": "Cmaj7 two-hand tapping arpeggio pattern diagram fretboard map",
+        "reason": "User explicitly asked for a 'score/example' (谱例) of a specific physical technique (two-hand tapping), which requires visual evidence of finger positions and tapping points on the fretboard."
+      },
+      "kg": {
+        "enabled": true,
+        "query": "two-hand tapping arpeggio voicing constraints and ergonomic patterns for maj7 chords",
+        "reason": "To provide arrangement heuristics and ergonomic constraints for executing two-hand tapping arpeggios effectively."
+      }
+    },
+    "composer_intent": {
+      "answer_type": "",
+      "must_include": [],
+      "avoid": [],
+      "uncertainty_notes": []
+    },
+    "eval_tags": []
+  }
+}

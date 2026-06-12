@@ -1,0 +1,59 @@
+{
+  "query_plan": {
+    "raw_query": "给出G小调的吉他指型参考",
+    "normalized_query": "G minor scale guitar fingerings and position diagrams",
+    "intent": "visual_shape_recommendation",
+    "confidence": 0.9,
+    "style_hints": [],
+    "target_keys": ["G minor"],
+    "target_roots": ["G"],
+    "chord_qualities": [],
+    "scale_or_mode": ["natural minor"],
+    "fret_region": "",
+    "requires_exact_key": true,
+    "requires_exact_chord": false,
+    "visual_evidence_required": true,
+    "allow_alternate_tuning": false,
+    "canonical_terms": [
+      "key:g_minor",
+      "scale:natural_minor",
+      "visual_type:scale_pattern"
+    ],
+    "required_terms": [
+      "key:g_minor",
+      "visual_type:scale_pattern"
+    ],
+    "optional_terms": [
+      "scale:natural_minor"
+    ],
+    "negative_constraints": [
+      "tuning:dadgad",
+      "tuning:drop",
+      "tuning:open"
+    ],
+    "techniques": [],
+    "fretboard_constraints": [],
+    "retrieval_plan": {
+      "fretboard_text": {
+        "enabled": true,
+        "query": "G minor scale guitar fingerings and fretboard positions",
+        "reason": "指板文本解释 G 小调音阶与把位逻辑"
+      },
+      "style_text": {
+        "enabled": false,
+        "query": "",
+        "reason": "未指定风格"
+      },
+      "visual_caption": {
+        "enabled": true,
+        "query": "G minor scale pattern fingering diagram",
+        "reason": "需要具体指型图证据"
+      },
+      "kg": {
+        "enabled": false,
+        "query": "",
+        "reason": "静态指型参考不需要 KG"
+      }
+    }
+  }
+}

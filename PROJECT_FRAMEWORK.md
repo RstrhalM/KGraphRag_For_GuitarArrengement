@@ -684,8 +684,10 @@ Query 层定位为 Agentic-ready RAG 的证据编排层。它不直接生成最�
 Query 层按可被 agent 调用的工具链设计：
 
 ```text
-analyze_query()
-  -> plan_retrieval()
+normalize_query()  # LLM Query Normalizer
+  -> QueryPlan
+  -> analysis_from_query_plan()
+  -> plan_retrieval_from_query_plan()
   -> retrieve_text()
   -> retrieve_visual_caption()
   -> retrieve_kg()
@@ -694,11 +696,28 @@ analyze_query()
   -> render_report()
 ```
 
-#### 1. analyze_query
+如果 LLM API 不可用，系统回退到原来的规则层：
+
+```text
+analyze_query()
+  -> plan_retrieval()
+```
+
+#### 1. normalize_query / analyze_query
 
 识别问题意图、风格线索、理论术语、技法术语和需要的证据类型。
 
-第一版采用规则 + 关键词，不让 LLM 自由规划：
+当前实现采用 `LLM QueryPlan + 规则兜底`：
+
+```text
+用户原始 query
+  -> scripts/query_normalizer.py
+  -> normalized_query
+  -> intent / style_hints / materials / techniques / constraints
+  -> retrieval_plan[fretboard_text/style_text/visual_caption/kg]
+```
+
+LLM normalizer 不直接回答问题，只负责把用户自然语言转成稳定内部计划。规则层仍作为兜底：
 
 ```text
 出现 指板 / 根音 / 音阶 / 琶音 / 和弦 / 音程
@@ -718,20 +737,23 @@ analyze_query()
 
 ```json
 {
+  "normalized_query": "Fmaj7 arpeggio math rock open string riff voicings and positions",
   "intent": "mixed_arrangement",
   "style_hints": ["mathrock"],
-  "theory_terms": ["Fmaj7", "arpeggio"],
-  "technique_terms": ["riff"],
-  "needs_fretboard_text": true,
-  "needs_visual": true,
-  "needs_style_text": true,
-  "needs_kg": true
+  "harmonic_materials": ["Fmaj7"],
+  "techniques": ["riff", "open string", "voicing"],
+  "retrieval_plan": {
+    "fretboard_text": {"enabled": true, "query": "Fmaj7 arpeggio shapes and notes on guitar fretboard"},
+    "style_text": {"enabled": true, "query": "math rock guitar open string riff techniques"},
+    "visual_caption": {"enabled": true, "query": "Fmaj7 arpeggio fingerings open string voicings guitar diagrams"},
+    "kg": {"enabled": true, "query": "arrange Fmaj7 arpeggio into math rock open string riff"}
+  }
 }
 ```
 
 #### 2. plan_retrieval
 
-把 query analysis 转成检索计划。
+把 QueryPlan 或 query analysis 转成检索计划。LLM QueryPlan 模式下，每个工具使用自己的专用检索 query，而不是把用户原句同时塞给所有库。
 
 ```text
 指板基础 / 乐理位置问题

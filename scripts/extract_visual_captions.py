@@ -278,7 +278,19 @@ def build_caption_text(result: dict[str, Any], candidate: dict[str, Any]) -> str
     return "\n".join(part for part in parts if part and not part.endswith(": "))
 
 
-def render_review_md(rows: list[dict[str, Any]]) -> str:
+def review_image_ref(value: Any, review_path: Path) -> str:
+    if not value:
+        return ""
+    image_path = Path(str(value))
+    if not image_path.is_absolute():
+        image_path = Path.cwd() / image_path
+    try:
+        return os.path.relpath(image_path.resolve(), review_path.parent.resolve()).replace("\\", "/")
+    except (OSError, ValueError):
+        return str(value).replace("\\", "/")
+
+
+def render_review_md(rows: list[dict[str, Any]], review_path: Path) -> str:
     lines = [
         "# Visual Caption Review",
         "",
@@ -288,6 +300,7 @@ def render_review_md(rows: list[dict[str, Any]]) -> str:
     ]
     for idx, row in enumerate(rows, start=1):
         meta = row.get("source_metadata", {}) if isinstance(row.get("source_metadata"), dict) else {}
+        image_ref = review_image_ref(meta.get("image_path"), review_path)
         lines.extend(
             [
                 f"## {idx:02d}. {row.get('visual_id')}",
@@ -318,6 +331,10 @@ def render_review_md(rows: list[dict[str, Any]]) -> str:
                 f"| image_paths | `{', '.join(map(str, meta.get('image_paths') or []))}` |",
                 f"| visual_role | `{meta.get('visual_role')}` |",
                 f"| exercise_numbers | `{', '.join(map(str, meta.get('exercise_numbers') or []))}` |",
+                "",
+                "**图片对照**",
+                "",
+                f"![]({image_ref})" if image_ref else "> 无可用图片路径",
                 "",
                 "**Caption**",
                 "",
@@ -391,7 +408,7 @@ def main(argv: list[str]) -> int:
             row = normalize_caption(result, candidate)
             rows.append(row)
             append_jsonl(result_path, row)
-            review_path.write_text(render_review_md(rows), encoding="utf-8")
+            review_path.write_text(render_review_md(rows, review_path), encoding="utf-8")
         except Exception as exc:
             error_row = {"visual_id": str(candidate.get("visual_id")), "error": str(exc)}
             errors.append(error_row)
@@ -408,7 +425,7 @@ def main(argv: list[str]) -> int:
 
     write_jsonl(result_path, rows)
     write_jsonl(error_path, errors)
-    review_path.write_text(render_review_md(rows), encoding="utf-8")
+    review_path.write_text(render_review_md(rows, review_path), encoding="utf-8")
     report = {
         "candidates": len(candidates),
         "captions": len(rows),

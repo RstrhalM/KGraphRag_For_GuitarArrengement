@@ -1,0 +1,37 @@
+[
+  {
+    "id": "facgce_fmaj9",
+    "query": "FACGCE 调弦的 Fmaj9 全开放弦和弦指型",
+    "expected_any": ["mr_style_001_fmaj9", "FACGCE_tuning_Fmaj9_open_chord"]
+  },
+  {
+    "id": "facgce_am_add11",
+    "query": "FACGCE 特殊调弦下 Am add11 开放弦 voicing 指型",
+    "expected_any": ["mr_style_001_am_add11", "FACGCE_Am_add11_chord_shape"]
+  },
+  {
+    "id": "facgce_bm7b5",
+    "query": "FACGCE 调弦 Bm7b5 半减七 可移动和弦指型",
+    "expected_any": ["mr_style_001_bm7b5", "FACGCE_Bm7b5_chord_shape"]
+  },
+  {
+    "id": "facgce_major_tapping_map",
+    "query": "FACGCE 大调指板音阶图，适合开放弦点弦和旋律 riff",
+    "expected_any": ["mr_style_002", "FACGCE_tuning_major_scale_fingerboard_map"]
+  },
+  {
+    "id": "g7_shell_voicing",
+    "query": "G7 shell voicing 壳式和弦，省略五音并减少高增益频段冲突",
+    "expected_any": ["mr_style_008", "G7_shell_voicings"]
+  },
+  {
+    "id": "cmaj7_tapping",
+    "query": "Cmaj7 两手点弦琶音，开放弦持续音和 let ring 谱例",
+    "expected_any": ["mr_style_010", "Cmaj7_tapping_arpeggio"]
+  },
+  {
+    "id": "mathrock_odd_meter_riff",
+    "query": "Math Rock I-IV 大七和弦快速转换，6/8 到 9/8 变拍 riff",
+    "expected_any": ["mr_style_015", "math_rock_I_IV_riff_irregular_meters"]
+  }
+]

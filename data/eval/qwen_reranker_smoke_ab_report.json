@@ -1,0 +1,1146 @@
+{
+  "results": [
+    {
+      "id": "gminor_visual",
+      "query": "给出G小调的吉他指型参考",
+      "runs": [
+        {
+          "backend": "none",
+          "intent": "visual_shape_recommendation",
+          "judgement": {
+            "sufficient": true,
+            "confidence": 0.71,
+            "missing": [],
+            "warnings": [],
+            "evidence_type_count": 2,
+            "text_count": 25,
+            "visual_count": 26,
+            "kg_count": 0,
+            "next_queries": []
+          },
+          "timings": {
+            "model_load_seconds": 3.694498300028499,
+            "fretboard_text_seconds": 0.31098440001369454,
+            "visual_caption_seconds": 0.19127229999867268,
+            "canonical_visual_seconds": 0.023861900001065806,
+            "model_rerank_seconds": 2.9399991035461426e-05,
+            "total_seconds": 4.8870134000026155
+          },
+          "answer_seed": {
+            "recommended_structure": [
+              "结论",
+              "相关教材证据",
+              "视觉/指法证据",
+              "KG/风格关系",
+              "可操作编配建议",
+              "不确定点"
+            ],
+            "top_text_ids": [
+              "text:fretboard_text_0162",
+              "text:fretboard_text_0037",
+              "text:fretboard_text_0044"
+            ],
+            "top_visual_ids": [
+              "visual_caption:fretboard_answer_E14_6",
+              "visual_caption:fretboard_answer_E15_5",
+              "visual_caption:fretboard_answer_E14_8"
+            ],
+            "top_kg_ids": [],
+            "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+            "query_plan": {
+              "raw_query": "给出G小调的吉他指型参考",
+              "normalized_query": "G minor scale guitar fingerings and position diagrams",
+              "intent": "visual_shape_recommendation",
+              "confidence": 0.9,
+              "style_hints": [],
+              "target_keys": [
+                "G minor"
+              ],
+              "target_roots": [
+                "G"
+              ],
+              "chord_qualities": [],
+              "scale_or_mode": [
+                "natural minor"
+              ],
+              "fret_region": "",
+              "requires_exact_key": true,
+              "requires_exact_chord": false,
+              "visual_evidence_required": true,
+              "allow_alternate_tuning": false,
+              "canonical_terms": [
+                "key:g_minor",
+                "scale:natural_minor",
+                "visual_type:scale_pattern"
+              ],
+              "required_terms": [
+                "key:g_minor",
+                "visual_type:scale_pattern"
+              ],
+              "optional_terms": [
+                "scale:natural_minor"
+              ],
+              "negative_constraints": [
+                "tuning:dadgad",
+                "tuning:drop",
+                "tuning:open"
+              ],
+              "techniques": [],
+              "fretboard_constraints": [],
+              "retrieval_plan": {
+                "fretboard_text": {
+                  "enabled": true,
+                  "query": "G minor scale guitar fingerings and fretboard positions",
+                  "reason": "指板文本解释 G 小调音阶与把位逻辑"
+                },
+                "style_text": {
+                  "enabled": false,
+                  "query": "",
+                  "reason": "未指定风格"
+                },
+                "visual_caption": {
+                  "enabled": true,
+                  "query": "G minor scale pattern fingering diagram",
+                  "reason": "需要具体指型图证据"
+                },
+                "kg": {
+                  "enabled": false,
+                  "query": "",
+                  "reason": "静态指型参考不需要 KG"
+                }
+              }
+            },
+            "model_rerank": {
+              "text": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              },
+              "visual": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              },
+              "kg": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              }
+            }
+          },
+          "top_text": [
+            {
+              "evidence_id": "text:fretboard_text_0162",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 1.14087,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0037",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 0.8366,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0044",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 0.83298,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0028",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 0.82537,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0033",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 0.82325,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册正文清洗层"
+            }
+          ],
+          "top_visual": [
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E14_6",
+              "source_id": "canonical_visual",
+              "score": 5.21,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "G 小调指型 4 (Bb 大调指型 3)"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E15_5",
+              "source_id": "canonical_visual",
+              "score": 3.31,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Bb Major Pattern 3 (G Minor Pattern 4)"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E14_8",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.27774,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E05_1",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.03733,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E57_2",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.0328,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            }
+          ],
+          "top_kg": []
+        },
+        {
+          "backend": "local",
+          "intent": "visual_shape_recommendation",
+          "judgement": {
+            "sufficient": true,
+            "confidence": 0.71,
+            "missing": [],
+            "warnings": [],
+            "evidence_type_count": 2,
+            "text_count": 25,
+            "visual_count": 26,
+            "kg_count": 0,
+            "next_queries": []
+          },
+          "timings": {
+            "model_load_seconds": 1.800013706088066e-06,
+            "fretboard_text_seconds": 0.03898350000963546,
+            "visual_caption_seconds": 0.04039869998814538,
+            "canonical_visual_seconds": 0.0019915000011678785,
+            "model_rerank_seconds": 3.5583055000170134,
+            "total_seconds": 3.644590799987782
+          },
+          "answer_seed": {
+            "recommended_structure": [
+              "结论",
+              "相关教材证据",
+              "视觉/指法证据",
+              "KG/风格关系",
+              "可操作编配建议",
+              "不确定点"
+            ],
+            "top_text_ids": [
+              "text:fretboard_text_0162",
+              "text:fretboard_text_0037",
+              "text:fretboard_text_0044"
+            ],
+            "top_visual_ids": [
+              "visual_caption:fretboard_answer_E14_6",
+              "visual_caption:fretboard_answer_E15_5",
+              "visual_caption:fretboard_answer_E14_8"
+            ],
+            "top_kg_ids": [],
+            "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+            "query_plan": {
+              "raw_query": "给出G小调的吉他指型参考",
+              "normalized_query": "G minor scale guitar fingerings and position diagrams",
+              "intent": "visual_shape_recommendation",
+              "confidence": 0.9,
+              "style_hints": [],
+              "target_keys": [
+                "G minor"
+              ],
+              "target_roots": [
+                "G"
+              ],
+              "chord_qualities": [],
+              "scale_or_mode": [
+                "natural minor"
+              ],
+              "fret_region": "",
+              "requires_exact_key": true,
+              "requires_exact_chord": false,
+              "visual_evidence_required": true,
+              "allow_alternate_tuning": false,
+              "canonical_terms": [
+                "key:g_minor",
+                "scale:natural_minor",
+                "visual_type:scale_pattern"
+              ],
+              "required_terms": [
+                "key:g_minor",
+                "visual_type:scale_pattern"
+              ],
+              "optional_terms": [
+                "scale:natural_minor"
+              ],
+              "negative_constraints": [
+                "tuning:dadgad",
+                "tuning:drop",
+                "tuning:open"
+              ],
+              "techniques": [],
+              "fretboard_constraints": [],
+              "retrieval_plan": {
+                "fretboard_text": {
+                  "enabled": true,
+                  "query": "G minor scale guitar fingerings and fretboard positions",
+                  "reason": "指板文本解释 G 小调音阶与把位逻辑"
+                },
+                "style_text": {
+                  "enabled": false,
+                  "query": "",
+                  "reason": "未指定风格"
+                },
+                "visual_caption": {
+                  "enabled": true,
+                  "query": "G minor scale pattern fingering diagram",
+                  "reason": "需要具体指型图证据"
+                },
+                "kg": {
+                  "enabled": false,
+                  "query": "",
+                  "reason": "静态指型参考不需要 KG"
+                }
+              }
+            },
+            "model_rerank": {
+              "text": {
+                "enabled": true,
+                "provider": "qwen3_causal_lm",
+                "model": "models/reranker/qwen3-reranker-0.6b",
+                "count": 25,
+                "weight": 0.35
+              },
+              "visual": {
+                "enabled": true,
+                "provider": "qwen3_causal_lm",
+                "model": "models/reranker/qwen3-reranker-0.6b",
+                "count": 26,
+                "weight": 0.35
+              },
+              "kg": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              }
+            }
+          },
+          "top_text": [
+            {
+              "evidence_id": "text:fretboard_text_0162",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 1.40098,
+              "rerank_delta": 0.26011,
+              "rerank_raw": 1.0625,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0037",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 1.13196,
+              "rerank_delta": 0.29536,
+              "rerank_raw": 1.6875,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0044",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 1.0754,
+              "rerank_delta": 0.24242,
+              "rerank_raw": 0.8125,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0041",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 1.02791,
+              "rerank_delta": 0.24702,
+              "rerank_raw": 0.875,
+              "title": "吉他指板手册正文清洗层"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0042",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 1.0277,
+              "rerank_delta": 0.27578,
+              "rerank_raw": 1.3125,
+              "title": "吉他指板手册正文清洗层"
+            }
+          ],
+          "top_visual": [
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E14_6",
+              "source_id": "canonical_visual",
+              "score": 5.55817,
+              "rerank_delta": 0.34817,
+              "rerank_raw": 5.25,
+              "title": "G 小调指型 4 (Bb 大调指型 3)"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E15_5",
+              "source_id": "canonical_visual",
+              "score": 3.65828,
+              "rerank_delta": 0.34828,
+              "rerank_raw": 5.3125,
+              "title": "Bb Major Pattern 3 (G Minor Pattern 4)"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E14_8",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.60268,
+              "rerank_delta": 0.32494,
+              "rerank_raw": 2.5625,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E57_2",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.36411,
+              "rerank_delta": 0.33131,
+              "rerank_raw": 2.875,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E57_5",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.35184,
+              "rerank_delta": 0.32636,
+              "rerank_raw": 2.625,
+              "title": "吉他指板手册：题目级练习答案图"
+            }
+          ],
+          "top_kg": []
+        }
+      ]
+    },
+    {
+      "id": "funk_groove",
+      "query": "funk 十六分闷音 groove 伴奏怎么编",
+      "runs": [
+        {
+          "backend": "none",
+          "intent": "style_arrangement",
+          "judgement": {
+            "sufficient": true,
+            "confidence": 0.71,
+            "missing": [],
+            "warnings": [],
+            "evidence_type_count": 2,
+            "text_count": 14,
+            "visual_count": 0,
+            "kg_count": 23,
+            "next_queries": []
+          },
+          "timings": {
+            "model_load_seconds": 1.7999846022576094e-06,
+            "style_text_seconds": 0.08971060000476427,
+            "kg_seconds": 0.7072734000103083,
+            "model_rerank_seconds": 2.989999484270811e-05,
+            "total_seconds": 0.800031000020681,
+            "kg_status": "neo4j"
+          },
+          "answer_seed": {
+            "recommended_structure": [
+              "结论",
+              "相关教材证据",
+              "视觉/指法证据",
+              "KG/风格关系",
+              "可操作编配建议",
+              "不确定点"
+            ],
+            "top_text_ids": [
+              "text:chunk_0008",
+              "text:chunk_0009",
+              "text:chunk_0011"
+            ],
+            "top_visual_ids": [],
+            "top_kg_ids": [
+              "kg:technique:upstroke_hit_downstroke:ENABLES:feature:percussive_ghost_note",
+              "kg:feature:staccato_bubble:ENABLES:heuristic:make_rhythm_part_a_hook",
+              "kg:technique:right_hand_constant_motion:ENABLES:feature:sixteenth_note_undercurrent",
+              "kg:task:funk_comping:ENABLES:technique:m7_to_m6_voice_leading",
+              "kg:voicing:sparse_funk_voicing:CONSTRAINS:caution:overcrowded_frequency_range"
+            ],
+            "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+            "model_rerank": {
+              "text": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              },
+              "visual": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              },
+              "kg": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              }
+            }
+          },
+          "top_text": [
+            {
+              "evidence_id": "text:chunk_0008",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.1036,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0009",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.09694,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0011",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.09092,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0007",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.07092,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0004",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.00031,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Cory Wong Funk 吉他大师课"
+            }
+          ],
+          "top_visual": [],
+          "top_kg": [
+            {
+              "evidence_id": "kg:technique:upstroke_hit_downstroke:ENABLES:feature:percussive_ghost_note",
+              "source_id": "GuitarIdiom",
+              "score": 1.82,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "technique:upstroke_hit_downstroke -[ENABLES]-> feature:percussive_ghost_note"
+            },
+            {
+              "evidence_id": "kg:feature:staccato_bubble:ENABLES:heuristic:make_rhythm_part_a_hook",
+              "source_id": "GuitarIdiom",
+              "score": 1.61,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "feature:staccato_bubble -[ENABLES]-> heuristic:make_rhythm_part_a_hook"
+            },
+            {
+              "evidence_id": "kg:technique:right_hand_constant_motion:ENABLES:feature:sixteenth_note_undercurrent",
+              "source_id": "GuitarIdiom",
+              "score": 1.58,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "technique:right_hand_constant_motion -[ENABLES]-> feature:sixteenth_note_undercurrent"
+            },
+            {
+              "evidence_id": "kg:task:funk_comping:ENABLES:technique:m7_to_m6_voice_leading",
+              "source_id": "GuitarIdiom",
+              "score": 1.56,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "task:funk_comping -[ENABLES]-> technique:m7_to_m6_voice_leading"
+            },
+            {
+              "evidence_id": "kg:voicing:sparse_funk_voicing:CONSTRAINS:caution:overcrowded_frequency_range",
+              "source_id": "Caution",
+              "score": 1.53,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "voicing:sparse_funk_voicing -[CONSTRAINS]-> caution:overcrowded_frequency_range"
+            }
+          ]
+        },
+        {
+          "backend": "local",
+          "intent": "style_arrangement",
+          "judgement": {
+            "sufficient": true,
+            "confidence": 0.71,
+            "missing": [],
+            "warnings": [],
+            "evidence_type_count": 2,
+            "text_count": 14,
+            "visual_count": 0,
+            "kg_count": 23,
+            "next_queries": []
+          },
+          "timings": {
+            "model_load_seconds": 1.600012183189392e-06,
+            "style_text_seconds": 0.05261630000313744,
+            "kg_seconds": 0.022685599979013205,
+            "model_rerank_seconds": 2.1154116000107024,
+            "total_seconds": 2.1934459999902174,
+            "kg_status": "neo4j"
+          },
+          "answer_seed": {
+            "recommended_structure": [
+              "结论",
+              "相关教材证据",
+              "视觉/指法证据",
+              "KG/风格关系",
+              "可操作编配建议",
+              "不确定点"
+            ],
+            "top_text_ids": [
+              "text:chunk_0009",
+              "text:chunk_0008",
+              "text:chunk_0011"
+            ],
+            "top_visual_ids": [],
+            "top_kg_ids": [
+              "kg:technique:upstroke_hit_downstroke:ENABLES:feature:percussive_ghost_note",
+              "kg:task:funk_comping:ENABLES:technique:m7_to_m6_voice_leading",
+              "kg:feature:staccato_bubble:ENABLES:heuristic:make_rhythm_part_a_hook",
+              "kg:technique:right_hand_constant_motion:ENABLES:feature:sixteenth_note_undercurrent",
+              "kg:voicing:sparse_funk_voicing:CONSTRAINS:caution:overcrowded_frequency_range"
+            ],
+            "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+            "model_rerank": {
+              "text": {
+                "enabled": true,
+                "provider": "qwen3_causal_lm",
+                "model": "models/reranker/qwen3-reranker-0.6b",
+                "count": 14,
+                "weight": 0.35
+              },
+              "visual": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              },
+              "kg": {
+                "enabled": true,
+                "provider": "qwen3_causal_lm",
+                "model": "models/reranker/qwen3-reranker-0.6b",
+                "count": 23,
+                "weight": 0.35
+              }
+            }
+          },
+          "top_text": [
+            {
+              "evidence_id": "text:chunk_0009",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.32983,
+              "rerank_delta": 0.23289,
+              "rerank_raw": 0.6875,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0008",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.11518,
+              "rerank_delta": 0.01158,
+              "rerank_raw": -3.375,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0011",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.09722,
+              "rerank_delta": 0.0063,
+              "rerank_raw": -4.0,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0007",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.07392,
+              "rerank_delta": 0.003,
+              "rerank_raw": -4.75,
+              "title": "Cory Wong Funk 吉他大师课"
+            },
+            {
+              "evidence_id": "text:chunk_0004",
+              "source_id": "cory_wong_funk_core",
+              "score": 1.01595,
+              "rerank_delta": 0.01564,
+              "rerank_raw": -3.0625,
+              "title": "Cory Wong Funk 吉他大师课"
+            }
+          ],
+          "top_visual": [],
+          "top_kg": [
+            {
+              "evidence_id": "kg:technique:upstroke_hit_downstroke:ENABLES:feature:percussive_ghost_note",
+              "source_id": "GuitarIdiom",
+              "score": 2.0882,
+              "rerank_delta": 0.2682,
+              "rerank_raw": 1.1875,
+              "title": "technique:upstroke_hit_downstroke -[ENABLES]-> feature:percussive_ghost_note"
+            },
+            {
+              "evidence_id": "kg:task:funk_comping:ENABLES:technique:m7_to_m6_voice_leading",
+              "source_id": "GuitarIdiom",
+              "score": 1.8877,
+              "rerank_delta": 0.3277,
+              "rerank_raw": 2.6875,
+              "title": "task:funk_comping -[ENABLES]-> technique:m7_to_m6_voice_leading"
+            },
+            {
+              "evidence_id": "kg:feature:staccato_bubble:ENABLES:heuristic:make_rhythm_part_a_hook",
+              "source_id": "GuitarIdiom",
+              "score": 1.88578,
+              "rerank_delta": 0.27578,
+              "rerank_raw": 1.3125,
+              "title": "feature:staccato_bubble -[ENABLES]-> heuristic:make_rhythm_part_a_hook"
+            },
+            {
+              "evidence_id": "kg:technique:right_hand_constant_motion:ENABLES:feature:sixteenth_note_undercurrent",
+              "source_id": "GuitarIdiom",
+              "score": 1.79786,
+              "rerank_delta": 0.21786,
+              "rerank_raw": 0.5,
+              "title": "technique:right_hand_constant_motion -[ENABLES]-> feature:sixteenth_note_undercurrent"
+            },
+            {
+              "evidence_id": "kg:voicing:sparse_funk_voicing:CONSTRAINS:caution:overcrowded_frequency_range",
+              "source_id": "Caution",
+              "score": 1.73743,
+              "rerank_delta": 0.20743,
+              "rerank_raw": 0.375,
+              "title": "voicing:sparse_funk_voicing -[CONSTRAINS]-> caution:overcrowded_frequency_range"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mathrock_fmaj7",
+      "query": "Fmaj7 做 mathrock riff 怎么结合开放弦和高把位指型",
+      "runs": [
+        {
+          "backend": "none",
+          "intent": "mixed_arrangement",
+          "judgement": {
+            "sufficient": true,
+            "confidence": 0.89,
+            "missing": [],
+            "warnings": [],
+            "evidence_type_count": 3,
+            "text_count": 40,
+            "visual_count": 25,
+            "kg_count": 24,
+            "next_queries": []
+          },
+          "timings": {
+            "model_load_seconds": 1.9000144675374031e-06,
+            "fretboard_text_seconds": 0.05881270000827499,
+            "visual_caption_seconds": 0.08400289999553934,
+            "style_text_seconds": 0.06342600000789389,
+            "kg_seconds": 0.024815699987811968,
+            "model_rerank_seconds": 3.580001066438854e-05,
+            "total_seconds": 0.24195210001198575,
+            "kg_status": "neo4j"
+          },
+          "answer_seed": {
+            "recommended_structure": [
+              "结论",
+              "相关教材证据",
+              "视觉/指法证据",
+              "KG/风格关系",
+              "可操作编配建议",
+              "不确定点"
+            ],
+            "top_text_ids": [
+              "text:chunk_0010",
+              "text:chunk_0004",
+              "text:chunk_0009"
+            ],
+            "top_visual_ids": [
+              "visual_caption:fretboard_answer_E44_6",
+              "visual_caption:fretboard_answer_E38_4",
+              "visual_caption:fretboard_answer_E24_8"
+            ],
+            "top_kg_ids": [
+              "kg:chord:shell_voicing:ENABLES:guitar_idiom:high_gain_riff_clarity",
+              "kg:chord:m7b5:ENABLES:guitar_idiom:rootless_shell_voicing_on_4_strings",
+              "kg:style:midwest_emo:EVOKES:feature:open_string_drone",
+              "kg:tuning:DAEAC#E:ENABLES:voicing:open_string_maj9_cluster",
+              "kg:chord:major_triad:SUGGESTS:pattern:caged_system_shapes"
+            ],
+            "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+            "model_rerank": {
+              "text": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              },
+              "visual": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              },
+              "kg": {
+                "enabled": false,
+                "provider": "none",
+                "reason": "disabled"
+              }
+            }
+          },
+          "top_text": [
+            {
+              "evidence_id": "text:chunk_0010",
+              "source_id": "mathrock_pdf_steve_h",
+              "score": 1.3652,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Math Rock Guitar E-book"
+            },
+            {
+              "evidence_id": "text:chunk_0004",
+              "source_id": "mathrock_text_course",
+              "score": 1.22729,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "mathrock教学课"
+            },
+            {
+              "evidence_id": "text:chunk_0009",
+              "source_id": "mathrock_pdf_steve_h",
+              "score": 1.21646,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "Math Rock Guitar E-book"
+            },
+            {
+              "evidence_id": "text:chunk_0002",
+              "source_id": "mathrock_text_course",
+              "score": 1.00022,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "mathrock教学课"
+            },
+            {
+              "evidence_id": "text:fretboard_text_0108",
+              "source_id": "fretboard_handbook_clean_text",
+              "score": 0.99633,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册正文清洗层"
+            }
+          ],
+          "top_visual": [
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E44_6",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.19019,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E38_4",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.17019,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E24_8",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.11067,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E38_2",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.08387,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E38_3",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.06747,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "吉他指板手册：题目级练习答案图"
+            }
+          ],
+          "top_kg": [
+            {
+              "evidence_id": "kg:chord:shell_voicing:ENABLES:guitar_idiom:high_gain_riff_clarity",
+              "source_id": "GuitarIdiom",
+              "score": 1.54,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "chord:shell_voicing -[ENABLES]-> guitar_idiom:high_gain_riff_clarity"
+            },
+            {
+              "evidence_id": "kg:chord:m7b5:ENABLES:guitar_idiom:rootless_shell_voicing_on_4_strings",
+              "source_id": "GuitarIdiom",
+              "score": 1.5,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "chord:m7b5 -[ENABLES]-> guitar_idiom:rootless_shell_voicing_on_4_strings"
+            },
+            {
+              "evidence_id": "kg:style:midwest_emo:EVOKES:feature:open_string_drone",
+              "source_id": "GuitarIdiom",
+              "score": 1.44,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "style:midwest_emo -[EVOKES]-> feature:open_string_drone"
+            },
+            {
+              "evidence_id": "kg:tuning:DAEAC#E:ENABLES:voicing:open_string_maj9_cluster",
+              "source_id": "GuitarIdiom",
+              "score": 1.37,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "tuning:DAEAC#E -[ENABLES]-> voicing:open_string_maj9_cluster"
+            },
+            {
+              "evidence_id": "kg:chord:major_triad:SUGGESTS:pattern:caged_system_shapes",
+              "source_id": "GuitarIdiom",
+              "score": 1.37,
+              "rerank_delta": null,
+              "rerank_raw": null,
+              "title": "chord:major_triad -[SUGGESTS]-> pattern:caged_system_shapes"
+            }
+          ]
+        },
+        {
+          "backend": "local",
+          "intent": "mixed_arrangement",
+          "judgement": {
+            "sufficient": true,
+            "confidence": 0.89,
+            "missing": [],
+            "warnings": [],
+            "evidence_type_count": 3,
+            "text_count": 40,
+            "visual_count": 25,
+            "kg_count": 24,
+            "next_queries": []
+          },
+          "timings": {
+            "model_load_seconds": 2.100015990436077e-06,
+            "fretboard_text_seconds": 0.05529460002435371,
+            "visual_caption_seconds": 0.048760200006654486,
+            "style_text_seconds": 0.045202899986179546,
+            "kg_seconds": 0.043231099989498034,
+            "model_rerank_seconds": 4.608404400001746,
+            "total_seconds": 4.81008270001621,
+            "kg_status": "neo4j"
+          },
+          "answer_seed": {
+            "recommended_structure": [
+              "结论",
+              "相关教材证据",
+              "视觉/指法证据",
+              "KG/风格关系",
+              "可操作编配建议",
+              "不确定点"
+            ],
+            "top_text_ids": [
+              "text:chunk_0010",
+              "text:chunk_0009",
+              "text:chunk_0004"
+            ],
+            "top_visual_ids": [
+              "visual_caption:fretboard_answer_E44_6",
+              "visual_caption:fretboard_answer_E38_4",
+              "visual_caption:fretboard_answer_E38_2"
+            ],
+            "top_kg_ids": [
+              "kg:chord:m7b5:ENABLES:guitar_idiom:rootless_shell_voicing_on_4_strings",
+              "kg:chord:shell_voicing:ENABLES:guitar_idiom:high_gain_riff_clarity",
+              "kg:tuning:DAEAC#E:ENABLES:voicing:open_string_maj9_cluster",
+              "kg:style:midwest_emo:EVOKES:feature:open_string_drone",
+              "kg:chord:major_triad:SUGGESTS:pattern:caged_system_shapes"
+            ],
+            "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+            "model_rerank": {
+              "text": {
+                "enabled": true,
+                "provider": "qwen3_causal_lm",
+                "model": "models/reranker/qwen3-reranker-0.6b",
+                "count": 40,
+                "weight": 0.35
+              },
+              "visual": {
+                "enabled": true,
+                "provider": "qwen3_causal_lm",
+                "model": "models/reranker/qwen3-reranker-0.6b",
+                "count": 25,
+                "weight": 0.35
+              },
+              "kg": {
+                "enabled": true,
+                "provider": "qwen3_causal_lm",
+                "model": "models/reranker/qwen3-reranker-0.6b",
+                "count": 24,
+                "weight": 0.35
+              }
+            }
+          },
+          "top_text": [
+            {
+              "evidence_id": "text:chunk_0010",
+              "source_id": "mathrock_pdf_steve_h",
+              "score": 1.68865,
+              "rerank_delta": 0.32345,
+              "rerank_raw": 2.5,
+              "title": "Math Rock Guitar E-book"
+            },
+            {
+              "evidence_id": "text:chunk_0009",
+              "source_id": "mathrock_pdf_steve_h",
+              "score": 1.51992,
+              "rerank_delta": 0.30346,
+              "rerank_raw": 1.875,
+              "title": "Math Rock Guitar E-book"
+            },
+            {
+              "evidence_id": "text:chunk_0004",
+              "source_id": "mathrock_text_course",
+              "score": 1.50666,
+              "rerank_delta": 0.27937,
+              "rerank_raw": 1.375,
+              "title": "mathrock教学课"
+            },
+            {
+              "evidence_id": "text:chunk_0002",
+              "source_id": "mathrock_text_course",
+              "score": 1.33362,
+              "rerank_delta": 0.3334,
+              "rerank_raw": 3.0,
+              "title": "mathrock教学课"
+            },
+            {
+              "evidence_id": "text:chunk_0006",
+              "source_id": "mathrock_text_course",
+              "score": 1.29702,
+              "rerank_delta": 0.31663,
+              "rerank_raw": 2.25,
+              "title": "mathrock教学课"
+            }
+          ],
+          "top_visual": [
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E44_6",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.41816,
+              "rerank_delta": 0.22797,
+              "rerank_raw": 0.625,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E38_4",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.37762,
+              "rerank_delta": 0.20743,
+              "rerank_raw": 0.375,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E38_2",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.31184,
+              "rerank_delta": 0.22797,
+              "rerank_raw": 0.625,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E38_3",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.24247,
+              "rerank_delta": 0.175,
+              "rerank_raw": 0.0,
+              "title": "吉他指板手册：题目级练习答案图"
+            },
+            {
+              "evidence_id": "visual_caption:fretboard_answer_E24_3",
+              "source_id": "fretboard_handbook_question_answer",
+              "score": 1.22199,
+              "rerank_delta": 0.21786,
+              "rerank_raw": 0.5,
+              "title": "吉他指板手册：题目级练习答案图"
+            }
+          ],
+          "top_kg": [
+            {
+              "evidence_id": "kg:chord:m7b5:ENABLES:guitar_idiom:rootless_shell_voicing_on_4_strings",
+              "source_id": "GuitarIdiom",
+              "score": 1.64257,
+              "rerank_delta": 0.14257,
+              "rerank_raw": -0.375,
+              "title": "chord:m7b5 -[ENABLES]-> guitar_idiom:rootless_shell_voicing_on_4_strings"
+            },
+            {
+              "evidence_id": "kg:chord:shell_voicing:ENABLES:guitar_idiom:high_gain_riff_clarity",
+              "source_id": "GuitarIdiom",
+              "score": 1.61422,
+              "rerank_delta": 0.07422,
+              "rerank_raw": -1.3125,
+              "title": "chord:shell_voicing -[ENABLES]-> guitar_idiom:high_gain_riff_clarity"
+            },
+            {
+              "evidence_id": "kg:tuning:DAEAC#E:ENABLES:voicing:open_string_maj9_cluster",
+              "source_id": "GuitarIdiom",
+              "score": 1.56136,
+              "rerank_delta": 0.19136,
+              "rerank_raw": 0.1875,
+              "title": "tuning:DAEAC#E -[ENABLES]-> voicing:open_string_maj9_cluster"
+            },
+            {
+              "evidence_id": "kg:style:midwest_emo:EVOKES:feature:open_string_drone",
+              "source_id": "GuitarIdiom",
+              "score": 1.45869,
+              "rerank_delta": 0.01869,
+              "rerank_raw": -2.875,
+              "title": "style:midwest_emo -[EVOKES]-> feature:open_string_drone"
+            },
+            {
+              "evidence_id": "kg:chord:major_triad:SUGGESTS:pattern:caged_system_shapes",
+              "source_id": "GuitarIdiom",
+              "score": 1.41172,
+              "rerank_delta": 0.04172,
+              "rerank_raw": -2.0,
+              "title": "chord:major_triad -[SUGGESTS]-> pattern:caged_system_shapes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

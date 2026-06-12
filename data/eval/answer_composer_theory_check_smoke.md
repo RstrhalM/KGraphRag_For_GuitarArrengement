@@ -1,0 +1,160 @@
+
+## Composed Answer
+
+**Summary:** 基于标准调弦，利用 F Lydian 调式色彩（B音作为#11）结合开放弦 Drone 技巧构建 Math Rock Riff，推荐使用低把位 Fmaj7 琶音指型与切分节奏。
+
+在标准调弦下为 Fmaj7 编写 Math Rock 风格的开放弦 Riff，核心在于利用“持续音（Drone）”与“移动和弦形状”的对比 [kg:style:midwest_emo:EVOKES:feature:open_string_drone]。
+
+**1. 和声与指型选择：**
+Fmaj7 的和弦内音为 F、A、C、E。在 Math Rock 中，常引入 Lydian 调式的 #11 音（B）来增加张力，而非将其视为三音 [theory_checks]。你可以参考 Fmaj7 的琶音指型 [text:fretboard_text_0099]，但在编配时，建议保留高音 E 弦或 B 弦的空弦音作为持续音。虽然证据中展示了 F 小调指型 [visual_caption:fretboard_answer_E14_7]，但你需要将其调整为 F 大调/Lydian 语境，重点关注根音 F 和大七度 E 的位置。
+
+**2. 开放弦运用策略：**
+Math Rock 风格强调“jangly”质感，即通过让空弦音（如高 E、B）在演奏其他音符时持续鸣响 [kg:style:midwest_emo:EVOKES:feature:open_string_drone]。例如，在弹奏 F 根音或 C 五音时，让高音空弦保持振动，形成类似 add9 或 maj7#11 的复合音响。尽管某些特殊调弦（如 DADGAD）更利于此 [kg:tuning:DADGAD:ENABLES:heuristic:ringing_open_string_anchor]，但在标准调弦下，你可以利用低把位（0-5品）的几何形状 [visual_caption:fretboard_answer_E04_9] 来实现类似的指法便利性。
+
+**3. 节奏建议：**
+采用复杂的切分音和连复段（Riff）结构。避免简单的正拍扫弦，尝试将重音放在弱拍，并利用休止符制造“数学感”的断裂。参考五声音阶的“每弦两音”几何规律 [kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry] 来设计快速的跨弦乐句，这能提高 Riff 的可玩性和流畅度。
+
+### Evidence Used
+
+- `{"evidence_id": "text:fretboard_text_0099", "role": "text", "why": "提供 Fmaj7 琶音的理论基础和指型参考"}`
+- `{"evidence_id": "kg:style:midwest_emo:EVOKES:feature:open_string_drone", "role": "kg", "why": "解释 Math Rock/Midwest Emo 风格中开放弦作为持续音的核心美学"}`
+- `{"evidence_id": "visual_caption:fretboard_answer_E04_9", "role": "visual", "why": "提供低把位包含开放弦的指板几何形状参考，适用于开放弦 Riff 设计"}`
+- `{"evidence_id": "kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry", "role": "kg", "why": "提供构建快速跨弦 Riff 的指法几何建议"}`
+- `{"evidence_id": "visual_caption:fretboard_answer_E14_7", "role": "visual", "why": "作为指板位置参考，虽为小调指型，但可用于定位 F 根音及相关音程关系"}`
+
+### Fretboard Options
+
+- `{"label": "低把位 Fmaj7 分解与开放弦混合", "evidence_id": "visual_caption:fretboard_answer_E04_9", "usage": "利用 0-5 品的指板空间，将 F (1弦1品)、A (2弦1品)、C (2弦3品) 等和弦音与空弦 E、B 结合，形成不完整的 voicing，留出空间给持续音。"}`
+- `{"label": "Fmaj7 琶音指型变体", "evidence_id": "text:fretboard_text_0099", "usage": "参考教材中的 Fmaj7 琶音指型，但在演奏时故意省略部分内音，替换为相邻的空弦音，以创造 Math Rock 特有的稀疏且共鸣丰富的听感。"}`
+
+### Style Arrangement Advice
+
+- `{"advice": "使用‘持续音（Drone）’技巧：在移动低音或内声部旋律时，保持高音空弦（特别是 E 和 B 弦）持续鸣响，营造 Lydian 色彩的宽广声场。", "evidence_ids": ["kg:style:midwest_emo:EVOKES:feature:open_string_drone"], "confidence": "high"}`
+- `{"advice": "节奏上采用非对称节拍或复杂切分，避免常规 4/4 强拍重音，利用休止符制造‘数学’般的精确停顿感。", "evidence_ids": ["text:chunk_0006"], "confidence": "medium"}`
+- `{"advice": "利用‘每弦两音’的几何指法逻辑设计快速 Riff 乐句，提高跨弦演奏的流畅度和速度。", "evidence_ids": ["kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry"], "confidence": "medium"}`
+
+### KG Reasoning
+
+- `{"relation": "style:midwest_emo -[EVOKES]-> feature:open_string_drone", "evidence_id": "kg:style:midwest_emo:EVOKES:feature:open_string_drone", "interpretation": "Math Rock 分支风格 Midwest Emo 依赖开放弦作为踏板音或延伸音（9th/11th），这是构建 Fmaj7 Riff 时的关键音色来源。"}`
+- `{"relation": "scale:pentatonic_major -[ENABLES]-> heuristic:two_notes_per_string_geometry", "evidence_id": "kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry", "interpretation": "虽然目标是 Fmaj7，但借用五声音阶的指法几何规律可以帮助设计更符合人体工学的快速 Riff 片段。"}`
+
+### Theory Checks
+
+- Fmaj7 和弦内音为 F (Root), A (3rd), C (5th), E (maj7)。
+- B 音在 F 大调中为 #11 (Lydian 特征音)，在 Fmaj7 语境下可作为色彩音（Tension），不应被称为三音。
+- G 音为 9 音，D 音为 13 音，均可作为延伸音加入 Riff，但需注意不要与和弦内音冲突造成浑浊。
+- 确保证据中提到的 F 小调指型 [visual_caption:fretboard_answer_E14_7] 在使用时需调整三音为 A (自然大调) 而非 Ab (小调)。
+
+### Uncertainties
+
+- 用户未指定是否接受特殊调弦，本建议严格基于标准调弦，但证据显示特殊调弦（如 DADGAD）在 Math Rock 中很常见 [kg:tuning:DADGAD:ENABLES:heuristic:ringing_open_string_anchor]。
+- 具体的 BPM 和拍号未提供，节奏建议仅基于风格特征。
+
+### Next Steps
+
+- 在吉他上尝试 F 根音（1弦1品或6弦1品）与高音空弦 E、B 的同时鸣响。
+- 练习 F Lydian 音阶（F G A B C D E），重点关注 B 音与空弦的结合。
+- 尝试将 Fmaj7 琶音指型 [text:fretboard_text_0099] 拆解为单音线条，并插入空弦作为过门。
+
+### Raw JSON
+
+```json
+{
+  "summary": "基于标准调弦，利用 F Lydian 调式色彩（B音作为#11）结合开放弦 Drone 技巧构建 Math Rock Riff，推荐使用低把位 Fmaj7 琶音指型与切分节奏。",
+  "answer": "在标准调弦下为 Fmaj7 编写 Math Rock 风格的开放弦 Riff，核心在于利用“持续音（Drone）”与“移动和弦形状”的对比 [kg:style:midwest_emo:EVOKES:feature:open_string_drone]。\n\n**1. 和声与指型选择：**\nFmaj7 的和弦内音为 F、A、C、E。在 Math Rock 中，常引入 Lydian 调式的 #11 音（B）来增加张力，而非将其视为三音 [theory_checks]。你可以参考 Fmaj7 的琶音指型 [text:fretboard_text_0099]，但在编配时，建议保留高音 E 弦或 B 弦的空弦音作为持续音。虽然证据中展示了 F 小调指型 [visual_caption:fretboard_answer_E14_7]，但你需要将其调整为 F 大调/Lydian 语境，重点关注根音 F 和大七度 E 的位置。\n\n**2. 开放弦运用策略：**\nMath Rock 风格强调“jangly”质感，即通过让空弦音（如高 E、B）在演奏其他音符时持续鸣响 [kg:style:midwest_emo:EVOKES:feature:open_string_drone]。例如，在弹奏 F 根音或 C 五音时，让高音空弦保持振动，形成类似 add9 或 maj7#11 的复合音响。尽管某些特殊调弦（如 DADGAD）更利于此 [kg:tuning:DADGAD:ENABLES:heuristic:ringing_open_string_anchor]，但在标准调弦下，你可以利用低把位（0-5品）的几何形状 [visual_caption:fretboard_answer_E04_9] 来实现类似的指法便利性。\n\n**3. 节奏建议：**\n采用复杂的切分音和连复段（Riff）结构。避免简单的正拍扫弦，尝试将重音放在弱拍，并利用休止符制造“数学感”的断裂。参考五声音阶的“每弦两音”几何规律 [kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry] 来设计快速的跨弦乐句，这能提高 Riff 的可玩性和流畅度。",
+  "evidence_used": [
+    {
+      "evidence_id": "text:fretboard_text_0099",
+      "role": "text",
+      "why": "提供 Fmaj7 琶音的理论基础和指型参考"
+    },
+    {
+      "evidence_id": "kg:style:midwest_emo:EVOKES:feature:open_string_drone",
+      "role": "kg",
+      "why": "解释 Math Rock/Midwest Emo 风格中开放弦作为持续音的核心美学"
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E04_9",
+      "role": "visual",
+      "why": "提供低把位包含开放弦的指板几何形状参考，适用于开放弦 Riff 设计"
+    },
+    {
+      "evidence_id": "kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry",
+      "role": "kg",
+      "why": "提供构建快速跨弦 Riff 的指法几何建议"
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E14_7",
+      "role": "visual",
+      "why": "作为指板位置参考，虽为小调指型，但可用于定位 F 根音及相关音程关系"
+    }
+  ],
+  "fretboard_options": [
+    {
+      "label": "低把位 Fmaj7 分解与开放弦混合",
+      "evidence_id": "visual_caption:fretboard_answer_E04_9",
+      "usage": "利用 0-5 品的指板空间，将 F (1弦1品)、A (2弦1品)、C (2弦3品) 等和弦音与空弦 E、B 结合，形成不完整的 voicing，留出空间给持续音。"
+    },
+    {
+      "label": "Fmaj7 琶音指型变体",
+      "evidence_id": "text:fretboard_text_0099",
+      "usage": "参考教材中的 Fmaj7 琶音指型，但在演奏时故意省略部分内音，替换为相邻的空弦音，以创造 Math Rock 特有的稀疏且共鸣丰富的听感。"
+    }
+  ],
+  "style_arrangement_advice": [
+    {
+      "advice": "使用‘持续音（Drone）’技巧：在移动低音或内声部旋律时，保持高音空弦（特别是 E 和 B 弦）持续鸣响，营造 Lydian 色彩的宽广声场。",
+      "evidence_ids": [
+        "kg:style:midwest_emo:EVOKES:feature:open_string_drone"
+      ],
+      "confidence": "high"
+    },
+    {
+      "advice": "节奏上采用非对称节拍或复杂切分，避免常规 4/4 强拍重音，利用休止符制造‘数学’般的精确停顿感。",
+      "evidence_ids": [
+        "text:chunk_0006"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "advice": "利用‘每弦两音’的几何指法逻辑设计快速 Riff 乐句，提高跨弦演奏的流畅度和速度。",
+      "evidence_ids": [
+        "kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "kg_reasoning": [
+    {
+      "relation": "style:midwest_emo -[EVOKES]-> feature:open_string_drone",
+      "evidence_id": "kg:style:midwest_emo:EVOKES:feature:open_string_drone",
+      "interpretation": "Math Rock 分支风格 Midwest Emo 依赖开放弦作为踏板音或延伸音（9th/11th），这是构建 Fmaj7 Riff 时的关键音色来源。"
+    },
+    {
+      "relation": "scale:pentatonic_major -[ENABLES]-> heuristic:two_notes_per_string_geometry",
+      "evidence_id": "kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry",
+      "interpretation": "虽然目标是 Fmaj7，但借用五声音阶的指法几何规律可以帮助设计更符合人体工学的快速 Riff 片段。"
+    }
+  ],
+  "theory_checks": [
+    "Fmaj7 和弦内音为 F (Root), A (3rd), C (5th), E (maj7)。",
+    "B 音在 F 大调中为 #11 (Lydian 特征音)，在 Fmaj7 语境下可作为色彩音（Tension），不应被称为三音。",
+    "G 音为 9 音，D 音为 13 音，均可作为延伸音加入 Riff，但需注意不要与和弦内音冲突造成浑浊。",
+    "确保证据中提到的 F 小调指型 [visual_caption:fretboard_answer_E14_7] 在使用时需调整三音为 A (自然大调) 而非 Ab (小调)。"
+  ],
+  "uncertainties": [
+    "用户未指定是否接受特殊调弦，本建议严格基于标准调弦，但证据显示特殊调弦（如 DADGAD）在 Math Rock 中很常见 [kg:tuning:DADGAD:ENABLES:heuristic:ringing_open_string_anchor]。",
+    "具体的 BPM 和拍号未提供，节奏建议仅基于风格特征。"
+  ],
+  "next_steps": [
+    "在吉他上尝试 F 根音（1弦1品或6弦1品）与高音空弦 E、B 的同时鸣响。",
+    "练习 F Lydian 音阶（F G A B C D E），重点关注 B 音与空弦的结合。",
+    "尝试将 Fmaj7 琶音指型 [text:fretboard_text_0099] 拆解为单音线条，并插入空弦作为过门。"
+  ],
+  "composer": {
+    "provider": "llm_api",
+    "model": "qwen3.7-plus",
+    "temperature": 0.2
+  }
+}
+```

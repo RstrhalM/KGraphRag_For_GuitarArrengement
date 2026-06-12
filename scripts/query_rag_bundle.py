@@ -25,16 +25,56 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 from local_text_embedding import DEFAULT_LOCAL_MODEL, LocalTransformerEmbedder
+from rerank_backend import RerankConfig, apply_model_rerank
 
 
 DEFAULT_CHROMA_PATH = ROOT / "data" / "chroma"
 DEFAULT_REPORT_MD = ROOT / "data" / "eval" / "query_rag_bundle_report.md"
 DEFAULT_REPORT_JSON = ROOT / "data" / "eval" / "query_rag_bundle_report.json"
+DEFAULT_CANONICAL_VISUAL_SIDECAR = (
+    ROOT
+    / "data"
+    / "processed"
+    / "fretboard_handbook"
+    / "question_answer_visual_caption_canonical"
+    / "fretboard_answer_visual_caption_canonical_terms.jsonl"
+)
+DEFAULT_VISUAL_CAPTION_SOURCE = (
+    ROOT
+    / "data"
+    / "processed"
+    / "fretboard_handbook"
+    / "question_answer_visual_caption_layer"
+    / "fretboard_answer_visual_caption_accepted_all.jsonl"
+)
+MATHROCK_CANONICAL_VISUAL_SIDECAR = (
+    ROOT
+    / "data"
+    / "processed"
+    / "mathrock"
+    / "style_visual_caption_trial"
+    / "batch_001_canonical"
+    / "canonical_terms_review.jsonl"
+)
+MATHROCK_VISUAL_CAPTION_SOURCE = (
+    ROOT
+    / "data"
+    / "processed"
+    / "mathrock"
+    / "style_visual_caption_trial"
+    / "batch_001_captions"
+    / "visual_caption_results.jsonl"
+)
 
 COLLECTIONS = {
     "fretboard_text": "guitar_fretboard_handbook_text_qwen3_06b",
     "visual_caption": "guitar_fretboard_answer_captions_qwen3_06b",
     "style_text": "guitar_text_chunks_qwen3_06b",
+}
+
+VISUAL_COLLECTIONS = {
+    "formal": COLLECTIONS["visual_caption"],
+    "mathrock_mixed_trial": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
 }
 
 TEXT_COLLECTIONS = {"fretboard_text", "style_text"}
@@ -101,7 +141,7 @@ VISUAL_TERMS = [
 
 STYLE_KEYWORDS = {
     "funk": ["funk", "groove", "ghost", "muted", "chuck", "切分", "十六分", "律动", "消音"],
-    "mathrock": ["mathrock", "math rock", "midwest", "DADGAD", "FACGCE", "tapping", "open string", "开放弦", "点弦", "奇数"],
+    "mathrock": ["mathrock", "math rock", "midwest", "数摇", "数学摇滚", "DADGAD", "FACGCE", "奇数"],
     "blues": ["blues", "shuffle", "turnaround", "bending", "布鲁斯"],
     "metal": ["metal", "djent", "palm mute", "alternate picking", "金属"],
     "jazz": ["jazz", "ii-V-I", "shell voicing", "chord melody", "爵士"],
@@ -157,6 +197,40 @@ KG_TERMS = [
 
 CHORD_RE = re.compile(r"\b[A-G](?:#|b)?(?:maj|min|m|mi|dim|aug|sus|add)?\d*(?:[#b]\d+)?(?:/[A-G](?:#|b)?)?\b", re.I)
 TOKEN_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9_+\-/'.#]*|\d+(?:\.\d+)?|[\u4e00-\u9fff]{2,}")
+
+ALT_TUNING_TERMS = [
+    "dadgad",
+    "facgce",
+    "drop tuning",
+    "open tuning",
+    "alternate tuning",
+    "特殊调弦",
+    "开放调弦",
+    "降弦",
+    "特调",
+    "tuning:dadgad",
+    "tuning:drop",
+]
+FRET_REGION_TERMS = {
+    "low": ["低把位", "low position", "low fret", "open position", "first position", "1st position"],
+    "middle": ["中把位", "middle position", "mid position"],
+    "high": ["高把位", "high position", "high fret", "upper position", "upper fret"],
+}
+DIRECT_KG_GOAL_TERMS = [
+    "riff",
+    "groove",
+    "voicing",
+    "leave_space",
+    "space",
+    "贝斯",
+    "频率",
+    "relative",
+    "相对",
+    "phrasing",
+    "hook",
+    "arrangement",
+    "编配",
+]
 
 
 @dataclass
@@ -242,6 +316,14 @@ def as_list(value: Any) -> list[Any]:
     return [value]
 
 
+def as_bool(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "yes", "y"}
+    return bool(value)
+
+
 def compact(text: str, limit: int = 600) -> str:
     text = " ".join(str(text or "").split())
     return text if len(text) <= limit else text[: limit - 1] + "..."
@@ -253,6 +335,61 @@ def query_tokens(query: str) -> set[str]:
         if term.lower() in query.lower():
             tokens.add(term.lower())
     return {token for token in tokens if len(token) >= 2}
+
+
+def compact_blob(*parts: Any) -> str:
+    return " ".join(str(part or "") for part in parts).lower().replace("♭", "b").replace("♯", "#")
+
+
+def unique_strings(values: list[Any]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for value in values:
+        text = str(value).strip()
+        if not text or text.lower() in seen:
+            continue
+        seen.add(text.lower())
+        out.append(text)
+    return out
+
+
+def term_in_blob(term: str, blob: str) -> bool:
+    needle = str(term or "").strip().lower().replace("♭", "b").replace("♯", "#")
+    if not needle:
+        return False
+    if re.fullmatch(r"[a-g](?:#|b)?", needle):
+        return re.search(rf"(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])", blob) is not None
+    return needle in blob
+
+
+def key_term_aliases(term: str) -> list[str]:
+    raw = str(term or "").strip().replace("♭", "b").replace("♯", "#")
+    if not raw:
+        return []
+    aliases = [raw]
+    lowered = raw.lower()
+    english_match = re.search(r"\b([a-g](?:#|b)?)\s*(major|minor|maj|min)\b", lowered)
+    if english_match:
+        root, mode = english_match.groups()
+        root = root.upper()
+        if mode in {"major", "maj"}:
+            aliases.extend([f"{root} major", f"{root} maj", f"{root}大调", f"{root} 大调", f"{root}大调音阶"])
+        else:
+            aliases.extend([f"{root} minor", f"{root} min", f"{root}m", f"{root}小调", f"{root} 小调", f"{root}自然小调", f"{root}小调音阶"])
+    chinese_match = re.search(r"([A-G](?:#|b)?)\s*(大调|小调)", raw, re.I)
+    if chinese_match:
+        root, mode = chinese_match.groups()
+        root = root.upper()
+        if mode == "大调":
+            aliases.extend([f"{root} major", f"{root} maj", f"{root}大调", f"{root} 大调", f"{root}大调音阶"])
+        else:
+            aliases.extend([f"{root} minor", f"{root} min", f"{root}m", f"{root}小调", f"{root} 小调", f"{root}自然小调", f"{root}小调音阶"])
+    return unique_strings(aliases)
+
+
+def key_term_in_blob(term: str, blob: str) -> bool:
+    normalized_blob = compact_blob(blob)
+    return any(term_in_blob(alias, normalized_blob) for alias in key_term_aliases(term))
 
 
 def has_any(query: str, terms: list[str]) -> bool:
@@ -353,7 +490,11 @@ def analyze_query(query: str, context: dict[str, Any] | None = None) -> QueryAna
     )
 
 
-def plan_retrieval(analysis: QueryAnalysis, top_k: int) -> list[SearchTask]:
+def plan_retrieval(
+    analysis: QueryAnalysis,
+    top_k: int,
+    visual_collection: str = COLLECTIONS["visual_caption"],
+) -> list[SearchTask]:
     tasks: list[SearchTask] = []
     if analysis.needs_fretboard_text:
         tasks.append(
@@ -374,7 +515,7 @@ def plan_retrieval(analysis: QueryAnalysis, top_k: int) -> list[SearchTask]:
             SearchTask(
                 name="visual_caption",
                 backend="chroma",
-                collection=COLLECTIONS["visual_caption"],
+                collection=visual_collection,
                 query=visual_query,
                 top_k=top_k,
                 reason="具体图形/指法/voicing/答案图证据",
@@ -410,10 +551,200 @@ def plan_retrieval(analysis: QueryAnalysis, top_k: int) -> list[SearchTask]:
     return tasks
 
 
+def query_plan_enabled_tools(query_plan: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    raw_plan = query_plan.get("retrieval_plan")
+    if not isinstance(raw_plan, dict):
+        return {}
+    enabled: dict[str, dict[str, Any]] = {}
+    for name in ("fretboard_text", "style_text", "visual_caption", "kg"):
+        item = raw_plan.get(name)
+        if not isinstance(item, dict) or not item.get("enabled"):
+            continue
+        enabled[name] = item
+    return enabled
+
+
+def analysis_from_query_plan(raw_query: str, query_plan: dict[str, Any]) -> QueryAnalysis:
+    enabled = query_plan_enabled_tools(query_plan)
+    normalized = str(query_plan.get("normalized_query") or raw_query)
+    theory_terms: list[str] = []
+    for key in ("harmonic_materials", "melodic_materials", "fretboard_constraints"):
+        theory_terms.extend(str(item) for item in as_list(query_plan.get(key)) if str(item).strip())
+    technique_terms = [str(item) for item in as_list(query_plan.get("techniques")) if str(item).strip()]
+    matched_rules = [f"llm_plan:{name}" for name in enabled]
+    return QueryAnalysis(
+        query=normalized,
+        intent=str(query_plan.get("intent") or "mixed_arrangement"),
+        style_hints=[str(item) for item in as_list(query_plan.get("style_hints")) if str(item).strip()],
+        theory_terms=theory_terms,
+        technique_terms=technique_terms,
+        needs_fretboard_text="fretboard_text" in enabled,
+        needs_visual="visual_caption" in enabled,
+        needs_style_text="style_text" in enabled,
+        needs_kg="kg" in enabled,
+        confidence=round(float(query_plan.get("confidence") or 0.0), 3),
+        matched_rules=matched_rules or ["llm_plan_empty_fallback"],
+    )
+
+
+def plan_retrieval_from_query_plan(
+    query_plan: dict[str, Any],
+    top_k: int,
+    visual_collection: str = COLLECTIONS["visual_caption"],
+) -> list[SearchTask]:
+    enabled = query_plan_enabled_tools(query_plan)
+    normalized = str(query_plan.get("normalized_query") or query_plan.get("raw_query") or "").strip()
+    specs = {
+        "fretboard_text": ("chroma", COLLECTIONS["fretboard_text"], top_k, "LLM QueryPlan: 指板/理论教材文本证据"),
+        "style_text": ("chroma", COLLECTIONS["style_text"], top_k, "LLM QueryPlan: 风格/riff/节奏教材文本证据"),
+        "visual_caption": ("chroma", visual_collection, top_k, "LLM QueryPlan: 指型/voicing/图形 caption 证据"),
+        "kg": ("neo4j_or_file", None, max(top_k, 8), "LLM QueryPlan: 技法关系/风格迁移/编配启发"),
+    }
+    tasks: list[SearchTask] = []
+    for name, item in enabled.items():
+        backend, collection, task_top_k, default_reason = specs[name]
+        task_query = str(item.get("query") or normalized or query_plan.get("raw_query") or "").strip()
+        if not task_query:
+            continue
+        tasks.append(
+            SearchTask(
+                name=name,
+                backend=backend,
+                collection=collection,
+                query=task_query,
+                top_k=task_top_k,
+                reason=str(item.get("reason") or default_reason),
+            )
+        )
+    return tasks
+
+
 def normalize_distance(distance: float | int | None) -> float:
     if distance is None:
         return 0.0
     return max(0.0, 1.0 - float(distance))
+
+
+def append_unique_term(terms: list[str], term: str) -> None:
+    normalized = term.strip().lower()
+    if normalized and normalized not in {item.strip().lower() for item in terms}:
+        terms.append(normalized)
+
+
+def remove_terms_by_prefix(terms: list[str], prefixes: tuple[str, ...]) -> list[str]:
+    return [term for term in terms if not str(term).strip().lower().startswith(prefixes)]
+
+
+def normalize_root_token(value: str) -> str:
+    return value.strip().lower().replace("♭", "b").replace("♯", "#")
+
+
+def normalize_chord_quality_token(value: str) -> str:
+    quality = value.strip().lower().replace("major", "maj").replace("minor", "min")
+    mapping = {
+        "ma7": "maj7",
+        "major7": "maj7",
+        "m7": "min7",
+        "mi7": "min7",
+        "min7": "min7",
+    }
+    return mapping.get(quality, quality)
+
+
+def exact_chord_terms_from_plan(query_plan: dict[str, Any], target_roots: list[str], chord_qualities: list[str]) -> list[str]:
+    terms: list[str] = []
+    for material in as_list(query_plan.get("harmonic_materials")):
+        match = re.search(r"\b([A-G](?:#|b|♭|♯)?)(maj9#11|maj7#11|maj#11|maj9|m11|min11|mi11|11|13|7#9|7b9|7#5|7b5|maj7|m7|mi7|min7|dim7|m7b5|sus4|sus2|add9|6/9|7)\b", str(material), re.I)
+        if match:
+            root = normalize_root_token(match.group(1))
+            quality = normalize_chord_quality_token(match.group(2))
+            terms.append(f"chord:{root}_{quality}")
+    if not terms and target_roots and chord_qualities:
+        for root in target_roots[:1]:
+            for quality in chord_qualities[:1]:
+                terms.append(f"chord:{normalize_root_token(str(root))}_{normalize_chord_quality_token(str(quality))}")
+    return unique_strings(terms)
+
+
+def is_tapping_tab_request(query_plan: dict[str, Any], query_blob: str) -> bool:
+    values = " ".join(
+        [
+            query_blob,
+            " ".join(str(item) for item in as_list(query_plan.get("techniques"))),
+            " ".join(str(item) for item in as_list(query_plan.get("canonical_terms"))),
+            " ".join(str(item) for item in as_list(query_plan.get("required_terms"))),
+        ]
+    ).lower()
+    return any(term in values for term in ["tapping", "点弦", "two_hand_tapping", "two-hand tapping"])
+
+
+def is_riff_tab_request(query_plan: dict[str, Any], query_blob: str) -> bool:
+    values = " ".join(
+        [
+            query_blob,
+            " ".join(str(item) for item in as_list(query_plan.get("techniques"))),
+            " ".join(str(item) for item in as_list(query_plan.get("canonical_terms"))),
+        ]
+    ).lower()
+    return any(term in values for term in ["riff", "乐句", "谱例", "tab", "节奏型", "节拍"])
+
+
+def meter_terms_from_query(query_blob: str) -> list[str]:
+    terms: list[str] = []
+    for match in re.findall(r"\b(\d+)\s*/\s*(\d+)\b", query_blob):
+        terms.append(f"meter:{match[0]}_{match[1]}")
+    return unique_strings(terms)
+
+
+def refine_visual_query_terms(
+    query_plan: dict[str, Any],
+    query_blob: str,
+    target_roots: list[str],
+    chord_qualities: list[str],
+    canonical_terms: list[str],
+    required_terms: list[str],
+    optional_terms: list[str],
+) -> tuple[list[str], list[str], list[str]]:
+    chord_terms = exact_chord_terms_from_plan(query_plan, target_roots, chord_qualities)
+    for term in chord_terms:
+        append_unique_term(canonical_terms, term)
+
+    tapping_request = is_tapping_tab_request(query_plan, query_blob)
+    riff_request = is_riff_tab_request(query_plan, query_blob)
+    meter_terms = meter_terms_from_query(query_blob)
+
+    for term in meter_terms:
+        append_unique_term(canonical_terms, term)
+
+    if riff_request:
+        # Riff/tab queries should not be forced into generic scale or chord
+        # diagrams; the visual layer should prefer concrete notation excerpts.
+        required_terms = remove_terms_by_prefix(required_terms, ("visual_type:scale_pattern", "chord_quality:maj"))
+        for term in ["visual_type:tab_excerpt", "visual_subtype:riff_tab", "technique:riff", "concept:riff_composition"]:
+            append_unique_term(canonical_terms, term)
+        append_unique_term(required_terms, "visual_type:tab_excerpt")
+        append_unique_term(optional_terms, "visual_subtype:riff_tab")
+        if "math rock" in query_blob or "mathrock" in query_blob or "数摇" in query_blob or "数学摇滚" in query_blob:
+            append_unique_term(canonical_terms, "style:math_rock")
+            append_unique_term(required_terms, "style:math_rock")
+        if meter_terms:
+            append_unique_term(canonical_terms, "technique:irregular_meter")
+            append_unique_term(optional_terms, "technique:irregular_meter")
+            for term in meter_terms:
+                append_unique_term(required_terms, term)
+
+    if tapping_request:
+        required_terms = remove_terms_by_prefix(required_terms, ("visual_type:scale_pattern", "key:"))
+        for term in ["technique:tapping", "visual_type:tab_excerpt", "visual_subtype:tapping_example", "concept:arpeggio"]:
+            append_unique_term(canonical_terms, term)
+        append_unique_term(required_terms, "technique:tapping")
+        append_unique_term(optional_terms, "visual_subtype:tapping_example")
+
+    if chord_terms and tapping_request:
+        for term in chord_terms:
+            append_unique_term(required_terms, term)
+
+    return unique_strings(canonical_terms), unique_strings(required_terms), unique_strings(optional_terms)
 
 
 def token_boost(query: str, text: str) -> float:
@@ -445,6 +776,342 @@ def style_source_boost(query: str, source_id: str, title: str, document: str, me
         elif style.lower() in blob:
             boost += 0.12
     return boost
+
+
+def extract_constraints(query_plan: dict[str, Any] | None, analysis: QueryAnalysis) -> dict[str, Any]:
+    query_plan = query_plan or {}
+    raw_query = str(query_plan.get("raw_query") or analysis.query)
+    normalized_query = str(query_plan.get("normalized_query") or analysis.query)
+    query_blob = compact_blob(raw_query, normalized_query, analysis.query)
+    target_tuning = str(query_plan.get("target_tuning") or "").strip().lower().replace(" ", "_").replace("-", "_")
+    if not target_tuning:
+        if "facgce" in query_blob:
+            target_tuning = "facgce"
+        elif "dadgad" in query_blob:
+            target_tuning = "dadgad"
+        elif "drop d" in query_blob or "dropd" in query_blob:
+            target_tuning = "drop_d"
+        elif "drop" in query_blob or "降弦" in query_blob:
+            target_tuning = "drop"
+        elif "open tuning" in query_blob or "开放调弦" in query_blob:
+            target_tuning = "open"
+        else:
+            target_tuning = "standard"
+    if target_tuning in {"std", "standard_tuning", "标调", "标准调弦"}:
+        target_tuning = "standard"
+    tuning_term = f"tuning:{target_tuning}"
+    target_keys = unique_strings(as_list(query_plan.get("target_keys")) + as_list(query_plan.get("key_or_tonality")))
+    target_roots = unique_strings(as_list(query_plan.get("target_roots")))
+    chord_qualities = unique_strings(as_list(query_plan.get("chord_qualities")))
+    scale_or_mode = unique_strings(as_list(query_plan.get("scale_or_mode")))
+    canonical_terms = unique_strings(as_list(query_plan.get("canonical_terms")))
+    required_terms = unique_strings(as_list(query_plan.get("required_terms")))
+    optional_terms = unique_strings(as_list(query_plan.get("optional_terms")))
+    negative_constraints = unique_strings(as_list(query_plan.get("negative_constraints")))
+    fret_region = str(query_plan.get("fret_region") or "").strip().lower()
+    position_constraints = unique_strings(as_list(query_plan.get("position_constraints")) + as_list(query_plan.get("fretboard_constraints")))
+    if not target_keys:
+        for match in re.finditer(r"\b([a-g](?:#|b)?)\s+(major|minor|maj|min)\b", query_blob):
+            root, mode = match.groups()
+            target_keys.append(f"{root.upper()}{' major' if mode in {'major', 'maj'} else ' minor'}")
+        for match in re.finditer(r"([A-G](?:#|b|♭|♯)?)\s*(大调|小调)", raw_query):
+            root = match.group(1).replace("♭", "b").replace("♯", "#")
+            target_keys.append(f"{root} {'major' if match.group(2) == '大调' else 'minor'}")
+    if not target_roots:
+        for value in target_keys + analysis.theory_terms:
+            match = re.search(r"\b([A-G](?:#|b)?)", str(value), re.I)
+            if match:
+                target_roots.append(match.group(1))
+    if not chord_qualities:
+        for value in analysis.theory_terms + [raw_query, normalized_query]:
+            for match in re.findall(r"(maj9#11|maj7#11|maj#11|maj9|m11|min11|mi11|11|13|7#9|7b9|7#5|7b5|maj7|m7|mi7|min7|dim7|m7b5|sus4|sus2|add9|6/9|7)", str(value), re.I):
+                chord_qualities.append(match)
+    if not fret_region:
+        for region, terms in FRET_REGION_TERMS.items():
+            if any(term in query_blob for term in terms):
+                fret_region = region
+                break
+    allow_alternate_tuning = as_bool(query_plan.get("allow_alternate_tuning")) or any(term in query_blob for term in ALT_TUNING_TERMS)
+    if tuning_term not in {term.lower() for term in canonical_terms}:
+        canonical_terms.append(tuning_term)
+    if tuning_term not in {term.lower() for term in required_terms}:
+        required_terms.append(tuning_term)
+    if target_tuning != "standard":
+        allow_alternate_tuning = True
+    visual_required = as_bool(query_plan.get("visual_evidence_required")) or analysis.needs_visual
+    explicit_mathrock_intent = any(
+        marker in query_blob for marker in ["math rock", "mathrock", "数摇", "数学摇滚"]
+    )
+    style_hints = unique_strings(as_list(query_plan.get("style_hints")) + analysis.style_hints)
+    if not explicit_mathrock_intent:
+        style_hints = [style for style in style_hints if style.lower() != "mathrock"]
+    standard_tuning_intent = "标准调弦" in query_blob or "standard tuning" in query_blob
+    negative_techniques = {
+        technique
+        for technique, markers in {
+            "tapping": ["不需要点弦", "不要点弦", "非点弦", "without tapping", "no tapping"],
+            "arpeggio": ["不需要琶音", "不要琶音", "非琶音", "without arpeggio", "no arpeggio"],
+            "open_string": ["不需要开放弦", "不要开放弦", "非开放弦", "without open strings", "no open strings"],
+        }.items()
+        if any(marker in query_blob for marker in markers)
+    }
+    canonical_terms, required_terms, optional_terms = refine_visual_query_terms(
+        query_plan,
+        query_blob,
+        target_roots,
+        chord_qualities,
+        canonical_terms,
+        required_terms,
+        optional_terms,
+    )
+    return {
+        "target_keys": unique_strings(target_keys),
+        "target_roots": unique_strings(target_roots),
+        "chord_qualities": unique_strings(chord_qualities),
+        "scale_or_mode": unique_strings(scale_or_mode),
+        "fret_region": fret_region,
+        "position_constraints": position_constraints,
+        "canonical_terms": canonical_terms,
+        "required_terms": required_terms,
+        "optional_terms": optional_terms,
+        "negative_constraints": negative_constraints,
+        "target_tuning": target_tuning,
+        "requires_exact_key": as_bool(query_plan.get("requires_exact_key")) or bool(target_keys),
+        "requires_exact_chord": as_bool(query_plan.get("requires_exact_chord")) or bool(chord_qualities and target_roots),
+        "visual_evidence_required": visual_required,
+        "allow_alternate_tuning": allow_alternate_tuning,
+        "allow_exercise_reference": True if query_plan.get("allow_exercise_reference") is None else as_bool(query_plan.get("allow_exercise_reference")),
+        "style_hints": style_hints,
+        "techniques": unique_strings(as_list(query_plan.get("techniques")) + analysis.technique_terms),
+        "mathrock_intent": explicit_mathrock_intent,
+        "standard_tuning_intent": standard_tuning_intent,
+        "negative_techniques": sorted(negative_techniques),
+        "query_blob": query_blob,
+    }
+
+
+def evidence_blob(item: EvidenceItem) -> str:
+    return compact_blob(item.title, item.source_id, item.content, json.dumps(item.metadata, ensure_ascii=False))
+
+
+def evidence_canonical_terms(item: EvidenceItem) -> set[str]:
+    terms: list[Any] = []
+    metadata_terms = item.metadata.get("canonical_terms")
+    if metadata_terms:
+        terms.extend(as_list(metadata_terms))
+    raw = item.metadata.get("raw_metadata")
+    if isinstance(raw, dict):
+        for key in ["canonical_terms", "required_terms", "optional_terms"]:
+            terms.extend(as_list(raw.get(key)))
+    domain = item.metadata.get("domain_rerank")
+    if isinstance(domain, dict):
+        terms.extend(as_list(domain.get("canonical_terms")))
+    term_set = {str(term).strip().lower() for term in terms if str(term).strip()}
+    raw = item.metadata.get("raw_metadata")
+    raw = raw if isinstance(raw, dict) else {}
+    tuning = str(item.metadata.get("tuning") or raw.get("tuning") or "").strip().lower().replace(" ", "_").replace("-", "_")
+    if tuning:
+        if tuning in {"std", "standard_tuning"}:
+            tuning = "standard"
+        term_set.add(f"tuning:{tuning}")
+    elif item.evidence_type == "visual_caption":
+        source_id = str(item.source_id or raw.get("source_id") or "").lower()
+        caption_layer = str(item.metadata.get("caption_layer") or raw.get("caption_layer") or "").lower()
+        collection = str(item.metadata.get("collection") or "").lower()
+        if (
+            "fretboard" in source_id
+            or "fretboard_answer" in caption_layer
+            or "fretboard_answer" in collection
+            or source_id == "canonical_visual"
+            or collection == "canonical_visual_sidecar"
+        ):
+            term_set.add("tuning:standard")
+    return term_set
+
+
+def domain_constraint_score(item: EvidenceItem, constraints: dict[str, Any]) -> tuple[float, dict[str, Any]]:
+    blob = evidence_blob(item)
+    item_terms = evidence_canonical_terms(item)
+    raw_metadata = item.metadata.get("raw_metadata")
+    raw_metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
+    caption_layer = str(item.metadata.get("caption_layer") or raw_metadata.get("caption_layer") or "").lower()
+    tuning = str(item.metadata.get("tuning") or raw_metadata.get("tuning") or "").lower()
+    score = 0.0
+    details: dict[str, Any] = {
+        "matched_keys": [],
+        "matched_roots": [],
+        "matched_chord_qualities": [],
+        "matched_scale_or_mode": [],
+        "matched_style": [],
+        "matched_techniques": [],
+        "matched_canonical_terms": [],
+        "missing_required_terms": [],
+        "matched_negative_constraints": [],
+        "penalties": [],
+    }
+
+    query_terms = {str(term).strip().lower() for term in constraints.get("canonical_terms", []) if str(term).strip()}
+    required_terms = {str(term).strip().lower() for term in constraints.get("required_terms", []) if str(term).strip()}
+    optional_terms = {str(term).strip().lower() for term in constraints.get("optional_terms", []) if str(term).strip()}
+    negative_terms = {str(term).strip().lower() for term in constraints.get("negative_constraints", []) if str(term).strip()}
+    matched_canonical = sorted(query_terms.intersection(item_terms))
+    matched_required = sorted(required_terms.intersection(item_terms))
+    missing_required = sorted(required_terms.difference(item_terms))
+    matched_optional = sorted(optional_terms.intersection(item_terms))
+    matched_negative = sorted(negative_terms.intersection(item_terms))
+    required_key_terms = {term for term in required_terms if term.startswith("key:")}
+    required_tuning_terms = {term for term in required_terms if term.startswith("tuning:")}
+    matched_required_key_terms = sorted(required_key_terms.intersection(item_terms))
+    matched_required_tuning_terms = sorted(required_tuning_terms.intersection(item_terms))
+    if matched_canonical:
+        score += min(0.45, 0.12 * len(matched_canonical))
+    if matched_required:
+        score += min(0.3, 0.12 * len(matched_required))
+    if matched_optional:
+        score += min(0.16, 0.06 * len(matched_optional))
+    if matched_negative:
+        score -= min(0.5, 0.25 * len(matched_negative))
+        details["penalties"].append("matched_negative_constraints")
+    if item_terms and missing_required:
+        score -= min(0.45, 0.12 * len(missing_required))
+        details["penalties"].append("missing_required_canonical_terms")
+    if item_terms and required_key_terms and not matched_required_key_terms:
+        score -= 0.35
+        details["penalties"].append("missing_required_key_term")
+    if item.evidence_type == "visual_caption" and required_tuning_terms and not matched_required_tuning_terms:
+        score -= 1.2
+        details["penalties"].append("missing_required_tuning_term")
+        item.metadata["optional_expansion_only"] = True
+    details["matched_canonical_terms"] = matched_canonical
+    details["matched_required_terms"] = matched_required
+    details["matched_optional_terms"] = matched_optional
+    details["missing_required_terms"] = missing_required
+    details["matched_negative_constraints"] = matched_negative
+    details["matched_required_key_terms"] = matched_required_key_terms
+    details["matched_required_tuning_terms"] = matched_required_tuning_terms
+
+    matched_keys = [term for term in constraints["target_keys"] if key_term_in_blob(term, blob)]
+    details["matched_keys"] = matched_keys
+    if matched_keys:
+        score += min(0.42, 0.28 + 0.07 * len(matched_keys))
+    elif constraints["requires_exact_key"] and item.evidence_type in {"visual_caption", "text"}:
+        score -= 0.08 if item.evidence_type == "visual_caption" else 0.04
+        details["penalties"].append("missing_exact_key")
+
+    matched_roots = [term for term in constraints["target_roots"] if term_in_blob(term, blob)]
+    details["matched_roots"] = matched_roots
+    if matched_roots:
+        score += min(0.18, 0.07 * len(matched_roots))
+
+    matched_qualities = [term for term in constraints["chord_qualities"] if term_in_blob(term, blob)]
+    details["matched_chord_qualities"] = matched_qualities
+    if matched_qualities:
+        score += min(0.35, 0.15 * len(matched_qualities))
+    elif constraints["requires_exact_chord"] and item.evidence_type == "visual_caption":
+        score -= 0.12
+        details["penalties"].append("missing_exact_chord_quality")
+
+    matched_modes = [term for term in constraints["scale_or_mode"] if term_in_blob(term, blob)]
+    details["matched_scale_or_mode"] = matched_modes
+    if matched_modes:
+        score += min(0.18, 0.09 * len(matched_modes))
+
+    fret_region = constraints.get("fret_region") or ""
+    if fret_region:
+        region_terms = FRET_REGION_TERMS.get(fret_region, [])
+        opposite_regions = [region for region in FRET_REGION_TERMS if region != fret_region]
+        if any(term in blob for term in region_terms):
+            score += 0.18
+            details["matched_fret_region"] = fret_region
+        elif any(term in blob for region in opposite_regions for term in FRET_REGION_TERMS[region]):
+            score -= 0.1
+            details["penalties"].append("opposite_fret_region")
+
+    matched_styles = [style for style in constraints["style_hints"] if term_in_blob(style, blob)]
+    details["matched_style"] = matched_styles
+    if matched_styles:
+        score += min(0.25, 0.12 * len(matched_styles))
+
+    matched_techniques = [term for term in constraints["techniques"] if term_in_blob(term, blob)]
+    details["matched_techniques"] = matched_techniques
+    if matched_techniques:
+        score += min(0.28, 0.09 * len(matched_techniques))
+
+    if constraints["visual_evidence_required"] and item.evidence_type == "visual_caption":
+        score += 0.05
+        details["visual_required_bonus"] = True
+
+    is_mathrock_visual = caption_layer == "mathrock_style_visual_caption_v1"
+    if item.evidence_type == "visual_caption" and is_mathrock_visual:
+        if constraints["mathrock_intent"]:
+            score += 0.12
+            details["mathrock_visual_bonus"] = True
+        else:
+            score -= 0.35
+            details["penalties"].append("mathrock_visual_without_style_intent")
+            item.metadata["optional_expansion_only"] = True
+
+    if item.evidence_type == "visual_caption" and constraints["standard_tuning_intent"]:
+        if tuning == "standard":
+            score += 0.035
+            details["standard_tuning_bonus"] = True
+        elif tuning and tuning != "unknown":
+            score -= 0.12
+            details["penalties"].append("nonstandard_tuning_for_standard_query")
+
+    for technique in constraints.get("negative_techniques", []):
+        aliases = {
+            "tapping": ["tapping", "点弦"],
+            "arpeggio": ["arpeggio", "琶音"],
+            "open_string": ["open_string", "open string", "开放弦"],
+        }.get(technique, [technique])
+        if any(alias in blob or alias in item_terms for alias in aliases):
+            score -= 0.35
+            details["penalties"].append(f"negative_technique:{technique}")
+
+    if not constraints["allow_exercise_reference"] and item.metadata.get("exercise_number"):
+        score -= 0.2
+        details["penalties"].append("exercise_reference_disallowed")
+
+    has_alt_tuning = any(term in blob for term in ALT_TUNING_TERMS)
+    if has_alt_tuning and not constraints["allow_alternate_tuning"]:
+        score -= 0.45 if item.evidence_type == "kg" else 0.25
+        details["penalties"].append("alternate_tuning_not_requested")
+        item.metadata["optional_expansion_only"] = True
+    elif has_alt_tuning and constraints["allow_alternate_tuning"]:
+        score += 0.2
+        details["matched_alternate_tuning"] = True
+
+    if item.evidence_type == "kg":
+        direct_matches = [term for term in DIRECT_KG_GOAL_TERMS if term in blob and term in constraints["query_blob"]]
+        if direct_matches:
+            score += min(0.25, 0.08 * len(direct_matches))
+            details["matched_direct_kg_goals"] = direct_matches
+
+    return round(score, 5), details
+
+
+def apply_domain_rerank(
+    text: list[EvidenceItem],
+    visual: list[EvidenceItem],
+    kg: list[EvidenceItem],
+    analysis: QueryAnalysis,
+    query_plan: dict[str, Any] | None,
+) -> tuple[list[EvidenceItem], list[EvidenceItem], list[EvidenceItem]]:
+    constraints = extract_constraints(query_plan, analysis)
+    for group in (text, visual, kg):
+        for item in group:
+            delta, details = domain_constraint_score(item, constraints)
+            item.score = round(item.score + delta, 5)
+            item.metadata["domain_rerank"] = {
+                "delta": delta,
+                "constraints": {key: value for key, value in constraints.items() if key != "query_blob"},
+                "details": details,
+            }
+    text.sort(key=lambda entry: entry.score, reverse=True)
+    visual.sort(key=lambda entry: entry.score, reverse=True)
+    kg.sort(key=lambda entry: entry.score, reverse=True)
+    return text, visual, kg
 
 
 def evidence_from_chroma_hit(
@@ -501,9 +1168,7 @@ def search_chroma(
         return []
     collection = client.get_collection(task.collection)
     embedding = embedder.embed([task.query], batch_size=batch_size)[0]
-    candidate_count = task.top_k
-    if task.name in {"style_text", "visual_caption"}:
-        candidate_count = min(max(task.top_k * 5, task.top_k), collection.count())
+    candidate_count = min(max(task.top_k * 5, task.top_k), collection.count())
     result = collection.query(
         query_embeddings=[embedding],
         n_results=candidate_count,
@@ -521,7 +1186,7 @@ def search_chroma(
     ):
         items.append(evidence_from_chroma_hit(task, item_id, document or "", metadata or {}, float(distance), rank))
     items.sort(key=lambda item: item.score, reverse=True)
-    return items[: task.top_k]
+    return items
 
 
 def kg_terms_from_query(query: str) -> list[str]:
@@ -643,7 +1308,7 @@ def search_neo4j(task: SearchTask, env_file: Path) -> tuple[list[EvidenceItem], 
                     limit=max(task.top_k * 5, task.top_k),
                 ).data()
         items = [kg_edge_to_evidence(row, rank, "neo4j") for rank, row in enumerate(rows, start=1)]
-        return rerank_kg_items(task.query, items, task.top_k), "neo4j"
+        return rerank_kg_items(task.query, items, max(task.top_k * 3, task.top_k)), "neo4j"
     except Exception as exc:  # Keep query layer usable when Neo4j is offline.
         return [], f"neo4j_failed:{type(exc).__name__}"
 
@@ -666,6 +1331,194 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def visual_id_from_caption_row(row: dict[str, Any]) -> str:
+    metadata = row.get("metadata_flat") if isinstance(row.get("metadata_flat"), dict) else {}
+    return str(row.get("visual_id") or row.get("segment_id") or metadata.get("visual_id") or "")
+
+
+@lru_cache(maxsize=2)
+def get_canonical_visual_rows(sidecar_path: str) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
+    rows = [row for row in read_jsonl(Path(sidecar_path)) if str(row.get("status") or "").lower() == "accepted"]
+    by_id = {str(row.get("visual_id") or ""): row for row in rows if row.get("visual_id")}
+    return by_id, rows
+
+
+@lru_cache(maxsize=2)
+def get_visual_caption_source_rows(source_path: str) -> dict[str, dict[str, Any]]:
+    rows = read_jsonl(Path(source_path))
+    return {visual_id_from_caption_row(row): row for row in rows if visual_id_from_caption_row(row)}
+
+
+def canonical_set(values: Any) -> set[str]:
+    return {str(value).strip().lower() for value in as_list(values) if str(value).strip()}
+
+
+def canonical_visual_score(query_plan: dict[str, Any], row: dict[str, Any]) -> tuple[float, dict[str, Any]]:
+    item_terms = canonical_set(row.get("canonical_terms"))
+    if not any(term.startswith("tuning:") for term in item_terms):
+        item_terms.add("tuning:standard")
+    query_blob = compact_blob(
+        str(query_plan.get("raw_query") or ""),
+        str(query_plan.get("normalized_query") or ""),
+        " ".join(str(item) for item in as_list(query_plan.get("techniques"))),
+    )
+    canonical_terms, required_terms_raw, optional_terms_raw = refine_visual_query_terms(
+        query_plan,
+        query_blob,
+        [str(item) for item in as_list(query_plan.get("target_roots"))],
+        [str(item) for item in as_list(query_plan.get("chord_qualities"))],
+        [str(item) for item in as_list(query_plan.get("canonical_terms"))],
+        [str(item) for item in as_list(query_plan.get("required_terms"))],
+        [str(item) for item in as_list(query_plan.get("optional_terms"))],
+    )
+    query_terms = canonical_set(canonical_terms)
+    required_terms = canonical_set(required_terms_raw)
+    optional_terms = canonical_set(optional_terms_raw)
+    negative_terms = canonical_set(query_plan.get("negative_constraints"))
+    matched_query = sorted(query_terms.intersection(item_terms))
+    matched_required = sorted(required_terms.intersection(item_terms))
+    matched_optional = sorted(optional_terms.intersection(item_terms))
+    matched_negative = sorted(negative_terms.intersection(item_terms))
+    missing_required = sorted(required_terms.difference(item_terms))
+    required_key_terms = {term for term in required_terms if term.startswith("key:")}
+    required_tuning_terms = {term for term in required_terms if term.startswith("tuning:")}
+    matched_required_key_terms = sorted(required_key_terms.intersection(item_terms))
+    matched_required_tuning_terms = sorted(required_tuning_terms.intersection(item_terms))
+    score = 0.0
+    score += len(matched_query) * 0.35
+    score += len(matched_required) * 0.75
+    score += len(matched_optional) * 0.18
+    score -= len(matched_negative) * 1.0
+    if required_terms and not matched_required:
+        score -= 0.45
+    if missing_required:
+        score -= min(0.8, 0.18 * len(missing_required))
+    if required_key_terms and not matched_required_key_terms:
+        score -= 1.8
+    if required_tuning_terms and not matched_required_tuning_terms:
+        score -= 3.0
+    if len(matched_required) >= max(1, min(2, len(required_terms))):
+        score += 0.35
+    return round(score, 5), {
+        "matched_query_terms": matched_query,
+        "matched_required_terms": matched_required,
+        "matched_optional_terms": matched_optional,
+        "matched_negative_terms": matched_negative,
+        "missing_required_terms": missing_required,
+        "matched_required_key_terms": matched_required_key_terms,
+        "matched_required_tuning_terms": matched_required_tuning_terms,
+        "item_terms": sorted(item_terms),
+    }
+
+
+def canonical_visual_to_evidence(
+    row: dict[str, Any],
+    source_row: dict[str, Any] | None,
+    score: float,
+    details: dict[str, Any],
+    rank: int,
+) -> EvidenceItem:
+    visual_id = str(row.get("visual_id") or "")
+    source_row = source_row or {}
+    metadata_flat = source_row.get("metadata_flat") if isinstance(source_row.get("metadata_flat"), dict) else {}
+    source_metadata = source_row.get("source_metadata") if isinstance(source_row.get("source_metadata"), dict) else {}
+    preview = row.get("source_preview") if isinstance(row.get("source_preview"), dict) else {}
+    content = str(preview.get("caption") or source_row.get("caption_text") or source_row.get("caption") or "")
+    title = str(
+        preview.get("musical_object")
+        or source_row.get("musical_object")
+        or source_row.get("topic")
+        or "canonical visual caption"
+    )
+    image_path = (
+        metadata_flat.get("image_path")
+        or metadata_flat.get("crop_path")
+        or source_metadata.get("image_path")
+        or source_metadata.get("crop_path")
+        or source_row.get("image_path")
+        or source_row.get("crop_path")
+        or ""
+    )
+    return EvidenceItem(
+        evidence_id=f"visual_caption:{visual_id}",
+        evidence_type="visual_caption",
+        source_id="canonical_visual",
+        title=title,
+        content=content,
+        score=round(1.0 + score, 5),
+        metadata={
+            "collection": "canonical_visual_sidecar",
+            "chunk_id": visual_id,
+            "visual_id": visual_id,
+            "exercise_number": metadata_flat.get("exercise_number") or "",
+            "subquestion_number": metadata_flat.get("subquestion_number") or "",
+            "image_path": image_path,
+            "canonical_terms": as_list(row.get("canonical_terms")),
+            "required_terms": as_list(row.get("required_terms")),
+            "optional_terms": as_list(row.get("optional_terms")),
+            "negative_constraints": as_list(row.get("negative_constraints")),
+            "canonical_retrieval": details,
+            "raw_metadata": metadata_flat or source_metadata or source_row,
+        },
+        trace={"rank": rank, "backend": "canonical_visual_sidecar"},
+    )
+
+
+def search_canonical_visual(
+    query_plan: dict[str, Any] | None,
+    limit: int,
+    sidecar_path: Path = DEFAULT_CANONICAL_VISUAL_SIDECAR,
+    source_path: Path = DEFAULT_VISUAL_CAPTION_SOURCE,
+) -> list[EvidenceItem]:
+    if not query_plan:
+        return []
+    if not sidecar_path.exists():
+        return []
+    query_terms = canonical_set(query_plan.get("canonical_terms"))
+    required_terms = canonical_set(query_plan.get("required_terms"))
+    if not query_terms and not required_terms:
+        return []
+    _, rows = get_canonical_visual_rows(str(sidecar_path))
+    source_by_id = get_visual_caption_source_rows(str(source_path)) if source_path.exists() else {}
+    scored: list[tuple[float, dict[str, Any], dict[str, Any]]] = []
+    for row in rows:
+        score, details = canonical_visual_score(query_plan, row)
+        if score <= 0:
+            continue
+        scored.append((score, row, details))
+    scored.sort(key=lambda item: item[0], reverse=True)
+    items: list[EvidenceItem] = []
+    for rank, (score, row, details) in enumerate(scored[: max(limit * 3, limit)], start=1):
+        visual_id = str(row.get("visual_id") or "")
+        items.append(canonical_visual_to_evidence(row, source_by_id.get(visual_id), score, details, rank))
+    return items
+
+
+def canonical_visual_sources_for_collection(visual_collection: str) -> list[tuple[Path, Path]]:
+    sources = [(DEFAULT_CANONICAL_VISUAL_SIDECAR, DEFAULT_VISUAL_CAPTION_SOURCE)]
+    if visual_collection == VISUAL_COLLECTIONS["mathrock_mixed_trial"]:
+        sources.append((MATHROCK_CANONICAL_VISUAL_SIDECAR, MATHROCK_VISUAL_CAPTION_SOURCE))
+    return sources
+
+
+def search_canonical_visual_all(
+    query_plan: dict[str, Any] | None,
+    limit: int,
+    visual_collection: str,
+) -> list[EvidenceItem]:
+    items: list[EvidenceItem] = []
+    seen: set[str] = set()
+    for sidecar_path, source_path in canonical_visual_sources_for_collection(visual_collection):
+        for item in search_canonical_visual(query_plan, limit, sidecar_path=sidecar_path, source_path=source_path):
+            key = str(item.evidence_id)
+            if key in seen:
+                continue
+            seen.add(key)
+            items.append(item)
+    items.sort(key=lambda item: item.score, reverse=True)
+    return items[: max(limit * 4, limit)]
+
+
 def search_kg_files(task: SearchTask, root: Path) -> list[EvidenceItem]:
     terms = kg_terms_from_query(task.query)
     scored: list[tuple[float, dict[str, Any]]] = []
@@ -683,7 +1536,7 @@ def search_kg_files(task: SearchTask, root: Path) -> list[EvidenceItem]:
             scored.append((matches + confidence_f, edge))
     scored.sort(key=lambda item: item[0], reverse=True)
     items = [kg_edge_to_evidence(edge, rank, "file_edges") for rank, (_, edge) in enumerate(scored[: max(task.top_k * 5, task.top_k)], start=1)]
-    return rerank_kg_items(task.query, items, task.top_k)
+    return rerank_kg_items(task.query, items, max(task.top_k * 3, task.top_k))
 
 
 def search_kg(task: SearchTask, env_file: Path) -> tuple[list[EvidenceItem], str]:
@@ -706,9 +1559,27 @@ def dedupe_items(items: list[EvidenceItem]) -> list[EvidenceItem]:
     return deduped
 
 
+def enrich_visual_items_with_canonical(items: list[EvidenceItem]) -> None:
+    if not DEFAULT_CANONICAL_VISUAL_SIDECAR.exists():
+        return
+    by_id, _ = get_canonical_visual_rows(str(DEFAULT_CANONICAL_VISUAL_SIDECAR))
+    for item in items:
+        visual_id = str(item.metadata.get("visual_id") or item.metadata.get("chunk_id") or "").replace("visual_caption:", "")
+        row = by_id.get(visual_id)
+        if not row:
+            continue
+        item.metadata.setdefault("canonical_terms", as_list(row.get("canonical_terms")))
+        item.metadata.setdefault("required_terms", as_list(row.get("required_terms")))
+        item.metadata.setdefault("optional_terms", as_list(row.get("optional_terms")))
+        item.metadata.setdefault("negative_constraints", as_list(row.get("negative_constraints")))
+        item.metadata["canonical_sidecar_status"] = row.get("status")
+
+
 def merge_evidence(results: dict[str, list[EvidenceItem]]) -> tuple[list[EvidenceItem], list[EvidenceItem], list[EvidenceItem]]:
     text_items = dedupe_items(results.get("fretboard_text", []) + results.get("style_text", []))
-    visual_items = dedupe_items(results.get("visual_caption", []))
+    raw_visual_items = results.get("visual_caption", [])
+    enrich_visual_items_with_canonical(raw_visual_items)
+    visual_items = dedupe_items(raw_visual_items)
     kg_items = dedupe_items(results.get("kg", []))
 
     text_exercises = {str(item.metadata.get("exercise_number")) for item in text_items if item.metadata.get("exercise_number")}
@@ -799,8 +1670,18 @@ def build_answer_seed(bundle: EvidenceBundle | None, analysis: QueryAnalysis, te
 def run_bundle(args: argparse.Namespace) -> EvidenceBundle:
     started = time.perf_counter()
     context = json.loads(args.context_json) if args.context_json else {}
-    analysis = analyze_query(args.query, context=context)
-    plan = plan_retrieval(analysis, args.top_k)
+    query_plan = context.get("query_plan") if isinstance(context.get("query_plan"), dict) else None
+    visual_collection = str(
+        getattr(args, "visual_collection", "") or COLLECTIONS["visual_caption"]
+    )
+    if query_plan:
+        analysis = analysis_from_query_plan(args.query, query_plan)
+        plan = plan_retrieval_from_query_plan(query_plan, args.top_k, visual_collection)
+        if not plan:
+            plan = plan_retrieval(analysis, args.top_k, visual_collection)
+    else:
+        analysis = analyze_query(args.query, context=context)
+        plan = plan_retrieval(analysis, args.top_k, visual_collection)
 
     model_started = time.perf_counter()
     embedder = get_cached_embedder(args.model, args.device, args.max_length)
@@ -819,9 +1700,31 @@ def run_bundle(args: argparse.Namespace) -> EvidenceBundle:
             results[task.name] = items
         timings[f"{task.name}_seconds"] = time.perf_counter() - task_started
 
+    if query_plan:
+        canonical_started = time.perf_counter()
+        canonical_items = search_canonical_visual_all(query_plan, args.top_k, visual_collection)
+        if canonical_items:
+            results.setdefault("visual_caption", []).extend(canonical_items)
+        timings["canonical_visual_seconds"] = time.perf_counter() - canonical_started
+
     text, visual, kg = merge_evidence(results)
+    model_rerank_started = time.perf_counter()
+    rerank_config = RerankConfig.from_env()
+    text, text_model_rerank = apply_model_rerank(analysis.query, text, rerank_config)
+    visual, visual_model_rerank = apply_model_rerank(analysis.query, visual, rerank_config)
+    kg, kg_model_rerank = apply_model_rerank(analysis.query, kg, rerank_config)
+    timings["model_rerank_seconds"] = time.perf_counter() - model_rerank_started
+    text, visual, kg = apply_domain_rerank(text, visual, kg, analysis, query_plan)
     judgement = judge_bundle(analysis, text, visual, kg)
     answer_seed = build_answer_seed(None, analysis, text, visual, kg)
+    if query_plan:
+        answer_seed["query_plan"] = query_plan
+    answer_seed["visual_collection"] = visual_collection
+    answer_seed["model_rerank"] = {
+        "text": text_model_rerank,
+        "visual": visual_model_rerank,
+        "kg": kg_model_rerank,
+    }
     timings["total_seconds"] = time.perf_counter() - started
     if kg_status:
         timings["kg_status"] = kg_status  # type: ignore[assignment]
@@ -926,6 +1829,11 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--device", default=os.environ.get("LOCAL_EMBEDDING_DEVICE", "auto"))
     parser.add_argument("--max-length", type=int, default=int(os.environ.get("LOCAL_EMBEDDING_MAX_LENGTH", "2048")))
     parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument(
+        "--visual-collection",
+        default=COLLECTIONS["visual_caption"],
+        choices=sorted(set(VISUAL_COLLECTIONS.values())),
+    )
     parser.add_argument("--env-file", type=Path, default=Path(".env"))
     parser.add_argument("--report-md", type=Path, default=DEFAULT_REPORT_MD)
     parser.add_argument("--report-json", type=Path, default=DEFAULT_REPORT_JSON)

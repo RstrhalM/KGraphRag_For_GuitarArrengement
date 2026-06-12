@@ -1,0 +1,2276 @@
+{
+  "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+  "analysis": {
+    "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+    "intent": "mixed_arrangement",
+    "style_hints": [],
+    "theory_terms": [
+      "B",
+      "D",
+      "大调",
+      "小调",
+      "指型"
+    ],
+    "technique_terms": [
+      "riff"
+    ],
+    "needs_fretboard_text": true,
+    "needs_visual": true,
+    "needs_style_text": true,
+    "needs_kg": true,
+    "confidence": 0.85,
+    "matched_rules": [
+      "fretboard_terms",
+      "visual_terms",
+      "style_or_technique_terms",
+      "arrangement_or_relation_terms"
+    ]
+  },
+  "plan": [
+    {
+      "name": "fretboard_text",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+      "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+      "top_k": 5,
+      "reason": "指板/理论/练习题干证据"
+    },
+    {
+      "name": "visual_caption",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+      "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？ 指型图 和弦图 voicing",
+      "top_k": 5,
+      "reason": "具体图形/指法/voicing/答案图证据"
+    },
+    {
+      "name": "style_text",
+      "backend": "chroma",
+      "collection": "guitar_text_chunks_qwen3_06b",
+      "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+      "top_k": 5,
+      "reason": "风格/riff/节奏/技法文本证据"
+    },
+    {
+      "name": "kg",
+      "backend": "neo4j_or_file",
+      "collection": null,
+      "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？ B D 大调 小调 指型 riff",
+      "top_k": 8,
+      "reason": "技法关系/风格迁移/编配启发"
+    }
+  ],
+  "text_evidence": [
+    {
+      "evidence_id": "text:chunk_0003",
+      "evidence_type": "text",
+      "source_id": "cory_wong_funk_core",
+      "title": "Cory Wong Funk 吉他大师课",
+      "content": "this next series of lessons is about cord voicings and cord moves that I use in my playing.especially,in the context of funk,music now most of these voice o icings start from the caged system if you're not familiar with the caged system.there's an introduction video i explain all of it,but that's going to be the basis for explaining the next few videos where I talk about.major chords,minor chords and dominant chords,then the video after that will be about triads ami approach to triadic playing and then at the end I'm going to give a summary of how I like to think about practicing those things.and how to really get the most mileage out of all of them?嗯，the first thing I'm going to talk about is major chords and major chord voicing moves that I use like I said in the introduction。most of what i do is based on the caged system。and within the caged system,I like to think about the relative major scale and major PE ni tonic scale if I'm thinking about cord voicing,so starting with the CS hape,\nwhat I normally think about is just this standard voicing like your open sea.but I think here so in the context ofc i'll think.I break it up into smaller groups,little subgroups of that shape,so this little CT riad here or here or here,and then what i do is i like to introduce lines.with the corresponding pen to tonic or major scale,so the major scale that corresponds with this c shape is.or PE ni tonic,i'll comp a little bit on a cord and then sometimes.i'll bring in some little lines from that shape.now this is the a shape INC major key right. this is the a shape,but it's accord right,so that's my cord voicing.and within that,\nI have a major scale. and then I also have a pentatonic scale.so a lot of what i do is I'm gonna play guitar moves using this.i'll play a voicing,but then i'll also play some lines.right in that same position,right in that same scale,shape PE ni tonic shape,cord shape. so I'm just kind of living in this world for the g shape,the actual fingering is kind of uncomfortable,so what I normally think about is just right in here.this one I use a lot. this is a goto for me because the pen I tonic part of it fits so well,so if I'm thinking about copying just AC major chord.all I'm doing there is kind a harmonizing within that sea major pana tonic shape right there.and am playing phrases.sometimes comping the actual sea cord and then playing lines within them,\nthere could also be some single note things.see,I went major this.that ADDS a different flavor,though the pen I tonic thing is just a little safer,moving to thee shape. this is your standard sixth string rooted bar cord.now when you're actually watching me finger this,it doesn't.look.maybe like I'm thinking bar cord,but the whole time I'm just thinking of that bar cord and this major scale shape.right c major standard shape,but breaking it up being able to play the cord and some lines in there to make phrases.and the final shape is d. this one is a little harder to think about.cause it's mostly just most people when they think about it. they just think of those four strings and honestly,\nit's just once I get there,it's kind apart of that sea shape,but.thinking about it,you can get into some different pen. you can get into some different shapes there.so the concept with all these major chords,the way that I think about it.I'm thinking of the actual cord shape,but then usually PE ni tonic things that surround it cause,then I make phrases come up with lines,come up with parts.that surround the sea major,but it's not just.comping on sea major like that's fine,that sounds good,\nbut what can be more exciting? what makes something more signature?is if you actually make a part from it something that feels more like a hook?that sort of thing just coming up with hooks instead of a generic cord comping.alright now,we're gonna move into dominant cord shapes which are basically the same as your major shape,except we're adding a dominant seven aflat seven. so instead of just a three note triad,we're now moving into four note chords so.so starting with dominant chords in general,one of the moves that I like to do is a flat three to three thing. so anywhere where there's a cord tone of a third,i'll sometimes do a little half step move into it.so most things are based off the mix I lidia n scale.and the relative major PE ni tonic scale again,just like in the major triads.so for this one,some of my go to moves for this just half stepping. then I move it into a nine cord,so AC kind of based on that same shape.but then also,what I really like to do is break these chord voicings up into little pods,two notes,three notes that sort of thing,so common thing i'll do is this.so you can hear what I'm playing is the root and the flat seven.sounds kind of bad on its own,but in the context of a dominant cord it sounds pretty cool so.and the reason why I break these cords up into smaller,little inversions is because it creates more space in the context of playing with a band.for me,I'm normally in a band with a keyboard player,sometimes two keyboard players maybe a horn section definitely a base player,\nsome other comping instrument as well.so I like to leave some space for other people to add some harmonic value and content as well,so.in the case of a rhythm guitar player,the phrasing and the rhythms that I use are just as important or more important,but.but also the notes that I leave out of the voicings are very important as long as I'm implying the correct harmony,so some other examples of goto moves I used within that would be.uh,something like this,I'm doing a single note line.so there I'm just sitting on AC seven flat,seven root. that's the flat three up to the three thing I was talking about.and just coming up with some sort of phrase within there.in the a shape,\nthis is my standard voicing for it,and what i'll normally do with this is i'll break it up again into this sort of thing.try to ne interval sounds kind of bad on its own.i don't depending on who you are,but in the context of a dominant cord it can sound really cool so you can do things like.and I'm just,it's just those notes and sometimes I'm adding this note,it's just the flat seven up top and again.I'm just thinking of the mix oli dean scale and the major pen to tonic scale in here. so here's an example of adding some mix oli dean lines in with the comping,and then i'll play a similar thing.with just pen I tonic lines mixed in with the comping.here's PE ni tonic.you can see there askin da goes back to just the major feel because I'm not really giving any flat seven information to suggest that it's a dominant harmony.unless I'm playing the actual chord,so it's up to you on how much information you want to give on that sort of thing or if other instruments are already implying that. the g shape for this is one of my favorites,because I have a couple go to moves with this in the dominant harmony and i'll just play one of those for you,so one of them is.walking up from the two to the flat three and then the five six flats even move,but I also keep some other notes on top of it.kind of creates a cool little thing where some notes stay the same and some notes move.that's sort of move.also,you can do this sort of thing kind of a classic move in there fun little thing to do,add some ribbon to it.thee shape also has a lot of signature moves that I like to use. i do this sort of and it's kind of just going down the mix I lidia n scale.but adding some more of these extra tones from the dominant cord voicing,so the scale itself and then sometimes adding in that flat three to three thing.so I have a tune called welcome to minneapolis that actually uses just this exacting.so there what I'm doing is really just holding that cup top. and playing some single note things in there,i'll show you some examples of comping. and then playing lines using that scale in there.sometimes when i play this voicing,i'll use my thumb down here. it's not proper guitar technique,but whatever it sounds good and it feels good to play.although that phrasing wise started to get a little bit convoluted,I'm just showing you some different moves that you can do within that cord shape this last d shape also sometimes gets kind of neglected,but twenty year standard dropped to so.when I think about this,I use it as an extension of the e shape or as an extension from the csh a peso in context how all sometimes use this is so if I'm planning on a cj m.so again,that kind of felt is an upper extension to thee shape,but it's fine. I'm right in here,and then i can go.you knew that sort of thing. it's all right there in that shape.",
+      "score": 1.24071,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0003",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "arrangement",
+          "blues_rock",
+          "funk",
+          "fusion",
+          "mixing_consideration",
+          "pop",
+          "pop_funk",
+          "rhythm_and_blues",
+          "rhythm_guitar"
+        ],
+        "raw_metadata": {
+          "page_hint": "",
+          "linked_kg_nodes": "[\"caution:range_tone_mismatch\", \"color:percussive_funk_momentum\", \"feature:staccato_bubble\", \"heuristic:leave_space_for_band\", \"heuristic:make_rhythm_part_a_hook\", \"scale:mixolydian_pentatonic_hybrid\", \"task:funk_comping\", \"task:riff_writing\", \"technique:caged_system_fragmentation\", \"technique:chromatic_approach_to_chord_tone\", \"voicing:sparse_funk_voicing\", \"voicing:triad_pods\"]",
+          "linked_review_ids": "[\"chunk_0003:funk_scale:001\", \"chunk_0003:funk_scale:002\", \"chunk_0003:funk_scale:003\", \"chunk_0003:funk_scale:004\", \"chunk_0003:funk_scale:005\", \"chunk_0003:funk_scale:006\"]",
+          "raw_path": "data/book/cory wong funk吉他大师课.txt",
+          "review_jsonl": "data/processed/style_rhythm/cory_wong_funk_review_core/arrangement_kg_review.all_accept.jsonl",
+          "style_tags": "[\"arrangement\", \"blues_rock\", \"funk\", \"fusion\", \"mixing_consideration\", \"pop\", \"pop_funk\", \"rhythm_and_blues\", \"rhythm_guitar\"]",
+          "image_refs": "[]",
+          "source_title": "Cory Wong Funk 吉他大师课",
+          "chunks_path": "data\\processed\\style_rhythm\\cory_wong_funk\\chunks.json",
+          "chunk_id": "chunk_0003",
+          "lesson_title": "scale.1 major,minor,dominant / part 1",
+          "linked_kg_edges": "[\"heuristic:make_rhythm_part_a_hook -[evokes]-> task:riff_writing\", \"voicing:sparse_funk_voicing -[enables]-> heuristic:leave_space_for_band\", \"technique:chromatic_approach_to_chord_tone -[suggests]-> color:percussive_funk_momentum\", \"scale:mixolydian_pentatonic_hybrid -[can_inspire]-> task:funk_comping\", \"voicing:triad_pods -[constrains]-> caution:range_tone_mismatch\", \"technique:caged_system_fragmentation -[enables]-> feature:staccato_bubble\"]",
+          "gp5_feature_triggers": "[\"dominant_7th_harmony_context\", \"fragmented_chord_shapes_within_caged_positions\", \"frequency_overlap_with_bass_track\", \"intervallic_dyads_or_triads_only\", \"low_note_count_per_chord_event\", \"low_register_dyads\", \"melodic_line_using_b7_and_major_3rd\", \"mixed_chord_and_single_note_track\", \"omitted_3rd_or_5th_in_dominant_context\", \"pentatonic_box_patterns_with_added_extensions\", \"semitone_slide_or_hammer_on_to_major_3rd\", \"short_duration_notes\", \"syncopated_melodic_phrases_over_harmony\"]",
+          "source_type": "transcript",
+          "source_id": "cory_wong_funk_core"
+        },
+        "domain_rerank": {
+          "delta": 0.51,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [
+              "D major"
+            ],
+            "matched_roots": [
+              "D"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 10,
+        "distance": 0.29428529739379883,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0006",
+      "evidence_type": "text",
+      "source_id": "mathrock_text_course",
+      "title": "mathrock教学课",
+      "content": "what is up guys we're back with another crazy midwest emerin math Rock progression? this one is gonna be.I'm going to keep a beamon on the tuning one. I'm using is something unique it's bfs hop de a.d and dokay so i didn't start with just an idea. I actually wanted to experiment around a specific alternate tuning.see,I have the be mono the one hundred and fifty three. I have the four right here so that could be also in the thirteen I have here.seven,which is eight and finally AD,which is another three. so this is basically AB minus thirteen cord,sorry,I thought,hey,let's experiment with s.something new a different alternate chining the idea is going to be set on around using movable cord shape in the beginning and then relying on some open strings.to carry out a pebble tone.or a constant Melody,\nso we had the seven ringing out. and that's what's going on there in the beginning,it's going to be a ga and then bin the base.eight ten twelve on the sixth string,then I'm playing the third of that the BC sharp d.which is going to be seventh fret nine threat,tenth RET on the third string and then I finish with some harmonics here,open harmonics.twelve on the fourth,third and second string so that's bmin or suspended four right there and then with the seven.it's really pretty now. we're gonna carry out some tapping Melody,heel.so what's this here? single melodies,alright? so that's gonna be nine to eleven first string.tapping the tool fer on the second stream and if we're in the key of be e moana,that's one. one,two,seven,pulling off to open all right now,we'll give you some hammer ons from our fourth through second string .it's going to be seven tonight,Fred. we have a power cord with the fourth and second string that's going to be at ob.now we're adding him the suspended second.so we got a suspended second cord here,pretty cool tapping,tapping the fourteenth threat to create that power cord second and fourth string. sliding down to the twelfth really Nice mouth Rock sound right there suspended and power cords mixing up suspended and power cords ya.and then pouring off,so that's gonna be the timing right there.so that's the first thing of that is,\nthe first phrase so once more.you can slide into it use some Grace notes,all right next up we have. so mixing up the progression there save from the g then to the p minor then to the a so just rearranging it there same quartz. then we're gonna do a series of the suspended cord right now and then hammering on.once again,from the ninth to the t or f rep,we're going to tap the fourteenth and the sixteenth fret. we're going to do a little bit of a variation here,you start with that little.l right there,so hammer on from the night to the t or fre tapped the power cord.voting fret good tablet,you can pull off tonight,night fret hammer on again to the top fret.and then do the same thing on the sixteenth front,\nand I'm doing pal quarti of e.dd power cord and that's going to be f sharp power cord,so we have b power cord here. that's the one,three,four,five.suspended cords from one to three power cord of four and five.you could even go back up to the seven right here,which is the a power cord I really like that. you could do some triplets,alright?cool thing about this,if we're giving it,that math Rock signature,we can kind of play an extra phrase or two and just carry it out like it's a different time signature,which is really neat,\nwhich is really.fine,and you can be sort of creative with its style,so we had.饼干。so that is section one. now section two completely different group,all right? let me play this s for you.so a lot of interesting stuff going on here,you can say it's a little bit jazzy,right? we're going.in and out of the key a little bit so plan,some non di tonic notes plan some Grace notes doing some slides.alright,so first time around.I'm doing a series of notes right here in the base region. I'm gonna go three zero. sixth rate that's going to bed to be.kind of outlining a beaumont accord hill,right? that's gonna be nine fret third string,seven fret four string. this is gonna be two seven in the beam water key.so three,one,two,seven. so that's what the malady is all about.and then we're hitting open first string,which is the d again .so I'm really outlining here the seventh and the ninth. it's kind of like a bee MI nine and nine chord is what I'm thinking about here.all right,interesting,huh? see,\nyou can do that all the time. you can upidgei ate.uh,accord,but rearrange the Melody and make the ribbon a little interesting. right? you're not bound to just.playing just chords,you can think of how we can do chords in our pigeons in a musical way. and this is a good example here,see I took it in the lower register.outlined the base,the line of the one and the three,and then i played the nine,the seven.and then the three again.in the higher register in the higher octave. ,and then I'm gonna do four,\nseven on the fourth string that's gonna be the fifth,fifth and the beamon i cord,and then back to the seventh.right? so now we're getting like all the notes of the bean wine and iron corn.alright,so what's going on here? I'm using a movable cord shape.remember how if we play our open strings we have bf sharp dis the bee want to try it?so now I'm playing an emo na triad,and then I'm going to bring that down to AD major triad right here. so you're going to be borrowing the first,the fifth fret.and then you're gonna be playing.third threat top two strings,fourth threat is going to be the major third of that chord on the fourth string .and i'd like to feel a little Grace,note there good from miner dem aj jo demo nar dem aj jo. 转折。 and I throw down a little percussive slap bit.where we're gonna do a little offbeat,sa little syncopation.小哒哒哒。 ,right,that's the next movement. right there,taking that same court shaped major going to bring it to a major slide,it down to GM ajj or.so starting on the temp right now,sliding down to the eighth threat,the major note the third is going to be Bill levin,sliding down to the nine on the fourth string.人。 right? what's going on here once,once again? we're gonna do that after that dom SIL.right? so we're going from this court right here barring seven th threat.thumb is playing the six string and then the finger is going to do fourth through second string and the musically this is going to be an f sharp. so that's the five cord we have,the third which is a one three.the four right here,I'm going to think of this as the thirteen as well,because then we have the seven on the second stream. there's an eno right there,it's behind the f shop.it's a set of sharp minus thirteen chord rather,but then we're gonna make the seventh hammer onto the one again. right,this is the ninth threat on the second three.OK,OK.don't slap again,\nalright? so we're gonna take that minor thirteen chord shape again.we're gonna slide down,do a chromatic passing cord right here. six th fret to the fifth fret,we're just gonna now,gonna be.in mind of the thing.三星的。I want more.second variation here we go,we have. ,so what's going on here once again outlining the beam liner shape with the base? but then I'm gonna do hammer on. from the a from the BT o,the CS hop,so that's the one of the two . and then I'm going to hit for three open for three. so we're going to walk him down there.that's what's going on,then basically.then I'm gonna do for thre t open on the fourth stream to meet at five to the three of the beam on court evs ha dear.so using. the similar notes,we're not quite outlining a beam line or nine chord here. we're using chords basically within just the beam line accord,but adding in the second as well.all right,but different barrier,I shouldn't heal. and then all right,and then we had similar next measure as well. we'll same next measure,which was .right? that what's going on here second time around? so same thing gone on there sliding down from a to g major triad minus thirteen to a regular fof sharma wine. ,now I'm going to tap a power cord here. this is a deep power cord,interesting hi cause now we have.it's a completely different cord right here. it's really cool,but I also wanted to think of it just as like f shop. and then AD in the Melody,creating AP chor da harmony OK ay,what's again the passing chord chromatic passing chord?and the same thing gone on there,we do aporth for variation to start home the porth into the miner thirteen cord. so. ,and that's what's going on there. it's,I'm just gonna do it on the base strings since I wanna ring out the dp oly corn.现在你可以铺off。 and once you get to the fifth fret,that might of thirteen quartz,so it would be like this slow.s lap and then that pool of rhu ben ne,sota.pretty me right,and then we're gonna end simply with that first idea that walk right there,gee a.be moana from the beginning.second variation or second movement .and there you go it.",
+      "score": 1.08621,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0006",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "math_rock",
+          "midwest_emo"
+        ],
+        "raw_metadata": {
+          "linked_kg_edges": "[\"tuning:BF#DEAD -[enables]-> feature:open_string_drone\", \"technique:tapped_power_chord -[evokes]-> color:angular_math_rock_momentum\", \"technique:tap_pull_off_to_open -[suggests]-> feature:common_tone_top_strings\", \"heuristic:theme_variation_layering -[can_inspire]-> task:math_rock_riff_writing\", \"technique:percussive_slap -[enables]-> feature:odd_grouping\", \"harmony:movable_minor_add9_shape -[constrains]-> tuning:BF#DEAD\", \"heuristic:non_diatonic_passing_chords -[suggests]-> color:jazzy_midwest_emo\", \"feature:odd_grouping -[evokes]-> style:math_rock\"]",
+          "image_refs": "[]",
+          "lesson_title": "tutorial 6 / part 1",
+          "linked_kg_nodes": "[\"color:angular_math_rock_momentum\", \"color:jazzy_midwest_emo\", \"feature:common_tone_top_strings\", \"feature:odd_grouping\", \"feature:open_string_drone\", \"harmony:movable_minor_add9_shape\", \"heuristic:non_diatonic_passing_chords\", \"heuristic:theme_variation_layering\", \"style:math_rock\", \"task:math_rock_riff_writing\", \"technique:percussive_slap\", \"technique:tap_pull_off_to_open\", \"technique:tapped_power_chord\", \"tuning:BF#DEAD\"]",
+          "gp5_feature_triggers": "[\"alternate_tuning_detected\", \"asymmetric_phrase_length\", \"bar_line_misalignment\", \"chord_shape_transposition\", \"chromatic_root_movement\", \"consonant_open_string_overlap\", \"dead_note_articulation\", \"high_hammer_pull_density\", \"high_open_string_sustain_ratio\", \"increasing_rhythmic_complexity\", \"sectional_variation_in_technique\", \"short_note_duration_with_sustain_flag\", \"simultaneous_high_fret_notes\", \"slide_articulation_between_chords\", \"syncopated_accent_pattern\", \"tapped_note_followed_by_open_string\"]",
+          "source_id": "mathrock_text_course",
+          "source_title": "mathrock教学课",
+          "raw_path": "data/book/mathrock教学课.txt",
+          "chunks_path": "data\\processed\\mathrock\\mathrock_text\\chunks.json",
+          "source_type": "transcript",
+          "chunk_id": "chunk_0006",
+          "review_jsonl": "data/processed/mathrock/mathrock_text/arrangement_kg_review.all_accept.jsonl",
+          "style_tags": "[\"math_rock\", \"midwest_emo\"]",
+          "linked_review_ids": "[\"chunk_0006:mathrock_text:001\", \"chunk_0006:mathrock_text:002\", \"chunk_0006:mathrock_text:003\", \"chunk_0006:mathrock_text:004\", \"chunk_0006:mathrock_text:005\", \"chunk_0006:mathrock_text:006\", \"chunk_0006:mathrock_text:007\", \"chunk_0006:mathrock_text:008\"]",
+          "page_hint": ""
+        },
+        "optional_expansion_only": true,
+        "domain_rerank": {
+          "delta": 0.33,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [
+              "D major"
+            ],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [
+              "alternate_tuning_not_requested"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.26878565549850464,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0045",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习15\n回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如：\nD大调指型1 (B小调指型2)\n再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 1.04047,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0045",
+        "page_hint": "26",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "gp5_feature_triggers": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "lesson_title": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "review_jsonl": "",
+          "linked_kg_edges": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6bf08545fb324ceef97dce49a035a6b474ab171276e257aa2479c8538ab431a6.jpg\"]",
+          "source_type": "clean_markdown",
+          "linked_review_ids": "[]",
+          "chunk_id": "fretboard_text_0045",
+          "page_hint": "26",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_nodes": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md"
+        },
+        "domain_rerank": {
+          "delta": 0.1,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.13453185558319092,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0143",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习15\nD大调指型1（B小调指型2）\nG大调指型4（E小调指型5）\nC大调指型2（A小调指型3）\nE大调指型5（C#小调指型1）\nBb大调指型3（G小调指型4）\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 1.00348,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0143",
+        "page_hint": "68",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ac046f1b37c66ec6255a0b7ef2a757ad7c0e9ae28da8cf7a96b0916b85d77e2c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\464fad4e8ea83f72b5f37371eb5d835f36dc03153324a328af64a1bef85b7b7b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9638beb838c84cca083f4e4e8890f9dd60446e003235a3ad65b4f70ca2a3498c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\23a2cefa4eb416d4d1e5a18fbaca9c680bdb7c468b61907043870915dd8eb2ff.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b0e741c4c6076e68e7a4aaf03d0154cc6c1fcad501dfb1eb6d8776eb14ce2e98.jpg\"]",
+          "review_jsonl": "",
+          "lesson_title": "",
+          "linked_kg_nodes": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "gp5_feature_triggers": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_title": "吉他指板手册正文清洗层",
+          "chunk_id": "fretboard_text_0143",
+          "page_hint": "68",
+          "linked_review_ids": "[]",
+          "source_type": "clean_markdown",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_edges": "[]",
+          "source_id": "fretboard_handbook_clean_text"
+        },
+        "domain_rerank": {
+          "delta": 0.1,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.17152315378189087,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0010",
+      "evidence_type": "text",
+      "source_id": "mathrock_pdf_steve_h",
+      "title": "Math Rock Guitar E-book",
+      "content": "## 习题答案\n\n调性练习\n\n1. E⼤调 - A⼤调 - G#⼩调 - F#⼩调 - E⼤调 = E⼤调：I - IV - iii - ii - I\n\n2. D⼩调 - G属 - C⼤调 = C⼤调：ii - V - I\n\n3. D⼤调 - E⼩调 - F#减 - G⼤调 = G⼤调：V - vi - vii - I\n\n4. C⼤调 - G⼤调 - A⼩调 - E⼩调 = 可能是C⼤调：I - V - vi -iii 或 G⼤调：IV - V - ii - vi\n\n5. G⼤调 - B⼩调 - C⼤调 - C⼩调 = G⼤调：I - iii - IV - iv - 好吧，这道题我耍了个花招，抱歉！你可能正为C⼤调和C⼩调挠头。这⾥的C⼩调（iv级⼩和弦）是从平⾏⼩调G⼩调借来的（称为借⽤和弦，后续会详述）：G⼩调音阶为G⼩、A减、Bb⼤、C⼩、D⼩、Eb⼤、F⼤（i ii, III, iv, v VI, VII- ⼩调音级标记）。\n\n## 第三章创作⼯具（从技巧理论到歌曲写作）\n\n至此，我们已经学习了数学摇滚相关的吉他技巧、音乐理论基础、实⽤和弦及⼀系列和弦进⾏。接下来你将掌握多种创作⼯具、方法和思路，以及提升演奏与写作创造⼒的技巧。这些是我在吉他探索之路上总结的经验，希望通过分享能为你指明演奏方向，并提供创作歌曲、即兴段落和乐思时可调⽤的⼯具箱。\n\n## 3.A 指板 mastery\n\n熟悉音名与指板位置的方法众多：琶音、音阶、移动和弦指型、不同弦起始的和弦形状等。建议你尝试不同方法，寻找最适合⾃⼰的路径。以下是我发现的能更轻松、更有逻辑地导航吉他琴颈的方法，它们助我逐步掌握指板。\n\n## 快速定位音高— 八度定位法\n\n这是⼀种快速定位指板上任意位置音符的便捷方法。在寻找和弦指型的根音、琶音和音阶的根音时，它尤为实⽤，相信你会在许多其他场景中发现它的价值。我称之为八度定位法，不过它或许已有既定名称。起初，你只需掌握低音E弦和A弦上的音符位置（标准调弦下）。若初次接触可能觉得困难，但⼀旦投入练习并养成习惯，你会发现这并不如想象中那般复杂。我已列出从空弦E和A开始直至第⼗⼆品各⾃八度的音符（从第⼗⼆品开始你会得到高八度的相同音符——以防你尚不知晓这⼀点！）。\n\n[IMAGE_BLOCK:images/2bc7d9594d0b1da6f1047696f82b15f2754e27a88d9513e6cb2478388961fa6e.jpg]\n\n让我们通过⼏个⽰例来理解其应⽤。在下图中，我⽤蓝色圆圈标出了低音E弦和A弦上的G音，并⽤⿊色圆圈标注了它们的八度音（音高更高的相同音符）所在位置。\n\n[IMAGE_BLOCK:images/fbd4ad5395e452807694cacbd688a98f0bf62c4fbf0c739e33472e02f5730181.jpg]\n\n注意各八度音之间的特定间距。从低音E弦上的G音（第三品）开始，我们跳过A弦，在D弦上第五品（即高三品的位置）找到其八度音。同理适⽤于从A弦起始的G音。若曾学习过流⾏朋克或朋克乐曲，你可能对这些八度音型很熟悉。但当从D弦的G音起始时，间距会略有变化——此时需间隔四品（⽽非三品），G弦起始的G音同理。下方⽰例中的橙色音符标注了这⼀点。不必刻意记忆此规则，正确弹奏时你⾃会听出八度音效。若在D弦和G弦起始时误⽤三品间距（⽽非四品），会产⽣不和谐的⼤七度音程，此时只需将高音滑至下⼀品即可获得八度音效。\n\n[IMAGE_BLOCK:images/d87da37cd8d8ca104c4aa6fdb507b878d49a72f852446b2b92b94a2bd6289f0d.jpg]\n\n另⼀个实⽤技巧是注意到低音E弦和高音E弦遵循相同的音阶排列。这意味着你可以将任意音符在两根弦上镜像对应，从⽽找到相同音高的音符。我已⽤下图表格中的红色音符标注了这种对应关系。\n\n[IMAGE_BLOCK:images/0f9b8ad95c61953970e60bd6d3f6280448d894fc5568aae04f56873b2685267b.jpg]\n\n我认为这套系统特别适合尚未系统掌握指板音位知识的乐⼿，通过该方法，你将稳步构建起对指板各位置音符名称的认知。\n\n最后补充⼀点：如之前未明确说明，此八度定位法同样适⽤于从低音E弦和A弦出发的任何音符。换言之，所有音符的八度间距规律都相同，本文以G音为例仅为⽰范。\n\n## 指板形状可视化训练— 琶音定位法\n\n掌握此法后，你能在指板任意位置快速即兴演奏，即便⾯对急速变换或复杂的和弦进⾏。若有充⾜时间，更能创作出令⾃⼰惊艳的乐句。它不仅助你达成上述⽬标，更为创作连复段、装饰乐句、旋律线等提供了全新思路。随着深入学习，你将愈发理解其价值所在。\n\n## 拓展七和弦琶音的创新演绎\n\n本节将介绍四种扩展琶音类型：⼤七、⼩七、属七及减七。相较于传统琶音指型，我将采⽤独特教学方式——将和弦指型串联成易于掌握的模式，助你驾驭整个指板。同时附上实际应⽤范例。\n\n## 为何要学习扩展七和弦琶音？\n\n扩展的七和弦琶音相较于基础和声琶音（更多理论细节请参阅相关章节）为我们提供了额外的音符选择，且能适配任何未变奏和弦类型的反复段落。例如，C⼤七琶音可应⽤于C⼤三和弦、C挂⼆或挂四和弦、C⼤六和弦、C⼤七和弦、C⼤九和弦等。只要和弦或其隐含和声未作变奏，皆可安全使⽤。以C⼤七降五和弦为例，降 音改变了和弦性质，此时若搭配C⼤七琶音仍能保持和5th声协调。包含b9、#9、b5、#5等音的和弦称为变奏和弦，其复杂内涵可简理解为使和弦音响更具\"离调\"特质。\n\n## 指板上⼤七和弦琶音全览\n\n以下展⽰跨⼀个八度的⼤七和弦琶音，当弹至吉他第⼗⼆品时需重复相同指型。各指型已⽤颜色标注其关联性，便于识别单个琶音（和弦）形态。建议逐步练习每个指型并找到最舒适的按法，随后尝试将它们串联成链（如下方记谱所⽰），以强化记忆与肌⾁记忆。\n\n[IMAGE_BLOCK:images/1b90cb5f452576065ac7cb29376c0c1a53c34390d94d75cba482a00505d3ef77.jpg]\n\n此为清晰记谱呈现\n\n[IMAGE_BLOCK:images/4906d7d8cb9ef31461ba3b6c8daa61e19b463619b08baa5a06b5f5701ef17a23.jpg]\n\n下方列出构成琶音的各和弦指型，这些指型均可互换⽤于⼤七和弦。需注意：当根音不同时需调整指型位置，但基本形态保持不变。至此您已掌握六种可⽤的⼤七和弦指型！\n\n[IMAGE_BLOCK:images/9d615d548f000b2900d2aed4ab4bc170c61c5f4e114be5561c24f6aff6bea2a7.jpg]\n\n以下是⼏个可供参考的简短乐思范例，你可以在此基础上扩展，但很快就会发现这些音型过于相似。因此，这些琶音最适合与其他琶音、音阶等技巧结合使⽤。本节最后我将展⽰琶音的混合运⽤⽰例。\n\n[IMAGE_BLOCK:images/0d4b25ba92208e81ee16eaff47291c0cfea625b6128c37b2d60647a53c7c4430.jpg]\n\n这⾥展⽰三个独立的点弦奏法范例，旨在演⽰这种技法的表现潜⼒。但由于全部基于四个音符的变奏，创作空间较为有限。如前所述，解决方法要么将这些短乐句作为重复动机使⽤，要么结合其他琶音与音阶等技巧。具体取决于音乐语境和你想要达到的效果。\n\n[IMAGE_BLOCK:images/f5b103afb9d7d18ccb6efaa4a6ce348823830f986ac960fb4d78884ba7be725f.jpg]\n\n## 指板上的⼩七和弦琶音\n\n现在进入⼩七和弦琶音部分。同样地，我⽤不同颜色标注了每种指型，以展⽰它们之间的关联，这样你就能看清每个独立的琶音（和弦）指型。\n\n[IMAGE_BLOCK:images/792842989cc943cb68a2e60385c0ee4914ade3c7a52074774bfaf65645bc4649.jpg]\n\n[IMAGE_BLOCK:images/eaea5d0791ab093cb407804394961ede04581816c0198a37cbe5d10a4506cac1.jpg]\n\n再次提醒，以下是每个琶音对应的独立和弦指型，请记住这些都可作为⼩七和弦使⽤！\n\n[IMAGE_BLOCK:images/0c0995be638aa9ed01d2789d5a2c532986488f505ee3a47365bed6c1bb5953c4.jpg]\n\n以下是⼏个可供参考的简短创作构思范例，我认为它们非常适合⽤来创作具有⽇式数学摇滚⻛格的段落。例如，可以尝试以下构思：\n\n[IMAGE_BLOCK:images/463c5ade3793cd01e3fc76b31aaa80b7d029356f1b5e9df5eac8f3730542b6e6.jpg]\n\n本例包含三个独立的点弦乐句（尽管记谱在同⼀⾏，我将其视为三个独立乐句），旨在展⽰运⽤这些技巧创作时可能达到的效果。\n\n[IMAGE_BLOCK:images/ca4f85cd3a787ab1fc72979195775d40020cb67baed690f545aa5b7e5ebe38cb.jpg]\n\n## 指板上的属七和弦琶音\n\n接下来练习跨⼀个八度的属七和弦琶音。同样地，我⽤不同颜色标注了每种指型，以展⽰它们之间的关联性。\n\n[IMAGE_BLOCK:images/4b7d500521b1cbfcef415368865c356bf7607402b708232b75f8401ef4e95d05.jpg]\n\n[IMAGE_BLOCK:images/f44379e49a0431ffdda02d60620e6b3ca937a566cb8315f06ef7f8f88bf29891.jpg]\n\n[IMAGE_BLOCK:images/a6f20e722b250f07e62abacbb00cc36cd45661033204395cf4b4777d3b506639.jpg]\n\n再次列举⼏个可供参考的简短乐句创意。单独听可能略显怪异，但作为独立乐句或即兴段落效果颇佳。建议搭配属七和弦（本文以C7为例）演奏会更出彩。由于这些乐句更适合与其他和弦配合并通过适当琶音转换来呈现，单独使⽤可能略显局限。但别忘了——数学摇滚本无定法，尽情尝试最适合的演绎方式！\n\n[IMAGE_BLOCK:images/b347f369737d84ea82bd4b9032c477a765fb4575650ace6e20089e239f689acf.jpg]\n\n## ⼩七降五（半减）琶音在指板上的分布\n\n最后，我们以⼩七降五琶音的八度跨度作结。同样，我⽤颜色标注了每种指型以展⽰它们的关联，便于你观察每个单独的琶音（和弦）形态。不过，我将根音从C改为D，以便更贴合⽰例。\n\n[IMAGE_BLOCK:images/fe69703bd5909b3439de12ab9323750c5ea7946010113ad2bcbeeef186f70760.jpg]\n\n[IMAGE_BLOCK:images/8aa525d37ca392722a3f78be9dda6610783761faa3e1703fc099c0e9b1208fbb.jpg]\n\n[IMAGE_BLOCK:images/776e5c9d07f8e9e53bcdd050fc0d78f5a963319d6d955cb279eb059587f99545.jpg]\n\n## 琶音范例即兴连复段与乐句\n\n在学习本部分前，你应当已熟悉⽬前所学的扩展琶音。本节旨在展⽰如何组合不同类型的琶音来创作即兴连复段和乐句。这些乐段既可配合和弦进⾏演奏，也可脱离和声伴奏单独使⽤。虽然这些范例设计较为简单，并非数学摇滚⻛格吉他的最佳⽰范，但你应该能较轻松地掌握。请注意观察所使⽤的琶音指型，这有助于在脑海中巩固各类琶音的音阶路径图。下⼀步可尝试变换节奏型、音符间距、音高选择等要素，对现有范例进⾏拓展。\n\n以下是⼀个编写上⾏⻛格乐句的⽰例。为简化操作，请注意三连音分组（三个音符⼀组），若将其视为三音符组合，对⼿指和⼤脑都会轻松许多！也可尝试反向演奏，营造下⾏感。此技巧虽常⽤，但建议比⽰例更精妙地运⽤，如缩短乐句、加入停顿等。\n\n[IMAGE_BLOCK:images/9a642c45bcaab86e11b232535e6d08ce8c682257a163d6eeafb87b74dcaddee6.jpg]\n\n这个例子虽然略显粗糙，但我设计它的⽬的是让你通过双音组合在琶音指型中灵活切换。你能分辨出这些音符组合源⾃哪些琶音指型吗？\n\n[IMAGE_BLOCK:images/1cd6027cf7d1940a7990923e1e0a5edc881e8b604140e54c07a76b841d72deb8.jpg]\n\n这是同⼀构思的更深入演绎。听起来更具音乐性了，对吧？试着将前⼀个创意融入你⾃⼰的创作中。\n\n[IMAGE_BLOCK:images/36b342108db9538a503bb070ff2f5a2ef28767aa4bab998d7b9b48f4ee2ac798.jpg]\n\n这⾥还有⼀个更具音乐性的构思，围绕IV级、V级、vi级和弦进⾏展开。乐队Delta Sleep在作品中频繁运⽤此类和弦⾛向，效果极佳。\n\n[IMAGE_BLOCK:images/395e00073c08b48de7f18fd168213fbb2dcc0241497e69cba4fbd81cc3e17bac.jpg]\n\n这是另⼀个基于I-IV和弦进⾏的数学摇滚⻛格riff范例。本次采⽤了快速和弦转换与非常规节拍来增强音乐性，典型展现了数学摇滚吉他⻛格的特征。若将第⼀⼩节视为三拍与四拍的组合，第⼆⼩节拆分为三组三拍，会更容易理解。\n\n[IMAGE_BLOCK:images/7e00ec5ecaeefdeb5c6ddb2c2b1754892f7829606b7ae1bfbee5092cc460c008.jpg]\n\n最后容我略去⼏个点弦范例— 这毕竟是数学摇滚！ \n[IMAGE_BLOCK:images/4e4cb08d2324e1bc7cd144996e90016ad68d82152d1e24d2ca82b95a35fc05e1.jpg]\n\n[IMAGE_BLOCK:images/f9c4d79826ed121574f604ea4b24497e5f6ef828400975d1ba24056ae77f235a.jpg]\n\n本节内容到此结束。随着时间推移，当你投入更多时间运⽤我提供的这两种方法时，它们将帮助你更好地内化指板上音符的位置，并对创作即兴段落、乐句、歌曲构思等起到关键作⽤。\n\n⽬前就到这⾥，恭喜你坚持学完！希望你收获颇丰并享受这个过程。更多更新即将推出！\n\n感谢您的支持与耐心。\n\n祝⼀切顺利，\n\n史蒂夫",
+      "score": 0.97572,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0010",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "alternate_tuning",
+          "math_rock",
+          "midwest_emo",
+          "tapping",
+          "voicing"
+        ],
+        "raw_metadata": {
+          "source_type": "mineru_markdown",
+          "raw_path": "data/book/Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans.pdf",
+          "review_jsonl": "data/processed/mathrock/pdf_kg_extract/arrangement_kg_review.jsonl",
+          "chunks_path": "data\\processed\\mathrock\\pdf_kg_extract\\chunks.json",
+          "lesson_title": "",
+          "page_hint": "",
+          "linked_kg_edges": "[\"chord:iv_minor -[evokes]-> color:borrowed_darkness\", \"pattern:octave_shape_low_strings -[constrains]-> interval:major_7th_dissonance\", \"arpeggio:maj7 -[enables]-> chord:maj6_maj9_sus\", \"technique:tapping_phrasing -[cautions]-> caution:motif_repetition_limit\", \"concept:math_rock_riff -[suggests]-> rhythm:mixed_meter_grouping\"]",
+          "style_tags": "[\"alternate_tuning\", \"math_rock\", \"midwest_emo\", \"tapping\", \"voicing\"]",
+          "source_id": "mathrock_pdf_steve_h",
+          "source_title": "Math Rock Guitar E-book",
+          "image_refs": "[\"images/2bc7d9594d0b1da6f1047696f82b15f2754e27a88d9513e6cb2478388961fa6e.jpg\", \"images/fbd4ad5395e452807694cacbd688a98f0bf62c4fbf0c739e33472e02f5730181.jpg\", \"images/d87da37cd8d8ca104c4aa6fdb507b878d49a72f852446b2b92b94a2bd6289f0d.jpg\", \"images/0f9b8ad95c61953970e60bd6d3f6280448d894fc5568aae04f56873b2685267b.jpg\", \"images/1b90cb5f452576065ac7cb29376c0c1a53c34390d94d75cba482a00505d3ef77.jpg\", \"images/4906d7d8cb9ef31461ba3b6c8daa61e19b463619b08baa5a06b5f5701ef17a23.jpg\", \"images/9d615d548f000b2900d2aed4ab4bc170c61c5f4e114be5561c24f6aff6bea2a7.jpg\", \"images/0d4b25ba92208e81ee16eaff47291c0cfea625b6128c37b2d60647a53c7c4430.jpg\", \"images/f5b103afb9d7d18ccb6efaa4a6ce348823830f986ac960fb4d78884ba7be725f.jpg\", \"images/792842989cc943cb68a2e60385c0ee4914ade3c7a52074774bfaf65645bc4649.jpg\", \"images/eaea5d0791ab093cb407804394961ede04581816c0198a37cbe5d10a4506cac1.jpg\", \"images/0c0995be638aa9ed01d2789d5a2c532986488f505ee3a47365bed6c1bb5953c4.jpg\", \"images/463c5ade3793cd01e3fc76b31aaa80b7d029356f1b5e9df5eac8f3730542b6e6.jpg\", \"images/ca4f85cd3a787ab1fc72979195775d40020cb67baed690f545aa5b7e5ebe38cb.jpg\", \"images/4b7d500521b1cbfcef415368865c356bf7607402b708232b75f8401ef4e95d05.jpg\", \"images/f44379e49a0431ffdda02d60620e6b3ca937a566cb8315f06ef7f8f88bf29891.jpg\", \"images/a6f20e722b250f07e62abacbb00cc36cd45661033204395cf4b4777d3b506639.jpg\", \"images/b347f369737d84ea82bd4b9032c477a765fb4575650ace6e20089e239f689acf.jpg\", \"images/fe69703bd5909b3439de12ab9323750c5ea7946010113ad2bcbeeef186f70760.jpg\", \"images/8aa525d37ca392722a3f78be9dda6610783761faa3e1703fc099c0e9b1208fbb.jpg\", \"images/776e5c9d07f8e9e53bcdd050fc0d78f5a963319d6d955cb279eb059587f99545.jpg\", \"images/9a642c45bcaab86e11b232535e6d08ce8c682257a163d6eeafb87b74dcaddee6.jpg\", \"images/1cd6027cf7d1940a7990923e1e0a5edc881e8b604140e54c07a76b841d72deb8.jpg\", \"images/36b342108db9538a503bb070ff2f5a2ef28767aa4bab998d7b9b48f4ee2ac798.jpg\", \"images/395e00073c08b48de7f18fd168213fbb2dcc0241497e69cba4fbd81cc3e17bac.jpg\", \"images/7e00ec5ecaeefdeb5c6ddb2c2b1754892f7829606b7ae1bfbee5092cc460c008.jpg\", \"images/4e4cb08d2324e1bc7cd144996e90016ad68d82152d1e24d2ca82b95a35fc05e1.jpg\", \"images/f9c4d79826ed121574f604ea4b24497e5f6ef828400975d1ba24056ae77f235a.jpg\"]",
+          "gp5_feature_triggers": "[]",
+          "linked_review_ids": "[\"mathrock_pdf_steve_h:chunk_0010:001\", \"mathrock_pdf_steve_h:chunk_0010:002\", \"mathrock_pdf_steve_h:chunk_0010:003\", \"mathrock_pdf_steve_h:chunk_0010:004\", \"mathrock_pdf_steve_h:chunk_0010:005\"]",
+          "linked_kg_nodes": "[\"arpeggio:maj7\", \"caution:motif_repetition_limit\", \"chord:iv_minor\", \"chord:maj6_maj9_sus\", \"color:borrowed_darkness\", \"concept:math_rock_riff\", \"interval:major_7th_dissonance\", \"pattern:octave_shape_low_strings\", \"rhythm:mixed_meter_grouping\", \"technique:tapping_phrasing\"]",
+          "chunk_id": "chunk_0010"
+        },
+        "domain_rerank": {
+          "delta": 0.19,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 7,
+        "distance": 0.28927576541900635,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:md_chunk_0021",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_mineru",
+      "title": "吉他指板手册",
+      "content": "## 第19章调式\n\n学习目标：记住各种调式的顺序，学习伊奥尼亚（Ionian）调式。\n\n当我们学习小调音阶的时候，已经知道小调音阶和大调音阶是相关的。先来复习一下关系大小调：“大调音阶的6级音是其关系小调的根音。”\n\n当练习大调音阶和小调音阶的时候，你会发现如果不采用特殊的方法强调根音的话，比如从根音开始并以根音结束，很难去找出哪个音是音阶的根音。但是，当在一个和弦进行中弹奏某一大调或者小调音阶，就很容易找出哪个音是根音。\n\n例如，弹奏右边构建C小调的两个和弦若干次：\n\n[IMAGE_BLOCK:images/82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg] \n自然小调\n\n当这些和弦的声音还在你耳边回旋时，紧接着弹奏C小调自然音阶的某个指型，例如指型2。\n\n注意，C小调的关系大调是Eb大调，他们共用着同样的音符，但是上面弹奏出的音乐无论如何也不像Eb大调中的音乐。\n\nBb7 \n[IMAGE_BLOCK:images/e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg]\n\n为了比较说明，下面弹奏构建Eb大调感觉的和弦进行若干次：\n\n[IMAGE_BLOCK:images/28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg]\n\n然后弹奏Eb大调的音阶，其音符和C自然小调的音符是相同的。\n\n判断哪个音是根音，很大程度上取决于音乐的语境：也即音阶是在什么和弦上弹奏的。只要选择了合适的和弦作为音乐的背景，那么任何音符都可以成为音阶的根音。\n\n[IMAGE_BLOCK:images/3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg]\n\n上面的规则适用于大调音阶中的每个音符，并不仅仅是6级音。大调音阶中的每一级音都是一个调式的根音。每种调式都可以用大调音阶的五种指型来表达。虽然使用了相同的音，但不同调式的感觉和大调音阶及小调音阶是完全不同的。\n\n记住以下调式的顺序和名称，顺序使用了罗马数字，名称使用了希腊语。在关于调式的理论里，通常采用罗马数字来表示。\n\nI Ionian (伊奥尼亚调式，也就是大调)\n\nII Dorian （多利亚调式）\n\nIII Phrygian (弗里几亚调式）\n\nIV Lydian （利底亚调式）\n\nV Mixolydian （混合利底亚调式）\n\nVI Aeolian (爱奥尼亚调式，也就是自然小调)\n\nVIILocrian (洛克里亚调式）\n## 练习\n\n当你学会了这些调式的名称和顺序，用手盖住上面的列表，回答下面的问题。 \n1.第五个调式是什么？ 9.Locrian调式是第几个？ \n2.Aeolian调式是第几个？ 10.第六个调式是什么？ \n3.第三个调式是什么？ 11.Dorian调式是第几个？ \n4.第二个调式是什么？ 12.第四个调式是什么？ \n5.Ionian调式是第几个？ 13.Phrygian调式是第几个？ \n6第七个调式是什么？ 14.再说一次第五个调式是什么？ \n7.Mixolydian调式是第几个？ 16.Lydian调式是第几个？ \n8.第一个调式是什么？\n## 寻找Ionian调式\n\nIonian调式和Aeolian调式是最重要的两个调式，这两个调式之前已经学习过了。Ionian是大调音阶的第一个调式，也即大调音阶。Aeolian是大调音阶的第六个调式，也即自然小调音阶。\n\n在下面的内容中，我们将要学习如何通过找到关系大调来弹奏各种调式，这就需要先掌握Ionian调式。跟着下面的内容按部就班地学习，不要着急。如果太匆忙跳过这些练习或者学得太快，可能会在后续的学习中产生混乱。所以在开始的时候要慢慢地一步一步去学习。\n\n首先假设你需要弹奏FMixolydian调式。那么按照下面的步骤进行：\n\n1．确定调式的序号。Mixolydian调式是大调音阶中的第五个调式，所以F现在就是“5”。\n\n2．向下数到Ionian调式。运用大调音阶公式，找到Ionian调式。例如，已经确定了F音是5级音，那么按照54^321的关系，就可以找到根音是Bb音。\n\n[IMAGE_BLOCK:images/199cf05b9c2edb12106447e6a73544c662d9145eab60dcacccd0a426b8081af0.jpg]\n\n3．弹奏大调音阶，但是要从特殊的根音开始并结束。这里我们从BbIonian调式中的F音演奏到F音。这样，就相当于演奏的是FMixolydian调式。\n## 练习52\n\n用以上所学习的三步寻找Ionian的方法，填写下面的空格。\n\n1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G\n\n2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A\n\n3.EDorian Ionian从E到E 8.FDorian Ionian从F到F\n\n4.A Ionian Ionian从A到A 9.E Lydian Ionian从E到E\n\n5.D Aeolian=Ionian从D到D 10.AMixolydian=\\_\\_Ionian从A到A",
+      "score": 0.96363,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "md_chunk_0021",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_title": "吉他指板手册",
+          "lesson_title": "",
+          "source_type": "mineru_markdown",
+          "page_hint": "",
+          "raw_path": "data/book/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).pdf",
+          "gp5_feature_triggers": "[]",
+          "style_tags": "[\"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_edges": "[]",
+          "chunk_id": "md_chunk_0021",
+          "linked_kg_nodes": "[]",
+          "markdown_path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_id": "fretboard_handbook_mineru",
+          "image_refs": "[\"images/82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg\", \"images/e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg\", \"images/28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg\", \"images/3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg\", \"images/199cf05b9c2edb12106447e6a73544c662d9145eab60dcacccd0a426b8081af0.jpg\"]",
+          "linked_review_ids": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.1,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.21136701107025146,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:chunk_0009",
+      "evidence_type": "text",
+      "source_id": "mathrock_pdf_steve_h",
+      "title": "Math Rock Guitar E-book",
+      "content": "## 扩展壳式和弦排列\n\n扩展壳式和弦按法是⼀种特殊的和弦排列方式。它包含定义延伸和弦所需的核心音符（三度音与七度音），并与根音结合形成⼀、三、七音结构。这种按法能保留延伸和弦的整体调性（⼤调、⼩调等），同时进⾏精简处理。这类和弦具有实⽤价值，例如在合奏场景中，当其他乐⼿已演奏密集和声时，使⽤壳式和弦（或仅⽤三度/七度音）更为适宜。相比完整和弦，它们更适配增益音色，同时也适合构建基于和弦的连复段，因其能勾勒出特定和弦的主⼲音符。\n\n以下是我常⽤的七和弦壳式按法指型，许多数学摇滚⻛格的乐队也广泛使⽤这些指型。\n\n⼤七和弦壳式按法：\n\n[IMAGE_BLOCK:images/0fb701b227a079643cfa2e46e182df267e2355c8a2e53f8a620d8076d61229cd.jpg] \n⼩七和弦壳式指型\n\n[IMAGE_BLOCK:images/a685b11d24ac55b0ad9cdf56c965179d3fff3dd0d69b3efc6dc21393c571f61f.jpg]\n\nDominant seven shell属七和弦壳式按法\n\n[IMAGE_BLOCK:images/59289762bbbf7de6ae59c12f9c736e6dbdd3e0090c476803af94f91e04945ed0.jpg]\n\n⼩七降五和弦的壳式排列与⼩七和弦相同。这是因为这些壳式排列由根音、三音和七音构成，⽽⼩七降五和弦的降五音在这些扩展壳式排列中并不存在。这并非问题，也无需担忧，只需正常使⽤壳式排列替代即可，它仍能适配并发挥调内七和弦的功能。\n\n以下是⼀些入⻔壳式和弦的练习。建议将它们与完整和弦混合使⽤，作为即兴 riff 的基础框架，或直接运⽤这些音符创作 riff（参考\n\nFCPREMIX 前奏吉他部分，聆听以分解和弦形式呈现的壳式和弦如何构成惊艳 riff！）。如前所述，适当加入增益效果后，这些和弦会显得真挚⽽富有⼒量感。\n\n[IMAGE_BLOCK:images/77f0e2ca9c72d33b056f977b6e89af1641880ce178c05182d5d485d6259bbe24.jpg]\n\n尝试⽤这个和弦进⾏实验，比如按以下顺序开始：G#m7 - F#m7 - A#m7- Bma7，⽤你常⽤的各种节奏型扫弦。接着改为琶音演奏（连续弹奏音符），然后结合两种方式，最后可以打乱和弦顺序，例如：Bma7 - A#m7- F#m7 - G#m7会形成优美的下⾏模式，或调整为上⾏进⾏。美妙极了。\n\n现在试着从左到右弹奏⽰例⼆（⻅下方）中的和弦，听起来熟悉吗？这是The Fall of Troy乐队歌曲F.C.P.R.E.M.I.X前奏部分使⽤的和弦！\n\n2 \n[IMAGE_BLOCK:images/3d5f88929db9c3662b0dea0792712ba5f772087cb6874ccd41216c0bf26577d7.jpg]\n\n和弦进⾏与混合和弦类型\n\n关于和弦的内容还没讲完。抱歉！\n\n下⼀步是运⽤已学和弦进⾏和弦编配。此外，我们应考虑通过两种方式装饰和弦：⽤同根音和弦（含转位形式）替换原和弦，或直接进⾏和弦替代。⾸先我们将探讨和弦进⾏的基本构建方法，随后讲解和弦装饰技巧。这两部分内容理解难度不⼤，我将尽量以简明清晰的方式助你掌握。\n\n## 和弦进⾏\n\n和弦进⾏是⼀系列连贯的和弦组合，可视为歌曲的基⽯。不同进⾏产⽣的听觉效果各异，从极简结构（仅⼀两个和弦）到高度复杂形态（包含多重替代、借调和弦、变体和弦等）均有体现。\n\n如前所述，明确乐曲的调性能帮助我们判断哪些和弦在和声上适⽤。可将调性视为指南，它既展⽰了可⽤和弦库，也确保了这些和弦在和声层⾯的协调性。\n\n若参考C⼤调（如下所⽰），我们便能知晓可⽤的和弦有哪些。\n\n<table><tr><td rowspan=1 colspan=1>C</td><td rowspan=1 colspan=1>D</td><td rowspan=1 colspan=1>E</td><td rowspan=1 colspan=1>F</td><td rowspan=1 colspan=1>G</td><td rowspan=1 colspan=1>A</td><td rowspan=1 colspan=1>B</td></tr><tr><td rowspan=1 colspan=1>A}$1</td><td rowspan=1 colspan=1>\\iii</td><td rowspan=1 colspan=1>\\}$=SR</td><td rowspan=1 colspan=1>\\a}$IV.</td><td rowspan=1 colspan=1>A\\a}$V</td><td rowspan=1 colspan=1>\\ivi</td><td rowspan=1 colspan=1>t&amp;</td></tr></table>\n\n那么如何确定进⾏中该使⽤哪些和弦？虽然和弦搭配并无硬性规定，但流⾏音乐经过数⼗年的实践，已总结出哪些和弦进⾏最易打动听众。关键在于：当这些和弦扩展至包含七度音时，属五和弦（G⼤调变为G属七和弦）会呈现不同于⼤调和弦的音响效果，⽽⼩七降五和弦也与其⼩调和弦有所区别（详⻅下文）。\n\n<table><tr><td rowspan=2 colspan=1>CM73</td><td rowspan=1 colspan=1>Dm7</td><td rowspan=1 colspan=1>Em7</td><td rowspan=1 colspan=1>FM7</td><td rowspan=1 colspan=1>G7</td><td rowspan=1 colspan=1>Am7</td><td rowspan=1 colspan=1>Bm7b5</td></tr><tr><td rowspan=1 colspan=1>1t03</td><td rowspan=1 colspan=1>103</td><td rowspan=1 colspan=1>03</td><td rowspan=1 colspan=1>703</td><td rowspan=1 colspan=1>\\t3</td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>ii</td><td rowspan=1 colspan=1>≡ER0</td><td rowspan=1 colspan=1>3 IV</td><td rowspan=1 colspan=1>V</td><td rowspan=1 colspan=1>vi</td><td rowspan=1 colspan=1>03</td></tr></table>\n\n因此实际⽽言，若不转调或借⽤其他调式的和弦，你主要可支配的扩展和弦有两个：例如C⼤七和弦(CM7)和F⼤七和弦(FM7)。当然，你可以（也应该）⽤不同方式扩展它们，比如添加⼤九度或⼩九度音。\n\n在⼤调中，第⼀和弦（此处以CM7为例）具有最强的倾向性，因为它解决了调性特征（将音乐带回主和弦——⼏乎所有流⾏歌曲都是这样收尾的）。IV级⼤调本身听起来相当稳定，但往往带有转向其他和弦的倾向。其后接第⼀或第五和弦时效果极佳。\n\n⼩调有三个可选和弦：⼆级（ii - Dm7）、三级（iii - Em7）和六级（vi -Am7）。这三个⼩调和弦中，六级听起来最强烈，因为它同时也是 ⼤C调的关系⼩调（这意味着 ⼩调与 ⼤调的音阶相同，回顾五度循环即A C可验证）。六到⼀的进⾏听起来非常完满。⽽六、七到⼀的上升和弦进⾏则能营造美妙的紧张感与释放感。\n\n以下是⼀些基础功能和弦进⾏供你入⻔。我们将仅使⽤⽬前学过的和弦，并标注了每个和弦的罗⻢数字符号及⽰例，但我建议你可以尝试替换同级和弦（比如将⼤七和弦改为⼤九和弦）。此外，不妨尝试不同的扫弦节奏、换和弦的时机、指弹模式，甚至⽤和弦内音创作即兴⽚段。记住这些进⾏可以在指板不同位置演奏，我鼓励你尝试这些和弦的各种变体来寻找心仪之声——对了，还可以换不同调号来弹奏！\n\n## ⾃然音阶流⾏和弦进⾏\n\n这些和弦进⾏在数学摇滚/情绪摇滚歌曲中极为常⻅，它们都属于⾃然音阶体系，即仅使⽤同⼀调号内的和弦。\n\n1.\n\n<table><tr><td>IV.</td><td>V</td><td>vi</td><td>1</td></tr><tr><td></td><td></td><td></td><td></td></tr></table>\n\n[IMAGE_BLOCK:images/834e654e5ca1722eb1b099c4c5bdf0d81ace75acadd940fb7b218f76f10faa87.jpg]\n\n这个和弦进⾏带有令人满⾜的上升感，并在最后⼀个和弦上形成完满解决，因为它最终回归到主和弦。这种进⾏非常适合⽤作歌曲结尾、中间段落甚至副歌部分。\n\n2.\n\n[IMAGE_BLOCK:images/a9f2f3ee9a0184d4cdb0770aafb091f71c32f790df30e8cc53b54dae4c0742c6.jpg]\n\n这个和弦进⾏本质上颇具流⾏感，又带有⼀丝忧郁与渴望的情绪，但仍是充满希望的渴求。若要概括其特质！我认为它非常适合营造副歌段落的听觉效果。\n\n3.\n\n[IMAGE_BLOCK:images/4b9d534592746879f302e4e0e1adf878a3ec0635caeff6afc2212d91fa5ab168.jpg]\n\n这个和弦进⾏非常适合作为中间段落或⽤于构建紧张感的段落。因为演奏时你会感觉到这个进⾏似乎需要\"前往某处\"—— 即需要推进到另⼀个段落或改变和弦进⾏。\n\n此外，6/9和弦是替代属七和弦效果的⼀个优雅解决方案。\n\n4.\n\n[IMAGE_BLOCK:images/2bbc50e96ed75e81836fabcce8f2438e0aca91d0200bc4c5add3afb9129c774b.jpg]\n\n和弦进⾏四非常适合⽤于主歌或副歌后的过渡段，能营造出令人愉悦的情绪氛围。\n\n5. \n[IMAGE_BLOCK:images/e32265c601bf5d191978e4f378070fea9dcc2867d5d02a376b8c6a1855f6b73b.jpg] \n最后，和弦进⾏五因其上⾏模式⽽具有这种美妙的振奋感。\n\n## 含借⽤和弦的和弦进⾏\n\n以下和弦进⾏包含借⽤和弦，与之前探讨的⾃然音阶和弦进⾏相比具有不同的质感与表现⼒。它们能为创作带来有趣变化，并可能形成⼀些新颖的和声进⾏。我强烈建议在个人创作和演奏中尝试运⽤，但⾸先：\n\n## 什么是借⽤和弦？\n\n简⽽言之，借⽤和弦是从母调（即特定歌曲或乐曲所使⽤的调号）以外的其他调式中借⽤的和弦。这类和弦通常源⾃平⾏⼩调或⼤调（当前使⽤调式的对立调式），\"借⽤\"⼀词由此⽽来。\n\n例如，若我们处于C⼤调中，可从 C⼩调（平⾏⼩调）借⽤和弦\n\nC⼤调音阶：\n\n<table><tr><td rowspan=1 colspan=1>C</td><td rowspan=1 colspan=1>D</td><td rowspan=1 colspan=1>E</td><td rowspan=1 colspan=1>F</td><td rowspan=1 colspan=1>G</td><td rowspan=1 colspan=1>A</td><td rowspan=1 colspan=1>B</td></tr><tr><td rowspan=1 colspan=1>i\\a}</td><td rowspan=1 colspan=1>\\{}$</td><td rowspan=1 colspan=1>\\}$</td><td rowspan=1 colspan=1>i\\}$</td><td rowspan=1 colspan=1>i\\}$</td><td rowspan=1 colspan=1>\\}$</td><td rowspan=1 colspan=1>\\</td></tr><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>ii</td><td rowspan=1 colspan=1>≡SR</td><td rowspan=1 colspan=1>IV</td><td rowspan=1 colspan=1>V</td><td rowspan=1 colspan=1>vi</td><td rowspan=1 colspan=1>t&amp;R</td></tr></table>\n\nC⼩调调性：\n\n<table><tr><td rowspan=1 colspan=1>C</td><td rowspan=1 colspan=1>D</td><td rowspan=1 colspan=1>Eb</td><td rowspan=1 colspan=1>F</td><td rowspan=1 colspan=1>G</td><td rowspan=1 colspan=1>Ab</td><td rowspan=1 colspan=1>B</td></tr><tr><td rowspan=1 colspan=1>\\}$</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1>i\\}</td><td rowspan=1 colspan=1>\\}$</td><td rowspan=1 colspan=1>\\}$</td><td rowspan=1 colspan=1>i\\}</td><td rowspan=2 colspan=1>\\}$VII</td></tr><tr><td rowspan=1 colspan=1>i</td><td rowspan=1 colspan=1>ii</td><td rowspan=1 colspan=1>III</td><td rowspan=1 colspan=1>iv</td><td rowspan=1 colspan=1>V</td><td rowspan=1 colspan=1>VI</td></tr></table>\n\n若在C⼤调中借⽤C⼩调的和弦，需使⽤特定标记来表明此为借⽤和弦：\n\n<table><tr><td rowspan=1 colspan=1>C</td><td rowspan=1 colspan=1>D</td><td rowspan=1 colspan=1>Eb</td><td rowspan=1 colspan=1>F</td><td rowspan=1 colspan=1>G</td><td rowspan=1 colspan=1>Ab</td><td rowspan=1 colspan=1>B</td></tr><tr><td rowspan=1 colspan=1>\\}$</td><td rowspan=1 colspan=1>3$</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1>\\{}$</td><td rowspan=1 colspan=1>\\}$</td><td rowspan=2 colspan=1>i\\}$BA</td><td rowspan=2 colspan=1>\\a}$R</td></tr><tr><td rowspan=1 colspan=1>i</td><td rowspan=1 colspan=1>\\x$f$</td><td rowspan=1 colspan=1>B+</td><td rowspan=1 colspan=1>iv</td><td rowspan=1 colspan=1>V</td></tr></table>\n\n降记号置于⼤三和弦blll、bVI和bVII前，明确标⽰其为借调和弦。需注意这些是⼤调中的⼩调或减和弦。⼩调和弦采⽤⼩写罗⻢数字：i、iv、v。由于⼤调中这些和弦本应⼤写，因此很容易区分它们是借调和弦。最后，⼆级和弦标注ii ∘ 减符号以表明其为借调的减和弦。\n\n以下借调和弦进⾏是我运⽤借调和弦的⼏种方式，每个⽰例下方会解释借调和弦的功能，您可借此学习其⽤法！\n\n1.\n\n<table><tr><td>IV</td><td></td><td>1l</td><td>bll</td></tr></table>\n\n[IMAGE_BLOCK:images/453abdc92272702f3f1d53ed0110eef727bb4d495ba1d760a7015fc672b62500.jpg]\n\n和弦进⾏⼀带有熟悉的上升感，但基于第三音构建的⼩和弦（G#m）被替换为平⾏⼩调（E⼩调）中借⽤的⼤三和弦。这引入了出人意料的音响效果，听众的⽿朵本能期待听到⼩三和弦。这是个相当精妙的技巧，效果出众。我最初是在TubeLord的歌曲中接触到这个⼿法。在我的乐队Mountains的歌曲《Restarts》前奏部分也运⽤了此技巧，不妨听听看能否辨识出那个借来的和弦。\n\nhttps://open.spotify.com/album/40YDxR2agQg5XKds5E6Ryt\n\n2. \n[IMAGE_BLOCK:images/bc281cbbb9aca3a7a46db5568f1b6646e80b500fbabc72093420202394c3bd46.jpg]\n\n在和声进⾏⼆中，减七和弦(vii°)被替换为平⾏⼩调(B⼩调)借来的⼤七和弦。这是缓解减和弦带来不必要紧张感的巧妙⼿法。尝试依次演奏AM7、A#m7b5和BM7和弦，能获得酷炫的半音效果！\n\n3.\n\n[IMAGE_BLOCK:images/48134e9d9925d822e6a590df6af4ec47a9b70ab10a07144a5c8ac8c2ffbeb670.jpg]\n\n在这个和弦进⾏中，借⽤和弦替代了基于第五音级构建的延伸属和弦（属七和弦），这为你提供了另⼀种规避不必要属和弦效果的方法，同时还增添了独特的音乐性格！没错，它再次借⽤了平⾏⼩调的和弦——如果你还没发现的话！\n\n4. \n[IMAGE_BLOCK:images/8e4e4dfc0a5841cafa7ad47665eaa0acef4d48213b6fda99be4d4fbf1992db98.jpg] \n最后，这⾥采⽤了与第三个和弦进⾏相同的⼿法来替代属五和弦。",
+      "score": 0.95501,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "chunk_0009",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "alternate_tuning",
+          "math_rock",
+          "midwest_emo",
+          "tapping",
+          "voicing"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[\"caution:distortion_muddy_low_freqs\", \"chord:6_9\", \"chord:borrowed_bIII\", \"chord:borrowed_bVII_M7\", \"chord:m7b5\", \"chord:shell_voicing\", \"color:satisfying_resolution_uplift\", \"color:surprise_modal_interchange\", \"guitar_idiom:math_rock_riff_framework\", \"heuristic:clarity_in_dense_arrangement\", \"heuristic:resolve_diminished_tension\", \"heuristic:substitute_dominant_softly\", \"progression:iv_v_vi_i\", \"technique:omit_5th_for_functional_equivalence\"]",
+          "chunk_id": "chunk_0009",
+          "review_jsonl": "data/processed/mathrock/pdf_kg_extract/arrangement_kg_review.jsonl",
+          "source_type": "mineru_markdown",
+          "linked_review_ids": "[\"mathrock_pdf_steve_h:chunk_0009:001\", \"mathrock_pdf_steve_h:chunk_0009:002\", \"mathrock_pdf_steve_h:chunk_0009:003\", \"mathrock_pdf_steve_h:chunk_0009:004\", \"mathrock_pdf_steve_h:chunk_0009:005\", \"mathrock_pdf_steve_h:chunk_0009:006\", \"mathrock_pdf_steve_h:chunk_0009:007\", \"mathrock_pdf_steve_h:chunk_0009:008\"]",
+          "image_refs": "[\"images/0fb701b227a079643cfa2e46e182df267e2355c8a2e53f8a620d8076d61229cd.jpg\", \"images/a685b11d24ac55b0ad9cdf56c965179d3fff3dd0d69b3efc6dc21393c571f61f.jpg\", \"images/59289762bbbf7de6ae59c12f9c736e6dbdd3e0090c476803af94f91e04945ed0.jpg\", \"images/77f0e2ca9c72d33b056f977b6e89af1641880ce178c05182d5d485d6259bbe24.jpg\", \"images/3d5f88929db9c3662b0dea0792712ba5f772087cb6874ccd41216c0bf26577d7.jpg\", \"images/834e654e5ca1722eb1b099c4c5bdf0d81ace75acadd940fb7b218f76f10faa87.jpg\", \"images/a9f2f3ee9a0184d4cdb0770aafb091f71c32f790df30e8cc53b54dae4c0742c6.jpg\", \"images/4b9d534592746879f302e4e0e1adf878a3ec0635caeff6afc2212d91fa5ab168.jpg\", \"images/2bbc50e96ed75e81836fabcce8f2438e0aca91d0200bc4c5add3afb9129c774b.jpg\", \"images/e32265c601bf5d191978e4f378070fea9dcc2867d5d02a376b8c6a1855f6b73b.jpg\", \"images/453abdc92272702f3f1d53ed0110eef727bb4d495ba1d760a7015fc672b62500.jpg\", \"images/bc281cbbb9aca3a7a46db5568f1b6646e80b500fbabc72093420202394c3bd46.jpg\", \"images/48134e9d9925d822e6a590df6af4ec47a9b70ab10a07144a5c8ac8c2ffbeb670.jpg\", \"images/8e4e4dfc0a5841cafa7ad47665eaa0acef4d48213b6fda99be4d4fbf1992db98.jpg\"]",
+          "page_hint": "",
+          "gp5_feature_triggers": "[]",
+          "source_title": "Math Rock Guitar E-book",
+          "source_id": "mathrock_pdf_steve_h",
+          "chunks_path": "data\\processed\\mathrock\\pdf_kg_extract\\chunks.json",
+          "linked_kg_edges": "[\"chord:shell_voicing -[enables]-> heuristic:clarity_in_dense_arrangement\", \"chord:shell_voicing -[suggests]-> caution:distortion_muddy_low_freqs\", \"chord:shell_voicing -[can_inspire]-> guitar_idiom:math_rock_riff_framework\", \"chord:m7b5 -[suggests]-> technique:omit_5th_for_functional_equivalence\", \"progression:iv_v_vi_i -[evokes]-> color:satisfying_resolution_uplift\", \"chord:borrowed_bIII -[evokes]-> color:surprise_modal_interchange\", \"chord:borrowed_bVII_M7 -[suggests]-> heuristic:resolve_diminished_tension\", \"chord:6_9 -[suggests]-> heuristic:substitute_dominant_softly\"]",
+          "raw_path": "data/book/Math-Rock-Guitar-E-book-November-2020-dcnauy_onlyTrans.pdf",
+          "lesson_title": "",
+          "style_tags": "[\"alternate_tuning\", \"math_rock\", \"midwest_emo\", \"tapping\", \"voicing\"]"
+        },
+        "domain_rerank": {
+          "delta": 0.19,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 16,
+        "distance": 0.3099852204322815,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0033",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习11\n在下图中，以给出的音符为起始音，在一根弦上写出相应的大调音阶。注意应用大调音阶公式和字母表规则。在写出音符的同时大声朗读出来。\n2)\n4)\n5)\n10）\n现在弹奏上面指板图中的音阶，注意在弹奏的同时要大声地说出音阶的名称和每个音符的名字：“d大调:D…E…·F#…G…A…B…C#…D…”\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.93425,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0033",
+        "page_hint": "20",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_type": "clean_markdown",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "page_hint": "20",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_review_ids": "[]",
+          "gp5_feature_triggers": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0058fbf60def1e6417812920f6558cc1fe2871e06e57b859238da40b1bfa802e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\733d105ce793fc0e3ad70054cbc71f15595dd6a810ff3978361d3959b9630f1d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ffaf557cd9e2b7ed9b7db216391e65f0c9a6b3dff5ef2164e43bc0bc8c5443bd.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a5e0bc7c0d841ead4adf7ccee2c8f1235961796b3021efe39134e137d3d5297e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2e03b6ab8dfdf93f3e392bd533231311a35c7bb76bf032a17340262a5cec4a1b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\84c935cf5637d28acebb01ebed5029c93820d72325f89c39e939ce7004d0a023.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f31637ca83232656dfe25e8f2c5503c9edbd4de5ffdb7cdf86296041e557c1a7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9d82485664d11b0778730e2f74370fb0110805fff707ec44c23277dd195b9e7b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\66c6ce0189241b2e2b56853875f6bf3b07338dbdd0a45f7e99ccf834b644c799.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9157452dde322fed412218a9ee021541e9f39715eeeaa2973d16d6422459d69.jpg\"]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_nodes": "[]",
+          "linked_kg_edges": "[]",
+          "review_jsonl": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "chunk_id": "fretboard_text_0033",
+          "lesson_title": ""
+        },
+        "domain_rerank": {
+          "delta": 0.1,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 16,
+        "distance": 0.19075071811676025,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0121",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "学习目标：在指板上构建变化和弦。\n当和弦中的音符或者延伸音出现升降的情况时就形成了变化和弦。变化和弦经常出现在属和弦和一些大和弦中。变化和弦的规则同样适用于变化和弦的琶音。\n常用的变化和弦的音符有：b5、#5、b9、#9、#11和b13。通常将这些音符应写在圆括号里，避免同和弦的根音混淆。例如：\nB(b5)=B大三和弦和b5=1、3、b5 (B-D-F)\nBb5=Bb强力和弦（仅根音和五度音）=1、5（B-F)",
+      "score": 0.93107,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0121",
+        "page_hint": "58",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "source_type": "clean_markdown",
+          "chunk_id": "fretboard_text_0121",
+          "page_hint": "58",
+          "gp5_feature_triggers": "[]",
+          "review_jsonl": "",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_kg_edges": "[]",
+          "linked_review_ids": "[]",
+          "lesson_title": "",
+          "image_refs": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]"
+        },
+        "domain_rerank": {
+          "delta": 0.1,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.16893166303634644,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0079",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习30\n运用五种大调音阶指型中的音符，构建D大三和弦琶音的五种指型。注意不要使用品位标记以下的音符，并且在画出音符时，保证所有的音符都在左手所在的把位以内，最多不要超出1品以外。\n1）D大三和弦琶音\n指型1\n2)D大三和弦琶音 指型2\n3)D大三和弦琶音\n=\n指型3\n4)D大三和弦琶音\nIV\nVII\n指型4\n5)D大三和弦琶音 指型5\nIX\n弹奏以上这些D大三和弦琶音，演奏时要大声说出和弦名称及指型序号。弹奏时，从每一指型中最低的根音开始，弹至最高音，再向下弹至最低音，最后回到根音。同时，要注意仔细聆听琶音中不同的音程性质。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.91937,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0079",
+        "page_hint": "41",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunk_id": "fretboard_text_0079",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_type": "clean_markdown",
+          "linked_review_ids": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2c8b32bf233d01c7334bd00960a8c649e8d99f3b3c728357259fe98d182cd025.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3d544f9591abee93dfeb682eb5293552ce4cfd3e72baff63056ed6e6fd8b5f46.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\59bcb0820ee626a7cbbd9299081215bb3ef5a38a94cb052c67dd23e9b52a3f1c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\97c7d7505ce88b266ced2d97a35a6883c794468513774f9432b5258e3bfd8e18.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c55fb174db9e32f32aaf479912847233a4017fcb23268b0f94341a474438053e.jpg\"]",
+          "lesson_title": "",
+          "linked_kg_edges": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "review_jsonl": "",
+          "source_id": "fretboard_handbook_clean_text",
+          "gp5_feature_triggers": "[]",
+          "page_hint": "41",
+          "linked_kg_nodes": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [
+              "missing_exact_key"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 12,
+        "distance": 0.18563413619995117,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    }
+  ],
+  "visual_evidence": [
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E15_8",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 15 小题: 8\n证据类型: fretboard_diagram\n视觉类型: mode_fretboard_map\n对象: Gb 大调指型 5 (Eb 小调指型 1)\n根音: Gb / Eb\n性质/调式: Major / Minor\n位置/指型: 指型 5 / 指型 1\n方向: horizontal\n把位: III\n可见标签: Gb 大调 指型 5, Eb 小调 指型 1\n按点概述: 横向指板图，罗马数字 III 标记把位。图中包含实心圆点（音阶音）和带方框的圆点（根音）。根据标题推断，方框圈出的音符分别为 Gb 大调根音和 Eb 小调根音。\ncaption: Gb 大调指型 5 (对应关系小调 Eb 小调指型 1) 的横向指板图。位于第 III 把位。图中用方框标出了关系小调的根音位置，展示了大调与其关系小调在同一指型下的根音对应关系。\n检索关键词: Gb Major, Eb Minor, Pattern 5, Pattern 1, Relative Minor, Root Note, Fretboard Diagram, Position III\n编配价值: 用于理解大调指型与关系小调指型的重叠逻辑。通过在同一把位（III把位）识别 Gb 大调与 Eb 小调的根音位置，帮助乐手在独奏或即兴中快速切换调式中心，掌握相对大小调的指板映射。\n题目上下文: 回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+      "score": 1.49672,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E15_8",
+        "page_hint": "data/练习解答（图片）/练习15.png",
+        "exercise_number": 15,
+        "subquestion_number": 8,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_08.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "exercise_number": 15,
+          "caption_layer": "fretboard_answer_caption_v1",
+          "visual_granularity": "question_answer_crop",
+          "source_id": "fretboard_handbook_question_answer",
+          "tuning": "",
+          "caption": "Gb 大调指型 5 (对应关系小调 Eb 小调指型 1) 的横向指板图。位于第 III 把位。图中用方框标出了关系小调的根音位置，展示了大调与其关系小调在同一指型下的根音对应关系。",
+          "uncertain_fields": "[\"fret_range\"]",
+          "entities": "{}",
+          "intervals": "[]",
+          "quality_or_mode": "Major / Minor",
+          "source_image": "data/练习解答（图片）/练习15.png",
+          "confidence": 0.95,
+          "key": "",
+          "musical_object": "Gb 大调指型 5 (Eb 小调指型 1)",
+          "segment_id": "fretboard_answer_E15_8",
+          "mapping_method": "exercise_level_fallback",
+          "question_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "page": "data/练习解答（图片）/练习15.png",
+          "image_type": "mode_fretboard_map",
+          "arrangement_value": "用于理解大调指型与关系小调指型的重叠逻辑。通过在同一把位（III把位）识别 Gb 大调与 Eb 小调的根音位置，帮助乐手在独奏或即兴中快速切换调式中心，掌握相对大小调的指板映射。",
+          "priority": "fretboard_foundation_answer",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "visual_type": "mode_fretboard_map",
+          "retrieval_keywords": "[\"Gb Major\", \"Eb Minor\", \"Pattern 5\", \"Pattern 1\", \"Relative Minor\", \"Root Note\", \"Fretboard Diagram\", \"Position III\"]",
+          "visual_id": "fretboard_answer_E15_8",
+          "topic_hint": "Gb 大调指型 5 (Eb 小调指型 1)",
+          "nearby_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "visible_structure": "{}",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_08.png",
+          "position_or_shape": "指型 5 / 指型 1",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_08.png",
+          "topic": "Gb 大调指型 5 (Eb 小调指型 1)",
+          "evidence_type": "fretboard_diagram",
+          "root": "Gb / Eb",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "subquestion_number": 8
+        },
+        "domain_rerank": {
+          "delta": 0.54,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [
+              "B minor"
+            ],
+            "matched_roots": [
+              "D",
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 13,
+        "distance": 0.16827797889709473,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？ 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E12_1",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 12 小题: 1\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: D大调 指型1\n根音: D\n性质/调式: Major Scale (Ionian)\n位置/指型: 指型1 (Pattern 1)\n方向: horizontal\n品位范围: 约为第5-8品\n可见标签: 1) D大调 指型1\n按点概述: 图中展示了D大调音阶在指板上的分布，包含多个按点（黑点）和两个圈出的根音（Root notes）。根据D大调指型1的常见把位推断，根音位于5弦7品和3弦7品附近。\ncaption: D大调音阶指型1（Pattern 1）的指板图示。图中标注了该调式在特定把位下的音符排列，其中根音D被圆圈特别标记。此图为横向六线谱风格，展示了从低音弦到高音弦的音阶指法分布，用于练习D Major Scale的第一种指型。\n检索关键词: D大调, D Major, 指型1, Pattern 1, 大调音阶, Major Scale, 吉他指板, 根音, 音阶指法\n编配价值: 提供了D大调基础指型（通常对应Mi型或Sol型变体，取决于起始根音位置）的视觉参考，帮助学习者掌握D大调在低把位到中把位的音阶连接，明确根音位置以建立调性中心感，适用于即兴solo构建及调内和弦推导的基础训练。\n题目上下文: 利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。 2 G大调指型\\_ 3)C大调指型一 = 1 51 Bb大调指型\\_ = 6 G大调指型 9 IV A大调指型\\_ 8 Gb大调指型 I三I 101 Eb大调指型 三 弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。",
+      "score": 1.42023,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E12_1",
+        "page_hint": "data/练习解答（图片）/练习12.png",
+        "exercise_number": 12,
+        "subquestion_number": 1,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_12_12/question_segments_v2/crops/exercise_12_01.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "intervals": "[]",
+          "musical_object": "D大调 指型1",
+          "entities": "{}",
+          "root": "D",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "page": "data/练习解答（图片）/练习12.png",
+          "position_or_shape": "指型1 (Pattern 1)",
+          "retrieval_keywords": "[\"D大调\", \"D Major\", \"指型1\", \"Pattern 1\", \"大调音阶\", \"Major Scale\", \"吉他指板\", \"根音\", \"音阶指法\"]",
+          "nearby_text": "利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。 2 G大调指型\\_ 3)C大调指型一 = 1 51 Bb大调指型\\_ = 6 G大调指型 9 IV A大调指型\\_ 8 Gb大调指型 I三I 101 Eb大调指型 三 弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。",
+          "priority": "fretboard_foundation_answer",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "caption": "D大调音阶指型1（Pattern 1）的指板图示。图中标注了该调式在特定把位下的音符排列，其中根音D被圆圈特别标记。此图为横向六线谱风格，展示了从低音弦到高音弦的音阶指法分布，用于练习D Major Scale的第一种指型。",
+          "exercise_number": 12,
+          "arrangement_value": "提供了D大调基础指型（通常对应Mi型或Sol型变体，取决于起始根音位置）的视觉参考，帮助学习者掌握D大调在低把位到中把位的音阶连接，明确根音位置以建立调性中心感，适用于即兴solo构建及调内和弦推导的基础训练。",
+          "topic": "D大调 指型1",
+          "visual_id": "fretboard_answer_E12_1",
+          "tuning": "",
+          "confidence": 0.95,
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_12_12/question_segments_v2/crops/exercise_12_01.png",
+          "visible_structure": "{}",
+          "visual_type": "scale_pattern",
+          "topic_hint": "D大调 指型1",
+          "uncertain_fields": "[\"fret_range\", \"string_position\"]",
+          "visual_granularity": "question_answer_crop",
+          "key": "",
+          "question_text": "利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。 2 G大调指型\\_ 3)C大调指型一 = 1 51 Bb大调指型\\_ = 6 G大调指型 9 IV A大调指型\\_ 8 Gb大调指型 I三I 101 Eb大调指型 三 弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。",
+          "evidence_type": "fretboard_diagram",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "source_id": "fretboard_handbook_question_answer",
+          "source_image": "data/练习解答（图片）/练习12.png",
+          "mapping_method": "exercise_level_fallback",
+          "segment_id": "fretboard_answer_E12_1",
+          "subquestion_number": 1,
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_12_12/question_segments_v2/crops/exercise_12_01.png",
+          "quality_or_mode": "Major Scale (Ionian)",
+          "image_type": "scale_pattern"
+        },
+        "domain_rerank": {
+          "delta": 0.47,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [
+              "D major"
+            ],
+            "matched_roots": [
+              "D"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 23,
+        "distance": 0.17477118968963623,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？ 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E19_2",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 19 小题: 2\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: Bb 小调五声音阶 指型4 / Db 大调五声音阶 指型3\n根音: Bb\n性质/调式: minor pentatonic\n位置/指型: 指型4 (Shape 4)\n答案项: 2: Bb 小调五声音阶 指型4\n方向: vertical\n把位: V\n可见标签: Bb 小调五声音阶, 指型 4, Db 大调五声音阶, 指型 3\n按点概述: 垂直指板图，第5把位（罗马数字V）。包含实心圆点（音阶音）、带方框的圆点（根音）和叉号（非调内音/延伸音）。顶部标注 Bb 小调五声音阶 指型4，底部标注 Db 大调五声音阶 指型3。\ncaption: 吉他指板练习答案：Bb 小调五声音阶指型4（对应关系大调 Db 大调五声音阶指型3）。图示为垂直指板第 V 把位，标有音阶按点及方形根音标记。\n检索关键词: Bb minor pentatonic, Db major pentatonic, 指型4, Shape 4, relative major, guitar scale diagram, root note square\n编配价值: 展示 Bb 小调与 Db 大调（关系大小调）在同一把位（V把位）的五声音阶指法重叠。用于理解小调五声与其关系大调五声的指型转换及根音定位（方形标记），辅助即兴演奏中的调式互换。\n题目上下文: 回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。 D小调五声音阶指型2",
+      "score": 1.39675,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E19_2",
+        "page_hint": "data/练习解答（图片）/练习16-练习19.png",
+        "exercise_number": 19,
+        "subquestion_number": 2,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_16_19/question_segments_v2/crops/exercise_19_02.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "topic_hint": "Bb 小调五声音阶 指型4 / Db 大调五声音阶 指型3",
+          "subquestion_number": 2,
+          "arrangement_value": "展示 Bb 小调与 Db 大调（关系大小调）在同一把位（V把位）的五声音阶指法重叠。用于理解小调五声与其关系大调五声的指型转换及根音定位（方形标记），辅助即兴演奏中的调式互换。",
+          "quality_or_mode": "minor pentatonic",
+          "source_id": "fretboard_handbook_question_answer",
+          "root": "Bb",
+          "tuning": "",
+          "visual_type": "scale_pattern",
+          "segment_id": "fretboard_answer_E19_2",
+          "retrieval_keywords": "[\"Bb minor pentatonic\", \"Db major pentatonic\", \"指型4\", \"Shape 4\", \"relative major\", \"guitar scale diagram\", \"root note square\"]",
+          "mapping_method": "exercise_level_fallback",
+          "priority": "fretboard_foundation_answer",
+          "exercise_number": 19,
+          "musical_object": "Bb 小调五声音阶 指型4 / Db 大调五声音阶 指型3",
+          "uncertain_fields": "[]",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_16_19/question_segments_v2/crops/exercise_19_02.png",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "visible_structure": "{}",
+          "image_type": "scale_pattern",
+          "caption": "吉他指板练习答案：Bb 小调五声音阶指型4（对应关系大调 Db 大调五声音阶指型3）。图示为垂直指板第 V 把位，标有音阶按点及方形根音标记。",
+          "page": "data/练习解答（图片）/练习16-练习19.png",
+          "visual_granularity": "question_answer_crop",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_16_19/question_segments_v2/crops/exercise_19_02.png",
+          "question_text": "回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。 D小调五声音阶指型2",
+          "visual_id": "fretboard_answer_E19_2",
+          "confidence": 1.0,
+          "position_or_shape": "指型4 (Shape 4)",
+          "key": "",
+          "source_image": "data/练习解答（图片）/练习16-练习19.png",
+          "topic": "Bb 小调五声音阶 指型4 / Db 大调五声音阶 指型3",
+          "entities": "{}",
+          "nearby_text": "回到练习17中，写出每个图示中关系大调五声音阶的名称和指型序号，并且用方形画出关系大调五声音阶的根音。第一个图示的例子如右所示。 D小调五声音阶指型2",
+          "evidence_type": "fretboard_diagram",
+          "intervals": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.47,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [
+              "B minor"
+            ],
+            "matched_roots": [
+              "D"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 19,
+        "distance": 0.17324960231781006,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？ 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E14_8",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 14 小题: 8\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: Bb minor 指型3 (Db major 指型2)\n根音: Bb\n性质/调式: minor / relative major Db\n位置/指型: Shape 3 (Minor) / Shape 2 (Major), Position III\n答案项: 8: Bb 小调 指型3 (Db 大调 指型2)\n方向: horizontal\n把位: III\n品位范围: unknown\n可见标签: Bb 小调 指型3, (Db 大调 指型2), III\n按点概述: 横向指板图，标注罗马数字 III。黑色圆点表示 Bb 小调音阶音符，其中部分根音被方框圈出（对应关系大调 Db 的根音位置）。根据指型推断起始把位约为第 6 品。\ncaption: 练习14第8题答案：Bb小调指型3（关系大调为Db大调指型2）。横向指板图显示第III把位音阶分布，黑点为音阶音，方框标出关系大调根音。\n检索关键词: Bb minor shape 3, Db major shape 2, relative major, guitar scale pattern, position III, Bb小调, Db大调, 关系大调根音\n编配价值: 展示小调指型与其关系大调指型的重叠关系，方框标记帮助乐手在 solo 或编配时快速定位关系大调根音，实现调式互换或色彩转换。\n题目上下文: 回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+      "score": 1.37494,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E14_8",
+        "page_hint": "data/练习解答（图片）/练习13-练习14.png",
+        "exercise_number": 14,
+        "subquestion_number": 8,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_08.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "caption": "练习14第8题答案：Bb小调指型3（关系大调为Db大调指型2）。横向指板图显示第III把位音阶分布，黑点为音阶音，方框标出关系大调根音。",
+          "visual_id": "fretboard_answer_E14_8",
+          "quality_or_mode": "minor / relative major Db",
+          "visual_granularity": "question_answer_crop",
+          "source_image": "data/练习解答（图片）/练习13-练习14.png",
+          "evidence_type": "fretboard_diagram",
+          "topic_hint": "Bb minor 指型3 (Db major 指型2)",
+          "key": "",
+          "page": "data/练习解答（图片）/练习13-练习14.png",
+          "entities": "{}",
+          "visible_structure": "{}",
+          "topic": "Bb minor 指型3 (Db major 指型2)",
+          "nearby_text": "回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "mapping_method": "exercise_level_fallback",
+          "position_or_shape": "Shape 3 (Minor) / Shape 2 (Major), Position III",
+          "intervals": "[]",
+          "priority": "fretboard_foundation_answer",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "question_text": "回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "confidence": 0.95,
+          "arrangement_value": "展示小调指型与其关系大调指型的重叠关系，方框标记帮助乐手在 solo 或编配时快速定位关系大调根音，实现调式互换或色彩转换。",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_08.png",
+          "musical_object": "Bb minor 指型3 (Db major 指型2)",
+          "uncertain_fields": "[\"fret_range\"]",
+          "visual_type": "scale_pattern",
+          "retrieval_keywords": "[\"Bb minor shape 3\", \"Db major shape 2\", \"relative major\", \"guitar scale pattern\", \"position III\", \"Bb小调\", \"Db大调\", \"关系大调根音\"]",
+          "image_type": "scale_pattern",
+          "source_id": "fretboard_handbook_question_answer",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "tuning": "",
+          "root": "Bb",
+          "subquestion_number": 8,
+          "segment_id": "fretboard_answer_E14_8",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "exercise_number": 14,
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_08.png"
+        },
+        "domain_rerank": {
+          "delta": 0.4,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [
+              "B minor"
+            ],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.1500580906867981,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？ 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E22_9_part2",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 22 小题: 9\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: Bb 小调五声音阶指型2 / Db 大调五声音阶指型1\n根音: Bb, Db\n性质/调式: minor pentatonic, major pentatonic\n位置/指型: 指型2 (XIII把位), 指型1\n答案项: 1: Bb 小调五声音阶 指型2; 2: Db 大调五声音阶 指型1\n方向: vertical\n把位: XIII\n品位范围: 约为 13-16品\n可见标签: Bb 小调五声音阶, 指型 2, XIII, Db 大调五声音阶, 指型 1\n按点概述: 上方图表为 Bb 小调五声音阶，位于 XIII 把位，根音用方框标出；下方图表为 Db 大调五声音阶，根音用方框标出。\ncaption: 练习22第9题答案图示：包含两个垂直指板图。上方为 Bb 小调五声音阶（指型2），标注于 XIII 把位，可见根音方框标记；下方为 Db 大调五声音阶（指型1），同样标记了根音位置。展示了关系大小调五声音阶的对应指型。\n检索关键词: Bb minor pentatonic, Db major pentatonic, 指型2, 指型1, XIII把位, 关系大小调, 五声音阶, 根音标记\n编配价值: 用于识别和记忆 Bb 小调与 Db 大调（关系调）在指板高把位（13品附近）的五声音阶指型对应关系，特别是通过方框定位根音以辅助即兴或编配时的调性确认。\n题目上下文: 回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。 弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。",
+      "score": 1.33146,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E22_9_part2",
+        "page_hint": "data/练习解答（图片）/练习22.png",
+        "exercise_number": 22,
+        "subquestion_number": 9,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_22_22/question_segments_v2/crops/exercise_22_09_part2.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "topic_hint": "Bb 小调五声音阶指型2 / Db 大调五声音阶指型1",
+          "evidence_type": "fretboard_diagram",
+          "tuning": "",
+          "nearby_text": "回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。 弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。",
+          "arrangement_value": "用于识别和记忆 Bb 小调与 Db 大调（关系调）在指板高把位（13品附近）的五声音阶指型对应关系，特别是通过方框定位根音以辅助即兴或编配时的调性确认。",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_22_22/question_segments_v2/crops/exercise_22_09_part2.png",
+          "subquestion_number": 9,
+          "topic": "Bb 小调五声音阶指型2 / Db 大调五声音阶指型1",
+          "source_id": "fretboard_handbook_question_answer",
+          "position_or_shape": "指型2 (XIII把位), 指型1",
+          "root": "Bb, Db",
+          "mapping_method": "exercise_level_fallback",
+          "priority": "fretboard_foundation_answer",
+          "caption": "练习22第9题答案图示：包含两个垂直指板图。上方为 Bb 小调五声音阶（指型2），标注于 XIII 把位，可见根音方框标记；下方为 Db 大调五声音阶（指型1），同样标记了根音位置。展示了关系大小调五声音阶的对应指型。",
+          "musical_object": "Bb 小调五声音阶指型2 / Db 大调五声音阶指型1",
+          "intervals": "[]",
+          "quality_or_mode": "minor pentatonic, major pentatonic",
+          "visible_structure": "{}",
+          "visual_granularity": "question_answer_crop",
+          "entities": "{}",
+          "visual_type": "scale_pattern",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_22_22/question_segments_v2/crops/exercise_22_09_part2.png",
+          "visual_id": "fretboard_answer_E22_9_part2",
+          "page": "data/练习解答（图片）/练习22.png",
+          "uncertain_fields": "[]",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "question_text": "回到前面的两个练习（练习20和练习21)，写出每一图形中对应的关系小调五声音阶或关系大调五声音阶，并且用方形画出关系调中的根音。 弹奏以上这些练习。对于练习20，先弹大调五声音阶，然后再弹它的关系小调五声音阶。对于练习21，先弹小调五声音阶，然后再弹其关系大调五声音阶。在弹奏之前请说出音阶名称和指型序号。",
+          "segment_id": "fretboard_answer_E22_9_part2",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "exercise_number": 22,
+          "source_image": "data/练习解答（图片）/练习22.png",
+          "image_type": "scale_pattern",
+          "retrieval_keywords": "[\"Bb minor pentatonic\", \"Db major pentatonic\", \"指型2\", \"指型1\", \"XIII把位\", \"关系大小调\", \"五声音阶\", \"根音标记\"]",
+          "key": "",
+          "confidence": 0.95
+        },
+        "domain_rerank": {
+          "delta": 0.4,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [
+              "B minor"
+            ],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "penalties": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 14,
+        "distance": 0.16853761672973633,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "D 大调旋律想转成 B 小调色彩时，有没有同把位指型可以参考，并说明适合怎样的 riff 写法？ 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    }
+  ],
+  "kg_evidence": [
+    {
+      "evidence_id": "kg:concept:standard_tuning:CONSTRAINS:pattern:interval_geometry_shift",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "concept:standard_tuning -[CONSTRAINS]-> pattern:interval_geometry_shift",
+      "content": "concept:standard_tuning -[CONSTRAINS]-> pattern:interval_geometry_shift\n在指板上构建双音（Double Stops）、和弦Voicing或跨弦Riff时，涉及第2弦（B弦）与第3弦（G弦）的交互。\n吉他标准调弦中唯一的非四度关系（G-B大三度）导致所有跨越这两根弦的音程指法发生几何偏移。编曲时必须应用'补偿规则'：同度/八度需调整品位差，纯四/五度、大六/七度的指型在跨越2-3弦时需额外移动1品（通常是向高音方向多移1品或向低音方向少移1品），否则音准错误。这是吉他指板逻辑的核心约束。\n练习23解答：纯四度...第3弦到第2弦...向上1品；纯五度...第3弦和第2弦之间是向上3品...只要跨越了第2弦，其相差的距离就都是2品。",
+      "score": 1.48,
+      "metadata": {
+        "source": "concept:standard_tuning",
+        "relation": "CONSTRAINS",
+        "target": "pattern:interval_geometry_shift",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 1.0,
+        "context_condition": "在指板上构建双音（Double Stops）、和弦Voicing或跨弦Riff时，涉及第2弦（B弦）与第3弦（G弦）的交互。",
+        "review_note": "吉他标准调弦中唯一的非四度关系（G-B大三度）导致所有跨越这两根弦的音程指法发生几何偏移。编曲时必须应用'补偿规则'：同度/八度需调整品位差，纯四/五度、大六/七度的指型在跨越2-3弦时需额外移动1品（通常是向高音方向多移1品或向低音方向少移1品），否则音准错误。这是吉他指板逻辑的核心约束。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.24,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:scale:pentatonic_minor:SUGGESTS:pattern:box_1_root_on_6th_string_heavy_riffing",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "scale:pentatonic_minor -[SUGGESTS]-> pattern:box_1_root_on_6th_string_heavy_riffing",
+      "content": "scale:pentatonic_minor -[SUGGESTS]-> pattern:box_1_root_on_6th_string_heavy_riffing\n编写摇滚/金属风格的强力和弦（Power Chord）衔接或低音Riff时\n练习17/19/21显示，小调五声指型1（Box 1）的根音位于6弦和5弦。该指型几何结构与强力和弦指法高度重合。编曲时应利用此特性，在失真音色下将单音Riff与双音强力和弦无缝切换，构建具有驱动力的低频声部。\n练习17/19/21中小调五声指型1在6/5弦的低把位形态",
+      "score": 1.47,
+      "metadata": {
+        "source": "scale:pentatonic_minor",
+        "relation": "SUGGESTS",
+        "target": "pattern:box_1_root_on_6th_string_heavy_riffing",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.9,
+        "context_condition": "编写摇滚/金属风格的强力和弦（Power Chord）衔接或低音Riff时",
+        "review_note": "练习17/19/21显示，小调五声指型1（Box 1）的根音位于6弦和5弦。该指型几何结构与强力和弦指法高度重合。编曲时应利用此特性，在失真音色下将单音Riff与双音强力和弦无缝切换，构建具有驱动力的低频声部。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 5,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 26,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "scale:pentatonic_major -[ENABLES]-> heuristic:two_notes_per_string_geometry",
+      "content": "scale:pentatonic_major -[ENABLES]-> heuristic:two_notes_per_string_geometry\n编配快速独奏乐句（licks）或跨弦 Riff 时\n大调五声音阶在吉他指板上呈现“每根弦2个音符”的几何规律。这种对称性消除了七声音阶中常见的“3-2”或“2-3”音符分布带来的指法切换障碍，极大简化了横向移动和跨弦演奏的物理难度，是构建高可玩性（playability）Solo的基础语汇。\n在五声音阶的每种指型中，每根琴弦上都只有2个音符...这让五声音阶演奏起来非常容易",
+      "score": 1.44,
+      "metadata": {
+        "source": "scale:pentatonic_major",
+        "relation": "ENABLES",
+        "target": "heuristic:two_notes_per_string_geometry",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "编配快速独奏乐句（licks）或跨弦 Riff 时",
+        "review_note": "大调五声音阶在吉他指板上呈现“每根弦2个音符”的几何规律。这种对称性消除了七声音阶中常见的“3-2”或“2-3”音符分布带来的指法切换障碍，极大简化了横向移动和跨弦演奏的物理难度，是构建高可玩性（playability）Solo的基础语汇。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 4,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 14,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:pattern:octave_shape_low_strings:CONSTRAINS:interval:major_7th_dissonance",
+      "evidence_type": "kg",
+      "source_id": "Caution",
+      "title": "pattern:octave_shape_low_strings -[CONSTRAINS]-> interval:major_7th_dissonance",
+      "content": "pattern:octave_shape_low_strings -[CONSTRAINS]-> interval:major_7th_dissonance\n在 D 弦和 G 弦上构建八度音程（Octave Riff）时\n吉他指板物理特性导致 D/G 弦组的八度指型间距（4品）与 E/A/D 弦组（3品）不同。若在 D/G 弦错误使用 3 品间距，会奏出极不协和的大七度而非八度，这是编写跨弦 Riff 时的常见陷阱。\n若在D弦和G弦起始时误⽤三品间距（⽽非四品），会产⽣不和谐的⼤七度音程",
+      "score": 1.43,
+      "metadata": {
+        "source": "pattern:octave_shape_low_strings",
+        "relation": "CONSTRAINS",
+        "target": "interval:major_7th_dissonance",
+        "knowledge_type": "Caution",
+        "confidence": 0.95,
+        "context_condition": "在 D 弦和 G 弦上构建八度音程（Octave Riff）时",
+        "review_note": "吉他指板物理特性导致 D/G 弦组的八度指型间距（4品）与 E/A/D 弦组（3品）不同。若在 D/G 弦错误使用 3 品间距，会奏出极不协和的大七度而非八度，这是编写跨弦 Riff 时的常见陷阱。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.24,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "D"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 20,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:concept:standard_tuning:CONSTRAINS:heuristic:interval_shift_exception_g2_b3",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "concept:standard_tuning -[CONSTRAINS]-> heuristic:interval_shift_exception_g2_b3",
+      "content": "concept:standard_tuning -[CONSTRAINS]-> heuristic:interval_shift_exception_g2_b3\n在指板上构建跨弦音阶、Riff或和弦Voicing时，计算相邻弦的音程位移\n吉他标准调弦中，除第2弦(B)与第3弦(G)之间外，相邻弦的同音/同音程关系通常相差3品（全音）或4品（半音）。但在2-3弦组上，由于大三度调弦差异，该位移缩减为2品（全音）或3品（半音）。这是编配跨弦乐句时必须处理的几何异常点。\n当从一根弦向上至另外一根弦时...通常是相差3品的距离。但有一个特例，就是第2弦与第3弦，这时一个全音是相差2品的距离。",
+      "score": 1.4,
+      "metadata": {
+        "source": "concept:standard_tuning",
+        "relation": "CONSTRAINS",
+        "target": "heuristic:interval_shift_exception_g2_b3",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 1.0,
+        "context_condition": "在指板上构建跨弦音阶、Riff或和弦Voicing时，计算相邻弦的音程位移",
+        "review_note": "吉他标准调弦中，除第2弦(B)与第3弦(G)之间外，相邻弦的同音/同音程关系通常相差3品（全音）或4品（半音）。但在2-3弦组上，由于大三度调弦差异，该位移缩减为2品（全音）或3品（半音）。这是编配跨弦乐句时必须处理的几何异常点。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.24,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "B"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:concept:fretboard_geometry:ENABLES:heuristic:octave_symmetry_at_12th_fret",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "concept:fretboard_geometry -[ENABLES]-> heuristic:octave_symmetry_at_12th_fret",
+      "content": "concept:fretboard_geometry -[ENABLES]-> heuristic:octave_symmetry_at_12th_fret\n编配高把位独奏或和弦Voicing时，需要快速定位同音异弦位置\n利用第12品与空弦音相同的八度对称性，可作为指板导航的绝对锚点。在编曲中，若需将低音线条移至高音区（如Octave Riff），可直接以12品为镜像参考，简化跨把位计算。\n练习8图示及文字：'吉他弦的第12品和空弦的音符是相同的...可以从第12品向前推算'",
+      "score": 1.39,
+      "metadata": {
+        "source": "concept:fretboard_geometry",
+        "relation": "ENABLES",
+        "target": "heuristic:octave_symmetry_at_12th_fret",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.9,
+        "context_condition": "编配高把位独奏或和弦Voicing时，需要快速定位同音异弦位置",
+        "review_note": "利用第12品与空弦音相同的八度对称性，可作为指板导航的绝对锚点。在编曲中，若需将低音线条移至高音区（如Octave Riff），可直接以12品为镜像参考，简化跨把位计算。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 4,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 37,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:concept:interval_mapping:CONSTRAINS:guitar_idiom:string_crossing_offset_rule",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "concept:interval_mapping -[CONSTRAINS]-> guitar_idiom:string_crossing_offset_rule",
+      "content": "concept:interval_mapping -[CONSTRAINS]-> guitar_idiom:string_crossing_offset_rule\n编配跨弦乐句、双音（Double Stops）或构建和弦 Voicing 时，需快速定位相邻弦上的音程指型。\n提取了吉他指板的核心几何规则：除2-3弦因大三度定弦导致偏移量不同外，其他相邻弦的同度/音程指型具有统一的平移规律（如纯四度同品、纯五度+2品等）。这是编写流畅跨弦 Riff 和避免指法断裂的基础启发式规则。\n纯四度在相邻的弦上为同一品...纯五度在相邻的弦上为向上升高2品的距离...只要跨越了第2弦，其相差的距离就都是2品。",
+      "score": 1.36,
+      "metadata": {
+        "source": "concept:interval_mapping",
+        "relation": "CONSTRAINS",
+        "target": "guitar_idiom:string_crossing_offset_rule",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "编配跨弦乐句、双音（Double Stops）或构建和弦 Voicing 时，需快速定位相邻弦上的音程指型。",
+        "review_note": "提取了吉他指板的核心几何规则：除2-3弦因大三度定弦导致偏移量不同外，其他相邻弦的同度/音程指型具有统一的平移规律（如纯四度同品、纯五度+2品等）。这是编写流畅跨弦 Riff 和避免指法断裂的基础启发式规则。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 3,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 9,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:chord:shell_voicing:ENABLES:guitar_idiom:high_gain_riff_clarity",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "chord:shell_voicing -[ENABLES]-> guitar_idiom:high_gain_riff_clarity",
+      "content": "chord:shell_voicing -[ENABLES]-> guitar_idiom:high_gain_riff_clarity\n编配高增益（High Gain/Distortion）吉他 Riff 或声部时\n图示展示了省略五音、仅保留根/三/七音的 Shell Voicing。这种稀疏排列能有效避免失真音色下的低频浑浊，是 Math Rock 中构建清晰、有力 Riff 的核心手段。\nPage 61 diagrams show Dm7/G7 shell voicings (Root-3rd-7th only); text mentions s",
+      "score": 1.28,
+      "metadata": {
+        "source": "chord:shell_voicing",
+        "relation": "ENABLES",
+        "target": "guitar_idiom:high_gain_riff_clarity",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "编配高增益（High Gain/Distortion）吉他 Riff 或声部时",
+        "review_note": "图示展示了省略五音、仅保留根/三/七音的 Shell Voicing。这种稀疏排列能有效避免失真音色下的低频浑浊，是 Math Rock 中构建清晰、有力 Riff 的核心手段。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 13,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:concept:interval_geometry:CONSTRAINS:heuristic:2nd_string_offset_rule",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "concept:interval_geometry -[CONSTRAINS]-> heuristic:2nd_string_offset_rule",
+      "content": "concept:interval_geometry -[CONSTRAINS]-> heuristic:2nd_string_offset_rule\n编配跨弦音程、双音（Double Stops）或构建和弦 Voicing 时\n吉他指板在第3弦与第2弦之间存在大三度调弦差异。除同度音外，所有跨越这两根弦的音程指法均需进行“+1品”或“-1品”的几何修正（如纯五度在相邻弦为+2品，但在3-2弦间为+3品）。这是编写流畅跨弦 Riff 和避免按错音的核心物理约束。\n练习23文本：'只要跨越了第2弦...由于2弦调弦方式的不同...相差的距离就都是2品/向上3品'",
+      "score": 1.28,
+      "metadata": {
+        "source": "concept:interval_geometry",
+        "relation": "CONSTRAINS",
+        "target": "heuristic:2nd_string_offset_rule",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "编配跨弦音程、双音（Double Stops）或构建和弦 Voicing 时",
+        "review_note": "吉他指板在第3弦与第2弦之间存在大三度调弦差异。除同度音外，所有跨越这两根弦的音程指法均需进行“+1品”或“-1品”的几何修正（如纯五度在相邻弦为+2品，但在3-2弦间为+3品）。这是编写流畅跨弦 Riff 和避免按错音的核心物理约束。",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 16,
+        "backend": "neo4j"
+      }
+    },
+    {
+      "evidence_id": "kg:heuristic:make_rhythm_part_a_hook:EVOKES:task:riff_writing",
+      "evidence_type": "kg",
+      "source_id": "GuitarIdiom",
+      "title": "heuristic:make_rhythm_part_a_hook -[EVOKES]-> task:riff_writing",
+      "content": "heuristic:make_rhythm_part_a_hook -[EVOKES]-> task:riff_writing\nFunk/Pop rhythm guitar comping where static strumming feels generic.\nTransform standard chord comping into a signature hook by integrating melodic lines (pentatonic/scale) within the chord shape, rather than just strumming full voicings.\nwhat makes something more signature? is if you actually make a part from it some",
+      "score": 1.28,
+      "metadata": {
+        "source": "heuristic:make_rhythm_part_a_hook",
+        "relation": "EVOKES",
+        "target": "task:riff_writing",
+        "knowledge_type": "GuitarIdiom",
+        "confidence": 0.95,
+        "context_condition": "Funk/Pop rhythm guitar comping where static strumming feels generic.",
+        "review_note": "Transform standard chord comping into a signature hook by integrating melodic lines (pentatonic/scale) within the chord shape, rather than just strumming full voicings.",
+        "provenance": {},
+        "backend": "neo4j",
+        "kg_rerank": {
+          "term_matches": 2,
+          "style_matches": 0,
+          "generic_penalty": 0.0
+        },
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "D major",
+              "B minor"
+            ],
+            "target_roots": [
+              "D",
+              "B"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "riff"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [
+              "riff"
+            ],
+            "penalties": [],
+            "matched_direct_kg_goals": [
+              "riff"
+            ]
+          }
+        }
+      },
+      "trace": {
+        "rank": 19,
+        "backend": "neo4j"
+      }
+    }
+  ],
+  "judgement": {
+    "sufficient": true,
+    "confidence": 0.89,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 3,
+    "text_count": 41,
+    "visual_count": 25,
+    "kg_count": 24,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [
+      "text:chunk_0003",
+      "text:chunk_0006",
+      "text:fretboard_text_0045"
+    ],
+    "top_visual_ids": [
+      "visual_caption:fretboard_answer_E15_8",
+      "visual_caption:fretboard_answer_E12_1",
+      "visual_caption:fretboard_answer_E19_2"
+    ],
+    "top_kg_ids": [
+      "kg:concept:standard_tuning:CONSTRAINS:pattern:interval_geometry_shift",
+      "kg:scale:pentatonic_minor:SUGGESTS:pattern:box_1_root_on_6th_string_heavy_riffing",
+      "kg:scale:pentatonic_major:ENABLES:heuristic:two_notes_per_string_geometry",
+      "kg:pattern:octave_shape_low_strings:CONSTRAINS:interval:major_7th_dissonance",
+      "kg:concept:standard_tuning:CONSTRAINS:heuristic:interval_shift_exception_g2_b3"
+    ],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。"
+  },
+  "timings": {
+    "model_load_seconds": 5.236119199995301,
+    "fretboard_text_seconds": 0.29146349999064114,
+    "visual_caption_seconds": 0.2010273999912897,
+    "style_text_seconds": 0.07258469999942463,
+    "kg_seconds": 0.3695410000073025,
+    "total_seconds": 6.945125500002177,
+    "kg_status": "neo4j"
+  }
+}

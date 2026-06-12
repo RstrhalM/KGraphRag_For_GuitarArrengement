@@ -1,0 +1,1810 @@
+{
+  "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+  "analysis": {
+    "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+    "intent": "mixed_lookup",
+    "style_hints": [],
+    "theory_terms": [
+      "G7",
+      "和弦",
+      "指型"
+    ],
+    "technique_terms": [
+      "点弦"
+    ],
+    "needs_fretboard_text": true,
+    "needs_visual": true,
+    "needs_style_text": true,
+    "needs_kg": false,
+    "confidence": 0.75,
+    "matched_rules": [
+      "fretboard_terms",
+      "visual_terms",
+      "style_or_technique_terms"
+    ]
+  },
+  "plan": [
+    {
+      "name": "fretboard_text",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+      "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+      "top_k": 5,
+      "reason": "指板/理论/练习题干证据"
+    },
+    {
+      "name": "visual_caption",
+      "backend": "chroma",
+      "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+      "query": "标准调弦的普通 G7 和弦指型，不要点弦 指型图 和弦图 voicing",
+      "top_k": 5,
+      "reason": "具体图形/指法/voicing/答案图证据"
+    },
+    {
+      "name": "style_text",
+      "backend": "chroma",
+      "collection": "guitar_text_chunks_qwen3_06b",
+      "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+      "top_k": 5,
+      "reason": "风格/riff/节奏/技法文本证据"
+    }
+  ],
+  "text_evidence": [
+    {
+      "evidence_id": "text:fretboard_text_0118",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 10） Bb13\n指型\n11)Fmi11(b5)\nXI\n12)Cma13(#11)\n三\n13) G9\nVlI\n14)D11\n15)Ami13\nXI\n弹奏以上练习中的琶音，演奏时大声说出和弦名称、指型序号和声部构成。\n“G大九和弦，指型4，‘1、3、5、7、9...\nD小九和弦，指型”\n在指板上构建延伸和弦时，采用与七和弦一样的方法：升高八度或者降低八度，以使每根琴弦上仅有一个和弦音。通常，让延伸音在和弦的最高处比较好。\n之前也曾提到过，在指板上弹奏延伸和弦时，可以根据演奏者的需要，忽略部分音符，从而获得更好的效果。忽略哪个音取决于所演奏的音乐风格，或者贝司及其他乐器是如何演奏的。可以尝试去掉五度音和（或）根音，听听会产生什么效果。\n\n[图示引用 6 张，详见 image_refs]",
+      "score": 1.11943,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0118",
+        "page_hint": "54",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "review_jsonl": "",
+          "source_id": "fretboard_handbook_clean_text",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3384a6590bd23579deebc821be0cd20f7b8a370e123752224157d95a17e9b3a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b3e5ad9f17f5aee153afa9efd6bd27a850adb72520990ca17d18daadae73974e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e62afb71282a16914fede8bcbb30020bacde8c13bec9cc914eec137dc821c131.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\40f0d7b74c754b397cf3c83fdd9ff7f8cbe37561076c4e182da7055d95c8b074.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\49648cecde9af74e5fec3ebb9d8524203ead0b0f6ddcd100a3f80c945600e366.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9088b2a6fbc1205c1c6d1c334cae13f83ce70b062cb186b697e475e71a2a8e2.jpg\"]",
+          "chunk_id": "fretboard_text_0118",
+          "linked_review_ids": "[]",
+          "gp5_feature_triggers": "[]",
+          "page_hint": "54",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_edges": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "source_type": "clean_markdown",
+          "lesson_title": ""
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.1505715250968933,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0037",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习12\n利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。\n2 G大调指型\\_\n3)C大调指型一\n=\n51 Bb大调指型\\_\n=\nG大调指型\nIV\nA大调指型\\_\n8 Gb大调指型\nI三I\n101 Eb大调指型\n三\n弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 1.08194,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0037",
+        "page_hint": "23",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_type": "clean_markdown",
+          "linked_kg_nodes": "[]",
+          "review_jsonl": "",
+          "source_id": "fretboard_handbook_clean_text",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "lesson_title": "",
+          "gp5_feature_triggers": "[]",
+          "linked_kg_edges": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "chunk_id": "fretboard_text_0037",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\bb42c2c6bb91e4aaf7fd44150978076b0bafe9b5dd5ba0077fb7d4a473fbf486.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5c2f7d29937759ccdc64857b83f7a22e6506c6ae7eb2e3ebf231b5c4c7cc7f5c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\7db786b94b0c1007964c6f5d24b2a4af277bad55f503f7775f8aa211f5711a7f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fdb05f9bd48d0eca087b09599a57a8f5032403c8a946d9b30efab9c1af809c2a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\652d43c36774c3732d9b2b437c89543e01f2ecd6ecc3fb8adac15684acf22b95.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\247e98c5de1e18f7bed3d6151dd60c99421e9cd4fd9be9dd18d6f43ccdf52d1f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e39d0f35127cbb2cc55b226fe53283c77b9d64072f42902c038db85b1d89adff.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\eaf375ea5027e376fed789b47d0afd250dad6e7cb6f03e8ef8d7aa454bb94c26.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3915d96cf8739e165fc331ba6c7e94d25a788ce2ebb260c57bb10f6d826587f7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d6d620ee542bb665ee1def9062d1addb66b2ac87bc83d993d8839edef64495e5.jpg\"]",
+          "linked_review_ids": "[]",
+          "page_hint": "23",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]"
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.16306298971176147,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0028",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习10\n在正确的弦上，画出指板图上方所写的音符。可以运用自然音阶推算的方法，也可以采用五种根音指型的方法。有时可能需要运用各种不同的方法：\n·从每根弦的空弦音向上推算\n·从每根弦的第12品向下推算\n·从另外一个熟悉的音符（比如，第7品的D音）向上或者向下推算\n·选择一个临近的音符（比如E音)，首先找到它所在的位置\nF\nVI\n2)\nF#\nIV\nII\nG\nV\nA\nV\nEb\nVII\nB\n三\nDb\nXI\n10)\nC\nxV\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 1.07862,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0028",
+        "page_hint": "17",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_edges": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\91fe5bc494d4625ffbc478053306e4ba6cd1a9b60dc591b26c2049669e905c20.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b7a4b341c58db24ff4c20d3e44ed3f291a00c2e0ddfbf3c7d8ec737856a4db3d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9e5b8859f3b89310e8c8d3750ecf53c9d12197b5b80b9e2d55ca93422384d9cf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3a8441dbc4ef1afc5b8d231f3382630de87d2e062a060c1408b4cdbb2ab7febf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\50c5a42c86a7809411315b0b0f67ca48734208338751013c70ca1e744e870fb6.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f2d1a903a076cfdb42e520b1277352833e07c9ebe4e145b7742b01e6022b674b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a37ef064a65a12f223ec569b59369572170de879ebfef5f45c0c21f57ba9328e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3f95f14312e41aeda0655632bcdb085e617ea85bb2a8263ed6d35a1778d0aa1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6981e345f733dc3854e60aef3bc67aed6ad169474efcc1c90bb789aa1cebae21.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a2ad3fd939cbdbc25a770aa91c46e25738a71bd1fcb6808764b1e87ee4136342.jpg\"]",
+          "chunk_id": "fretboard_text_0028",
+          "lesson_title": "",
+          "review_jsonl": "",
+          "page_hint": "17",
+          "source_title": "吉他指板手册正文清洗层",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_review_ids": "[]",
+          "source_type": "clean_markdown",
+          "gp5_feature_triggers": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_kg_nodes": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.16637593507766724,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0108",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "学习目标：构建七和弦的常备声部。\n前面我们已学习了密集和弦，实际上对于三和弦和七和弦而言，开放和弦有时更加悦耳好听并且更加容易弹奏。\n对于七和弦来说，密集和弦有时在吉他上是很难弹奏的。按弦的手指有时够不到并按住全部的音符。例如，像Amaj7这样的密集和弦。\n和弦中的音符在指板上的跨度太大，以致很难全部按住。同时，这样的和弦中也含有较多相近的低音，使得音色也会变得暗淡浑浊。\n为了找到和弦中更有用的和弦音，常常需要将其中的某些音符升高或降低一个八度，这样就可以得到更加宽广的和弦声音。下面来尝试一下。密集大七和弦Amaj7包含了“1、3、5、7”四个音符，如果将三度音升高一个八度，那么就变成了“1、5、7、10”。这样它就变成了开放和弦，因为所有的音在音高上都分散开来而不是局促在一起了。在指板上，可以用五度音程来演奏Amaj7和弦，这样就用到了指型4。\n由于在和弦中十度音和三度音产生的和弦性质是相同的，因此可以用“1、5、7、3”来表示这个和弦的构成，这样更便于识别和弦音。也就是说，即使把和弦中的某些音符升高或降低了一个八度，也可以用原来的音符来表示它。\n最上面两根琴弦上的五度音听起来还是有些暗沉，可以把和弦中的五度音升高一个八度，这样就变成了“1、7、10、12”，也就是“1、7、3、5”。\n在用向下扫弦的方法演奏这个和弦时，左手的1指需要同时完成以下两项任务：（1）牢牢按住六弦上的和弦根音。（2）对第5弦进行消音。如果是拨弦而不是扫弦时，注意不要拨奏第5弦。\n“1、7、3、5”是ma7、mi7、dom7、mi7(b5)和dim7这些和弦指型4中的常用声部构成。尽管这些和弦有多种不同的声部构成可以选择，但常用声部构成可以让你在指板上迅速地找出该和弦。在练习过程中，首先要掌握的是指型2和指型4的和弦常用声部构成，即根音在第6弦和第5弦上的和弦，它们也是最容易的声部构成。掌握了它们，就基本可以写出一首歌的和弦进行了。然后，你就可以学习其他声部构成的和弦了，它们会让音乐更有色彩或者和弦进行更加流畅。最终的目标是要掌握和弦五种指型中的常用声部构成。\n七和弦常用声部构成表\n\n[图示引用 4 张，详见 image_refs]",
+      "score": 1.07387,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0108",
+        "page_hint": "51",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_title": "吉他指板手册正文清洗层",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\530d4efe467fbf8b61260ac47fc8282cdb89fa8148d93dea37ad8ce0406a0d8d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\33b8159428f446970ffdd6b0a125c27dd7bf26c94345cd9e67c7ef2d0112440d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9a8e283a7962aa92f29ca3c2c080d96e5767c42cdc41e873f7feae04cc2a0d7d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\dea1567ec2f9de31a02846495b3a87bb1a36e0a1bb177c57d39b41a695cf6c4a.jpg\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "review_jsonl": "",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "page_hint": "51",
+          "lesson_title": "",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_type": "clean_markdown",
+          "chunk_id": "fretboard_text_0108",
+          "gp5_feature_triggers": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_nodes": "[]",
+          "linked_kg_edges": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.15,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.15112531185150146,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0061",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 纯四度\n吉他的调弦应用的便是纯四度。每根弦都比其下方的弦高四度，除了第2弦的B音比第3弦的G音高一个大三度音程外。\n\n[图示引用 3 张，详见 image_refs]",
+      "score": 1.07309,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0061",
+        "page_hint": "33",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\20632a03da621dec6c053e3acccda31a14c60d57560404a1e6739a5409500a49.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d98f502c13ad332d80124d3115eac2bb5332f4ce963dee124d7e30c88df3a11f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e0008725356a522ed8fa9d80b4ac9edcb91b25763ac38b3dfb318bd861e72912.jpg\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "page_hint": "33",
+          "review_jsonl": "",
+          "gp5_feature_triggers": "[]",
+          "linked_kg_edges": "[]",
+          "lesson_title": "",
+          "chunk_id": "fretboard_text_0061",
+          "linked_review_ids": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_type": "clean_markdown"
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.1469099521636963,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0044",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习14\n回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。\nE小调指型5(G大调指型4）\n再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 1.069,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0044",
+        "page_hint": "26",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_id": "fretboard_handbook_clean_text",
+          "source_type": "clean_markdown",
+          "linked_review_ids": "[]",
+          "gp5_feature_triggers": "[]",
+          "lesson_title": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_kg_nodes": "[]",
+          "page_hint": "26",
+          "review_jsonl": "",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_edges": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0b2c654cc033443dc9a9ab711f4f8aaeed89249dd2d0601e5743f6cd919ae824.jpg\"]",
+          "chunk_id": "fretboard_text_0044"
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 10,
+        "distance": 0.1759987473487854,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0021",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习8\n指板上第12品位置的音符和空弦的音符是相同的。用一张含有6根弦的指板图，在每根弦的第12品处标出音符的名称。然后再次在每根弦上写出每个自然音阶音符，不同的是这次从第12品开始，向前写出来。记住F和E之间是半音，C和B之间也是半音。\n←A\n除了以上这些练习之外，你还可以这样练习。先弹奏每根弦空弦上的自然音阶音符。然后从空弦位置向上一直弹奏到手可以容易按得到的位置。在弹奏的同时大声地说出每个音符的名称（以及所在品格的位置）：\n“第6弦：、空·F、第品G、第3品…A、第5品…B、第品…C、第8…”\n说出品的位置可以很好地加强你对于全音和半音的记忆。同样，不要急于记住每个音符，现在只要知道音乐的字母表，并且能够记住E和F之间、B和C之间是半音就可以了。\nVl\n\n[图示引用 6 张，详见 image_refs]",
+      "score": 1.04968,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0021",
+        "page_hint": "12",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunk_id": "fretboard_text_0021",
+          "review_jsonl": "",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_edges": "[]",
+          "linked_kg_nodes": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\24126a6e73ef4ac122e855eb06967856951e6a0e507f4cf585e28f1a9bef4e21.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8f015cd0ae013e7fe491ae752b9323e93dffd12f84b425e54f0b483204917d6d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\aa00c491c1021d3db98b68b4953b7c62a2c8cb5c42ae09bf0792f43aefc789db.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\29277f363a463f033f8d637c64ad8071470a921c1ff84aa04f07af333227a4e7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0d87c9d6bc002b07a8b2ff483b0a1767030a512324cae12d6bf01cc5d31b712e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e42f26ebf39921325b15c9ac4a213531b38fcc4341e3bbc96e737af494ccda29.jpg\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_review_ids": "[]",
+          "gp5_feature_triggers": "[]",
+          "page_hint": "12",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_type": "clean_markdown",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_title": "吉他指板手册正文清洗层",
+          "lesson_title": ""
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 7,
+        "distance": 0.17031621932983398,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0010",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 琴弦\n琴弦一般按从第6弦到第1弦的顺序命名。第6弦指的是最粗的那根琴弦，而第1弦指的是最细的那根。同时第1弦也是音高最高的琴弦。\n向上到下一根琴弦的意思就是说到音高更高的琴弦上。除非你是倒立着弹吉他（见第19章)，否则这里所说的移动到更高的弦时，指的是将手指向地面的方向移动。这样说来，标示弦的数字与我们通常理解的意义是相反的。要想改变这个规则是比较难的，目前所有\n的吉他书籍都是这样标示的。\n从第6弦开始，每根弦用字母标示的名称是：E、A、D、G、B、E。在开始下面的学习之前，先记熟这些弦的名称。记住了这些内容，在听力范围之内，我们就能够清晰地说出第4弦是D音，第2弦是B音，依此类推。本书尽量减少需要记忆的内容，但是有些知识是必须要牢记的。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 1.04155,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0010",
+        "page_hint": "6",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "chunk_id": "fretboard_text_0010",
+          "source_type": "clean_markdown",
+          "gp5_feature_triggers": "[]",
+          "review_jsonl": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "lesson_title": "",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\cff603262c186ae283f0f2c6c62c96ba002f1f059da6de0b3bfb9bcb90067791.jpg\"]",
+          "linked_review_ids": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_kg_nodes": "[]",
+          "page_hint": "6",
+          "linked_kg_edges": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]"
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 17,
+        "distance": 0.17845404148101807,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0018",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "学习目标：学习音乐的字母表；认识全音和半音；记住B和C之间、E和F之间的自然半音。\n音乐中一共有12个音。但是，通常仅用字母表中的7个字母来表示它们：A、B、C、D、E、F和G。是不是有些糊涂了？\n之所以用7个字母来表示，是因为大多数的音乐都是用7个音符构成的音阶来创作的。使用7个音符可以很快地组合成一个音阶。如果要用到12个音符中的其他音符时，可以在这7个音符的末尾加上一个临时记号（#、b或者)。临时记号是非常重要的，所以请反复大声朗读下面这句话：\n“升号（#）升高音符，降号（b）降低音符，还原记号（）将它们变回来。”\n另一个有关“音阶中音”的音乐术语是自然音。自然音的意思就是“它源自于自然音阶”。所谓非自然音就是指自然音阶以外的那5个音符。（自然音阶有7个音，当然，12个音减去7个自然音就等于5个非自然音。）\n随着音乐创作发展到如今比较先进的地步，键盘已经成为一个非常完美的工具。而吉他属于古老的乐器，但是它遵循的法则在键盘上却可以很容易地表达清楚。将键盘平放在面前，7个白键就是C调中的7个自然音。在白键之间有5个黑键。全部的12个音符以同样的型式不断地重复，从而使得我们可以演奏更高音域或更低音域的音乐。\n白键通常称为自然音，和调名合起来全称为“C调自然音阶”、“D调自然音阶”等。黑键的命名方式是参考白键再用高或者低（在键盘上看是左和右）的方式进行表达。例如，在C和D之间的黑键就叫做“升C”（C#），或者也可以叫做“降D”（Db）。\n为了看清楚这套音符体系在吉他上的运用，下面采用类似钢琴的方式来看一下自然音阶的位置：也就是在一根弦上找出这些不同的音符。这里用到的是第5弦。\nE F\n注意在琴弦上，有些音符之间间隔一个品格，而有些音符则彼此相邻。间隔一个品格（2品距离）的两个音符之间的距离称为一个全音(有时候也会说：一个音)。而相邻品格(1品距离）的两个音符之间的距离称为一个半音。\n我们需要牢记的是B和C、E和F之间的距离是一个半音。在钢琴键盘上，可以看到在这两个音所在的白键之间没有黑键存在。在吉他的指板上，这两对自然音符在相邻的品位上。其他的自然音阶音符之间的距离都是一个全音（也就是2品）。为了记住这点，我建议你打开窗户，向全世界大声喊出下面这句话：\n“B和C之间是半音，E和F之间也是半音。”\n然后再喊出这句：\n“BernieCohen和ErnieFrank是我最亲密的两个朋友。”\n吉他上的六根弦可以看成是六架小钢琴，每架钢琴的键盘都是从一个不同的音符开始的。现在让我们做一做下面的练习，画出每根弦上的自然音阶音符，加强一下B和C之间是半音、E和F之间是半音的概念。这一章中我们仅仅需要牢记这一点就足够了，并不要求记住指板上的每一个音符。\n\n[图示引用 3 张，详见 image_refs]",
+      "score": 1.03856,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0018",
+        "page_hint": "12",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_edges": "[]",
+          "review_jsonl": "",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_review_ids": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\363dc09fc11fb7dd3aef29f1fe36a9f4afd46988dda8349c5bf858d99b311923.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\96708a31e81aad2d7dfd2cd898adf6d708701ef52d335ea25fc4d3ae6f4092b8.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\912f337444f137aaaaa7f86f2de96311dc721d604f554a4048399cebca678ab6.jpg\"]",
+          "gp5_feature_triggers": "[]",
+          "lesson_title": "",
+          "page_hint": "12",
+          "chunk_id": "fretboard_text_0018",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "linked_kg_nodes": "[]",
+          "source_type": "clean_markdown"
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 20,
+        "distance": 0.18143939971923828,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "指板/理论/练习题干证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:md_chunk_0021",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_mineru",
+      "title": "吉他指板手册",
+      "content": "## 第19章调式\n\n学习目标：记住各种调式的顺序，学习伊奥尼亚（Ionian）调式。\n\n当我们学习小调音阶的时候，已经知道小调音阶和大调音阶是相关的。先来复习一下关系大小调：“大调音阶的6级音是其关系小调的根音。”\n\n当练习大调音阶和小调音阶的时候，你会发现如果不采用特殊的方法强调根音的话，比如从根音开始并以根音结束，很难去找出哪个音是音阶的根音。但是，当在一个和弦进行中弹奏某一大调或者小调音阶，就很容易找出哪个音是根音。\n\n例如，弹奏右边构建C小调的两个和弦若干次：\n\n[IMAGE_BLOCK:images/82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg] \n自然小调\n\n当这些和弦的声音还在你耳边回旋时，紧接着弹奏C小调自然音阶的某个指型，例如指型2。\n\n注意，C小调的关系大调是Eb大调，他们共用着同样的音符，但是上面弹奏出的音乐无论如何也不像Eb大调中的音乐。\n\nBb7 \n[IMAGE_BLOCK:images/e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg]\n\n为了比较说明，下面弹奏构建Eb大调感觉的和弦进行若干次：\n\n[IMAGE_BLOCK:images/28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg]\n\n然后弹奏Eb大调的音阶，其音符和C自然小调的音符是相同的。\n\n判断哪个音是根音，很大程度上取决于音乐的语境：也即音阶是在什么和弦上弹奏的。只要选择了合适的和弦作为音乐的背景，那么任何音符都可以成为音阶的根音。\n\n[IMAGE_BLOCK:images/3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg]\n\n上面的规则适用于大调音阶中的每个音符，并不仅仅是6级音。大调音阶中的每一级音都是一个调式的根音。每种调式都可以用大调音阶的五种指型来表达。虽然使用了相同的音，但不同调式的感觉和大调音阶及小调音阶是完全不同的。\n\n记住以下调式的顺序和名称，顺序使用了罗马数字，名称使用了希腊语。在关于调式的理论里，通常采用罗马数字来表示。\n\nI Ionian (伊奥尼亚调式，也就是大调)\n\nII Dorian （多利亚调式）\n\nIII Phrygian (弗里几亚调式）\n\nIV Lydian （利底亚调式）\n\nV Mixolydian （混合利底亚调式）\n\nVI Aeolian (爱奥尼亚调式，也就是自然小调)\n\nVIILocrian (洛克里亚调式）\n## 练习\n\n当你学会了这些调式的名称和顺序，用手盖住上面的列表，回答下面的问题。 \n1.第五个调式是什么？ 9.Locrian调式是第几个？ \n2.Aeolian调式是第几个？ 10.第六个调式是什么？ \n3.第三个调式是什么？ 11.Dorian调式是第几个？ \n4.第二个调式是什么？ 12.第四个调式是什么？ \n5.Ionian调式是第几个？ 13.Phrygian调式是第几个？ \n6第七个调式是什么？ 14.再说一次第五个调式是什么？ \n7.Mixolydian调式是第几个？ 16.Lydian调式是第几个？ \n8.第一个调式是什么？\n## 寻找Ionian调式\n\nIonian调式和Aeolian调式是最重要的两个调式，这两个调式之前已经学习过了。Ionian是大调音阶的第一个调式，也即大调音阶。Aeolian是大调音阶的第六个调式，也即自然小调音阶。\n\n在下面的内容中，我们将要学习如何通过找到关系大调来弹奏各种调式，这就需要先掌握Ionian调式。跟着下面的内容按部就班地学习，不要着急。如果太匆忙跳过这些练习或者学得太快，可能会在后续的学习中产生混乱。所以在开始的时候要慢慢地一步一步去学习。\n\n首先假设你需要弹奏FMixolydian调式。那么按照下面的步骤进行：\n\n1．确定调式的序号。Mixolydian调式是大调音阶中的第五个调式，所以F现在就是“5”。\n\n2．向下数到Ionian调式。运用大调音阶公式，找到Ionian调式。例如，已经确定了F音是5级音，那么按照54^321的关系，就可以找到根音是Bb音。\n\n[IMAGE_BLOCK:images/199cf05b9c2edb12106447e6a73544c662d9145eab60dcacccd0a426b8081af0.jpg]\n\n3．弹奏大调音阶，但是要从特殊的根音开始并结束。这里我们从BbIonian调式中的F音演奏到F音。这样，就相当于演奏的是FMixolydian调式。\n## 练习52\n\n用以上所学习的三步寻找Ionian的方法，填写下面的空格。\n\n1.BMixolydian=Ionian从B到B 6.GLocrian Ionian从G到G\n\n2. CLydian = Ionian从C到C 7. A Phrygian Ionian从A到A\n\n3.EDorian Ionian从E到E 8.FDorian Ionian从F到F\n\n4.A Ionian Ionian从A到A 9.E Lydian Ionian从E到E\n\n5.D Aeolian=Ionian从D到D 10.AMixolydian=\\_\\_Ionian从A到A",
+      "score": 1.02627,
+      "metadata": {
+        "collection": "guitar_text_chunks_qwen3_06b",
+        "chunk_id": "md_chunk_0021",
+        "page_hint": "",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_review_ids": "[]",
+          "chunk_id": "md_chunk_0021",
+          "source_type": "mineru_markdown",
+          "page_hint": "",
+          "style_tags": "[\"fretboard\", \"guitar_foundation\"]",
+          "gp5_feature_triggers": "[]",
+          "lesson_title": "",
+          "image_refs": "[\"images/82991a9b8d5efea86bdb6e65e119d1c64a7fd939517818f55214ade8768e925d.jpg\", \"images/e3466d7cfeddfe8e74e0d72b672f0650d013984442fe870f82390d7781e2715d.jpg\", \"images/28d9b74d2cd27ed74d979d24c5dfcfe02fd4930f1787f35a89f696802a957da1.jpg\", \"images/3d1c15d8d1743d2273d664c6082b8eac4d073b8f5c0f1d8880bb39ecfe4f2bc3.jpg\", \"images/199cf05b9c2edb12106447e6a73544c662d9145eab60dcacccd0a426b8081af0.jpg\"]",
+          "markdown_path": "data\\processed\\mineru_full_gpu\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\ocr\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_title": "吉他指板手册",
+          "raw_path": "data/book/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).pdf",
+          "linked_kg_nodes": "[]",
+          "linked_kg_edges": "[]",
+          "source_id": "fretboard_handbook_mineru"
+        },
+        "domain_rerank": {
+          "delta": 0.22,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.2437341809272766,
+        "task": {
+          "name": "style_text",
+          "backend": "chroma",
+          "collection": "guitar_text_chunks_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦",
+          "top_k": 5,
+          "reason": "风格/riff/节奏/技法文本证据"
+        }
+      }
+    }
+  ],
+  "visual_evidence": [
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E50_6",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 50 小题: 6\n证据类型: fretboard_diagram\n视觉类型: chord_diagram\n对象: Gmi9 指型4\n根音: G\n性质/调式: minor ninth\n位置/指型: 指型4 / III把位\n音程: 1, b3, b7, 9\n方向: vertical\n把位: III\n可见标签: 6) 和弦 Gmi9, 指型 4, 1 b3 b7 9\n按点概述: 垂直指板图，左侧标注罗马数字III。根音（双圈）位于推断的6弦3品(G)，其余按点分布在5弦、4弦及2弦，构成Gmi9和弦指型。\ncaption: Gmi9和弦指型4图示。位于III把位，声部构成为1、b3、b7、9。根音G在6弦，包含降三度、降七度及九度延伸音，属于小九和弦Voicing。\n检索关键词: Gmi9, G minor 9, 指型4, Shape 4, III把位, 1 b3 b7 9, 小九和弦, 延伸和弦\n编配价值: 提供G小调或相关调式中的小九和弦低把位指法，根音在6弦，适合爵士或流行伴奏中的Voicing构建，强调b3与9音的色彩。\n题目上下文: 正确写出下面图示中延伸和弦的名称、指型序号和声部构成。 1）和弦Cma9 指型2 2)和弦指型 3)和弦指型 4）和弦指型 5）和弦指型 6和弦指型 7）和弦指型 8）和弦指型 9）和弦指型 10）和弦指型 弹奏上面练习中的延伸和弦，弹奏时大声说出和弦名称、指型序号、声部构成及音符名称。“C大九和弦，指型2，‘1、5、7、9’,C-G-B-D..….”",
+      "score": 1.22584,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "fretboard_answer_E50_6",
+        "page_hint": "data/练习解答（图片）/练习49-51.png",
+        "exercise_number": 50,
+        "subquestion_number": 6,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_49_51/question_segments_v2/crops/exercise_50_06.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "uncertain_fields": "[]",
+          "subquestion_number": 6,
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_49_51/question_segments_v2/crops/exercise_50_06.png",
+          "topic_hint": "Gmi9 指型4",
+          "visual_type": "chord_diagram",
+          "exercise_number": 50,
+          "image_type": "chord_diagram",
+          "retrieval_keywords": "[\"Gmi9\", \"G minor 9\", \"指型4\", \"Shape 4\", \"III把位\", \"1 b3 b7 9\", \"小九和弦\", \"延伸和弦\"]",
+          "visual_granularity": "question_answer_crop",
+          "position_or_shape": "指型4 / III把位",
+          "segment_id": "fretboard_answer_E50_6",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "question_text": "正确写出下面图示中延伸和弦的名称、指型序号和声部构成。 1）和弦Cma9 指型2 2)和弦指型 3)和弦指型 4）和弦指型 5）和弦指型 6和弦指型 7）和弦指型 8）和弦指型 9）和弦指型 10）和弦指型 弹奏上面练习中的延伸和弦，弹奏时大声说出和弦名称、指型序号、声部构成及音符名称。“C大九和弦，指型2，‘1、5、7、9’,C-G-B-D..….”",
+          "tuning": "",
+          "source_id": "fretboard_handbook_question_answer",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_49_51/question_segments_v2/crops/exercise_50_06.png",
+          "priority": "fretboard_foundation_answer",
+          "caption": "Gmi9和弦指型4图示。位于III把位，声部构成为1、b3、b7、9。根音G在6弦，包含降三度、降七度及九度延伸音，属于小九和弦Voicing。",
+          "mapping_method": "exercise_level_fallback",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "visual_id": "fretboard_answer_E50_6",
+          "entities": "{}",
+          "arrangement_value": "提供G小调或相关调式中的小九和弦低把位指法，根音在6弦，适合爵士或流行伴奏中的Voicing构建，强调b3与9音的色彩。",
+          "musical_object": "Gmi9 指型4",
+          "nearby_text": "正确写出下面图示中延伸和弦的名称、指型序号和声部构成。 1）和弦Cma9 指型2 2)和弦指型 3)和弦指型 4）和弦指型 5）和弦指型 6和弦指型 7）和弦指型 8）和弦指型 9）和弦指型 10）和弦指型 弹奏上面练习中的延伸和弦，弹奏时大声说出和弦名称、指型序号、声部构成及音符名称。“C大九和弦，指型2，‘1、5、7、9’,C-G-B-D..….”",
+          "evidence_type": "fretboard_diagram",
+          "topic": "Gmi9 指型4",
+          "intervals": "[\"1\", \"b3\", \"b7\", \"9\"]",
+          "source_image": "data/练习解答（图片）/练习49-51.png",
+          "quality_or_mode": "minor ninth",
+          "root": "G",
+          "page": "data/练习解答（图片）/练习49-51.png",
+          "key": "",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "visible_structure": "{}",
+          "confidence": 1.0
+        },
+        "canonical_terms": [
+          "root:g",
+          "chord_quality:m9",
+          "fret_region:low",
+          "technique:voicing"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.27,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 10,
+        "distance": 0.14416104555130005,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E48_13",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 48 小题: 13\n证据类型: fretboard_diagram\n视觉类型: chord_diagram\n对象: G9 指型 1\n根音: G\n性质/调式: dominant ninth\n位置/指型: 指型 1 / VII把位\n方向: horizontal\n把位: VII\n可见标签: 3) G9, 指型 1, VII\n按点概述: 横向指板图，显示5个按点。根音位于第6弦（推断）VII品（双圈标记），其余音符分布在相邻弦的高把位区域，构成G9和弦指型。\ncaption: G9和弦指板图示，标注为“3) G9 指型 1”，位于VII把位。图中展示了该延伸和弦在指板上的具体按法，根音以双圈强调，用于构建属九和弦琶音或伴奏Voicing。\n检索关键词: G9, G dominant 9, 指型 1, VII把位, 延伸和弦, 属九和弦, 吉他指板图解\n编配价值: 提供G9和弦在VII把位的封闭指型参考，适用于爵士或流行编配中属功能和声的Voice Leading，以及基于该指型的琶音Solo练习。\n题目上下文: 在下面的图示中构建延伸和弦琶音，每次只延伸一个音符。标出指型序号。 1）Gma9 = = 2)Dmi9 3)A9 指型 V 4) Emi9(b5) 指型 VII 5） Bma9(#11) 6)F#mi11指型 IV 7Db9指型 8)Ab9(#11) 9)Ebmi13指型 三I VI",
+      "score": 1.22495,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "fretboard_answer_E48_13",
+        "page_hint": "data/练习解答（图片）/练习47-48.png",
+        "exercise_number": 48,
+        "subquestion_number": 13,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_47_48/question_segments_v2/crops/exercise_48_13.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "evidence_type": "fretboard_diagram",
+          "visual_type": "chord_diagram",
+          "nearby_text": "在下面的图示中构建延伸和弦琶音，每次只延伸一个音符。标出指型序号。 1）Gma9 = = 2)Dmi9 3)A9 指型 V 4) Emi9(b5) 指型 VII 5） Bma9(#11) 6)F#mi11指型 IV 7Db9指型 8)Ab9(#11) 9)Ebmi13指型 三I VI",
+          "priority": "fretboard_foundation_answer",
+          "caption": "G9和弦指板图示，标注为“3) G9 指型 1”，位于VII把位。图中展示了该延伸和弦在指板上的具体按法，根音以双圈强调，用于构建属九和弦琶音或伴奏Voicing。",
+          "visual_id": "fretboard_answer_E48_13",
+          "source_image": "data/练习解答（图片）/练习47-48.png",
+          "visual_granularity": "question_answer_crop",
+          "topic_hint": "G9 指型 1",
+          "uncertain_fields": "[\"fret_range\", \"string_position\"]",
+          "segment_id": "fretboard_answer_E48_13",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_47_48/question_segments_v2/crops/exercise_48_13.png",
+          "quality_or_mode": "dominant ninth",
+          "source_id": "fretboard_handbook_question_answer",
+          "subquestion_number": 13,
+          "mapping_method": "exercise_level_fallback",
+          "arrangement_value": "提供G9和弦在VII把位的封闭指型参考，适用于爵士或流行编配中属功能和声的Voice Leading，以及基于该指型的琶音Solo练习。",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "exercise_number": 48,
+          "confidence": 0.95,
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_47_48/question_segments_v2/crops/exercise_48_13.png",
+          "entities": "{}",
+          "intervals": "[]",
+          "retrieval_keywords": "[\"G9\", \"G dominant 9\", \"指型 1\", \"VII把位\", \"延伸和弦\", \"属九和弦\", \"吉他指板图解\"]",
+          "question_text": "在下面的图示中构建延伸和弦琶音，每次只延伸一个音符。标出指型序号。 1）Gma9 = = 2)Dmi9 3)A9 指型 V 4) Emi9(b5) 指型 VII 5） Bma9(#11) 6)F#mi11指型 IV 7Db9指型 8)Ab9(#11) 9)Ebmi13指型 三I VI",
+          "page": "data/练习解答（图片）/练习47-48.png",
+          "position_or_shape": "指型 1 / VII把位",
+          "image_type": "chord_diagram",
+          "musical_object": "G9 指型 1",
+          "key": "",
+          "visible_structure": "{}",
+          "topic": "G9 指型 1",
+          "tuning": "",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "root": "G"
+        },
+        "canonical_terms": [
+          "root:g",
+          "chord_quality:",
+          "fret_region:high",
+          "technique:voicing"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.27,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 12,
+        "distance": 0.14505112171173096,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E51_8",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 51 小题: 8\n证据类型: fretboard_diagram\n视觉类型: chord_diagram\n对象: G7(#5)\n根音: G\n性质/调式: dominant seventh sharp five\n位置/指型: III (3rd fret root on E string)\n音程: b7, 3, #5\n方向: vertical\n把位: III\n品位范围: 1-5\n可见标签: 8), G7(#5), b7, 3, #5\n按点概述: Root at 3rd fret low E string (marked with circle and Roman numeral III); b7 at 4th fret A string; 3 at 5th fret D string; #5 at 5th fret G string.\ncaption: 练习51第8题答案：G7(#5)和弦指法图。根音位于III把位（3品6弦），构成音标注为b7、3、#5，分别位于4品5弦、5品4弦和5品3弦。\n检索关键词: G7(#5), augmented dominant, changes chord, III position, 吉他指板, 声部构成\n编配价值: 展示了基于6弦根音的G7(#5)封闭和弦按法，适用于需要增五度张力的属和弦解决或半音阶连接场景，明确了变化音#5在3弦上的位置。\n题目上下文: 根据声部构成在下面的图示中构建变化和弦，并且写出和弦的名称。 2 3 7 8 10",
+      "score": 1.1999,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "fretboard_answer_E51_8",
+        "page_hint": "data/练习解答（图片）/练习49-51.png",
+        "exercise_number": 51,
+        "subquestion_number": 8,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_49_51/question_segments_v2/crops/exercise_51_08.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "priority": "fretboard_foundation_answer",
+          "page": "data/练习解答（图片）/练习49-51.png",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_49_51/question_segments_v2/crops/exercise_51_08.png",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_49_51/question_segments_v2/crops/exercise_51_08.png",
+          "topic": "G7(#5)",
+          "key": "",
+          "visual_type": "chord_diagram",
+          "evidence_type": "fretboard_diagram",
+          "confidence": 1.0,
+          "caption_layer": "fretboard_answer_caption_v1",
+          "question_text": "根据声部构成在下面的图示中构建变化和弦，并且写出和弦的名称。 2 3 7 8 10",
+          "uncertain_fields": "[]",
+          "subquestion_number": 8,
+          "musical_object": "G7(#5)",
+          "intervals": "[\"b7\", \"3\", \"#5\"]",
+          "mapping_method": "exercise_level_fallback",
+          "position_or_shape": "III (3rd fret root on E string)",
+          "retrieval_keywords": "[\"G7(#5)\", \"augmented dominant\", \"changes chord\", \"III position\", \"吉他指板\", \"声部构成\"]",
+          "segment_id": "fretboard_answer_E51_8",
+          "visible_structure": "{}",
+          "quality_or_mode": "dominant seventh sharp five",
+          "source_id": "fretboard_handbook_question_answer",
+          "entities": "{}",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "topic_hint": "G7(#5)",
+          "source_image": "data/练习解答（图片）/练习49-51.png",
+          "arrangement_value": "展示了基于6弦根音的G7(#5)封闭和弦按法，适用于需要增五度张力的属和弦解决或半音阶连接场景，明确了变化音#5在3弦上的位置。",
+          "nearby_text": "根据声部构成在下面的图示中构建变化和弦，并且写出和弦的名称。 2 3 7 8 10",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "image_type": "chord_diagram",
+          "visual_granularity": "question_answer_crop",
+          "visual_id": "fretboard_answer_E51_8",
+          "tuning": "",
+          "caption": "练习51第8题答案：G7(#5)和弦指法图。根音位于III把位（3品6弦），构成音标注为b7、3、#5，分别位于4品5弦、5品4弦和5品3弦。",
+          "root": "G",
+          "exercise_number": 51
+        },
+        "canonical_terms": [
+          "root:g",
+          "chord_quality:",
+          "fret_region:low",
+          "technique:voicing",
+          "visual_type:chord_diagram"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.27,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 13,
+        "distance": 0.14510077238082886,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E48_1",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 48 小题: 1\n证据类型: fretboard_diagram\n视觉类型: chord_diagram\n对象: Gma9 指型 4\n根音: G\n性质/调式: major ninth\n位置/指型: 指型 4\n方向: horizontal\n可见标签: 1) Gma9, 指型 4\n按点概述: 横向指板图，显示5个按点。根据Gma9和弦构成及指型分布推断，根音G位于第6弦3品（带圈标记），其余音符分布在相邻品格，符合G大调九和弦指法特征。\ncaption: 练习48第1题答案：Gma9和弦指板图。标注为“指型 4”。图中展示了G大调九和弦在吉他指板上的具体按法，根音G位于低音区（推断为6弦3品），包含延伸音9音，用于构建延伸和弦琶音。\n检索关键词: Gma9, G major 9, 指型 4, 延伸和弦, 琶音, 吉他指板, Exercise 48\n编配价值: 提供Gma9和弦的特定指型（Shape 4）视觉参考，帮助学习者掌握该和弦在指板上的Voicing排列及延伸音位置，适用于爵士或流行编配中的和声构建与Solo即兴素材积累。\n题目上下文: Gma9 = =",
+      "score": 1.1956,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "fretboard_answer_E48_1",
+        "page_hint": "data/练习解答（图片）/练习47-48.png",
+        "exercise_number": 48,
+        "subquestion_number": 1,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_47_48/question_segments_v2/crops/exercise_48_01.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "musical_object": "Gma9 指型 4",
+          "retrieval_keywords": "[\"Gma9\", \"G major 9\", \"指型 4\", \"延伸和弦\", \"琶音\", \"吉他指板\", \"Exercise 48\"]",
+          "subquestion_number": 1,
+          "tuning": "",
+          "entities": "{}",
+          "root": "G",
+          "position_or_shape": "指型 4",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_47_48/question_segments_v2/crops/exercise_48_01.png",
+          "mapping_method": "exercise_subquestion_number",
+          "key": "",
+          "visible_structure": "{}",
+          "visual_granularity": "question_answer_crop",
+          "page": "data/练习解答（图片）/练习47-48.png",
+          "visual_type": "chord_diagram",
+          "caption": "练习48第1题答案：Gma9和弦指板图。标注为“指型 4”。图中展示了G大调九和弦在吉他指板上的具体按法，根音G位于低音区（推断为6弦3品），包含延伸音9音，用于构建延伸和弦琶音。",
+          "intervals": "[]",
+          "arrangement_value": "提供Gma9和弦的特定指型（Shape 4）视觉参考，帮助学习者掌握该和弦在指板上的Voicing排列及延伸音位置，适用于爵士或流行编配中的和声构建与Solo即兴素材积累。",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "evidence_type": "fretboard_diagram",
+          "nearby_text": "在下面的图示中构建延伸和弦琶音，每次只延伸一个音符。标出指型序号。 1）Gma9 = = 2)Dmi9 3)A9 指型 V 4) Emi9(b5) 指型 VII 5） Bma9(#11) 6)F#mi11指型 IV 7Db9指型 8)Ab9(#11) 9)Ebmi13指型 三I VI",
+          "source_image": "data/练习解答（图片）/练习47-48.png",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_47_48/question_segments_v2/crops/exercise_48_01.png",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "question_text": "在下面的图示中构建延伸和弦琶音，每次只延伸一个音符。标出指型序号。 1）Gma9 = = 2)Dmi9 3)A9 指型 V 4) Emi9(b5) 指型 VII 5） Bma9(#11) 6)F#mi11指型 IV 7Db9指型 8)Ab9(#11) 9)Ebmi13指型 三I VI",
+          "topic": "Gma9 指型 4",
+          "exercise_number": 48,
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "source_id": "fretboard_handbook_question_answer",
+          "visual_id": "fretboard_answer_E48_1",
+          "image_type": "chord_diagram",
+          "segment_id": "fretboard_answer_E48_1",
+          "topic_hint": "Gma9 指型 4",
+          "uncertain_fields": "[\"fret_range\", \"string_position\"]",
+          "quality_or_mode": "major ninth",
+          "confidence": 0.95,
+          "priority": "fretboard_foundation_answer"
+        },
+        "canonical_terms": [
+          "root:g",
+          "chord_quality:maj9",
+          "concept:caged",
+          "fret_region:low"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.27,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 21,
+        "distance": 0.1494044065475464,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E07_4",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 7 小题: 4\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: 吉他指板半音阶（Chromatic Scale）全音符名称对照表\n根音: G\n性质/调式: Chromatic / 半音阶\n位置/指型: 3弦开放把位至12品八度\n答案项: 1: G#/Ab; 2: A#/Bb; 3: C#/Db; 4: D#/Eb; 5: F#/Gb\n方向: horizontal\n品位范围: Open-12\n可见标签: G, G# Ab, A, A# Bb, B, C, C# Db, D, D# Eb, E, F, F# Gb, G, G# Ab, A, A# Bb\n按点概述: 单弦（推断为3弦G弦）从空弦到12品的连续半音按点，下方对应标注了每个位置的升号与降号异名同音名称。\ncaption: 吉他指板3弦（G弦）半音阶图示，展示从空弦G到12品高八度G的完整 chromatic scale。图中标注了所有非自然音符的等音名称（Enharmonic equivalents），如G#/Ab、A#/Bb、C#/Db、D#/Eb、F#/Gb，用于辅助记忆临时记号在指板上的位置及拼写。\n检索关键词: 半音阶, chromatic scale, 等音, enharmonic, 临时记号, 升降号, 指板音名, G弦音阶, 异名同音\n编配价值: 作为基础乐理与指板记忆的参考答案，帮助学习者建立单弦上的半音距离概念，并掌握变化音（Accidentals）在指板上的双重命名规则，是构建调式音阶和理解和弦构成的基础地图。\n题目上下文: 当你完成了自然音符的练习之后，下面来写一下标有临时记号的另外五个非自然音符。写的时候要注意既要写出带有升号（#）的名称也要写出带有降号（b）的名称。这样，每个非自然音符就会有两个名字。首先来看一下例子。",
+      "score": 1.17721,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "fretboard_answer_E07_4",
+        "page_hint": "data/练习解答（图片）/练习6-练习9.png",
+        "exercise_number": 7,
+        "subquestion_number": 4,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_06_09/question_segments_v2/crops/exercise_07_04.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "image_type": "scale_pattern",
+          "visual_granularity": "question_answer_crop",
+          "topic": "吉他指板半音阶（Chromatic Scale）全音符名称对照表",
+          "root": "G",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "source_image": "data/练习解答（图片）/练习6-练习9.png",
+          "caption": "吉他指板3弦（G弦）半音阶图示，展示从空弦G到12品高八度G的完整 chromatic scale。图中标注了所有非自然音符的等音名称（Enharmonic equivalents），如G#/Ab、A#/Bb、C#/Db、D#/Eb、F#/Gb，用于辅助记忆临时记号在指板上的位置及拼写。",
+          "evidence_type": "fretboard_diagram",
+          "source_id": "fretboard_handbook_question_answer",
+          "topic_hint": "吉他指板半音阶（Chromatic Scale）全音符名称对照表",
+          "subquestion_number": 4,
+          "visual_type": "scale_pattern",
+          "musical_object": "吉他指板半音阶（Chromatic Scale）全音符名称对照表",
+          "quality_or_mode": "Chromatic / 半音阶",
+          "visible_structure": "{}",
+          "intervals": "[]",
+          "uncertain_fields": "[]",
+          "exercise_number": 7,
+          "page": "data/练习解答（图片）/练习6-练习9.png",
+          "nearby_text": "当你完成了自然音符的练习之后，下面来写一下标有临时记号的另外五个非自然音符。写的时候要注意既要写出带有升号（#）的名称也要写出带有降号（b）的名称。这样，每个非自然音符就会有两个名字。首先来看一下例子。",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_06_09/question_segments_v2/crops/exercise_07_04.png",
+          "segment_id": "fretboard_answer_E07_4",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_06_09/question_segments_v2/crops/exercise_07_04.png",
+          "tuning": "",
+          "priority": "fretboard_foundation_answer",
+          "arrangement_value": "作为基础乐理与指板记忆的参考答案，帮助学习者建立单弦上的半音距离概念，并掌握变化音（Accidentals）在指板上的双重命名规则，是构建调式音阶和理解和弦构成的基础地图。",
+          "key": "",
+          "entities": "{}",
+          "confidence": 1.0,
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "question_text": "当你完成了自然音符的练习之后，下面来写一下标有临时记号的另外五个非自然音符。写的时候要注意既要写出带有升号（#）的名称也要写出带有降号（b）的名称。这样，每个非自然音符就会有两个名字。首先来看一下例子。",
+          "retrieval_keywords": "[\"半音阶\", \"chromatic scale\", \"等音\", \"enharmonic\", \"临时记号\", \"升降号\", \"指板音名\", \"G弦音阶\", \"异名同音\"]",
+          "position_or_shape": "3弦开放把位至12品八度",
+          "visual_id": "fretboard_answer_E07_4",
+          "mapping_method": "exercise_level_fallback",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]"
+        },
+        "canonical_terms": [
+          "scale:chromatic",
+          "root:g",
+          "tuning:standard",
+          "technique:open_string",
+          "fret_region:low",
+          "fret_region:middle"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.27,
+          "constraints": {
+            "target_keys": [],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [
+              "7"
+            ],
+            "scale_or_mode": [],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [],
+            "required_terms": [],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "requires_exact_key": false,
+            "requires_exact_chord": true,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": [
+              "点弦"
+            ],
+            "mathrock_intent": false,
+            "standard_tuning_intent": true,
+            "negative_techniques": [
+              "tapping"
+            ]
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [
+              "7"
+            ],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 9,
+        "distance": 0.14279282093048096,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "标准调弦的普通 G7 和弦指型，不要点弦 指型图 和弦图 voicing",
+          "top_k": 5,
+          "reason": "具体图形/指法/voicing/答案图证据"
+        }
+      }
+    }
+  ],
+  "kg_evidence": [],
+  "judgement": {
+    "sufficient": true,
+    "confidence": 0.71,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 2,
+    "text_count": 43,
+    "visual_count": 25,
+    "kg_count": 0,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [
+      "text:fretboard_text_0118",
+      "text:fretboard_text_0037",
+      "text:fretboard_text_0028"
+    ],
+    "top_visual_ids": [
+      "visual_caption:fretboard_answer_E50_6",
+      "visual_caption:fretboard_answer_E48_13",
+      "visual_caption:fretboard_answer_E51_8"
+    ],
+    "top_kg_ids": [],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+    "visual_collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+    "model_rerank": {
+      "text": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "visual": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "kg": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      }
+    }
+  },
+  "timings": {
+    "model_load_seconds": 5.210897200013278,
+    "fretboard_text_seconds": 0.3516161000006832,
+    "visual_caption_seconds": 0.22294710000278428,
+    "style_text_seconds": 0.07544620000408031,
+    "model_rerank_seconds": 3.480000304989517e-05,
+    "total_seconds": 6.797014399984619
+  }
+}

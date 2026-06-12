@@ -37,7 +37,7 @@ def as_text(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def hit_result(item: dict[str, Any], expected_any: list[str]) -> bool:
+def hit_result(item: dict[str, Any], test: dict[str, Any]) -> bool:
     haystack = "\n".join(
         [
             as_text(item.get("id")),
@@ -45,7 +45,17 @@ def hit_result(item: dict[str, Any], expected_any: list[str]) -> bool:
             as_text(item.get("metadata")),
         ]
     ).lower()
-    return any(token.lower() in haystack for token in expected_any)
+    expected_any = test.get("expected_any", [])
+    if expected_any and not any(str(token).lower() in haystack for token in expected_any):
+        return False
+    metadata = item.get("metadata") or {}
+    expected_source_ids = {str(value) for value in test.get("expected_source_ids", [])}
+    if expected_source_ids and str(metadata.get("source_id") or "") not in expected_source_ids:
+        return False
+    forbidden_layers = {str(value) for value in test.get("forbidden_caption_layers", [])}
+    if forbidden_layers and str(metadata.get("caption_layer") or "") in forbidden_layers:
+        return False
+    return bool(expected_any or expected_source_ids)
 
 
 def compact_metadata(metadata: dict[str, Any]) -> dict[str, Any]:
@@ -146,6 +156,8 @@ def lexical_rerank_score(item: dict[str, Any], query: str, tokens: set[str]) -> 
     caption = str(metadata.get("caption") or "").lower()
     image_type = str(metadata.get("image_type") or "").lower()
     granularity = str(metadata.get("visual_granularity") or "").lower()
+    tuning = str(metadata.get("tuning") or "").lower()
+    caption_layer = str(metadata.get("caption_layer") or "").lower()
 
     detail_bonus = 0.0
     if is_specific_visual_query(query, tokens):
@@ -178,6 +190,32 @@ def lexical_rerank_score(item: dict[str, Any], query: str, tokens: set[str]) -> 
             detail_bonus += 0.024
         if "chord_shape" in topic:
             detail_bonus -= 0.010
+
+    lowered_query = query.lower()
+    mathrock_intent = "math rock" in lowered_query or "mathrock" in lowered_query or "数摇" in query or "数学摇滚" in query
+    foundation_intent = any(marker in query for marker in ["普通", "基础", "常规"]) or any(
+        marker in lowered_query for marker in ["basic", "plain", "generic"]
+    )
+    if mathrock_intent and caption_layer == "mathrock_style_visual_caption_v1":
+        detail_bonus += 0.050
+    if foundation_intent and not mathrock_intent and caption_layer == "mathrock_style_visual_caption_v1":
+        detail_bonus -= 0.100
+
+    standard_tuning_intent = "标准调弦" in query or "standard tuning" in lowered_query
+    if standard_tuning_intent:
+        if tuning == "standard":
+            detail_bonus += 0.035
+        elif tuning and tuning != "unknown":
+            detail_bonus -= 0.120
+
+    negative_techniques = {
+        "tapping": ["不需要点弦", "不要点弦", "非点弦", "without tapping", "no tapping"],
+        "arpeggio": ["不需要琶音", "不要琶音", "非琶音", "without arpeggio", "no arpeggio"],
+        "open_string": ["不需要开放弦", "不要开放弦", "非开放弦", "without open strings", "no open strings"],
+    }
+    for technique, markers in negative_techniques.items():
+        if any(marker in lowered_query for marker in markers) and technique in blob:
+            detail_bonus -= 0.140
 
     vector_score = -float(item.get("distance") or 0.0)
     final_score = vector_score + match_score + detail_bonus
@@ -239,7 +277,7 @@ def run_eval(args: argparse.Namespace) -> dict[str, Any]:
                 "metadata": compact_metadata(metadata or {}),
                 "document": doc,
             }
-            row["is_expected"] = hit_result(row, test.get("expected_any", []))
+            row["is_expected"] = hit_result(row, test)
             hits.append(row)
 
         if args.rerank:
@@ -250,8 +288,11 @@ def run_eval(args: argparse.Namespace) -> dict[str, Any]:
         rows.append(
             {
                 "id": test["id"],
+                "group": test.get("group", "default"),
                 "query": test["query"],
                 "expected_any": test.get("expected_any", []),
+                "expected_source_ids": test.get("expected_source_ids", []),
+                "forbidden_caption_layers": test.get("forbidden_caption_layers", []),
                 "top_k": args.top_k,
                 "rerank": args.rerank,
                 "rerank_candidates": candidate_count,
@@ -267,6 +308,16 @@ def run_eval(args: argparse.Namespace) -> dict[str, Any]:
 
     totals = [row["total_seconds"] for row in rows]
     model_metadata = embedder.metadata()
+    group_names = sorted({str(row.get("group") or "default") for row in rows})
+    groups = {}
+    for group in group_names:
+        group_rows = [row for row in rows if row.get("group") == group]
+        groups[group] = {
+            "tests": len(group_rows),
+            "hit_at_1": sum(1 for row in group_rows if row["hit_at_1"]),
+            "hit_at_k": sum(1 for row in group_rows if row["hit_at_k"]),
+            "misses": [row["id"] for row in group_rows if not row["hit_at_k"]],
+        }
     summary = {
         "tests": len(rows),
         "collection": args.collection,
@@ -277,6 +328,7 @@ def run_eval(args: argparse.Namespace) -> dict[str, Any]:
         "hit_at_1": sum(1 for row in rows if row["hit_at_1"]),
         "hit_at_k": sum(1 for row in rows if row["hit_at_k"]),
         "misses": [row["id"] for row in rows if not row["hit_at_k"]],
+        "groups": groups,
         "avg_total_seconds": statistics.mean(totals) if totals else 0,
         "median_total_seconds": statistics.median(totals) if totals else 0,
         "model": {

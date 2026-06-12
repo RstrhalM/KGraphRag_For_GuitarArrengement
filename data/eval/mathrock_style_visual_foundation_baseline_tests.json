@@ -1,0 +1,51 @@
+[
+  {
+    "id": "foundation_b6",
+    "group": "foundation_preservation",
+    "query": "B6 六和弦指法，不包含七度音，根音在九品附近",
+    "expected_any": ["B6_chord_shape", "B6"],
+    "expected_source_ids": ["fretboard_handbook_question_answer"]
+  },
+  {
+    "id": "foundation_fm7b5",
+    "group": "foundation_preservation",
+    "query": "F小七减五 Fm7b5 琶音指型，低把位，半减七和弦",
+    "expected_any": ["Fm7b5_arpeggio_shape_1", "F half-diminished"],
+    "expected_source_ids": ["fretboard_handbook_question_answer"]
+  },
+  {
+    "id": "foundation_d_major",
+    "group": "foundation_preservation",
+    "query": "D大三和弦琶音 指型1 根音三音五音",
+    "expected_any": ["D_major_triad_arpeggio_shape_1", "D大三和弦琶音", "D major triad arpeggio"],
+    "expected_source_ids": ["fretboard_handbook_question_answer"]
+  },
+  {
+    "id": "foundation_d_dim",
+    "group": "foundation_preservation",
+    "query": "D减三和弦琶音，根音小三度减五度，制造紧张经过感",
+    "expected_any": ["D_diminished_triad_arpeggio_shape", "D diminished"],
+    "expected_source_ids": ["fretboard_handbook_question_answer"]
+  },
+  {
+    "id": "foundation_gsus2",
+    "group": "foundation_preservation",
+    "query": "Gsus2 挂二和弦 1 2 5 构成音，在图上补全指法",
+    "expected_any": ["Gsus2_chord_shape_exercise", "Gsus2", "挂二和弦"],
+    "expected_source_ids": ["fretboard_handbook_question_answer"]
+  },
+  {
+    "id": "foundation_plain_g7",
+    "group": "foundation_preservation",
+    "query": "标准调弦 G7 属七和弦普通指型图",
+    "expected_any": ["G7"],
+    "expected_source_ids": ["fretboard_handbook_question_answer"]
+  },
+  {
+    "id": "foundation_plain_cmaj7",
+    "group": "foundation_preservation",
+    "query": "标准调弦 Cmaj7 大七和弦基础指型，不需要点弦谱例",
+    "expected_any": ["Cmaj7", "Cma7", "C major seventh", "MA7"],
+    "expected_source_ids": ["fretboard_handbook_question_answer"]
+  }
+]

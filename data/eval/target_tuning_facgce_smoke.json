@@ -1,0 +1,921 @@
+{
+  "query": "FACGCE 调弦下的 数摇riff,G调要怎么设计",
+  "analysis": {
+    "query": "Design math rock riffs in G major using FACGCE tuning",
+    "intent": "mixed_arrangement",
+    "style_hints": [
+      "mathrock"
+    ],
+    "theory_terms": [],
+    "technique_terms": [
+      "riff"
+    ],
+    "needs_fretboard_text": false,
+    "needs_visual": true,
+    "needs_style_text": false,
+    "needs_kg": false,
+    "confidence": 0.0,
+    "matched_rules": [
+      "llm_plan:visual_caption"
+    ]
+  },
+  "plan": [
+    {
+      "name": "visual_caption",
+      "backend": "chroma",
+      "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+      "query": "FACGCE tuning G major math rock riff chord shapes",
+      "top_k": 5,
+      "reason": "test"
+    }
+  ],
+  "text_evidence": [],
+  "visual_evidence": [
+    {
+      "evidence_id": "visual_caption:mr_style_002",
+      "evidence_type": "visual_caption",
+      "source_id": "mathrock_pdf",
+      "title": "Math Rock 吉他教材",
+      "content": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 34\n图像类型: fretboard_diagram\n主题: FACGCE_tuning_major_scale_fingerboard_map\n调弦: FACGCE\n调性: unknown\n根音: unknown\n音阶: major scale\n技法: tapping, riff construction, melodic phrasing\n指型: movable patterns\n弦组: 6 strings\n品位范围: 0-7\n开放弦: 6th string (F), 1st string (E)\n包含音: scale degrees (unspecified)\ncaption: FACGCE调弦下的大调实用音符指板图，覆盖0-7品。图中黑色圆点标示根音位置（如6弦空弦、1弦5品等），空心圆点为音阶内其他音符。该指型设计包含开放弦与重复音，旨在提供丰富的旋律选择，适用于Math Rock风格的主奏、点弦Riff及过渡乐句创作。\n编配价值: 此图展示了非标准调弦下的几何化音阶布局，利用FACGCE调弦特有的和弦内音分布，便于构建具有Math Rock特征的复杂点弦Riff和线性旋律。开放弦与高把位音符的结合提供了独特的声部连接可能性，适合开发具有辨识度的器乐摇滚编配。\n附近文字: FACGCE 调弦的大调实用音符指板图及其点弦/旋律用途说明 描述特殊调弦音阶图中的开放弦、重复音和适合点弦 riff 的几何布局。 教材章节语境：Math Rock 吉他编配与演奏。\ncanonical_terms: tuning:facgce, visual_type:fretboard_diagram, visual_subtype:scale_pattern, style:math_rock, style:guitar_arrangement, scale:major, technique:open_string, technique:tapping, technique:melodic_riff",
+      "score": 2.09706,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "mr_style_002",
+        "page_hint": 34,
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_002.png",
+        "style_tags": [
+          "math_rock",
+          "guitar_arrangement"
+        ],
+        "raw_metadata": {
+          "priority": "P1_mathrock_style_trial",
+          "confidence": 0.95,
+          "source_title": "Math Rock 吉他教材",
+          "image_type": "fretboard_diagram",
+          "source_image": "",
+          "topic": "FACGCE_tuning_major_scale_fingerboard_map",
+          "caption_layer": "mathrock_style_visual_caption_v1",
+          "exercise_number": "",
+          "question_text": "",
+          "canonical_terms": "[\"tuning:facgce\", \"visual_type:fretboard_diagram\", \"visual_subtype:scale_pattern\", \"style:math_rock\", \"style:guitar_arrangement\", \"scale:major\", \"technique:open_string\", \"technique:tapping\", \"technique:melodic_riff\"]",
+          "tuning": "FACGCE",
+          "crop_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_002.png",
+          "topic_hint": "FACGCE 调弦的大调实用音符指板图及其点弦/旋律用途说明",
+          "uncertain_fields": "[\"key\", \"root\"]",
+          "visual_id": "mr_style_002",
+          "quality_or_mode": "",
+          "page": 34,
+          "arrangement_value": "此图展示了非标准调弦下的几何化音阶布局，利用FACGCE调弦特有的和弦内音分布，便于构建具有Math Rock特征的复杂点弦Riff和线性旋律。开放弦与高把位音符的结合提供了独特的声部连接可能性，适合开发具有辨识度的器乐摇滚编配。",
+          "mapping_method": "",
+          "key": "unknown",
+          "position_or_shape": "",
+          "nearby_text": "FACGCE 调弦的大调实用音符指板图及其点弦/旋律用途说明 描述特殊调弦音阶图中的开放弦、重复音和适合点弦 riff 的几何布局。 教材章节语境：Math Rock 吉他编配与演奏。",
+          "visible_structure": "{\"string_set\": \"6 strings\", \"fret_range\": \"0-7\", \"open_strings\": [\"6th string (F)\", \"1st string (E)\"], \"omitted_tones\": [], \"included_tones\": [\"scale degrees (unspecified)\"]}",
+          "visual_type": "fretboard_diagram",
+          "entities": "{\"chords\": [], \"scales\": [\"major scale\"], \"intervals\": [], \"techniques\": [\"tapping\", \"riff construction\", \"melodic phrasing\"], \"fingerings\": [\"movable patterns\"]}",
+          "root": "unknown",
+          "canonical_status": "accepted",
+          "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_002.png",
+          "source_id": "mathrock_pdf",
+          "musical_object": "FACGCE_tuning_major_scale_fingerboard_map",
+          "evidence_type": "",
+          "style_tags": "[\"math_rock\", \"guitar_arrangement\"]",
+          "segment_id": "mr_style_002",
+          "retrieval_keywords": "[]",
+          "visual_granularity": "single_retrievable_unit",
+          "intervals": "[]",
+          "subquestion_number": "",
+          "caption": "FACGCE调弦下的大调实用音符指板图，覆盖0-7品。图中黑色圆点标示根音位置（如6弦空弦、1弦5品等），空心圆点为音阶内其他音符。该指型设计包含开放弦与重复音，旨在提供丰富的旋律选择，适用于Math Rock风格的主奏、点弦Riff及过渡乐句创作。"
+        },
+        "domain_rerank": {
+          "delta": 0.91,
+          "constraints": {
+            "target_keys": [
+              "g_major"
+            ],
+            "target_roots": [
+              "g"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "major"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "tuning:facgce",
+              "key:g_major",
+              "root:g",
+              "scale:major",
+              "technique:riff"
+            ],
+            "required_terms": [
+              "tuning:facgce",
+              "key:g_major"
+            ],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "target_tuning": "facgce",
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": true,
+            "allow_exercise_reference": true,
+            "style_hints": [
+              "mathrock"
+            ],
+            "techniques": [
+              "riff"
+            ],
+            "mathrock_intent": true,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [
+              "g_major"
+            ],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [
+              "major"
+            ],
+            "matched_style": [
+              "mathrock"
+            ],
+            "matched_techniques": [
+              "riff"
+            ],
+            "matched_canonical_terms": [
+              "scale:major",
+              "tuning:facgce"
+            ],
+            "missing_required_terms": [
+              "key:g_major"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term"
+            ],
+            "matched_required_terms": [
+              "tuning:facgce"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:facgce"
+            ],
+            "visual_required_bonus": true,
+            "mathrock_visual_bonus": true,
+            "matched_alternate_tuning": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 6,
+        "distance": 0.19293618202209473,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "FACGCE tuning G major math rock riff chord shapes",
+          "top_k": 5,
+          "reason": "test"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:mr_style_001_g7",
+      "evidence_type": "visual_caption",
+      "source_id": "mathrock_pdf",
+      "title": "Math Rock 吉他教材",
+      "content": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 33\n图像类型: chord_diagram\n主题: FACGCE_tuning_G7_chord_shape\n调弦: FACGCE\n调性: C major\n根音: G\n和弦: G7\n技法: mute, open_strings\n弦组: 6 strings\n品位范围: open-3\n开放弦: 5th string, 4th string, 3rd string, 2nd string, 1st string\n包含音: G, B, D, F\ncaption: FACGCE特殊调弦下的G7和弦指型图。利用该调弦特性，通过6弦3品按弦配合多根开放弦构成属七和弦 voicing。1、2弦标注闷音（xx），保留中低频开放弦共鸣，呈现Math Rock风格特有的开放、清脆且具张力的和声色彩。\n编配价值: 此指型利用FACGCE调弦的开放弦共振，简化了传统G7按法，适合Math Rock中快速切换的Riff编配。开放弦带来的延音与泛音列丰富了声部连接，为独奏或伴奏提供独特的调性色彩与空间感。\n附近文字: FACGCE 调弦中的 G7 和弦指型 基于 FACGCE 调弦，独立识别 G7 指型的开放弦、闷弦、按弦位置和编配用途。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：G7。\ncanonical_terms: tuning:facgce, visual_type:chord_diagram, visual_subtype:chord_shape, style:math_rock, style:guitar_arrangement, root:g, chord_quality:dominant7, chord:g_dominant7, technique:mute, technique:open_string, technique:voicing",
+      "score": 1.76337,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "mr_style_001_g7",
+        "page_hint": 33,
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_g7.png",
+        "style_tags": [
+          "math_rock",
+          "guitar_arrangement"
+        ],
+        "raw_metadata": {
+          "key": "C major",
+          "uncertain_fields": "[]",
+          "position_or_shape": "",
+          "canonical_status": "accepted",
+          "priority": "P1_mathrock_style_trial",
+          "page": 33,
+          "visual_type": "chord_diagram",
+          "musical_object": "FACGCE_tuning_G7_chord_shape",
+          "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_g7.png",
+          "segment_id": "mr_style_001_g7",
+          "confidence": 0.95,
+          "quality_or_mode": "",
+          "retrieval_keywords": "[]",
+          "source_id": "mathrock_pdf",
+          "visual_granularity": "single_retrievable_unit",
+          "intervals": "[]",
+          "mapping_method": "",
+          "caption": "FACGCE特殊调弦下的G7和弦指型图。利用该调弦特性，通过6弦3品按弦配合多根开放弦构成属七和弦 voicing。1、2弦标注闷音（xx），保留中低频开放弦共鸣，呈现Math Rock风格特有的开放、清脆且具张力的和声色彩。",
+          "nearby_text": "FACGCE 调弦中的 G7 和弦指型 基于 FACGCE 调弦，独立识别 G7 指型的开放弦、闷弦、按弦位置和编配用途。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：G7。",
+          "evidence_type": "",
+          "exercise_number": "",
+          "topic_hint": "FACGCE 调弦中的 G7 和弦指型",
+          "crop_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_g7.png",
+          "tuning": "FACGCE",
+          "caption_layer": "mathrock_style_visual_caption_v1",
+          "visual_id": "mr_style_001_g7",
+          "root": "G",
+          "topic": "FACGCE_tuning_G7_chord_shape",
+          "image_type": "chord_diagram",
+          "arrangement_value": "此指型利用FACGCE调弦的开放弦共振，简化了传统G7按法，适合Math Rock中快速切换的Riff编配。开放弦带来的延音与泛音列丰富了声部连接，为独奏或伴奏提供独特的调性色彩与空间感。",
+          "subquestion_number": "",
+          "style_tags": "[\"math_rock\", \"guitar_arrangement\"]",
+          "entities": "{\"chords\": [\"G7\"], \"scales\": [], \"intervals\": [], \"techniques\": [\"mute\", \"open_strings\"], \"fingerings\": []}",
+          "visible_structure": "{\"string_set\": \"6 strings\", \"fret_range\": \"open-3\", \"open_strings\": [\"5th string\", \"4th string\", \"3rd string\", \"2nd string\", \"1st string\"], \"omitted_tones\": [], \"included_tones\": [\"G\", \"B\", \"D\", \"F\"]}",
+          "source_title": "Math Rock 吉他教材",
+          "canonical_terms": "[\"tuning:facgce\", \"visual_type:chord_diagram\", \"visual_subtype:chord_shape\", \"style:math_rock\", \"style:guitar_arrangement\", \"root:g\", \"chord_quality:dominant7\", \"chord:g_dominant7\", \"technique:mute\", \"technique:open_string\", \"technique:voicing\"]",
+          "question_text": "",
+          "source_image": ""
+        },
+        "domain_rerank": {
+          "delta": 0.55,
+          "constraints": {
+            "target_keys": [
+              "g_major"
+            ],
+            "target_roots": [
+              "g"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "major"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "tuning:facgce",
+              "key:g_major",
+              "root:g",
+              "scale:major",
+              "technique:riff"
+            ],
+            "required_terms": [
+              "tuning:facgce",
+              "key:g_major"
+            ],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "target_tuning": "facgce",
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": true,
+            "allow_exercise_reference": true,
+            "style_hints": [
+              "mathrock"
+            ],
+            "techniques": [
+              "riff"
+            ],
+            "mathrock_intent": true,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "g"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [
+              "major"
+            ],
+            "matched_style": [
+              "mathrock"
+            ],
+            "matched_techniques": [
+              "riff"
+            ],
+            "matched_canonical_terms": [
+              "root:g",
+              "tuning:facgce"
+            ],
+            "missing_required_terms": [
+              "key:g_major"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "tuning:facgce"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:facgce"
+            ],
+            "visual_required_bonus": true,
+            "mathrock_visual_bonus": true,
+            "matched_alternate_tuning": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.16662800312042236,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "FACGCE tuning G major math rock riff chord shapes",
+          "top_k": 5,
+          "reason": "test"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:mr_style_001_fmaj9",
+      "evidence_type": "visual_caption",
+      "source_id": "mathrock_pdf",
+      "title": "Math Rock 吉他教材",
+      "content": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 33\n图像类型: chord_diagram\n主题: FACGCE_tuning_Fmaj9_open_chord\n调弦: FACGCE\n调性: F major\n根音: F\n和弦: Fmaj9\n技法: open_strings\n弦组: 6 strings\n品位范围: open position (frets 1-4)\n开放弦: 6, 5, 4, 3, 2, 1\n包含音: F, A, C, G, E\ncaption: FACGCE特殊调弦下的Fmaj9和弦指型图。图示显示该和弦在开放把位演奏，六根弦均为空弦音（oooooo），无需左手按品。利用FACGCE调弦特性，空弦音直接构成F大九和弦（根音F、三音A、五音C、九音G、七音E），是Math Rock风格中典型的开放和声Voicing。\n编配价值: 此指型展示了Math Rock编配的核心逻辑：通过特殊调弦将复杂延伸和弦（如maj9）转化为简单的全开放空弦结构。极大降低了左手按弦负担，使演奏者能专注于右手点弦、 tapping或复杂节奏律动，同时获得明亮、共鸣丰富的声部色彩，适合作为风格化Riff的根基或段落连接。\n附近文字: FACGCE 调弦中的 Fmaj9 和弦指型 基于 FACGCE 调弦，独立识别 Fmaj9 指型的开放弦、按弦位置和编配用途。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：Fmaj9。\ncanonical_terms: tuning:facgce, visual_type:chord_diagram, visual_subtype:chord_shape, style:math_rock, style:guitar_arrangement, root:f, chord_quality:maj9, chord:f_maj9, technique:open_string, technique:voicing",
+      "score": 1.6334,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "mr_style_001_fmaj9",
+        "page_hint": 33,
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_fmaj9.png",
+        "style_tags": [
+          "math_rock",
+          "guitar_arrangement"
+        ],
+        "raw_metadata": {
+          "arrangement_value": "此指型展示了Math Rock编配的核心逻辑：通过特殊调弦将复杂延伸和弦（如maj9）转化为简单的全开放空弦结构。极大降低了左手按弦负担，使演奏者能专注于右手点弦、 tapping或复杂节奏律动，同时获得明亮、共鸣丰富的声部色彩，适合作为风格化Riff的根基或段落连接。",
+          "confidence": 1.0,
+          "uncertain_fields": "[]",
+          "topic_hint": "FACGCE 调弦中的 Fmaj9 和弦指型",
+          "caption_layer": "mathrock_style_visual_caption_v1",
+          "visible_structure": "{\"string_set\": \"6 strings\", \"fret_range\": \"open position (frets 1-4)\", \"open_strings\": [\"6\", \"5\", \"4\", \"3\", \"2\", \"1\"], \"omitted_tones\": [], \"included_tones\": [\"F\", \"A\", \"C\", \"G\", \"E\"]}",
+          "retrieval_keywords": "[]",
+          "quality_or_mode": "",
+          "root": "F",
+          "mapping_method": "",
+          "visual_id": "mr_style_001_fmaj9",
+          "page": 33,
+          "key": "F major",
+          "caption": "FACGCE特殊调弦下的Fmaj9和弦指型图。图示显示该和弦在开放把位演奏，六根弦均为空弦音（oooooo），无需左手按品。利用FACGCE调弦特性，空弦音直接构成F大九和弦（根音F、三音A、五音C、九音G、七音E），是Math Rock风格中典型的开放和声Voicing。",
+          "entities": "{\"chords\": [\"Fmaj9\"], \"scales\": [], \"intervals\": [], \"techniques\": [\"open_strings\"], \"fingerings\": []}",
+          "visual_granularity": "single_retrievable_unit",
+          "source_id": "mathrock_pdf",
+          "crop_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_fmaj9.png",
+          "position_or_shape": "",
+          "source_image": "",
+          "visual_type": "chord_diagram",
+          "tuning": "FACGCE",
+          "evidence_type": "",
+          "canonical_status": "accepted",
+          "segment_id": "mr_style_001_fmaj9",
+          "style_tags": "[\"math_rock\", \"guitar_arrangement\"]",
+          "image_type": "chord_diagram",
+          "intervals": "[]",
+          "exercise_number": "",
+          "priority": "P1_mathrock_style_trial",
+          "musical_object": "FACGCE_tuning_Fmaj9_open_chord",
+          "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_fmaj9.png",
+          "canonical_terms": "[\"tuning:facgce\", \"visual_type:chord_diagram\", \"visual_subtype:chord_shape\", \"style:math_rock\", \"style:guitar_arrangement\", \"root:f\", \"chord_quality:maj9\", \"chord:f_maj9\", \"technique:open_string\", \"technique:voicing\"]",
+          "question_text": "",
+          "source_title": "Math Rock 吉他教材",
+          "nearby_text": "FACGCE 调弦中的 Fmaj9 和弦指型 基于 FACGCE 调弦，独立识别 Fmaj9 指型的开放弦、按弦位置和编配用途。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：Fmaj9。",
+          "subquestion_number": "",
+          "topic": "FACGCE_tuning_Fmaj9_open_chord"
+        },
+        "domain_rerank": {
+          "delta": 0.43,
+          "constraints": {
+            "target_keys": [
+              "g_major"
+            ],
+            "target_roots": [
+              "g"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "major"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "tuning:facgce",
+              "key:g_major",
+              "root:g",
+              "scale:major",
+              "technique:riff"
+            ],
+            "required_terms": [
+              "tuning:facgce",
+              "key:g_major"
+            ],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "target_tuning": "facgce",
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": true,
+            "allow_exercise_reference": true,
+            "style_hints": [
+              "mathrock"
+            ],
+            "techniques": [
+              "riff"
+            ],
+            "mathrock_intent": true,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "g"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [
+              "major"
+            ],
+            "matched_style": [
+              "mathrock"
+            ],
+            "matched_techniques": [
+              "riff"
+            ],
+            "matched_canonical_terms": [
+              "tuning:facgce"
+            ],
+            "missing_required_terms": [
+              "key:g_major"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "tuning:facgce"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:facgce"
+            ],
+            "visual_required_bonus": true,
+            "mathrock_visual_bonus": true,
+            "matched_alternate_tuning": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.17659837007522583,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "FACGCE tuning G major math rock riff chord shapes",
+          "top_k": 5,
+          "reason": "test"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:mr_style_001_am",
+      "evidence_type": "visual_caption",
+      "source_id": "mathrock_pdf",
+      "title": "Math Rock 吉他教材",
+      "content": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 33\n图像类型: chord_diagram\n主题: FACGCE_tuning_Am_chord_shape\n调弦: FACGCE\n调性: A minor\n根音: A\n和弦: Am\n技法: muted_strings\n弦组: 6 strings\n品位范围: open-3\n开放弦: 5th string (C), 4th string (G), 3rd string (C), 2nd string (E)\n包含音: A, C, E\ncaption: FACGCE调弦下的Am和弦指型图。图示显示6弦与1弦标记为闷音（X），根音A位于6弦3品，其余按弦点分布在5、4、3弦的低把位区域。该指型利用开放弦共鸣，构成完整的A小三和弦结构，是Math Rock风格中基于特殊调弦的基础和声素材。\n编配价值: 此Am指型专为FACGCE调弦设计，通过保留中间四根弦的开放音（C-G-C-E），在演奏Root位置时产生独特的密集排列Voicing。外弦闷音处理适合Math Rock中高频切分Riff或动态对比段落，能作为Loop基底或过渡连接，提供区别于标准调弦的声学色彩。\n附近文字: FACGCE 调弦中的 Am 和弦指型 基于 FACGCE 调弦，独立识别 Am 指型的闷弦、按弦位置和编配用途。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：Am。\ncanonical_terms: tuning:facgce, visual_type:chord_diagram, visual_subtype:chord_shape, style:math_rock, style:guitar_arrangement, root:a, chord_quality:minor, chord:a_minor, technique:mute, technique:open_string, technique:voicing",
+      "score": 1.51289,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "mr_style_001_am",
+        "page_hint": 33,
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_am.png",
+        "style_tags": [
+          "math_rock",
+          "guitar_arrangement"
+        ],
+        "raw_metadata": {
+          "arrangement_value": "此Am指型专为FACGCE调弦设计，通过保留中间四根弦的开放音（C-G-C-E），在演奏Root位置时产生独特的密集排列Voicing。外弦闷音处理适合Math Rock中高频切分Riff或动态对比段落，能作为Loop基底或过渡连接，提供区别于标准调弦的声学色彩。",
+          "confidence": 1.0,
+          "intervals": "[]",
+          "root": "A",
+          "quality_or_mode": "",
+          "question_text": "",
+          "style_tags": "[\"math_rock\", \"guitar_arrangement\"]",
+          "visual_type": "chord_diagram",
+          "segment_id": "mr_style_001_am",
+          "source_image": "",
+          "topic": "FACGCE_tuning_Am_chord_shape",
+          "evidence_type": "",
+          "uncertain_fields": "[]",
+          "retrieval_keywords": "[]",
+          "visible_structure": "{\"string_set\": \"6 strings\", \"fret_range\": \"open-3\", \"open_strings\": [\"5th string (C)\", \"4th string (G)\", \"3rd string (C)\", \"2nd string (E)\"], \"omitted_tones\": [], \"included_tones\": [\"A\", \"C\", \"E\"]}",
+          "entities": "{\"chords\": [\"Am\"], \"scales\": [], \"intervals\": [], \"techniques\": [\"muted_strings\"], \"fingerings\": []}",
+          "exercise_number": "",
+          "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_am.png",
+          "key": "A minor",
+          "caption": "FACGCE调弦下的Am和弦指型图。图示显示6弦与1弦标记为闷音（X），根音A位于6弦3品，其余按弦点分布在5、4、3弦的低把位区域。该指型利用开放弦共鸣，构成完整的A小三和弦结构，是Math Rock风格中基于特殊调弦的基础和声素材。",
+          "mapping_method": "",
+          "topic_hint": "FACGCE 调弦中的 Am 和弦指型",
+          "nearby_text": "FACGCE 调弦中的 Am 和弦指型 基于 FACGCE 调弦，独立识别 Am 指型的闷弦、按弦位置和编配用途。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：Am。",
+          "visual_granularity": "single_retrievable_unit",
+          "visual_id": "mr_style_001_am",
+          "image_type": "chord_diagram",
+          "caption_layer": "mathrock_style_visual_caption_v1",
+          "tuning": "FACGCE",
+          "position_or_shape": "",
+          "source_id": "mathrock_pdf",
+          "subquestion_number": "",
+          "page": 33,
+          "musical_object": "FACGCE_tuning_Am_chord_shape",
+          "source_title": "Math Rock 吉他教材",
+          "priority": "P1_mathrock_style_trial",
+          "canonical_status": "accepted",
+          "crop_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_am.png",
+          "canonical_terms": "[\"tuning:facgce\", \"visual_type:chord_diagram\", \"visual_subtype:chord_shape\", \"style:math_rock\", \"style:guitar_arrangement\", \"root:a\", \"chord_quality:minor\", \"chord:a_minor\", \"technique:mute\", \"technique:open_string\", \"technique:voicing\"]"
+        },
+        "domain_rerank": {
+          "delta": 0.34,
+          "constraints": {
+            "target_keys": [
+              "g_major"
+            ],
+            "target_roots": [
+              "g"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "major"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "tuning:facgce",
+              "key:g_major",
+              "root:g",
+              "scale:major",
+              "technique:riff"
+            ],
+            "required_terms": [
+              "tuning:facgce",
+              "key:g_major"
+            ],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "target_tuning": "facgce",
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": true,
+            "allow_exercise_reference": true,
+            "style_hints": [
+              "mathrock"
+            ],
+            "techniques": [
+              "riff"
+            ],
+            "mathrock_intent": true,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "g"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [
+              "mathrock"
+            ],
+            "matched_techniques": [
+              "riff"
+            ],
+            "matched_canonical_terms": [
+              "tuning:facgce"
+            ],
+            "missing_required_terms": [
+              "key:g_major"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "tuning:facgce"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:facgce"
+            ],
+            "visual_required_bonus": true,
+            "mathrock_visual_bonus": true,
+            "matched_alternate_tuning": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.18211406469345093,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "FACGCE tuning G major math rock riff chord shapes",
+          "top_k": 5,
+          "reason": "test"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:mr_style_001_am_add11",
+      "evidence_type": "visual_caption",
+      "source_id": "mathrock_pdf",
+      "title": "Math Rock 吉他教材",
+      "content": "来源: Math Rock 吉他教材 / mathrock_pdf\n视觉角色: style_visual_evidence\n页码: 33\n图像类型: chord_diagram\n主题: FACGCE_Am_add11_chord_shape\n调弦: FACGCE\n调性: A minor\n根音: A\n和弦: Am(add11), Am+11\n音程: add11\n技法: mute_high_strings\n指型: open_position_shape\n弦组: 6 strings (low 4 active, high 2 muted)\n品位范围: 0-3 (open position)\n开放弦: 6弦, 5弦, 4弦\n包含音: Root, b3, 5, 11\ncaption: FACGCE特殊调弦下的Am(add11)和弦指型图。图示为开放把位按法，利用调弦特性在低把位构建包含根音、小三度、五度及十一度延伸音的和声结构。高音弦（1、2弦）标记为“xx”表示制音或不发声，强调低音区开放弦的共鸣与数学摇滚特有的清冷色彩。\n编配价值: 该指型展示了Math Rock风格中利用非标准调弦获取复杂延伸音（add11）的低成本方案。通过开放弦与简单指法的结合，能在保持演奏流畅度的同时获得宽广的声场和独特的调式色彩，适合作为Riff的基础和声或过门填充。\n附近文字: FACGCE 调弦中的 Am(add11) 和弦指型 基于 FACGCE 调弦，独立识别 Am(add11) 指型的开放弦、按弦位置和延伸音效果。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：Am(add11)。\ncanonical_terms: tuning:facgce, visual_type:chord_diagram, visual_subtype:chord_shape, style:math_rock, style:guitar_arrangement, root:a, chord_quality:m_add11, chord:a_m_add11, technique:mute, technique:open_string, technique:extended_chord_voicing",
+      "score": 1.41783,
+      "metadata": {
+        "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+        "chunk_id": "mr_style_001_am_add11",
+        "page_hint": 33,
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_am_add11.png",
+        "style_tags": [
+          "math_rock",
+          "guitar_arrangement"
+        ],
+        "raw_metadata": {
+          "caption": "FACGCE特殊调弦下的Am(add11)和弦指型图。图示为开放把位按法，利用调弦特性在低把位构建包含根音、小三度、五度及十一度延伸音的和声结构。高音弦（1、2弦）标记为“xx”表示制音或不发声，强调低音区开放弦的共鸣与数学摇滚特有的清冷色彩。",
+          "uncertain_fields": "[]",
+          "evidence_type": "",
+          "caption_layer": "mathrock_style_visual_caption_v1",
+          "style_tags": "[\"math_rock\", \"guitar_arrangement\"]",
+          "canonical_terms": "[\"tuning:facgce\", \"visual_type:chord_diagram\", \"visual_subtype:chord_shape\", \"style:math_rock\", \"style:guitar_arrangement\", \"root:a\", \"chord_quality:m_add11\", \"chord:a_m_add11\", \"technique:mute\", \"technique:open_string\", \"technique:extended_chord_voicing\"]",
+          "entities": "{\"chords\": [\"Am(add11)\", \"Am+11\"], \"scales\": [], \"intervals\": [\"add11\"], \"techniques\": [\"mute_high_strings\"], \"fingerings\": [\"open_position_shape\"]}",
+          "topic": "FACGCE_Am_add11_chord_shape",
+          "mapping_method": "",
+          "image_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_am_add11.png",
+          "visual_type": "chord_diagram",
+          "retrieval_keywords": "[]",
+          "intervals": "[]",
+          "key": "A minor",
+          "exercise_number": "",
+          "source_title": "Math Rock 吉他教材",
+          "question_text": "",
+          "topic_hint": "FACGCE 调弦中的 Am(add11) 和弦指型",
+          "visual_granularity": "single_retrievable_unit",
+          "image_type": "chord_diagram",
+          "page": 33,
+          "visible_structure": "{\"string_set\": \"6 strings (low 4 active, high 2 muted)\", \"fret_range\": \"0-3 (open position)\", \"open_strings\": [\"6弦\", \"5弦\", \"4弦\"], \"omitted_tones\": [], \"included_tones\": [\"Root\", \"b3\", \"5\", \"11\"]}",
+          "musical_object": "FACGCE_Am_add11_chord_shape",
+          "arrangement_value": "该指型展示了Math Rock风格中利用非标准调弦获取复杂延伸音（add11）的低成本方案。通过开放弦与简单指法的结合，能在保持演奏流畅度的同时获得宽广的声场和独特的调式色彩，适合作为Riff的基础和声或过门填充。",
+          "source_image": "",
+          "canonical_status": "accepted",
+          "position_or_shape": "",
+          "source_id": "mathrock_pdf",
+          "priority": "P1_mathrock_style_trial",
+          "nearby_text": "FACGCE 调弦中的 Am(add11) 和弦指型 基于 FACGCE 调弦，独立识别 Am(add11) 指型的开放弦、按弦位置和延伸音效果。 教材章节语境：Math Rock 吉他编配与演奏。 已确认调弦上下文：FACGCE。 图示标题对应标准和弦名：Am(add11)。",
+          "quality_or_mode": "",
+          "confidence": 1.0,
+          "root": "A",
+          "tuning": "FACGCE",
+          "visual_id": "mr_style_001_am_add11",
+          "crop_path": "data/processed/mathrock/style_visual_caption_trial/batch_001_visual_crops/crops/mr_style_001_am_add11.png",
+          "subquestion_number": "",
+          "segment_id": "mr_style_001_am_add11"
+        },
+        "domain_rerank": {
+          "delta": 0.27,
+          "constraints": {
+            "target_keys": [
+              "g_major"
+            ],
+            "target_roots": [
+              "g"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "major"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "tuning:facgce",
+              "key:g_major",
+              "root:g",
+              "scale:major",
+              "technique:riff"
+            ],
+            "required_terms": [
+              "tuning:facgce",
+              "key:g_major"
+            ],
+            "optional_terms": [],
+            "negative_constraints": [],
+            "target_tuning": "facgce",
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": true,
+            "allow_exercise_reference": true,
+            "style_hints": [
+              "mathrock"
+            ],
+            "techniques": [
+              "riff"
+            ],
+            "mathrock_intent": true,
+            "standard_tuning_intent": false,
+            "negative_techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [
+              "mathrock"
+            ],
+            "matched_techniques": [
+              "riff"
+            ],
+            "matched_canonical_terms": [
+              "tuning:facgce"
+            ],
+            "missing_required_terms": [
+              "key:g_major"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term",
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [
+              "tuning:facgce"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "matched_required_tuning_terms": [
+              "tuning:facgce"
+            ],
+            "visual_required_bonus": true,
+            "mathrock_visual_bonus": true,
+            "matched_alternate_tuning": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 8,
+        "distance": 0.2071683406829834,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+          "query": "FACGCE tuning G major math rock riff chord shapes",
+          "top_k": 5,
+          "reason": "test"
+        }
+      }
+    }
+  ],
+  "kg_evidence": [],
+  "judgement": {
+    "sufficient": false,
+    "confidence": 0.53,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 1,
+    "text_count": 0,
+    "visual_count": 25,
+    "kg_count": 0,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [],
+    "top_visual_ids": [
+      "visual_caption:mr_style_002",
+      "visual_caption:mr_style_001_g7",
+      "visual_caption:mr_style_001_fmaj9"
+    ],
+    "top_kg_ids": [],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+    "query_plan": {
+      "raw_query": "FACGCE 调弦下的 数摇riff,G调要怎么设计",
+      "normalized_query": "Design math rock riffs in G major using FACGCE tuning",
+      "intent": "mixed_arrangement",
+      "style_hints": [
+        "mathrock"
+      ],
+      "target_tuning": "facgce",
+      "target_keys": [
+        "g_major"
+      ],
+      "target_roots": [
+        "g"
+      ],
+      "scale_or_mode": [
+        "major"
+      ],
+      "techniques": [
+        "riff"
+      ],
+      "visual_evidence_required": true,
+      "allow_alternate_tuning": true,
+      "canonical_terms": [
+        "tuning:facgce",
+        "key:g_major",
+        "root:g",
+        "scale:major",
+        "technique:riff"
+      ],
+      "required_terms": [
+        "tuning:facgce",
+        "key:g_major"
+      ],
+      "retrieval_plan": {
+        "visual_caption": {
+          "enabled": true,
+          "query": "FACGCE tuning G major math rock riff chord shapes",
+          "reason": "test"
+        },
+        "fretboard_text": {
+          "enabled": false,
+          "query": "",
+          "reason": ""
+        },
+        "style_text": {
+          "enabled": false,
+          "query": "",
+          "reason": ""
+        },
+        "kg": {
+          "enabled": false,
+          "query": "",
+          "reason": ""
+        }
+      }
+    },
+    "visual_collection": "guitar_visual_mixed_mathrock_trial_qwen3_06b",
+    "model_rerank": {
+      "text": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "visual": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "kg": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      }
+    }
+  },
+  "timings": {
+    "model_load_seconds": 7.806453600001987,
+    "visual_caption_seconds": 0.6082172000024002,
+    "canonical_visual_seconds": 0.035792100010439754,
+    "model_rerank_seconds": 3.470000228844583e-05,
+    "total_seconds": 9.548131000017747
+  }
+}

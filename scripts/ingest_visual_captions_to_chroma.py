@@ -52,6 +52,10 @@ def row_to_doc(row: dict[str, Any]) -> dict[str, Any]:
     meta = row.get("source_metadata") if isinstance(row.get("source_metadata"), dict) else {}
     visual_id = str(row.get("visual_id") or meta.get("visual_id") or "")
     caption_text = str(row.get("caption_text") or row.get("caption") or "")
+    canonical_terms = [str(item) for item in row.get("canonical_terms") or [] if str(item).strip()]
+    document = caption_text
+    if canonical_terms:
+        document += "\ncanonical_terms: " + ", ".join(canonical_terms)
     metadata = {
         "visual_id": visual_id,
         "source_id": meta.get("source_id", ""),
@@ -89,10 +93,14 @@ def row_to_doc(row: dict[str, Any]) -> dict[str, Any]:
         "uncertain_fields": row.get("uncertain_fields", []),
         "entities": row.get("entities", {}),
         "visible_structure": row.get("visible_structure", {}),
+        "canonical_terms": canonical_terms,
+        "canonical_status": (row.get("canonical_sidecar") or {}).get("status", "")
+        if isinstance(row.get("canonical_sidecar"), dict)
+        else "",
     }
     return {
         "id": stable_id(visual_id),
-        "document": caption_text,
+        "document": document,
         "metadata": {key: metadata_value(value) for key, value in metadata.items()},
     }
 

@@ -1,0 +1,2043 @@
+{
+  "query": "给出G小调的吉他指型参考",
+  "analysis": {
+    "query": "G minor scale guitar fingerings and position diagrams",
+    "intent": "visual_shape_recommendation",
+    "style_hints": [],
+    "theory_terms": [],
+    "technique_terms": [],
+    "needs_fretboard_text": true,
+    "needs_visual": true,
+    "needs_style_text": false,
+    "needs_kg": false,
+    "confidence": 0.9,
+    "matched_rules": [
+      "llm_plan:fretboard_text",
+      "llm_plan:visual_caption"
+    ]
+  },
+  "plan": [
+    {
+      "name": "fretboard_text",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+      "query": "G minor scale guitar fingerings and fretboard positions",
+      "top_k": 5,
+      "reason": "指板文本解释 G 小调音阶与把位逻辑"
+    },
+    {
+      "name": "visual_caption",
+      "backend": "chroma",
+      "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+      "query": "G minor scale pattern fingering diagram",
+      "top_k": 5,
+      "reason": "需要具体指型图证据"
+    }
+  ],
+  "text_evidence": [
+    {
+      "evidence_id": "text:fretboard_text_0162",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习50\n2)和弦Bb9\n指型4或5\n3）和弦Gmi11\nP指型1\n\n[图示引用 6 张，详见 image_refs]",
+      "score": 1.14087,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0162",
+        "page_hint": "68",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "lesson_title": "",
+          "review_jsonl": "",
+          "source_id": "fretboard_handbook_clean_text",
+          "source_type": "clean_markdown",
+          "page_hint": "68",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_edges": "[]",
+          "linked_kg_nodes": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e72cd711895b082e11de9fa869144c6a6a37f1087e88f2e1aa07d9c999c80847.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\898aaf27334cfd9992b8de3c49701a6bde0e41aab63d523e1feb881c0e6bf115.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c6fbec739870c35e3f9e03ed85f1d83de7463979e8f2ed996c5beef170a6f4e2.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\999d3ecc3b493475a3b90e6691c0339f21f2bfbd517452d86b1ff1135fea4ea1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fc1e11f93497932d5dcb190e4727bc13beafff1e38a595a36a41eda7f27fbfdf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\75909c64aba25c0c0ae1ee7feeeeb08060c180f57f8dc1a4c9da135849506227.jpg\"]",
+          "gp5_feature_triggers": "[]",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "chunk_id": "fretboard_text_0162"
+        },
+        "domain_rerank": {
+          "delta": 0.35,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [
+              "G minor"
+            ],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 22,
+        "distance": 0.2841343879699707,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0037",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习12\n利用大调音阶公式并根据下图中给出的根音画出各大调音阶指型中的其他音符。画音符时，不要按照品位标记进行，要尽可能使用最小的把位移动。圈出指型中的所有根音，并且用指型的序号标记出来。\n2 G大调指型\\_\n3)C大调指型一\n=\n51 Bb大调指型\\_\n=\nG大调指型\nIV\nA大调指型\\_\n8 Gb大调指型\nI三I\n101 Eb大调指型\n三\n弹奏每种指型。先大声说出每种音阶的名称和指型的序号。弹奏的时候也可以同时说出音符在音阶中的级数（第1一7级）。从每种指型中最低的根音开始弹奏，然后弹至最高的音符，接着再向下弹至最低的音符，最后回到根音。\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.8366,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0037",
+        "page_hint": "23",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_edges": "[]",
+          "chunk_id": "fretboard_text_0037",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\bb42c2c6bb91e4aaf7fd44150978076b0bafe9b5dd5ba0077fb7d4a473fbf486.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\5c2f7d29937759ccdc64857b83f7a22e6506c6ae7eb2e3ebf231b5c4c7cc7f5c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\7db786b94b0c1007964c6f5d24b2a4af277bad55f503f7775f8aa211f5711a7f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fdb05f9bd48d0eca087b09599a57a8f5032403c8a946d9b30efab9c1af809c2a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\652d43c36774c3732d9b2b437c89543e01f2ecd6ecc3fb8adac15684acf22b95.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\247e98c5de1e18f7bed3d6151dd60c99421e9cd4fd9be9dd18d6f43ccdf52d1f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e39d0f35127cbb2cc55b226fe53283c77b9d64072f42902c038db85b1d89adff.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\eaf375ea5027e376fed789b47d0afd250dad6e7cb6f03e8ef8d7aa454bb94c26.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3915d96cf8739e165fc331ba6c7e94d25a788ce2ebb260c57bb10f6d826587f7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\d6d620ee542bb665ee1def9062d1addb66b2ac87bc83d993d8839edef64495e5.jpg\"]",
+          "gp5_feature_triggers": "[]",
+          "source_type": "clean_markdown",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "page_hint": "23",
+          "source_title": "吉他指板手册正文清洗层",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_review_ids": "[]",
+          "lesson_title": "",
+          "review_jsonl": "",
+          "linked_kg_nodes": "[]",
+          "source_id": "fretboard_handbook_clean_text"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 6,
+        "distance": 0.26839524507522583,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0044",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习14\n回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。\nE小调指型5(G大调指型4）\n再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 0.83298,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0044",
+        "page_hint": "26",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "review_jsonl": "",
+          "chunk_id": "fretboard_text_0044",
+          "linked_kg_nodes": "[]",
+          "gp5_feature_triggers": "[]",
+          "source_title": "吉他指板手册正文清洗层",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_type": "clean_markdown",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_review_ids": "[]",
+          "linked_kg_edges": "[]",
+          "lesson_title": "",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "page_hint": "26",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0b2c654cc033443dc9a9ab711f4f8aaeed89249dd2d0601e5743f6cd919ae824.jpg\"]"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 9,
+        "distance": 0.27201902866363525,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0028",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习10\n在正确的弦上，画出指板图上方所写的音符。可以运用自然音阶推算的方法，也可以采用五种根音指型的方法。有时可能需要运用各种不同的方法：\n·从每根弦的空弦音向上推算\n·从每根弦的第12品向下推算\n·从另外一个熟悉的音符（比如，第7品的D音）向上或者向下推算\n·选择一个临近的音符（比如E音)，首先找到它所在的位置\nF\nVI\n2)\nF#\nIV\nII\nG\nV\nA\nV\nEb\nVII\nB\n三\nDb\nXI\n10)\nC\nxV\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.82537,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0028",
+        "page_hint": "17",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_review_ids": "[]",
+          "page_hint": "17",
+          "chunk_id": "fretboard_text_0028",
+          "source_title": "吉他指板手册正文清洗层",
+          "lesson_title": "",
+          "linked_kg_edges": "[]",
+          "gp5_feature_triggers": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "linked_kg_nodes": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "review_jsonl": "",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\91fe5bc494d4625ffbc478053306e4ba6cd1a9b60dc591b26c2049669e905c20.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b7a4b341c58db24ff4c20d3e44ed3f291a00c2e0ddfbf3c7d8ec737856a4db3d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9e5b8859f3b89310e8c8d3750ecf53c9d12197b5b80b9e2d55ca93422384d9cf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\3a8441dbc4ef1afc5b8d231f3382630de87d2e062a060c1408b4cdbb2ab7febf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\50c5a42c86a7809411315b0b0f67ca48734208338751013c70ca1e744e870fb6.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f2d1a903a076cfdb42e520b1277352833e07c9ebe4e145b7742b01e6022b674b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a37ef064a65a12f223ec569b59369572170de879ebfef5f45c0c21f57ba9328e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3f95f14312e41aeda0655632bcdb085e617ea85bb2a8263ed6d35a1778d0aa1.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6981e345f733dc3854e60aef3bc67aed6ad169474efcc1c90bb789aa1cebae21.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a2ad3fd939cbdbc25a770aa91c46e25738a71bd1fcb6808764b1e87ee4136342.jpg\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "source_type": "clean_markdown"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 17,
+        "distance": 0.2796335816383362,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0033",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习11\n在下图中，以给出的音符为起始音，在一根弦上写出相应的大调音阶。注意应用大调音阶公式和字母表规则。在写出音符的同时大声朗读出来。\n2)\n4)\n5)\n10）\n现在弹奏上面指板图中的音阶，注意在弹奏的同时要大声地说出音阶的名称和每个音符的名字：“d大调:D…E…·F#…G…A…B…C#…D…”\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.82325,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0033",
+        "page_hint": "20",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "linked_kg_nodes": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "lesson_title": "",
+          "source_type": "clean_markdown",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0058fbf60def1e6417812920f6558cc1fe2871e06e57b859238da40b1bfa802e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\733d105ce793fc0e3ad70054cbc71f15595dd6a810ff3978361d3959b9630f1d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\ffaf557cd9e2b7ed9b7db216391e65f0c9a6b3dff5ef2164e43bc0bc8c5443bd.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\a5e0bc7c0d841ead4adf7ccee2c8f1235961796b3021efe39134e137d3d5297e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2e03b6ab8dfdf93f3e392bd533231311a35c7bb76bf032a17340262a5cec4a1b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\84c935cf5637d28acebb01ebed5029c93820d72325f89c39e939ce7004d0a023.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f31637ca83232656dfe25e8f2c5503c9edbd4de5ffdb7cdf86296041e557c1a7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\9d82485664d11b0778730e2f74370fb0110805fff707ec44c23277dd195b9e7b.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\66c6ce0189241b2e2b56853875f6bf3b07338dbdd0a45f7e99ccf834b644c799.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9157452dde322fed412218a9ee021541e9f39715eeeaa2973d16d6422459d69.jpg\"]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_id": "fretboard_handbook_clean_text",
+          "linked_review_ids": "[]",
+          "chunk_id": "fretboard_text_0033",
+          "page_hint": "20",
+          "source_title": "吉他指板手册正文清洗层",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "gp5_feature_triggers": "[]",
+          "review_jsonl": "",
+          "linked_kg_edges": "[]"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 18,
+        "distance": 0.28175389766693115,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0118",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 10） Bb13\n指型\n11)Fmi11(b5)\nXI\n12)Cma13(#11)\n三\n13) G9\nVlI\n14)D11\n15)Ami13\nXI\n弹奏以上练习中的琶音，演奏时大声说出和弦名称、指型序号和声部构成。\n“G大九和弦，指型4，‘1、3、5、7、9...\nD小九和弦，指型”\n在指板上构建延伸和弦时，采用与七和弦一样的方法：升高八度或者降低八度，以使每根琴弦上仅有一个和弦音。通常，让延伸音在和弦的最高处比较好。\n之前也曾提到过，在指板上弹奏延伸和弦时，可以根据演奏者的需要，忽略部分音符，从而获得更好的效果。忽略哪个音取决于所演奏的音乐风格，或者贝司及其他乐器是如何演奏的。可以尝试去掉五度音和（或）根音，听听会产生什么效果。\n\n[图示引用 6 张，详见 image_refs]",
+      "score": 0.82282,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0118",
+        "page_hint": "54",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "gp5_feature_triggers": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "page_hint": "54",
+          "linked_kg_edges": "[]",
+          "linked_kg_nodes": "[]",
+          "linked_review_ids": "[]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "review_jsonl": "",
+          "source_type": "clean_markdown",
+          "source_id": "fretboard_handbook_clean_text",
+          "chunk_id": "fretboard_text_0118",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "lesson_title": "",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c3384a6590bd23579deebc821be0cd20f7b8a370e123752224157d95a17e9b3a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b3e5ad9f17f5aee153afa9efd6bd27a850adb72520990ca17d18daadae73974e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e62afb71282a16914fede8bcbb30020bacde8c13bec9cc914eec137dc821c131.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\40f0d7b74c754b397cf3c83fdd9ff7f8cbe37561076c4e182da7055d95c8b074.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\49648cecde9af74e5fec3ebb9d8524203ead0b0f6ddcd100a3f80c945600e366.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\c9088b2a6fbc1205c1c6d1c334cae13f83ce70b062cb186b697e475e71a2a8e2.jpg\"]",
+          "source_title": "吉他指板手册正文清洗层"
+        },
+        "domain_rerank": {
+          "delta": 0.03,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 20,
+        "distance": 0.28217798471450806,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0133",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习56\n在下面的图示中画出E和声小调音阶的五种指型。\n1）E和声小调\n2)E和声小调\n3)E和声小调\n4）E和声小调\n5）E和声小调\n弹奏上面练习中的和声小调音阶指型。大声说出指型的序号，并且说出所弹奏的音在音阶中的级数。\n\n[图示引用 5 张，详见 image_refs]",
+      "score": 0.78941,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0133",
+        "page_hint": "63",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\e851127aa4ad39c65b66546a480c883265d026a27d75976c3974d8f2ec981e2a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\8868e4d7cae035f5c6d17b2031c17aea95ebf6efddaacf7091e1fe813a854f4c.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\115ce68f16db98ecb361746dfc7e9c58a126492e5c25c3472d3218ca29d9d0c5.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\4fa6ab8e0e5ce9db6457501fa581351d7f9dac91d52e9128610e371588b2603e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\1e35749800ec0135e1656d7fef176fb172c649188d567d93ca56cacb129e6b8a.jpg\"]",
+          "linked_kg_edges": "[]",
+          "gp5_feature_triggers": "[]",
+          "source_id": "fretboard_handbook_clean_text",
+          "page_hint": "63",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "source_type": "clean_markdown",
+          "review_jsonl": "",
+          "lesson_title": "",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "chunk_id": "fretboard_text_0133",
+          "linked_review_ids": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_kg_nodes": "[]"
+        },
+        "domain_rerank": {
+          "delta": -0.04,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "distance": 0.2455892562866211,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0041",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习13\n下面的指板图中给出了把位的标识和音阶的根音，在图中使用小调音阶公式构建相应的自然小调音阶指型。音符不要低于把位标识。圈出指型中的根音，标出音阶的名称和指型的序号。\nE小调指型5\n2 C小调指型\\_\n3 E小调指型\n4）\\_小调指型\\_\n51\\_小调指型\nVII\n6 ）\\_小调指型\\_\n=\n7\\_小调指型\\_\nV\n8)\\_小调指型\\_\n91\\_小调指型\\_\nVIII\n10）\\_小调指型\\_\nIV\n弹奏上面每种小调音阶指型。大声说出音阶的名称和指型的序号。同样，弹奏的时候也从最低的根音开始，弹至最高音，然后向下弹至最低音，最后回到根音。弹奏的同时也可以边弹边识别该音符是音阶中的几级音。\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.78089,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0041",
+        "page_hint": "26",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "source_title": "吉他指板手册正文清洗层",
+          "review_jsonl": "",
+          "linked_kg_edges": "[]",
+          "lesson_title": "",
+          "gp5_feature_triggers": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "page_hint": "26",
+          "source_id": "fretboard_handbook_clean_text",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\f09be9d71a598f94ec98d6c08fcd97e472732f7b3eac8926769fa69b08958df9.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\29f84e1f701a5e61675513dc20dc02716d7752194cda59b4153969bf53cfdb73.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\489616e399ba3b7c7c2dacddaca9278244cd8353a284dacb8161959388af49c3.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\adfc48b32b6ce25ec8061ec2f058566ea961674b54946d23cc7ea52fc2817f8e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\376e5f7120d6aef3f7e9f6b198657db86f8f2a85b1687ce4f5d10b037cc07612.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\167825209dfba812a44adf6af53d12fd12638652b2c48256cab1f0bfd8ba4192.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2203651a90315544be206ca4b5b622ee6b2203d225e87d529da3e835eee58c8f.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\22b1f1fee79a4669c7cb5570ffb1f3891f4c16f9187dd672ef87a2d32a7a3389.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\79fe9299f8fc153d18d91e0811bad3ac362e27d7db7841359d5efdcfe6ade654.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\27038d48f2b5021b7590679807a8a6c4ac38bcdf8b78b382f023613bb3b17205.jpg\"]",
+          "linked_review_ids": "[]",
+          "source_type": "clean_markdown",
+          "linked_kg_nodes": "[]",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "chunk_id": "fretboard_text_0041"
+        },
+        "domain_rerank": {
+          "delta": -0.04,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "distance": 0.25411272048950195,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0045",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习15\n回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如：\nD大调指型1 (B小调指型2)\n再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。\n\n[图示引用 1 张，详见 image_refs]",
+      "score": 0.772,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0045",
+        "page_hint": "26",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6bf08545fb324ceef97dce49a035a6b474ab171276e257aa2479c8538ab431a6.jpg\"]",
+          "linked_kg_edges": "[]",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "source_title": "吉他指板手册正文清洗层",
+          "linked_review_ids": "[]",
+          "source_type": "clean_markdown",
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_kg_nodes": "[]",
+          "gp5_feature_triggers": "[]",
+          "review_jsonl": "",
+          "lesson_title": "",
+          "page_hint": "26",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "source_id": "fretboard_handbook_clean_text",
+          "chunk_id": "fretboard_text_0045"
+        },
+        "domain_rerank": {
+          "delta": -0.04,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 3,
+        "distance": 0.26300108432769775,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    },
+    {
+      "evidence_id": "text:fretboard_text_0142",
+      "evidence_type": "text",
+      "source_id": "fretboard_handbook_clean_text",
+      "title": "吉他指板手册正文清洗层",
+      "content": "## 练习13\nE小调指型5\n2C小调指型2\nE小调指型\nA小调指型3\nD小调指型3\n小调指型4\n小调指型\nBb小调指型3\n小调指型2\nF小调指型5\n\n[图示引用 10 张，详见 image_refs]",
+      "score": 0.77005,
+      "metadata": {
+        "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+        "chunk_id": "fretboard_text_0142",
+        "page_hint": "68",
+        "exercise_number": "",
+        "subquestion_number": "",
+        "image_path": "",
+        "style_tags": [
+          "clean_text",
+          "fretboard",
+          "guitar_foundation"
+        ],
+        "raw_metadata": {
+          "raw_path": "data/processed/mineru_full_gpu/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)/ocr/吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org).md",
+          "linked_kg_nodes": "[]",
+          "review_jsonl": "",
+          "chunk_id": "fretboard_text_0142",
+          "linked_kg_edges": "[]",
+          "lesson_title": "",
+          "source_title": "吉他指板手册正文清洗层",
+          "source_id": "fretboard_handbook_clean_text",
+          "source_type": "clean_markdown",
+          "style_tags": "[\"clean_text\", \"fretboard\", \"guitar_foundation\"]",
+          "page_hint": "68",
+          "chunks_path": "data\\processed\\fretboard_handbook\\text_clean\\chunks.json",
+          "gp5_feature_triggers": "[]",
+          "image_refs": "[\"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\aa757a54a06b630efa6d927ec30bfa29c8f1248240b24dee45d9bf6359d391bf.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\0b5a30842ced8eddce90c21ed678b2ae4825d95d6534bf697c0df5a282c76ca9.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\6c9b9bc6504ddf3616f1e23fff369c976a6348e8c442b529274d1a7404b9f7b7.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\217ec23fcb2ada251b0e2538a412339a4a7f868ab7acc55d4b93d2eea272f5f4.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\af2a615fdd8ba99273b1419c09377083cf872bd70bfd1180cc658eb649c94f56.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\2623d9690382e6b1c283766fbfd29add42a7670ed3b45be90a1d901e454b48b8.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\b1e6190512cdab9ca3c8339b6f9be813e237271028b880d565192a7002895f5d.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\90a49dd549b660d978eedc8b143046e04f3b91efd5265dea71f0ed49fca6773a.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\741955881ca28a7155fb1a55d54878c09664beb6ffc964aea969fa148e75a49e.jpg\", \"data\\\\processed\\\\mineru_full_gpu\\\\吉他指板手册 by （美）巴雷特·塔利亚里诺著；刘洋，刘刚译 (z-lib.org)\\\\ocr\\\\images\\\\fadbf75f0081959d1d1fe1471f9b042f9838467ecc44698ef2ed9587029a3ba6.jpg\"]",
+          "linked_review_ids": "[]"
+        },
+        "domain_rerank": {
+          "delta": -0.04,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [],
+            "missing_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_exact_key"
+            ],
+            "matched_required_terms": [],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": []
+          }
+        }
+      },
+      "trace": {
+        "rank": 4,
+        "distance": 0.26495474576950073,
+        "task": {
+          "name": "fretboard_text",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_handbook_text_qwen3_06b",
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "top_k": 5,
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        }
+      }
+    }
+  ],
+  "visual_evidence": [
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E14_6",
+      "evidence_type": "visual_caption",
+      "source_id": "canonical_visual",
+      "title": "G 小调指型 4 (Bb 大调指型 3)",
+      "content": "来源: 吉他指板手册\n练习: 14 小题: 6\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: G 小调指型 4 (Bb 大调指型 3)\n根音: G\n性质/调式: minor / Aeolian\n位置/指型: 指型 4 (Pattern 4) / Bb Major Pattern 3\n答案项: 6: G 小调指型 4 (Bb 大调指型 3)\n方向: horizontal\n品位范围: 约为 3-7 品\n可见标签: G 小调 指型 4, (Bb 大调 指型 3)\n按点概述: 横向指板图，包含 G 小调音阶按点（圆点）及 Bb 大调根音标记（方框）。可见 G 音位于 6 弦 3 品、5 弦 10 品(推断)、4 弦 5 品等位置；方框标记了关系大调 Bb 的根音，分别位于 5 弦 6 品和 2 弦 6 品。\ncaption: 吉他指板练习答案：G 小调指型 4（对应关系大调 Bb 大调指型 3）。图中展示了 G 小调音阶在指板上的分布，并用方形框特别标出了其关系大调 Bb 大调的根音位置（如 5 弦 6 品 Bb），用于辅助理解小调与其关系大调的指法关联。\n检索关键词: G minor pattern 4, Bb major pattern 3, relative major root, G 小调指型4, Bb 大调指型3, 关系大调根音, fretboard diagram\n编配价值: 该图示明确了 G 小调指型 4 的具体把位，并通过方框高亮 Bb 大调根音，帮助演奏者在即兴或编配时快速定位关系大调的主音，实现小调色彩与大调色彩的…",
+      "score": 5.21,
+      "metadata": {
+        "collection": "canonical_visual_sidecar",
+        "chunk_id": "fretboard_answer_E14_6",
+        "visual_id": "fretboard_answer_E14_6",
+        "exercise_number": 14,
+        "subquestion_number": 6,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_06.png",
+        "canonical_terms": [
+          "key:g_minor",
+          "root:g",
+          "scale:natural_minor",
+          "concept:relative_major_minor",
+          "visual_type:scale_pattern"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_retrieval": {
+          "matched_query_terms": [
+            "key:g_minor",
+            "scale:natural_minor",
+            "visual_type:scale_pattern"
+          ],
+          "matched_required_terms": [
+            "key:g_minor",
+            "visual_type:scale_pattern"
+          ],
+          "matched_optional_terms": [
+            "scale:natural_minor"
+          ],
+          "matched_negative_terms": [],
+          "missing_required_terms": [],
+          "matched_required_key_terms": [
+            "key:g_minor"
+          ],
+          "item_terms": [
+            "concept:relative_major_minor",
+            "key:g_minor",
+            "root:g",
+            "scale:natural_minor",
+            "visual_type:scale_pattern"
+          ]
+        },
+        "raw_metadata": {
+          "visual_id": "fretboard_answer_E14_6",
+          "source_id": "fretboard_handbook_question_answer",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "exercise_number": 14,
+          "subquestion_number": 6,
+          "evidence_type": "fretboard_diagram",
+          "visual_type": "scale_pattern",
+          "musical_object": "G 小调指型 4 (Bb 大调指型 3)",
+          "root": "G",
+          "quality_or_mode": "minor / Aeolian",
+          "position_or_shape": "指型 4 (Pattern 4) / Bb Major Pattern 3",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_06.png",
+          "source_image": "data/练习解答（图片）/练习13-练习14.png",
+          "question_text": "回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "caption_layer": "fretboard_answer_caption_v1"
+        },
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 1.13,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [
+              "G minor"
+            ],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "missing_required_terms": [],
+            "matched_negative_constraints": [],
+            "penalties": [],
+            "matched_required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "matched_optional_terms": [
+              "scale:natural_minor"
+            ],
+            "matched_required_key_terms": [
+              "key:g_minor"
+            ],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 1,
+        "backend": "canonical_visual_sidecar"
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E15_5",
+      "evidence_type": "visual_caption",
+      "source_id": "canonical_visual",
+      "title": "Bb Major Pattern 3 (G Minor Pattern 4)",
+      "content": "来源: 吉他指板手册\n练习: 15 小题: 5\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: Bb Major Pattern 3 (G Minor Pattern 4)\n根音: Bb / G\n性质/调式: Major / Natural Minor\n位置/指型: Pattern 3 / Pattern 4\n方向: horizontal\n把位: II\n品位范围: unknown\n可见标签: Bb 大调 指型 3, (G 小调 指型 4)\n按点概述: 横向指板图，包含实心圆点（音阶音）和方形框（根音）。根据罗马数字 II 推断起始把位。图中可见 Bb 大调指型 3 的按点分布，并用方框特别标记了关系小调 G 小调的根音位置。\ncaption: Bb 大调指型 3 (对应 G 小调指型 4) 的吉他指板图解。图示为横向六线谱风格，标注罗马数字 II 表示第二把位。图中使用实心黑点表示音阶构成音，并使用方形框高亮标出了关系小调 (G minor) 的根音位置，用于展示大调与其关系小调在指板上的指型重叠与根音对应关系。\n检索关键词: Bb Major, G Minor, Relative Minor, Pattern 3, Pattern 4, Root Note, Fretboard Diagram, Scale Shape, Guitar Theory\n编配价值: 展示了 Bb 大调指型 3 与 G 小调指型 4 的同一性。通过方框标记 G 小调根音，帮助学习者在大调指型中快速定位关系小调主音，便于进行大小调转换练习或即兴演奏中的…",
+      "score": 3.31,
+      "metadata": {
+        "collection": "canonical_visual_sidecar",
+        "chunk_id": "fretboard_answer_E15_5",
+        "visual_id": "fretboard_answer_E15_5",
+        "exercise_number": 15,
+        "subquestion_number": 5,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_05.png",
+        "canonical_terms": [
+          "key:bb_major",
+          "key:g_minor",
+          "root:bb",
+          "root:g",
+          "scale:major",
+          "scale:natural_minor",
+          "concept:relative_major_minor",
+          "fret_region:middle"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_retrieval": {
+          "matched_query_terms": [
+            "key:g_minor",
+            "scale:natural_minor"
+          ],
+          "matched_required_terms": [
+            "key:g_minor"
+          ],
+          "matched_optional_terms": [
+            "scale:natural_minor"
+          ],
+          "matched_negative_terms": [],
+          "missing_required_terms": [
+            "visual_type:scale_pattern"
+          ],
+          "matched_required_key_terms": [
+            "key:g_minor"
+          ],
+          "item_terms": [
+            "concept:relative_major_minor",
+            "fret_region:middle",
+            "key:bb_major",
+            "key:g_minor",
+            "root:bb",
+            "root:g",
+            "scale:major",
+            "scale:natural_minor"
+          ]
+        },
+        "raw_metadata": {
+          "visual_id": "fretboard_answer_E15_5",
+          "source_id": "fretboard_handbook_question_answer",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "exercise_number": 15,
+          "subquestion_number": 5,
+          "evidence_type": "fretboard_diagram",
+          "visual_type": "scale_pattern",
+          "musical_object": "Bb Major Pattern 3 (G Minor Pattern 4)",
+          "root": "Bb / G",
+          "quality_or_mode": "Major / Natural Minor",
+          "position_or_shape": "Pattern 3 / Pattern 4",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_15_15/question_segments_v2/crops/exercise_15_05.png",
+          "source_image": "data/练习解答（图片）/练习15.png",
+          "question_text": "回到第7章中的练习12，在每种大调指型的上方标出其关系小调。然后用方形在指型图中画出其关系小调的根音。例如： D大调指型1 (B小调指型2) 再次弹奏练习12中的各种指型。首先从大调音阶的根音弹奏这个指型，然后从关系小调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "caption_layer": "fretboard_answer_caption_v1"
+        },
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.86,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [
+              "G minor"
+            ],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [
+              "natural minor"
+            ],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor"
+            ],
+            "missing_required_terms": [
+              "visual_type:scale_pattern"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms"
+            ],
+            "matched_required_terms": [
+              "key:g_minor"
+            ],
+            "matched_optional_terms": [
+              "scale:natural_minor"
+            ],
+            "matched_required_key_terms": [
+              "key:g_minor"
+            ],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 2,
+        "backend": "canonical_visual_sidecar"
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E14_8",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 14 小题: 8\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: Bb minor 指型3 (Db major 指型2)\n根音: Bb\n性质/调式: minor / relative major Db\n位置/指型: Shape 3 (Minor) / Shape 2 (Major), Position III\n答案项: 8: Bb 小调 指型3 (Db 大调 指型2)\n方向: horizontal\n把位: III\n品位范围: unknown\n可见标签: Bb 小调 指型3, (Db 大调 指型2), III\n按点概述: 横向指板图，标注罗马数字 III。黑色圆点表示 Bb 小调音阶音符，其中部分根音被方框圈出（对应关系大调 Db 的根音位置）。根据指型推断起始把位约为第 6 品。\ncaption: 练习14第8题答案：Bb小调指型3（关系大调为Db大调指型2）。横向指板图显示第III把位音阶分布，黑点为音阶音，方框标出关系大调根音。\n检索关键词: Bb minor shape 3, Db major shape 2, relative major, guitar scale pattern, position III, Bb小调, Db大调, 关系大调根音\n编配价值: 展示小调指型与其关系大调指型的重叠关系，方框标记帮助乐手在 solo 或编配时快速定位关系大调根音，实现调式互换或色彩转换。\n题目上下文: 回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+      "score": 1.27774,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E14_8",
+        "page_hint": "data/练习解答（图片）/练习13-练习14.png",
+        "exercise_number": 14,
+        "subquestion_number": 8,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_08.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "mapping_method": "exercise_level_fallback",
+          "page": "data/练习解答（图片）/练习13-练习14.png",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_08.png",
+          "quality_or_mode": "minor / relative major Db",
+          "exercise_number": 14,
+          "uncertain_fields": "[\"fret_range\"]",
+          "segment_id": "fretboard_answer_E14_8",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_13_14/question_segments_v2/crops/exercise_14_08.png",
+          "tuning": "",
+          "visible_structure": "{}",
+          "retrieval_keywords": "[\"Bb minor shape 3\", \"Db major shape 2\", \"relative major\", \"guitar scale pattern\", \"position III\", \"Bb小调\", \"Db大调\", \"关系大调根音\"]",
+          "arrangement_value": "展示小调指型与其关系大调指型的重叠关系，方框标记帮助乐手在 solo 或编配时快速定位关系大调根音，实现调式互换或色彩转换。",
+          "source_id": "fretboard_handbook_question_answer",
+          "topic_hint": "Bb minor 指型3 (Db major 指型2)",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "question_text": "回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "evidence_type": "fretboard_diagram",
+          "caption": "练习14第8题答案：Bb小调指型3（关系大调为Db大调指型2）。横向指板图显示第III把位音阶分布，黑点为音阶音，方框标出关系大调根音。",
+          "intervals": "[]",
+          "subquestion_number": 8,
+          "musical_object": "Bb minor 指型3 (Db major 指型2)",
+          "image_type": "scale_pattern",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "topic": "Bb minor 指型3 (Db major 指型2)",
+          "entities": "{}",
+          "priority": "fretboard_foundation_answer",
+          "key": "",
+          "visual_granularity": "question_answer_crop",
+          "position_or_shape": "Shape 3 (Minor) / Shape 2 (Major), Position III",
+          "confidence": 0.95,
+          "nearby_text": "回到练习13。在每种指型上方用圆括号写出它的关系大调。在指型图中用方形画出其关系大调的根音。下面是第一个指型的例子。 E小调指型5(G大调指型4） 再次弹奏练习13中的各种指型。首先从小调音阶的根音弹奏这个指型，然后从其关系大调音阶的根音开始弹奏。弹奏之前先大声说出每种指型的序号。",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "visual_id": "fretboard_answer_E14_8",
+          "visual_type": "scale_pattern",
+          "source_image": "data/练习解答（图片）/练习13-练习14.png",
+          "root": "Bb"
+        },
+        "canonical_terms": [
+          "key:bb_minor",
+          "root:bb",
+          "scale:natural_minor",
+          "concept:relative_major_minor",
+          "visual_type:scale_pattern"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.42,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [
+              "G minor"
+            ],
+            "matched_roots": [
+              "G"
+            ],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "missing_required_terms": [
+              "key:g_minor"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term"
+            ],
+            "matched_required_terms": [
+              "visual_type:scale_pattern"
+            ],
+            "matched_optional_terms": [
+              "scale:natural_minor"
+            ],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 9,
+        "distance": 0.24225789308547974,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "G minor scale pattern fingering diagram",
+          "top_k": 5,
+          "reason": "需要具体指型图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E05_1",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 5 小题: 1\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: C大调音阶指型1 (C Major Scale Pattern 1)\n根音: C\n性质/调式: Major / Ionian\n位置/指型: Pattern 1 (指型1)\n答案项: 1: Pattern 1 diagram shown\n方向: horizontal\n品位范围: 3rd-7th frets (approx)\n可见标签: 1), 4, 5, 1, 2, 3, 4, 5\n按点概述: Horizontal fretboard showing C Major scale notes. Root C is marked with a black dot on the A string (5th string) at the 3rd fret. Other scale degrees are marked with white circles. Fingering numbers 1-5 are indicated above specific notes.\ncaption: 吉他指板横向图示，展示C大调音阶指型1（Pattern 1）。根音C位于5弦3品（黑点），其余音级以白圈表示。图上方标注了指法数字1-5，对应不同把位或手指位置。此为练习5第1小题的示例答案。\n检索关键词: C Major Scale, Pattern 1, Root Position, Fretboard Diagram, Scale Degrees, Guitar Exercise Answer\n编配价值: 展示了C大调最基础的开放/低把位指型（Pattern 1），明确了根音在5弦的位置及对应的指法逻辑，用于构建音阶记忆和后续指型推导的基础参照。\n题目上下文: 根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 2 3 4 5 6 7 8 9 10",
+      "score": 1.03733,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E05_1",
+        "page_hint": "data/练习解答（图片）/练习1-练习5.png",
+        "exercise_number": 5,
+        "subquestion_number": 1,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_01_05/question_segments_v2/crops/exercise_05_01.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "retrieval_keywords": "[\"C Major Scale\", \"Pattern 1\", \"Root Position\", \"Fretboard Diagram\", \"Scale Degrees\", \"Guitar Exercise Answer\"]",
+          "mapping_method": "exercise_level_fallback",
+          "exercise_number": 5,
+          "caption": "吉他指板横向图示，展示C大调音阶指型1（Pattern 1）。根音C位于5弦3品（黑点），其余音级以白圈表示。图上方标注了指法数字1-5，对应不同把位或手指位置。此为练习5第1小题的示例答案。",
+          "key": "",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "evidence_type": "fretboard_diagram",
+          "arrangement_value": "展示了C大调最基础的开放/低把位指型（Pattern 1），明确了根音在5弦的位置及对应的指法逻辑，用于构建音阶记忆和后续指型推导的基础参照。",
+          "quality_or_mode": "Major / Ionian",
+          "source_id": "fretboard_handbook_question_answer",
+          "root": "C",
+          "segment_id": "fretboard_answer_E05_1",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "topic_hint": "C大调音阶指型1 (C Major Scale Pattern 1)",
+          "position_or_shape": "Pattern 1 (指型1)",
+          "question_text": "根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 2 3 4 5 6 7 8 9 10",
+          "tuning": "",
+          "visual_id": "fretboard_answer_E05_1",
+          "page": "data/练习解答（图片）/练习1-练习5.png",
+          "intervals": "[]",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_01_05/question_segments_v2/crops/exercise_05_01.png",
+          "subquestion_number": 1,
+          "visual_type": "scale_pattern",
+          "confidence": 0.95,
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_01_05/question_segments_v2/crops/exercise_05_01.png",
+          "topic": "C大调音阶指型1 (C Major Scale Pattern 1)",
+          "visible_structure": "{}",
+          "uncertain_fields": "[\"exact_fret_numbers\"]",
+          "visual_granularity": "question_answer_crop",
+          "musical_object": "C大调音阶指型1 (C Major Scale Pattern 1)",
+          "image_type": "scale_pattern",
+          "entities": "{}",
+          "priority": "fretboard_foundation_answer",
+          "source_image": "data/练习解答（图片）/练习1-练习5.png",
+          "nearby_text": "根据下面给出的音符画出5种根音型式，并且标出指型的序号。第一个图示作为例子已给出答案。 2 3 4 5 6 7 8 9 10"
+        },
+        "canonical_terms": [
+          "visual_type:scale_pattern",
+          "root:c",
+          "scale:major",
+          "mode:ionian",
+          "fret_region:low",
+          "concept:root_form"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [
+              "G minor"
+            ],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [
+              "visual_type:scale_pattern"
+            ],
+            "missing_required_terms": [
+              "key:g_minor"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term"
+            ],
+            "matched_required_terms": [
+              "visual_type:scale_pattern"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 5,
+        "distance": 0.23267173767089844,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "G minor scale pattern fingering diagram",
+          "top_k": 5,
+          "reason": "需要具体指型图证据"
+        }
+      }
+    },
+    {
+      "evidence_id": "visual_caption:fretboard_answer_E57_2",
+      "evidence_type": "visual_caption",
+      "source_id": "fretboard_handbook_question_answer",
+      "title": "吉他指板手册：题目级练习答案图",
+      "content": "来源: 吉他指板手册\n练习: 57 小题: 2\n证据类型: fretboard_diagram\n视觉类型: scale_pattern\n对象: Ab旋律小调 指型2\n根音: Ab\n性质/调式: melodic minor\n位置/指型: 指型2 (Pattern 2)\n方向: vertical\n可见标签: X\n按点概述: 垂直指板图，显示Ab旋律小调指型2的按点分布。包含两个带双圈的主音（Root）标记，以及一个标有'X'的不可用弦位置。\ncaption: Ab旋律小调（Ab Melodic Minor）指型2的垂直指板图示。图中展示了该调式在特定把位的音阶排列，包含两个双圈标记的主音Ab，以及一个标为X的哑音弦位，用于辅助记忆指法结构。\n检索关键词: Ab旋律小调, Ab Melodic Minor, 指型2, Pattern 2, 吉他音阶, 指板图, 主音标记\n编配价值: 提供Ab旋律小调第二把位/指型的视觉参考，帮助乐手掌握该调式在指板中部的音阶走向及主音定位，适用于即兴Solo或旋律编配时的指法记忆。\n题目上下文: Ab旋律小调 指型2 3 Ab旋律小调 指型3",
+      "score": 1.0328,
+      "metadata": {
+        "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+        "chunk_id": "fretboard_answer_E57_2",
+        "page_hint": "data/练习解答（图片）/练习55-57.png",
+        "exercise_number": 57,
+        "subquestion_number": 2,
+        "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_55_57/question_segments_v2/crops/exercise_57_02.png",
+        "style_tags": [
+          "guitar",
+          "fretboard",
+          "foundation",
+          "exercise_answer"
+        ],
+        "raw_metadata": {
+          "image_type": "scale_pattern",
+          "source_image": "data/练习解答（图片）/练习55-57.png",
+          "priority": "fretboard_foundation_answer",
+          "quality_or_mode": "melodic minor",
+          "source_id": "fretboard_handbook_question_answer",
+          "subquestion_number": 2,
+          "exercise_number": 57,
+          "tuning": "",
+          "page": "data/练习解答（图片）/练习55-57.png",
+          "style_tags": "[\"guitar\", \"fretboard\", \"foundation\", \"exercise_answer\"]",
+          "arrangement_value": "提供Ab旋律小调第二把位/指型的视觉参考，帮助乐手掌握该调式在指板中部的音阶走向及主音定位，适用于即兴Solo或旋律编配时的指法记忆。",
+          "crop_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_55_57/question_segments_v2/crops/exercise_57_02.png",
+          "image_path": "data/processed/fretboard_handbook/bbox_tasks/exercise_55_57/question_segments_v2/crops/exercise_57_02.png",
+          "visual_type": "scale_pattern",
+          "caption": "Ab旋律小调（Ab Melodic Minor）指型2的垂直指板图示。图中展示了该调式在特定把位的音阶排列，包含两个双圈标记的主音Ab，以及一个标为X的哑音弦位，用于辅助记忆指法结构。",
+          "entities": "{}",
+          "topic": "Ab旋律小调 指型2",
+          "nearby_text": "在下面的图示中画出Ab旋律小调音阶的五种指型。 1 Ab旋律小调指型1 2) Ab旋律小调 指型2 3 Ab旋律小调 指型3 4) Ab旋律小调 指型4 5) Ab旋律小调 指型5 弹奏上面练习中的旋律小调音阶指型。大声说出指型的序号，并且说出所弹奏的音在音阶中的级数。",
+          "visual_granularity": "question_answer_crop",
+          "position_or_shape": "指型2 (Pattern 2)",
+          "root": "Ab",
+          "musical_object": "Ab旋律小调 指型2",
+          "visual_id": "fretboard_answer_E57_2",
+          "segment_id": "fretboard_answer_E57_2",
+          "source_title": "吉他指板手册：题目级练习答案图",
+          "evidence_type": "fretboard_diagram",
+          "visible_structure": "{}",
+          "topic_hint": "Ab旋律小调 指型2",
+          "mapping_method": "exercise_subquestion_number",
+          "key": "",
+          "intervals": "[]",
+          "retrieval_keywords": "[\"Ab旋律小调\", \"Ab Melodic Minor\", \"指型2\", \"Pattern 2\", \"吉他音阶\", \"指板图\", \"主音标记\"]",
+          "caption_layer": "fretboard_answer_caption_v1",
+          "uncertain_fields": "[\"fret_range\", \"string_position\"]",
+          "question_text": "在下面的图示中画出Ab旋律小调音阶的五种指型。 1 Ab旋律小调指型1 2) Ab旋律小调 指型2 3 Ab旋律小调 指型3 4) Ab旋律小调 指型4 5) Ab旋律小调 指型5 弹奏上面练习中的旋律小调音阶指型。大声说出指型的序号，并且说出所弹奏的音在音阶中的级数。",
+          "confidence": 1.0
+        },
+        "canonical_terms": [
+          "root:ab",
+          "scale:melodic_minor",
+          "concept:pattern_2",
+          "visual_type:scale_pattern"
+        ],
+        "required_terms": [],
+        "optional_terms": [],
+        "negative_constraints": [],
+        "canonical_sidecar_status": "accepted",
+        "domain_rerank": {
+          "delta": 0.17,
+          "constraints": {
+            "target_keys": [
+              "G minor"
+            ],
+            "target_roots": [
+              "G"
+            ],
+            "chord_qualities": [],
+            "scale_or_mode": [
+              "natural minor"
+            ],
+            "fret_region": "",
+            "position_constraints": [],
+            "canonical_terms": [
+              "key:g_minor",
+              "scale:natural_minor",
+              "visual_type:scale_pattern"
+            ],
+            "required_terms": [
+              "key:g_minor",
+              "visual_type:scale_pattern"
+            ],
+            "optional_terms": [
+              "scale:natural_minor"
+            ],
+            "negative_constraints": [
+              "tuning:dadgad",
+              "tuning:drop",
+              "tuning:open"
+            ],
+            "requires_exact_key": true,
+            "requires_exact_chord": false,
+            "visual_evidence_required": true,
+            "allow_alternate_tuning": false,
+            "allow_exercise_reference": true,
+            "style_hints": [],
+            "techniques": []
+          },
+          "details": {
+            "matched_keys": [
+              "G minor"
+            ],
+            "matched_roots": [],
+            "matched_chord_qualities": [],
+            "matched_scale_or_mode": [],
+            "matched_style": [],
+            "matched_techniques": [],
+            "matched_canonical_terms": [
+              "visual_type:scale_pattern"
+            ],
+            "missing_required_terms": [
+              "key:g_minor"
+            ],
+            "matched_negative_constraints": [],
+            "penalties": [
+              "missing_required_canonical_terms",
+              "missing_required_key_term"
+            ],
+            "matched_required_terms": [
+              "visual_type:scale_pattern"
+            ],
+            "matched_optional_terms": [],
+            "matched_required_key_terms": [],
+            "visual_required_bonus": true
+          }
+        }
+      },
+      "trace": {
+        "rank": 6,
+        "distance": 0.23720169067382812,
+        "task": {
+          "name": "visual_caption",
+          "backend": "chroma",
+          "collection": "guitar_fretboard_answer_captions_qwen3_06b",
+          "query": "G minor scale pattern fingering diagram",
+          "top_k": 5,
+          "reason": "需要具体指型图证据"
+        }
+      }
+    }
+  ],
+  "kg_evidence": [],
+  "judgement": {
+    "sufficient": true,
+    "confidence": 0.71,
+    "missing": [],
+    "warnings": [],
+    "evidence_type_count": 2,
+    "text_count": 25,
+    "visual_count": 26,
+    "kg_count": 0,
+    "next_queries": []
+  },
+  "answer_seed": {
+    "recommended_structure": [
+      "结论",
+      "相关教材证据",
+      "视觉/指法证据",
+      "KG/风格关系",
+      "可操作编配建议",
+      "不确定点"
+    ],
+    "top_text_ids": [
+      "text:fretboard_text_0162",
+      "text:fretboard_text_0037",
+      "text:fretboard_text_0044"
+    ],
+    "top_visual_ids": [
+      "visual_caption:fretboard_answer_E14_6",
+      "visual_caption:fretboard_answer_E15_5",
+      "visual_caption:fretboard_answer_E14_8"
+    ],
+    "top_kg_ids": [],
+    "composer_instruction": "只能基于 evidence_id 引用证据；区分教材明确内容与系统推断；如果 judgement.missing 非空，需要先说明证据不足。",
+    "query_plan": {
+      "raw_query": "给出G小调的吉他指型参考",
+      "normalized_query": "G minor scale guitar fingerings and position diagrams",
+      "intent": "visual_shape_recommendation",
+      "confidence": 0.9,
+      "style_hints": [],
+      "target_keys": [
+        "G minor"
+      ],
+      "target_roots": [
+        "G"
+      ],
+      "chord_qualities": [],
+      "scale_or_mode": [
+        "natural minor"
+      ],
+      "fret_region": "",
+      "requires_exact_key": true,
+      "requires_exact_chord": false,
+      "visual_evidence_required": true,
+      "allow_alternate_tuning": false,
+      "canonical_terms": [
+        "key:g_minor",
+        "scale:natural_minor",
+        "visual_type:scale_pattern"
+      ],
+      "required_terms": [
+        "key:g_minor",
+        "visual_type:scale_pattern"
+      ],
+      "optional_terms": [
+        "scale:natural_minor"
+      ],
+      "negative_constraints": [
+        "tuning:dadgad",
+        "tuning:drop",
+        "tuning:open"
+      ],
+      "techniques": [],
+      "fretboard_constraints": [],
+      "retrieval_plan": {
+        "fretboard_text": {
+          "enabled": true,
+          "query": "G minor scale guitar fingerings and fretboard positions",
+          "reason": "指板文本解释 G 小调音阶与把位逻辑"
+        },
+        "style_text": {
+          "enabled": false,
+          "query": "",
+          "reason": "未指定风格"
+        },
+        "visual_caption": {
+          "enabled": true,
+          "query": "G minor scale pattern fingering diagram",
+          "reason": "需要具体指型图证据"
+        },
+        "kg": {
+          "enabled": false,
+          "query": "",
+          "reason": "静态指型参考不需要 KG"
+        }
+      }
+    },
+    "model_rerank": {
+      "text": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "visual": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      },
+      "kg": {
+        "enabled": false,
+        "provider": "none",
+        "reason": "disabled"
+      }
+    }
+  },
+  "timings": {
+    "model_load_seconds": 5.2533702999935485,
+    "fretboard_text_seconds": 0.37122240001917817,
+    "visual_caption_seconds": 0.23425919999135658,
+    "canonical_visual_seconds": 0.03502939999452792,
+    "model_rerank_seconds": 3.170000854879618e-05,
+    "total_seconds": 7.202642299991567
+  }
+}

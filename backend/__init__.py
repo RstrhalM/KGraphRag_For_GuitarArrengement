@@ -1,2 +1,1 @@
-"""Read-only web workbench backend."""
-
+"""Local Agentic RAG workbench backend."""
